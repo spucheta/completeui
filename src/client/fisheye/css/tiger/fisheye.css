@@ -1,0 +1,18 @@
+.tiger .ntb-fisheye-menubackground
+{
+	background: url(background-white.png) top left repeat;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #fff;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #bbb;
+}
+
+.tiger .ntb-fisheye-label
+{
+	background: url(background-black.png) top left repeat;
+	padding: 3px 5px;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: center;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+	<jsfile path="../toolkit/js/nitobi/base/toolkitdetection.js"/>
+	<jsfile path="js/nitobi/tabstrip/tabstrip.js"/>
+	<jsfile path="js/nitobi/tabstrip/tab.js"/>
+	<jsfile path="js/nitobi/tabstrip/tabs.js"/>
+	<jsfile path="js/nitobi/tabstrip/tabchangeeventargs.js"/>
+	<jsfile path="js/nitobi/tabstrip/error/error.js"/>
+	<xslfile path="xsl/nitobi/tabstrip/tabstrip.xsl" namespace="nitobi.tabstrip" name="tabstripProc"/>
+	<cssfile path="css/nitobi.reset.css"/>
+	<cssfile path="css/glass/nitobi.tabstrip.css"/>
+	<cssfile path="css/plain/nitobi.tabstrip.css"/>
+	<cssfile path="css/nitobi/nitobi.tabstrip.css"/>
+	<cssfile path="css/nested/nitobi.tabstrip.css"/>
+</includes>

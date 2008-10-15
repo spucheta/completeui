@@ -1,0 +1,50 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+.ntb-grid-reset div, .ntb-grid-reset span, .ntb-grid-reset iframe, .ntb-grid-reset h1, .ntb-grid-reset h2, .ntb-grid-reset h3, .ntb-grid-reset h4, .ntb-grid-reset h5, .ntb-grid-reset h6, .ntb-grid-reset p, .ntb-grid-reset blockquote, .ntb-grid-reset pre,
+.ntb-grid-reset a, .ntb-grid-reset em, .ntb-grid-reset font, .ntb-grid-reset img, .ntb-grid-reset strong, .ntb-grid-reset ol, .ntb-grid-reset ul, .ntb-grid-reset li, .ntb-grid-reset fieldset, .ntb-grid-reset form, .ntb-grid-reset label, 
+.ntb-grid-reset table, .ntb-grid-reset caption, .ntb-grid-reset tbody, .ntb-grid-reset tfoot, .ntb-grid-reset thead, .ntb-grid-reset tr, .ntb-grid-reset th, .ntb-grid-reset td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+.ntb-grid-reset ol,.ntb-grid-reset  ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.ntb-grid-reset table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.ntb-grid-reset caption,.ntb-grid-reset th,.ntb-grid-reset td {
+	text-align: left;
+	font-weight: normal;
+}
+
+.ntb-grid-reset blockquote:before, .ntb-grid-reset blockquote:after, .ntb-grid-reset q:before, q:after {
+	content: "";
+}
+
+.ntb-grid-reset blockquote, q {
+	quotes: "" "";
+}

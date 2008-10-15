@@ -1,0 +1,50 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+.ntb-tree-reset div, .ntb-tree-reset span, .ntb-tree-reset iframe, .ntb-tree-reset h1, .ntb-tree-reset h2, .ntb-tree-reset h3, .ntb-tree-reset h4, .ntb-tree-reset h5, .ntb-tree-reset h6, .ntb-tree-reset p, .ntb-tree-reset blockquote, .ntb-tree-reset pre,
+.ntb-tree-reset a, .ntb-tree-reset em, .ntb-tree-reset font, .ntb-tree-reset img, .ntb-tree-reset strong, .ntb-tree-reset ol, .ntb-tree-reset ul, .ntb-tree-reset li, .ntb-tree-reset fieldset, .ntb-tree-reset form, .ntb-tree-reset label, 
+.ntb-tree-reset table, .ntb-tree-reset caption, .ntb-tree-reset tbody, .ntb-tree-reset tfoot, .ntb-tree-reset thead, .ntb-tree-reset tr, .ntb-tree-reset th, .ntb-tree-reset td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+.ntb-tree-reset ol,.ntb-tree-reset  ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.ntb-tree-reset table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.ntb-tree-reset caption,.ntb-tree-reset th,.ntb-tree-reset td {
+	text-align: left;
+	font-weight: normal;
+}
+
+.ntb-tree-reset blockquote:before, .ntb-tree-reset blockquote:after, .ntb-tree-reset q:before, q:after {
+	content: "";
+}
+
+.ntb-tree-reset blockquote, q {
+	quotes: "" "";
+}

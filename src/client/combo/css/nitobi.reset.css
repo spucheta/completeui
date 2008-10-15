@@ -1,0 +1,51 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+.ntb-combo-reset div, .ntb-combo-reset span, .ntb-combo-reset iframe, .ntb-combo-reset h1, .ntb-combo-reset h2, .ntb-combo-reset h3, .ntb-combo-reset h4, .ntb-combo-reset h5, .ntb-combo-reset h6, .ntb-combo-reset p, .ntb-combo-reset blockquote, .ntb-combo-reset pre,
+.ntb-combo-reset a, .ntb-combo-reset em, .ntb-combo-reset font, .ntb-combo-reset img, .ntb-combo-reset strong, .ntb-combo-reset ol, .ntb-combo-reset ul, .ntb-combo-reset li, .ntb-combo-reset fieldset, .ntb-combo-reset form, .ntb-combo-reset label, 
+.ntb-combo-reset table, .ntb-combo-reset caption, .ntb-combo-reset tbody, .ntb-combo-reset tfoot, .ntb-combo-reset thead, .ntb-combo-reset tr, .ntb-combo-reset th {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	background: transparent;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+.ntb-combo-reset ol,.ntb-combo-reset  ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.ntb-combo-reset table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.ntb-combo-reset caption,.ntb-combo-reset th,.ntb-combo-reset td {
+	text-align: left;
+	font-weight: normal;
+}
+
+.ntb-combo-reset blockquote:before, .ntb-combo-reset blockquote:after, .ntb-combo-reset q:before, q:after {
+	content: "";
+}
+
+.ntb-combo-reset blockquote, q {
+	quotes: "" "";
+}

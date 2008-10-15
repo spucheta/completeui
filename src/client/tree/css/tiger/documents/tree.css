@@ -1,0 +1,107 @@
+.documents .tree {
+	background-color:transparent;
+}
+
+.documents .sidebar-background {
+	background-image:url('sidebar.gif');
+	background-repeat: repeat-y;
+}
+
+.documents .root .node .icon {
+	width:19px;
+	background-color:transparent;
+	background-image:url('base.gif');
+	background-repeat: no-repeat;
+}
+
+.documents .hover .node, .documents .hover .leaf { 
+	background-color: #D4AAFF; 
+	color: white;	
+}
+
+
+.documents .tree .selected .node, .documents .tree .selected .leaf {
+	background-color: #3875d7;
+	color: #fff;
+}
+
+.documents .pipe {
+	width:19px;
+	background-color:transparent;
+	background-image:url('line.gif');
+
+}
+.documents .tee {
+	width:19px;
+	background-color:transparent;
+	background-image:url('joinbottom.gif');
+
+}
+.documents .ell {
+	width:19px;
+	background-color:transparent;
+	background-image:url('join.gif');
+	background-repeat: no-repeat;
+}
+.documents .spacer {
+	width:20px;
+}
+
+.documents .sidebar {
+	background-color:transparent;
+	width:34px;	
+}
+.documents .flag {
+	background-color:transparent;
+}
+
+.documents .collapsed .tee {
+	background-image:url('plusbottom.gif');
+}
+
+.documents .expanded .tee {
+	background-image:url('minusbottom.gif');
+}
+
+.documents .collapsed .ell {
+	background-image:url('plus.gif');
+}
+
+.documents .expanded .ell {
+	background-image:url('minus.gif');
+}
+
+.documents .node .icon {
+	width:19px;
+	background-color:transparent;
+	background-image:url('folder.gif');
+	background-repeat: no-repeat;
+}
+
+.documents .expanded .node .icon {
+	background-image:url('folderopen.gif');
+}
+
+.documents .leaf .icon {
+	width:19px;
+	background-color:transparent;
+	background-image:url('page.gif');
+	background-repeat: no-repeat;
+}
+
+.documents .label {
+	font-family: arial;
+	font-size: 12px;
+	padding-left: 2px;
+}
+.documents .working .tee {
+	width:19px;
+	background-image:url('indicator.gif');
+	background-repeat: no-repeat;
+}
+
+.documents .working .ell{
+	width:19px;
+	background-image:url('indicator.gif');
+	background-repeat: no-repeat;
+}

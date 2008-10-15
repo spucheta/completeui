@@ -1,0 +1,51 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+.recordsearch div, .recordsearch span, .recordsearch iframe, .recordsearch h1, .recordsearch h2, .recordsearch h3, .recordsearch h4, .recordsearch h5, .recordsearch h6, .recordsearch p, .recordsearch blockquote, .recordsearch pre,
+.recordsearch a, .recordsearch em, .recordsearch font, .recordsearch img, .recordsearch strong, .recordsearch ol, .recordsearch ul, .recordsearch li, .recordsearch fieldset, .recordsearch form, .recordsearch label, 
+.recordsearch table, .recordsearch caption, .recordsearch tbody, .recordsearch tfoot, .recordsearch thead, .recordsearch tr, .recordsearch th, .recordsearch td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	background: transparent;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+.recordsearch ol,.recordsearch  ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.recordsearch table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.recordsearch caption,.recordsearch th,.recordsearch td {
+	text-align: left;
+	font-weight: normal;
+}
+
+.recordsearch blockquote:before, .recordsearch blockquote:after, .recordsearch q:before, q:after {
+	content: "";
+}
+
+.recordsearch blockquote, q {
+	quotes: "" "";
+}

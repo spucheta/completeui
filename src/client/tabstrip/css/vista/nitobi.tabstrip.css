@@ -1,0 +1,388 @@
+/* Font settings */
+.vista .ntb-tab-strip, .vista .ntb-tab-strip a {
+	overflow:hidden;
+	width:100%;
+	height:100%;
+	font-size: 12px; 
+	font-family: Arial, Helvetica, sans-serif;
+	color:#FFFFFF;
+	text-align:left;
+	font-weight:normal;
+	white-space: nowrap;
+	padding: 0px;
+	margin: 0px;	
+}
+.vista .ntb-tab a, .vista .ntb-tab-inactive  .ntb-tab-label a, .vista .ntb-tab-active .ntb-tab-label a {
+	color: #ffffff;	
+	text-decoration: none;
+}
+.vista .ntb-tab-active .ntb-tab a {
+}
+.vista .ntb-tab-disabled .ntb-tab,  {
+	font-weight:bold;
+	color:gray;
+	text-align:left;
+	cursor:pointer;
+}
+.vista .ntb-tab-disabled .ntb-tab a {
+	text-decoration:none;
+	cursor:pointer;
+}
+
+/* default */
+.vista .ntb-tab-strip-max, .vista .ntb-tab-strip-body-container {
+	width:100%;
+	height:100%
+}
+.vista .ntb-tab-strip .ntb-tab-tabs-row {
+	vertical-align:bottom;
+}
+.vista .ntb-tab-bodies-row {
+	width: 100%;
+	vertical-align:top;
+}
+.vista .ntb-tab-strip-body-container {
+	border: 1px solid lightgrey;
+}
+.vista .ntb-tab-mouseover .ntb-tab {
+	font-weight:bold;
+	white-space: nowrap;
+	padding:0px;
+	margin:0px;
+}
+
+/* scroller */
+.vista .ntb-tab-scrollerbuttoncontainer {
+	width:15px;
+	white-space:normal;
+}
+.vista .ntb-tab-scrollerbutton {
+	width:14px;
+	height: 14px;
+	font-size:7pt;
+	border: 1px solid black;
+	padding:0px;
+	margin:auto;
+	background-repeat:no-repeat;
+	background-position: center;
+}
+.vista .ntb-tab-scrollerbutton-left {
+	background-image: url(assets/left.png);
+}
+.vista .ntb-tab-scrollerbutton-right {
+	background-image: url(assets/right.png);
+}
+
+/* iframe */
+.vista .ntb-tab-active .ntb-tab-iframecontainer, .vista .ntb-tab-disabled .ntb-tab-iframecontainer {
+	border:0;
+	position:static;
+	width:100%;
+	height:100%;
+}
+.vista .ntb-tab-inactive .ntb-tab-iframecontainer {
+	border:0;
+	width:0px;
+	height:0px;
+	top:-1000px;
+	left:-1000px;
+	position:absolute;
+}
+
+/* Other */
+.vista .ntb-tab-icon-active {
+	width: 15%;
+}
+
+.vista .ntb-tab-container {
+	overflow:hidden;
+}
+
+.vista .ntb-leading-tab {
+	border: black 1px solid;
+	background-color: red;
+}
+
+.vista .ntb-tab-tabs {
+	position:relative;
+	top:0px;
+	table-layout:fixed;
+	border-collapse:collapse;
+}
+.vista .ntb-tab-inactive  .ntb-tab-label, .vista .ntb-tab-active .ntb-tab-label {
+	border-collapse: collapse;
+	width:100%;
+	height:30px;
+}
+.vista .ntb-tab-active .ntb-tab-mouseover .ntb-tab-label {
+	border-collapse: collapse;
+	width:100%;
+}
+.vista .ntb-tab-inactive  .ntb-tab-bodycontainer {
+	top:-1000px;
+	left:-1000px;
+	position:absolute;
+}
+.vista .ntb-tab-active .ntb-tab-bodycontainer {
+	position:static;
+}
+.vista .ntb-tab-mintable {
+	border-collapse:collapse;
+	padding:0;
+	margin:0;
+	table-layout:fixed;
+}
+
+/* load indicator */
+.vista .ntb-tab-activityindicator {
+	white-space:nowrap;
+	background-image:url(assets/indicator.gif);
+	background-repeat:no-repeat;
+	background-position:center;
+	width:16px;
+	height:16px;
+}
+
+/* Setting z-indexes */
+.vista .ntb-tab-inactive .ntb-tab a {
+	z-index:302;
+}
+.vista .ntb-tab-active .ntb-tab-bodycontainer, .vista .ntb-tab-active .ntb-tab-iframecontainer, .vista .ntb-tab-disabled .ntb-tab-iframecontainer, .vista .ntb-tab-active .ntb-tab-table {
+	z-index:300;
+}
+.vista .ntb-tab-bodycontainer, .vista .ntb-tab-inactive .ntb-tab-iframecontainer, .vista .ntb-tab-inactive  .ntb-tab-bodycontainer, .vista .ntb-tab-inactive .ntb-tab-table {
+	z-index:299;
+}
+.vista .ntb-tab-active .ntb-tab-body, .vista .ntb-tab-active .ntb-tab-left, .vista .ntb-tab-active .ntb-tab-right, .vista .ntb-tab-active .ntb-tab-mouseover .ntb-tab-body, .vista .ntb-tab-active .ntb-tab-mouseover .ntb-tab-left, .vista .ntb-tab-active .ntb-tab-mouseover .ntb-tab-right {
+	z-index:200;
+}
+.vista .ntb-tab-disabled .ntb-tab-body, .vista .ntb-tab-disabled .ntb-tab-left, .vista .ntb-tab-disabled .ntb-tab-right, .vista .ntb-tab-disabled .ntb-tab-bodycontainer, .vista .ntb-tab-disabled .ntb-tab-table  {
+	z-index:199;
+}
+.vista .ntb-tab-inactive .ntb-tab-body .ntb-pulse, .vista .ntb-tab-inactive  .ntb-tab-left .ntb-pulse, .vista .ntb-tab-inactive .ntb-tab-right .ntb-pulse {
+	z-index:101;
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+	visibility:hidden;
+	opacity:0.0;
+}
+.vista .ntb-tab-inactive .ntb-tab-body, .vista .ntb-tab-inactive  .ntb-tab-left, .vista .ntb-tab-inactive .ntb-tab-right, .vista .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab-body, .vista .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left, .vista .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab-right {
+	z-index:100;
+}
+
+/* Tab settings */
+.vista .ntb-tab-inactive .ntb-tab-table, .vista .ntb-tab-active .ntb-tab-table, .vista .ntb-tab-disabled .ntb-tab-table, .vista .ntb-tab-inactive .ntb-tab, .vista .ntb-tab-inactive .ntb-tab-body .ntb-pulse {
+	width:100%;
+	height:30px;
+	border-collapse:collapse;
+	border:0;
+	table-layout:fixed;			
+	position:relative;
+	cursor:pointer;
+}
+.vista .ntb-tab-inactive .ntb-tab-left , .vista .ntb-tab-active .ntb-tab-left , .vista .ntb-tab-disabled .ntb-tab-left, .vista .ntb-tab-inactive .ntb-tab-left .ntb-pulse {
+	width: 13px;
+	height:30px;
+}
+.vista .ntb-tab-inactive .ntb-tab-right, .vista .ntb-tab-active .ntb-tab-right, .vista .ntb-tab-disabled .ntb-tab-right, .vista .ntb-tab-inactive  .ntb-tab-left .ntb-pulse {
+	width:20px;
+	height:30px;
+}
+
+/* Inactive */
+.vista .ntb-tab-inactive .ntb-tab-body {
+	background:url(tabs/body/inactivebody.png) bottom left repeat-x;
+}
+.vista .ntb-tab-inactive  .ntb-tab-left {
+	background: url(tabs/left/inactiveleft.png) bottom right no-repeat;
+}
+.vista .ntb-tab-inactive .ntb-tab-right {
+	background:url(tabs/right/inactiveright.png) bottom left no-repeat;
+}
+/* inactive hover */
+.vista .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab {
+	white-space:nowrap;
+	padding:0px;
+	margin:0px;
+	text-align:left;
+	padding-top:0px;
+	cursor:pointer;
+}
+.vista .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/activebody_hover.png) bottom left repeat-x;
+}
+.vista .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left {
+	background: url(tabs/left/inactiveleft_hover.png) bottom right no-repeat;
+}
+.vista .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/activeright_hover.png) bottom left no-repeat;
+}
+
+/* active */
+.vista .ntb-tab-active .ntb-tab-body {
+	background:url(tabs/body/activebody.png) bottom left repeat-x;
+}
+.vista .ntb-tab-active .ntb-tab-left {
+	background:url(tabs/left/activeleft.png) bottom right no-repeat;
+}
+.vista .ntb-tab-active .ntb-tab-right {
+	background: url(tabs/right/activeright.png) bottom left no-repeat;
+}
+/* active hover */
+.vista .ntb-tab-active .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/activebody_hover.png) bottom left repeat-x;
+}
+.vista .ntb-tab-active .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/activeleft_hover.png) bottom right no-repeat;
+}
+.vista .ntb-tab-active .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/activeright_hover.png) bottom left no-repeat;
+}
+
+/* disabled */
+.vista .ntb-tab-disabled .ntb-tab-body {
+	background:url(tabs/body/disabledbody.png) bottom left repeat-x;
+}
+.vista .ntb-tab-disabled .ntb-tab-left {
+	background:url(tabs/left/disabledleft.png) bottom right no-repeat;
+}
+.vista .ntb-tab-disabled .ntb-tab-right {
+	background:url(tabs/right/disabledright.png) bottom left no-repeat;
+}
+
+/* pulse */
+.vista .ntb-tab-inactive .ntb-tab-body .ntb-pulse {
+	background:url(tabs/body/ractivebody.png) bottom left repeat-x;
+}
+.vista .ntb-tab-inactive .ntb-tab-left .ntb-pulse {
+	background: url(tabs/left/ractiveleft.png) bottom right no-repeat;
+}
+.vista .ntb-tab-inactive .ntb-tab-right .ntb-pulse {
+	background:url(tabs/right/ractiveright.png) bottom left no-repeat;
+}
+
+/* red tab inactive */
+.vista .redtab .ntb-tab-inactive  .ntb-tab-body {
+	background:url(tabs/body/ractivebody.png) bottom left repeat-x;
+}
+.vista .redtab .ntb-tab-inactive  .ntb-tab-left {
+	background:url(tabs/left/rinactiveleft.png) bottom right no-repeat;
+}
+.vista .redtab .ntb-tab-inactive  .ntb-tab-right {
+	background:url(tabs/right/ractiveright.png) bottom left no-repeat;
+}
+/* red tab inactive hover */
+.vista .redtab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/ractivebody_hover.png) bottom left repeat-x;
+}
+.vista .redtab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/rinactiveleft_hover.png) bottom right no-repeat;
+}
+.vista .redtab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/ractiveright_hover.png) bottom left no-repeat;
+}
+
+/* red tab active */
+.vista .redtab .ntb-tab-active  .ntb-tab-body {
+	background:url(tabs/body/ractivebody.png) bottom left repeat-x;
+}
+.vista .redtab .ntb-tab-active  .ntb-tab-left {
+	background:url(tabs/left/ractiveleft.png) bottom right no-repeat;
+}
+.vista .redtab .ntb-tab-active  .ntb-tab-right {
+	background:url(tabs/right/ractiveright.png) bottom left no-repeat;
+}
+/* red tab active hover */
+.vista .redtab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/ractivebody_hover.png) bottom left repeat-x;
+}
+.vista .redtab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/ractiveleft_hover.png) bottom right no-repeat;
+}
+.vista .redtab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/ractiveright_hover.png) bottom left no-repeat;
+}
+
+/* green tab inactive */
+.vista .greentab .ntb-tab-inactive  .ntb-tab-body {
+	background:url(tabs/body/gactivebody.png) bottom left repeat-x;
+}
+.vista .greentab .ntb-tab-inactive  .ntb-tab-left {
+	background:url(tabs/left/ginactiveleft.png) bottom right no-repeat;
+}
+.vista .greentab .ntb-tab-inactive  .ntb-tab-right {
+	background:url(tabs/right/gactiveright.png) bottom left no-repeat;
+}
+/* green tab inactive hover */
+.vista .greentab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/gactivebody_hover.png) bottom left repeat-x;
+}
+.vista .greentab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/ginactiveleft_hover.png) bottom right no-repeat;
+}
+.ntb-tab-right, .vista .greentab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/gactiveright_hover.png) bottom left no-repeat;
+}
+
+/* green tab active */
+.vista .greentab .ntb-tab-active  .ntb-tab-body {
+	background:url(tabs/body/gactivebody.png) bottom left repeat-x;
+}
+.vista .greentab .ntb-tab-active  .ntb-tab-left {
+	background:url(tabs/left/gactiveleft.png) bottom right no-repeat;
+}
+.vista .greentab .ntb-tab-active  .ntb-tab-right {
+	background:url(tabs/right/gactiveright.png) bottom left no-repeat;
+}
+/* green tab active hover */
+.vista .greentab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/gactivebody_hover.png) bottom left repeat-x;
+}
+.vista .greentab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/gactiveleft_hover.png) bottom right no-repeat;
+}
+.vista .greentab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/gactiveright_hover.png) bottom left no-repeat;
+}
+
+/* purple tab inactive */
+.vista .purpletab .ntb-tab-inactive  .ntb-tab-body {
+	background:url(tabs/body/pactivebody.png) bottom left repeat-x;
+}
+.vista .purpletab .ntb-tab-inactive  .ntb-tab-left {
+	background:url(tabs/left/pinactiveleft.png) bottom right no-repeat;
+}
+.vista .purpletab .ntb-tab-inactive  .ntb-tab-right {
+	background:url(tabs/right/pactiveright.png) bottom left no-repeat;
+}
+/* purple tab inactive hover */
+.vista .purpletab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/pactivebody_hover.png) bottom left repeat-x;
+}
+.vista .purpletab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/pinactiveleft_hover.png) bottom right no-repeat;
+}
+.vista .purpletab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/pactiveright_hover.png) bottom left no-repeat;
+}
+
+/* purple tab active */
+.vista .purpletab .ntb-tab-active  .ntb-tab-body {
+	background:url(tabs/body/pactivebody.png) bottom left repeat-x;
+}
+.vista .purpletab .ntb-tab-active  .ntb-tab-left {
+	background:url(tabs/left/pactiveleft.png) bottom right no-repeat;
+}
+.vista .purpletab .ntb-tab-active  .ntb-tab-right {
+	background:url(tabs/right/pactiveright.png) bottom left no-repeat;
+}
+/* purple tab active hover */
+.vista .purpletab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/pactivebody_hover.png) bottom left repeat-x;
+}
+.vista .purpletab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/pactiveleft_hover.png) bottom right no-repeat;
+}
+.vista .purpletab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/pactiveright_hover.png) bottom left no-repeat;
+}

@@ -1,0 +1,51 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+.cmail div, .cmail span, .cmail iframe, .cmail h1, .cmail h2, .cmail h3, .cmail h4, .cmail h5, .cmail h6, .cmail p, .cmail blockquote, .cmail pre,
+.cmail a, .cmail em, .cmail font, .cmail img, .cmail strong, .cmail ol, .cmail ul, .cmail li, .cmail fieldset, .cmail form, .cmail label, 
+.cmail table, .cmail caption, .cmail tbody, .cmail tfoot, .cmail thead, .cmail tr, .cmail th, .cmail td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	background: transparent;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+.cmail ol,.cmail  ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.cmail table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.cmail caption,.cmail th,.cmail td {
+	text-align: left;
+	font-weight: normal;
+}
+
+.cmail blockquote:before, .cmail blockquote:after, .cmail q:before, q:after {
+	content: "";
+}
+
+.cmail blockquote, q {
+	quotes: "" "";
+}

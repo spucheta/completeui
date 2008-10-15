@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<project default="buildAll" basedir=".">
+	<import file="build_component.xml" />
+
+	<property name="DIST" value="../dist" />
+	<property name="TEMP" value="../temp" />
+	<loadfile srcFile="license.txt" property="license" />
+	<property name="license" value="" />
+	<target name="createOutputFolders">
+		<mkdir dir="${DIST}"/>
+		<mkdir dir="${TEMP}"/>
+	</target>
+	
+	<target name="clean">
+		<delete dir="${DIST}"/>
+		<delete dir="${TEMP}"/>
+	</target>
+	
+	<target name="buildAll" depends="clean, createOutputFolders">
+		<antcall target="buildComponent">
+			<param name="component" value="calendar"/>
+			<param name="license" value="${license}" />
+		</antcall>
+		<antcall target="buildComponent">
+			<param name="component" value="callout"/>
+		</antcall>
+		<antcall target="buildComponent">
+			<param name="component" value="combo"/>
+		</antcall>
+		<antcall target="buildComponent">
+			<param name="component" value="fisheye"/>
+		</antcall>
+		<antcall target="buildComponent">
+			<param name="component" value="grid"/>
+		</antcall>
+		<antcall target="buildComponent">
+			<param name="component" value="spotlight"/>
+		</antcall>
+		<antcall target="buildComponent">
+			<param name="component" value="tabstrip"/>
+		</antcall>
+		<antcall target="buildComponent">
+			<param name="component" value="toolkit"/>
+		</antcall>
+		<antcall target="buildComponent">
+			<param name="component" value="tree"/>
+		</antcall>
+		<antcall target="buildComponent">
+			<param name="component" value="treegrid"/>
+		</antcall>
+	</target>
+</project>

@@ -1,0 +1,51 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+.winofficexp div, .winofficexp span, .winofficexp iframe, .winofficexp h1, .winofficexp h2, .winofficexp h3, .winofficexp h4, .winofficexp h5, .winofficexp h6, .winofficexp p, .winofficexp blockquote, .winofficexp pre,
+.winofficexp a, .winofficexp em, .winofficexp font, .winofficexp img, .winofficexp strong, .winofficexp ol, .winofficexp ul, .winofficexp li, .winofficexp fieldset, .winofficexp form, .winofficexp label, 
+.winofficexp table, .winofficexp caption, .winofficexp tbody, .winofficexp tfoot, .winofficexp thead, .winofficexp tr, .winofficexp th, .winofficexp td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	background: transparent;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+.winofficexp ol,.winofficexp  ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.winofficexp table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.winofficexp caption,.winofficexp th,.winofficexp td {
+	text-align: left;
+	font-weight: normal;
+}
+
+.winofficexp blockquote:before, .winofficexp blockquote:after, .winofficexp q:before, q:after {
+	content: "";
+}
+
+.winofficexp blockquote, q {
+	quotes: "" "";
+}

@@ -1,0 +1,108 @@
+<project name="componentBuild" basedir=".">
+	<target name="buildComponent" depends="obfuscateJS, mergeAll">
+		<concat destfile="${TEMP}/${component}/nitobi.${component}.obfuscated.license.js">
+			<fileset file="${TEMP}/${component}/nitobi.${component}.obfuscated.js"/>
+			<header>${license}</header>
+		</concat>
+		<copy file="${TEMP}/${component}/nitobi.${component}.obfuscated.license.js" tofile="${DIST}/nitobi.${component}.js" failonerror="false" />
+	</target>
+	
+	<target name="obfuscateJS" description="Concats and obfuscates the javascript for the component">
+		<xslt 
+			in="../src/client/${component}/includes.xml" 
+			out="${TEMP}/${component}/jsincludes.txt" 
+			style="includes/xsl/jsincludes.xslt">
+			<param name="component" expression="${component}" />
+		</xslt>
+		
+	    <loadfile property="srcjsfiles" srcfile="${TEMP}/${component}/jsincludes.txt" />
+	
+	    <concat append="false" destfile="${TEMP}/${component}/js.merged.js" fixlastline="true" >
+	        <filelist files="${srcjsfiles}" dir="." />
+	    </concat>
+		
+		<!-- clean out all the calls to Debug.* -->
+		<replaceregexp file="${TEMP}/${component}/js.merged.js"
+			match="^\s*Debug\.(.*)\(.*\);"
+			replace=""
+			byline="true" />
+
+		<!-- clean out all the calls to console.* -->
+		<replaceregexp file="${TEMP}/${component}/js.merged.js"
+			match="^\s*console\.(.*)\(.*\);"
+			replace=""
+			byline="true" />
+
+		<!-- clean out all the calls to console.* -->
+		<replaceregexp file="${TEMP}/${component}/js.merged.js"
+			match="^\s*debugger(.*)$"
+			replace=""
+			byline="true" />
+			
+	    <java jar="./dojo_rhino.jar" fork="true" output="${TEMP}/${component}/js.obfuscated.js">
+			<arg line="-opt -1 -c ${TEMP}/${component}/js.merged.js > ${TEMP}/${component}/js.obfuscated.js 2>&amp;1" />
+		</java>
+	</target>
+	
+	<target name="mergeAll" depends="mergeXMLIncludes, mergeXSLIncludes">
+	    <concat append="false" destfile="${TEMP}/${component}/nitobi.${component}.obfuscated.js" fixlastline="true">
+	        <fileset dir="${TEMP}/${component}" casesensitive="false">
+	            <include name="js.obfuscated.js"/>
+	        	<include name="xml.js"/>
+	            <include name="xslt.js"/>
+	        </fileset>
+	    </concat>
+	</target>
+	
+	<target name="mergeXMLIncludes">
+	    <xslt in="../src/client/${component}/includes.xml" out="${TEMP}/${component}/xmlstringify.txt" style="includes/xsl/xmlstringify.xslt">
+	    	<param name="component" expression="${component}" />
+	    </xslt>
+
+	    <concat append="false" destfile="${TEMP}/${component}/xmltostringbat.js" fixlastline="true" >
+	        <filelist files="${TEMP}/${component}/xmlstringify.txt includes/js/xmltostring.js" dir="." />
+	    </concat>
+		
+		<java
+			jar="js.jar"
+			fork="true" output="${TEMP}/log.txt">
+			<arg line="-f ${TEMP}/${component}/xmltostringbat.js" />
+		</java>
+	    
+	    <xslt in="../src/client/${component}/includes.xml" out="${TEMP}/${component}/xmlincludes.txt" style="includes/xsl/xmlincludes.xslt">
+	    	<param name="component" expression="${component}" />
+	    </xslt>
+
+	    <loadfile property="srcxmlfiles" srcfile="${TEMP}/${component}/xmlincludes.txt" />		
+	    
+	    <concat append="false" destfile="${TEMP}/${component}/xml.js" fixlastline="true" >
+	        <filelist files="${srcxmlfiles}" dir="." />
+	    </concat>
+	</target>
+	
+	<target name="mergeXSLIncludes">
+	    <xslt in="../src/client/${component}/includes.xml" out="${TEMP}/${component}/xslstringify.txt" style="includes/xsl/xslstringify.xslt">
+	    	<param name="component" expression="${component}" />
+	    </xslt>
+
+	    <concat append="false" destfile="${TEMP}/${component}/xsltostringbat.js" fixlastline="true" >
+	        <filelist files="${TEMP}/${component}/xslstringify.txt includes/js/xsltostring.js" dir="." />
+	    </concat>
+		
+		<java
+			jar="js.jar"
+			fork="true" output="${TEMP}/log.txt">
+			<arg line="-f ${TEMP}/${component}/xsltostringbat.js"/>
+		</java>
+	    
+	    <xslt in="../src/client/${component}/includes.xml" out="${TEMP}/${component}/xslincludes.txt" style="includes/xsl/xslincludes.xslt">
+	    	<param name="component" expression="${component}" />
+	    </xslt>
+
+	    <loadfile property="srcxslfiles" srcfile="${TEMP}/${component}/xslincludes.txt" />		
+	    
+	    <concat append="false" destfile="${TEMP}/${component}/xslt.js" fixlastline="true" >
+	        <filelist files="${srcxslfiles}" dir="." />
+	    </concat>
+	</target>
+</project>

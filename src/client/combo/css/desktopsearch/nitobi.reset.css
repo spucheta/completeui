@@ -1,0 +1,51 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+.desktopsearch div, .desktopsearch span, .desktopsearch iframe, .desktopsearch h1, .desktopsearch h2, .desktopsearch h3, .desktopsearch h4, .desktopsearch h5, .desktopsearch h6, .desktopsearch p, .desktopsearch blockquote, .desktopsearch pre,
+.desktopsearch a, .desktopsearch em, .desktopsearch font, .desktopsearch img, .desktopsearch strong, .desktopsearch ol, .desktopsearch ul, .desktopsearch li, .desktopsearch fieldset, .desktopsearch form, .desktopsearch label, 
+.desktopsearch table, .desktopsearch caption, .desktopsearch tbody, .desktopsearch tfoot, .desktopsearch thead, .desktopsearch tr, .desktopsearch th, .desktopsearch td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	background: transparent;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+.desktopsearch ol,.desktopsearch  ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.desktopsearch table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.desktopsearch caption,.desktopsearch th,.desktopsearch td {
+	text-align: left;
+	font-weight: normal;
+}
+
+.desktopsearch blockquote:before, .desktopsearch blockquote:after, .desktopsearch q:before, q:after {
+	content: "";
+}
+
+.desktopsearch blockquote, q {
+	quotes: "" "";
+}

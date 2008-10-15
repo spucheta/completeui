@@ -1,0 +1,51 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+.winxpsilver div, .winxpsilver span, .winxpsilver iframe, .winxpsilver h1, .winxpsilver h2, .winxpsilver h3, .winxpsilver h4, .winxpsilver h5, .winxpsilver h6, .winxpsilver p, .winxpsilver blockquote, .winxpsilver pre,
+.winxpsilver a, .winxpsilver em, .winxpsilver font, .winxpsilver img, .winxpsilver strong, .winxpsilver ol, .winxpsilver ul, .winxpsilver li, .winxpsilver fieldset, .winxpsilver form, .winxpsilver label, 
+.winxpsilver table, .winxpsilver caption, .winxpsilver tbody, .winxpsilver tfoot, .winxpsilver thead, .winxpsilver tr, .winxpsilver th, .winxpsilver td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	background: transparent;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+.winxpsilver ol,.winxpsilver  ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.winxpsilver table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.winxpsilver caption,.winxpsilver th,.winxpsilver td {
+	text-align: left;
+	font-weight: normal;
+}
+
+.winxpsilver blockquote:before, .winxpsilver blockquote:after, .winxpsilver q:before, q:after {
+	content: "";
+}
+
+.winxpsilver blockquote, q {
+	quotes: "" "";
+}

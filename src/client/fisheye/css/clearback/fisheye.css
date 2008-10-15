@@ -1,0 +1,17 @@
+.clearback .ntb-fisheye-menubackground
+{
+	background-color: transparent;
+	border: 0px;
+}
+
+.clearback .ntb-fisheye-label
+{
+	border: 1px solid #666666;
+	padding: 3px 5px;
+	background-color: #FCFCFC;
+	font-family: "trebuchet ms", georgia, tahoma, verdana;
+	font-size: 12px;
+	text-align: center;
+	font-weight: bold;
+	opacity = 0.75;
+}

@@ -1,0 +1,31 @@
+
+
+.ntb-toolbar
+{
+	background-image: url(background.jpg);
+	overflow: hidden;
+}
+
+.ntb-button
+{
+	background: none transparent scroll repeat 0% 0%;
+	padding: 1px;
+	cursor: hand;
+}
+
+.ntb-button-highlight, .ntb-button-down, ntb-button-checked
+{
+	padding:0px;
+	border: 1px solid #000000;
+}
+
+.ntb-button-highlight, .ntb-button-down
+{
+	background-color: #7f8290;
+	cursor: hand;	
+}
+
+.ntb-button-checked
+{
+	background-color: #a8abb9;
+}

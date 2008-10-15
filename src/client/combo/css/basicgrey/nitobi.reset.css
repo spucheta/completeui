@@ -1,0 +1,51 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+.basicgrey div, .basicgrey span, .basicgrey iframe, .basicgrey h1, .basicgrey h2, .basicgrey h3, .basicgrey h4, .basicgrey h5, .basicgrey h6, .basicgrey p, .basicgrey blockquote, .basicgrey pre,
+.basicgrey a, .basicgrey em, .basicgrey font, .basicgrey img, .basicgrey strong, .basicgrey ol, .basicgrey ul, .basicgrey li, .basicgrey fieldset, .basicgrey form, .basicgrey label, 
+.basicgrey table, .basicgrey caption, .basicgrey tbody, .basicgrey tfoot, .basicgrey thead, .basicgrey tr, .basicgrey th, .basicgrey td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	background: transparent;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+.basicgrey ol,.basicgrey  ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.basicgrey table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.basicgrey caption,.basicgrey th,.basicgrey td {
+	text-align: left;
+	font-weight: normal;
+}
+
+.basicgrey blockquote:before, .basicgrey blockquote:after, .basicgrey q:before, q:after {
+	content: "";
+}
+
+.basicgrey blockquote, q {
+	quotes: "" "";
+}

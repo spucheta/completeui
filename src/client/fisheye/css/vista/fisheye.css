@@ -1,0 +1,20 @@
+.vista .ntb-fisheye-menubackground
+{
+	border: 1px solid #74787c;
+	border-top: 1px solid #fff;
+	border-left: 1px solid #d8d8d8;
+	background: url(background.png) left top repeat-x;
+}
+
+.vista .ntb-fisheye-label
+{
+	padding: 3px 5px;
+	background-color: #000;
+	color: #fff;
+	opacity: 0.7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: center;
+	font-weight: bold;
+	opacity = 0.85;
+}

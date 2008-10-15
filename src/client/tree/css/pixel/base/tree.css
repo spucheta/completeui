@@ -1,0 +1,92 @@
+@namespace ntb "http://www.nitobi.com";
+ntb|tree {
+	display:none;
+}
+
+ntb\:tree {
+	display:none;
+}
+
+.tree { overflow:auto; }
+.tree * { width:auto; white-space:nowrap !important;}
+
+
+.tree .hover .node, .tree .hover .leaf { 
+	background-color: #cce9ff;
+}
+
+.treenode {	
+}
+
+
+.tree .node div div, .tree .leaf div div {
+	display: inline;
+	float:left;
+	height:20px;			
+}
+
+.selected .node, .selected .leaf {
+	background-color: #cce9ff;
+}
+
+.chooser {
+	cursor:default;
+	
+}
+
+.expanded .ell {
+	width:20px;
+	background-color:purple;
+}
+.collapsed .ell {
+	width:20px;
+	background-color:brown;
+}
+
+.working .ell {
+	width:20px;
+	background-color:black;	
+}
+
+.expanded .tee {
+	width:20px;
+	background-color:orange;
+}
+.collapsed .tee {
+	width:20px;
+	background-color:pink;
+}
+
+.working .tee {
+	width:20px;
+	background-color:black;	
+}
+
+
+.pipe {
+	width:20px;
+	background-color:blue;
+}
+.tee {
+	width:20px;
+	background-color:green;
+}
+.ell {
+	width:20px;
+	background-color:red;
+}
+.spacer {
+	width:20px;
+}
+.sidebar {
+	width:20px;
+	background-color: #ddd;
+}
+
+.flag {
+	width:20px;
+}
+
+.read {
+	background-color: green;
+}				

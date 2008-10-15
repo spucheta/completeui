@@ -1,0 +1,374 @@
+/* --------------------	*/
+/* Global Attributes	*/
+/* --------------------	*/
+
+/* This is where you set your desired font size. The line-heights 
+   and vertical margins are automatically calculated from this. 
+   The percentage is of 16px (0.625 * 16px = 10px). */
+
+.vista { font-size: 62.5%; }
+
+/* Default fonts and colors 
+---------------------------------------------*/
+
+.vista {
+	font-family: "segoe ui",tahoma,arial,sans-serif;
+	font-size: 11px;
+	text-align:left;
+}
+
+.vista h1,.vista h2,.vista h3,.vista h4,.vista h5,.vista h6 { 
+	color:#000;
+	font-family: "segoe ui",tahoma,arial,sans-serif;
+	font-size: 11px;
+}
+
+/* Links */
+
+/* --------------------	*/
+/* Text  				*/
+/* --------------------	*/
+
+/* Headings
+---------------------------------------------*/
+.vista h1, .vista h2, .vista h3, .vista h4, .vista h5, .vista h6 { 
+	font-weight: normal; 
+}
+
+.vista h1 { font-size: 3.6em; line-height: 1; margin-bottom: 0.5em; }
+.vista h2 { font-size: 2.4em; margin-bottom: 0.75em; }
+.vista h3 { font-size: 1.8em; line-height: 1; margin-bottom: 1em; }
+.vista h4 { font-size: 1.4em; line-height: 1.25; margin-bottom: 1.25em; }
+.vista h5 { font-size: 1.2em; font-weight: bold; margin-bottom: 1.5em; }
+.vista h6 { font-size: 1.2em; font-weight: bold; }
+
+/* Text Elemenets
+---------------------------------------------*/
+
+.vista p 			{ font-family:"segoe ui",tahoma,arial,sans-serif; font-size:1.2em; margin: 0 0 1.5em; }
+.vista p.last      { margin-bottom: 0; }
+.vista p img       { float: left; margin: 0; padding: 0; }
+.vista p img.top   { margin-top: 0; } /* Use this if the image is at the top of the <p>. */
+
+/* Forms */
+
+/* Lists */
+
+.vista .ntb-grid {
+}
+
+/*********** Column headers ******************/
+
+.vista .ntb-grid-header {
+	background: url(assets/header_base.png) left top repeat-x;
+	height: 23px;
+}
+
+.vista .ntb-column-descending { 
+	background-color:#e6f5fd;
+}
+
+.vista .ntb-column-ascending { 
+	background-color:#e6f5fd;
+}
+
+.vista .ntb-column-indicator { 
+	padding: 2px;
+}
+
+.vista .ntb-column-indicator-border,
+.vista .ntb-column-indicator-borderhover,
+.vista .ntb-column-indicator-borderascending,
+.vista .ntb-column-indicator-borderdescending,
+.vista .ntb-column-indicator-borderascendinghover,
+.vista .ntb-column-indicator-borderdescendinghover {
+	background: url(assets/header.png) left top repeat-x;
+	border-right: 1px solid #d5d5d5;
+    cursor: pointer; /*Firefox*/
+    cursor: hand;
+}
+.vista .ntb-column-indicator-borderhover,
+.vista .ntb-column-indicator-borderascending,
+.vista .ntb-column-indicator-borderdescending {
+	border-right: 1px solid #96d9f9;
+}
+.vista .ntb-column-indicator-borderascending {
+	background: url(assets/header_ascending.png) repeat-x center top ;
+}
+.vista .ntb-column-indicator-borderdescending {
+	background: url(assets/header_decending.png) repeat-x center top;
+}
+.vista .ntb-column-indicator-borderhover {
+	background: url(assets/header_hover.png) repeat-x left top;
+}
+.vista .ntb-column-indicator-borderascendinghover {
+	background: url(assets/header_ascending.png) repeat-x center top ;
+}
+.vista .ntb-column-indicator-borderdescendinghover {
+	background: url(assets/header_decending.png) repeat-x center top;
+}
+
+.vista .ntb-column-resizeline {
+    filter:alpha(opacity=50);
+    -moz-opacity: .50;
+    opacity: .50;
+    background-color: #736F6E;	/* gray */
+    width: 3px;
+    position:absolute;
+    display:none;
+    top:-5000px;
+    left:-5000px;
+    cursor: w-resize;
+    z-index: 900;
+}
+
+.vista .ntb-grid-resizebox {
+    filter:alpha(opacity=50);
+    -moz-opacity: .50;
+    opacity: .50;
+    background-color: #736F6E;	/* gray */
+    width: 3px;
+    position:absolute;
+    display:none;
+    top: -5000px;
+    left: -5000px;
+    cursor: w-resize;
+    z-index: 900;
+}
+
+.vista .ntb-row {
+}
+
+.vista .ntb-row-hover { 
+	background-color:#e6f5fd;
+}
+
+.vista .ntb-row-select { 
+	clear:both; 
+}
+
+.vista .ntb-cell {
+    text-decoration:none;
+	padding:0px 2px 0px 4px;
+	white-space:nowrap;
+}
+
+.vista .ntb-cell-border {
+	font-family: "segoe ui",tahoma,arial,sans-serif;
+	font-size: 11px;
+	text-align:left;
+	border-right: #d5d5d5 1px solid;
+}
+
+.vista .ntb-row-alternate {
+	
+}
+
+.vista .ntb-cell-border:hover {
+
+}
+.vista .ntb-cell-hover { 
+	background-color:#e6f5fd;
+}
+
+.vista .ntb-grid-selection-background {
+    background-color: #3399ff;
+    filter:alpha(opacity=25);
+    -moz-opacity:.25;
+    opacity:.25;
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:15;
+}
+
+.vista .ntb-loading {
+    background-color:#FFFFFF;
+    filter:alpha(opacity=85);
+    -moz-opacity:.85;
+    opacity:.85;
+    z-index:200000;
+    position:absolute;
+	cursor:wait;
+}
+
+.vista .ntb-loading-icon { 
+	overflow:hidden; 
+	z-index:300000; 
+}
+
+.vista input, .vista textarea, .vista select, .vista ntb-input {
+	/*NOTE: Inputs don't inherit front styles*/
+	color:#000;
+	font-family: "segoe ui",tahoma,arial,sans-serif;
+	font-size: 11px;
+    border:0px solid #000000;
+    padding:0px 2px 0px 4px;
+    width: 100px;
+}
+
+.vista .ntb-input-border { 
+	border:1px solid #000000; 
+	background-color: #FFFFFF; 
+}
+
+.vista .ntb-lookup-options {
+	background-color: #ffffff;
+	border-top: 1px solid #000000;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+.vista .ntb-resize-corner {
+    background: transparent url('resizecorner.png') no-repeat;
+    width: 15px;
+    height: 16px;   
+    z-index:3000000;
+    position:absolute;
+}
+
+.vista .ntb-resize-indicator-right {
+	background-color:blue;
+	position:absolute;
+	bottom:0px;
+	right:-4px;
+	width:4px;
+	height:10px;
+	line-height:1px;
+	overflow:hidden;
+}
+
+.vista .ntb-resize-indicator-bottom {
+	background-color:#0000FF; 		/* light blue */
+	position:absolute;
+	bottom:-4px;
+	right:-4px;
+	width:15px;
+	height:4px;
+	line-height:1px;
+	overflow:hidden;
+}
+
+.vista .ntb-grid-selection {
+    background-color:transparent;
+    display:block;
+    height:10px;
+    width:10px;
+    position:absolute;
+    left:-2000px;
+    top:-2000px;
+}
+
+.vista .ntb-grid-selection-grabby {
+	/* Note: Always define a generic cursor 
+	at the end of the list in case none of 
+	the url-defined cursors can be used */
+	
+    position:absolute;
+    right:-1px;
+    bottom:-1px;
+    width:5px;
+    height:5px;
+    overflow:hidden;
+    background-color:#000000;
+    cursor:pointer;
+    cursor:hand;
+    z-index:20;
+}
+
+.vista .ntb-grid-selection-border {
+    border: 1px solid #000000;
+}
+
+.vista .ntb-grid-selection-border-active {
+    border:1px dashed #000000;
+}
+
+.vista .ntb-datepicker-button {
+	/* change class name from .ntb-dp-input .ntb-dp-inputbutton */
+    width:20px;
+    text-align:center;
+}
+
+.vista .ntb-datepicker-button a {
+	/* changed from .ntb-dp-input .ntb-dp-inputbutton a */
+    display:block;
+    height:16px;
+    width:16px;
+    background: transparent url("date.gif") no-repeat;
+}
+.vista .ntb-datepicker-button a:hover { background-position: -16px 0; }
+.vista .ntb-datepicker-input input { padding:0; margin:0; border:0; }
+.vista .ntb-hyperlink-editor { text-decoration: underline; cursor: pointer; color: blue; }
+.vista .ntb-hide { display:none; }
+
+.vista .ntb-effects-small {
+	clear:both;
+	display:block;
+	float:none;
+	height:0px;
+	overflow:hidden;
+	width:auto;
+}
+
+.vista .ntb-clipboard {
+    position:absolute;
+    top:1px;
+    left:1px;
+    height:0px;
+    width:0px;
+    z-index:-1;
+}
+
+.vista .ntb-checkbox {
+	height:100%;
+	width:15px;
+	margin-right: 5px;
+	float:left;
+}
+
+.vista .ntb-checkbox-unchecked {
+	background: url(assets/checkbox_off.png) center center no-repeat;
+}
+
+.vista .ntb-checkbox-checked {
+	background: url(assets/checkbox_on.png) center center no-repeat;
+}
+
+.vista .ntb-checkbox-text {
+	float:left;
+}
+
+/*
+	border-top: #b7babc 1px solid;*/
+/* Toolbar Overwrite */
+.vista .ntbtoolbarcontainer {
+	border-left: 1px solid #707070 !important;
+	border-right: 1px solid #707070 !important;
+	height: 21px !important;
+	margin: 0 1px 1px 1px !important;
+}
+.vista .ntb-toolbar {
+	background: url(assets/toolbar.png) left top repeat-x !important;
+}
+.vista .ntb-button-highlight {
+	background: url(assets/toolbar_hover.png) left top no-repeat !important;
+}
+.vista .ntb-button-down {
+	background: url(assets/toolbar_hover.png) left top no-repeat !important;
+}.nitobi-hide {
+	display:none;
+}
+
+.ntb-effects-small {
+	clear:both;
+	display:block;
+	float:none;
+	height:0px;
+	//height:1px;
+	overflow:hidden;
+	width:auto;
+}

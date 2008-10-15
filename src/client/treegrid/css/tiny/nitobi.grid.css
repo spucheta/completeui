@@ -1,0 +1,382 @@
+/* --------------------	*/
+/* Global Attributes	*/
+/* --------------------	*/
+
+/* This is where you set your desired font size. The line-heights 
+   and vertical margins are automatically calculated from this. 
+   The percentage is of 16px (0.625 * 16px = 10px). */
+
+.tiny { font-size: 62.5%; }
+
+/* Default fonts and colors 
+---------------------------------------------*/
+
+.tiny, .tiny td {
+	color:#333333;
+	font-family:Tahoma, Arial, Verdana;
+	font-size: 7pt;
+	text-align:left;
+}
+
+.tiny h1,.tiny h2,.tiny h3,.tiny h4,.tiny h5,.tiny h6 { 
+	color:#222222; 
+	font-family:Tahoma, Arial, Verdana;
+}
+
+/* Links */
+
+/* --------------------	*/
+/* Text  				*/
+/* --------------------	*/
+
+/* Headings
+---------------------------------------------*/
+.tiny h1, .tiny h2, .tiny h3, .tiny h4, .tiny h5, .tiny h6 { 
+	font-weight: normal; 
+}
+
+.tiny h1 { font-size: 3.6em; line-height: 1; margin-bottom: 0.5em; }
+.tiny h2 { font-size: 2.4em; margin-bottom: 0.75em; }
+.tiny h3 { font-size: 1.8em; line-height: 1; margin-bottom: 1em; }
+.tiny h4 { font-size: 1.4em; line-height: 1.25; margin-bottom: 1.25em; }
+.tiny h5 { font-size: 1.2em; font-weight: bold; margin-bottom: 1.5em; }
+.tiny h6 { font-size: 1.2em; font-weight: bold; }
+
+/* Text Elemenets
+---------------------------------------------*/
+
+.tiny p 			{ font-family:Tahoma, Arial, Verdana; font-size:1.2em; margin: 0 0 1.5em; }
+.tiny p.last      { margin-bottom: 0; }
+.tiny p img       { float: left; margin: 0; padding: 0; }
+.tiny p img.top   { margin-top: 0; } /* Use this if the image is at the top of the <p>. */
+
+/* Forms */
+
+/* Lists */
+
+.tiny .ntb-grid { 
+	border:#CCCCCC 1px solid; 
+}
+
+/*********** Column headers ******************/
+
+.tiny .ntb-grid-header { 
+	background-image:url('column_deadspace.gif');
+	height:18px;
+}
+
+.tiny .ntb-column-ascending, .tiny .ntb-column-descending { 
+	background-color:#EFEFEF; 
+}
+
+.tiny .ntb-column-indicator { 
+	padding:2px; 
+}
+
+.tiny .ntb-column-indicator-border,
+.tiny .ntb-column-indicator-borderhover,
+.tiny .ntb-column-indicator-borderascending,
+.tiny .ntb-column-indicator-borderdescending,
+.tiny .ntb-column-indicator-borderascendinghover,
+.tiny .ntb-column-indicator-borderdescendinghover {
+	font-weight: bold;
+	background: url('column_header.gif') no-repeat right bottom;
+	padding: 0px 1px 0px 0px; /*this is to make headers line up with data*/
+    cursor: pointer; /*Firefox*/
+    cursor: hand;
+	height:auto;
+}
+.tiny .ntb-column-indicator-borderhover {
+    background-image:url('column_header_over.gif');
+}
+.tiny .ntb-column-indicator-borderascending {
+    background:url('column_asc.gif') no-repeat right bottom;
+}
+.tiny .ntb-column-indicator-borderdescending {
+    background:url('column_desc.gif') no-repeat right bottom ;
+}
+.tiny .ntb-column-indicator-borderascendinghover {
+    background:url('column_asc_over.gif') no-repeat right bottom;
+}
+.tiny .ntb-column-indicator-borderdescendinghover {
+    background:url('column_desc_over.gif') no-repeat right bottom ;
+}
+
+.tiny .ntb-column-resizeline {
+    filter:alpha(opacity=50);
+    -moz-opacity: .50;
+    opacity: .50;
+    background-color: #736F6E;	/* gray */
+    width: 3px;
+    position:absolute;
+    display:none;
+    top:-5000px;
+    left:-5000px;
+    cursor: w-resize;
+    z-index: 900;
+}
+
+.tiny .ntb-grid-resizebox {
+    filter:alpha(opacity=50);
+    -moz-opacity: .50;
+    opacity: .50;
+    background-color: #736F6E;	/* gray */
+    width: 3px;
+    position:absolute;
+    display:none;
+    top: -5000px;
+    left: -5000px;
+    cursor: w-resize;
+    z-index: 900;
+}
+
+.tiny .ntb-row {
+    margin:0px;
+    cursor:default;
+	height:15px;
+}
+
+.nitobi .ntb-row-alternate {
+}
+
+.tiny .ntb-row-hover { 
+	background-color:#E7E3D6 
+}
+
+.tiny .ntb-row-select { 
+	clear:both; 
+}
+
+.tiny .ntb-cell {
+	padding:0px 2px 0px 4px;
+    text-decoration:none;
+    white-space:nowrap;
+}
+
+.tiny .ntb-cell-border {
+	border-right:1px solid #c0c0c0;
+}
+
+.tiny .ntb-cell-hover { 
+	background-color:#FCD661; 
+}
+
+.tiny .ntb-grid-selection {
+    background-color:transparent;
+    display:block;
+    height:10px;
+    width:10px;
+    position:absolute;
+    left:-2000px;
+    top:-2000px;
+}
+
+.tiny .ntb-grid-selection-grabby {
+	/* Note: Always define a generic cursor 
+	at the end of the list in case none of 
+	the url-defined cursors can be used */
+	
+    position:absolute;
+    right:-1px;
+    bottom:-1px;
+    width:5px;
+    height:5px;
+    overflow:hidden;
+    background-color:#666666;
+    cursor:pointer;
+    cursor:hand;
+    z-index:20;
+}
+
+.tiny .ntb-grid-selection-border {
+	border: 1px solid transparent;
+
+}
+
+.tiny .ntb-grid-selection-border-active {
+    border:1px dashed #000000;
+}
+
+.tiny .ntb-grid-selection-background {
+    background-color:#F0B604;
+    filter:alpha(opacity=25);
+    -moz-opacity:.25;
+    opacity:.25;
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:10;
+}
+
+.tiny .ntb-loading {
+    background-color:#FFFFFF;
+    filter:alpha(opacity=85);
+    -moz-opacity:.85;
+    opacity:.85;
+    z-index:200000;
+    position:absolute;
+	cursor:wait;
+}
+
+.tiny .ntb-loading-icon { 
+	overflow:hidden; 
+	z-index:300000; 
+} 	
+
+/******** Image editor / column ************/
+
+.tiny .ntb-image {
+}
+
+/******** Checkbox editor / column ************/
+
+.tiny .ntb-checkbox {
+	background: transparent url('unchecked.gif') no-repeat center center;
+	width: 17px; 
+	height: 100%; 
+	float:left;
+}
+
+.tiny .ntb-checkbox-unchecked { 
+	background: transparent url('unchecked.gif') no-repeat center center; 
+}
+
+.tiny .ntb-checkbox-checked { 
+	background: transparent url('checked.gif') no-repeat center center; 
+} 
+
+.tiny .ntb-checkbox-text {
+	float:left;
+}
+
+.tiny input, .tiny textarea, .tiny select, .tiny .ntb-input {
+	/*NOTE: Inputs don't inherit front styles*/
+	color:#333333;
+	font-family:Tahoma, Arial, Verdana;
+	font-size: 8pt;
+	padding:0px 2px 0px 4px;
+    border:0px solid #000000;
+}
+
+.tiny .ntb-input-border { 
+	border:1px solid #000000; 
+	background-color: #FFFFFF; 
+}
+
+.tiny .ntb-lookup-text {
+	border-bottom: 1px solid #000000;
+}
+
+.tiny .ntb-lookup-options {
+	background-color: #ffffff;
+	border: 0px solid #000000;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+.tiny .ntb-resize-indicator-right {
+	background: transparent url('resize_right.png') no-repeat;
+	position:absolute;
+	bottom:0px;
+	right:-4px;
+	width:4px;
+	height:10px;
+	line-height:1px;
+	overflow:hidden;
+}
+
+.tiny .ntb-resize-indicator-bottom {
+	background: transparent url('resize_bottom.png') no-repeat;
+	position:absolute;
+	bottom:-4px;
+	right:-4px;
+	width:15px;
+	height:4px;
+	line-height:1px;
+	overflow:hidden;
+}
+
+.tiny .ntb-frozenshadow {
+	right:-5px;
+	width:5px;
+	background:url('shadow.png');
+}
+
+.tiny .ntb-datepicker-button {
+    width:20px;
+    text-align:center;
+}
+
+.tiny .ntb-datepicker-button a {
+    display:block;
+    height:16px;
+    width:16px;
+    background: transparent url("date.gif") no-repeat;
+}
+.tiny .ntb-datepicker-button a:hover { background-position: -16px 0; }
+.tiny .ntb-datepicker-input input { padding:0; margin:0; border:0; }
+.tiny .ntb-hyperlink-editor { text-decoration: underline; cursor: pointer; color: blue; }
+.tiny .ntb-hide { display:none; }
+
+.tiny .ntb-effects-small {
+	clear:both;
+	display:block;
+	float:none;
+	height:0px;
+	//height:1px;
+	overflow:hidden;
+	width:auto;
+}
+
+.tiny .ntb-clipboard {
+    position:absolute;
+    top:1px;
+    left:1px;
+    height:1px;
+    width:1px;
+    z-index:-1;
+}
+
+.tiny .ntb-grid-subgroup {
+	position:relative;
+	left:10px;
+	border: 1px solid #CCCCCC; 
+}
+
+.tiny .ntb-column-collapsed
+{
+	background-image: url(plus.gif);
+	background-repeat: no-repeat;
+	background-position: center left;
+	cursor: pointer;
+}
+
+.tiny .ntb-column-expanded
+{
+	background-image: url(minus.gif);
+	background-repeat: no-repeat;
+	background-position: center left;
+	cursor: pointer;
+}
+
+.tiny .ntb-column-collapsed-hover
+{
+	background-image: url(plus_hover.gif);
+	background-repeat: no-repeat;
+	background-position: center left;
+	cursor: pointer;
+}
+
+.tiny .ntb-column-expanded-hover
+{
+	background-image: url(minus_hover.gif);
+	background-repeat: no-repeat;
+	background-position: center left;
+	cursor: pointer;
+}
+
+
+/* Text */

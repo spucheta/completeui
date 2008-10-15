@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+
+	<jsfile path="js/nitobi/lang/lang.js"/>
+	<jsfile path="js/nitobi/lang/math.js"/>
+	<jsfile path="js/nitobi/version.js"/>
+	<jsfile path="js/nitobi/object.js"/>
+	<jsfile path="js/nitobi/base/base.js" />
+	<jsfile path="js/nitobi/base/base-compat.js"/>
+	<jsfile path="js/nitobi/browser/browser.js"/>
+	<jsfile path="js/nitobi/browser/cookies.js"/>
+	<jsfile path="js/nitobi/browser/history.js"/>
+	<jsfile path="js/nitobi/xml/xml.js"/>
+	<jsfile path="js/nitobi/html/url.js"/>
+	<jsfile path="js/nitobi/base/event.js"/>	
+	<jsfile path="js/nitobi/html/css.js"/>
+	<jsfile path="js/nitobi/drawing/drawing.compat.js" depends="js/nitobi/html/html.js" description="" />
+	<jsfile path="js/nitobi/html/html.js" depends="js/nitobi/drawing/drawing.compat.js" description="depends on drawing only for compat stuff." />
+	<jsfile path="js/nitobi/html/html.event.js"/>
+	<jsfile path="js/nitobi/html/html.event.compat.js"/>
+	<jsfile path="js/nitobi/html/html-css.compat.js"/>
+	<jsfile path="js/nitobi/html/html-url.compat.js"/>
+	<xslfile path="js/nitobi/base/xsl/uniqueidgenerator.xsl" namespace="nitobi.base" name="uniqueIdGeneratorProc"/>
+	<jsfile path="js/nitobi/base/xmlnamespace.js"/>
+	<jsfile path="js/nitobi/collections/ienumerable.js"/>
+	<jsfile path="js/nitobi/base/iserializable.js"/>
+	<jsfile path="js/nitobi/base/registry.js"/>
+	<jsfile path="js/nitobi/base/factory.js"/>
+	<jsfile path="js/nitobi/base/profile.js"/>
+	<jsfile path="js/nitobi/base/declaration.js"/>
+	<jsfile path="js/nitobi/base/datemath.js"/>	
+	<jsfile path="js/nitobi/base/eventargs.js"/>
+	<jsfile path="js/nitobi/collections/ilist.js"/>
+	<jsfile path="js/nitobi/collections/list.js"/>
+	<jsfile path="js/nitobi/collections/hash.js"/>
+	<jsfile path="js/nitobi/ui/ui.js"/>
+	<jsfile path="js/nitobi/ui/istyleable.js"/>
+	<jsfile path="js/nitobi/ui/styleeventargs.js"/>
+	<jsfile path="js/nitobi/ui/iscrollable.js"/>
+	<jsfile path="js/nitobi/dragdrop/dragdrop.js" />
+	<jsfile path="js/nitobi/ajax/ajax.js"/>
+	<jsfile path="js/nitobi/ajax/httprequest.js"/>
+	<jsfile path="js/nitobi/ajax/httprequestpool.js"/>
+	<jsfile path="js/nitobi/data/urlconnector.js"/>
+	<jsfile path="js/nitobi/debug/debug.js"/>
+  	<jsfile path="js/nitobi/error/error.js" />
+  	<jsfile path="js/nitobi/html/irenderer.js" />
+  	<jsfile path="js/nitobi/html/xslrenderer.js" />
+  	<jsfile path="js/nitobi/ui/element.js" />
+	<jsfile path="js/nitobi/ui/elementeventargs.js" />
+	<jsfile path="js/nitobi/ui/eventnotificationeventargs.js" />
+  	<jsfile path="js/nitobi/ui/container.js" />
+  	<jsfile path="js/nitobi/effects/effects.js" />
+  	<jsfile path="js/nitobi/component/component.js" />
+  	<jsfile path="js/nitobi/effects/effect.js" />
+  	<jsfile path="js/nitobi/effects/transition.js" />
+  	<jsfile path="js/nitobi/effects/scale.js" />
+  	<jsfile path="js/nitobi/effects/effectqueue.js" />
+  	<jsfile path="js/nitobi/effects/blind.js" />
+  	<jsfile path="js/nitobi/effects/shade.js" />
+  	<cssfile path="css/nitobi/effects/effects.css" />
+  	<jsfile path="js/nitobi/lang/stringbuilder.js" />
+</includes>

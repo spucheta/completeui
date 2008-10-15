@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+	<jsfile path="../toolkit/js/nitobi/base/toolkitdetection.js"/>
+	
+	<xmlfile path="xml/model.xml" namespace="nitobi.grid" name="modelDoc"/>
+	<xmlfile path="xml/toolbar.xml" namespace="nitobi.grid" name="toolbarDoc"/>
+	<xmlfile path="xml/toolbarpaging.xml" namespace="nitobi.grid" name="pagingToolbarDoc"/>
+
+	<xslfile path="xsl/addXid.xslt" namespace="nitobi.data" name="addXidXslProc"/>
+	<xslfile path="xsl/adjustXi.xslt" namespace="nitobi.data" name="adjustXiXslProc"/>
+	<xslfile path="xsl/dataTranslatorXsl.xslt" namespace="nitobi.data" name="dataTranslatorXslProc"/>
+	<xslfile path="xsl/dateFormatTemplates.xslt" namespace="nitobi.grid" name="dateFormatTemplatesXslProc"/>
+	<xslfile path="xsl/dateEditor.xslt" namespace="nitobi.form" name="dateXslProc"/>
+	<xslfile path="xsl/declarationConverter.xslt" namespace="nitobi.grid" name="declarationConverterXslProc"/>
+	<xslfile path="xsl/frameCssXsl.xslt" namespace="nitobi.grid" name="frameCssXslProc"/>
+	<xslfile path="xsl/frameXsl.xslt" namespace="nitobi.grid" name="frameXslProc"/>
+	<xslfile path="xsl/listboxXsl.xslt" namespace="nitobi.form" name="listboxXslProc"/>
+	<xslfile path="xsl/mergeEbaXmlToLog.xslt" namespace="nitobi.data" name="mergeEbaXmlToLogXslProc"/>
+	<xslfile path="xsl/mergeEbaXml.xslt" namespace="nitobi.data" name="mergeEbaXmlXslProc"/>
+	<xslfile path="xsl/numberFormatTemplates.xslt" namespace="nitobi.grid" name="numberFormatTemplatesXslProc"/>
+	<xslfile path="xsl/numberEditor.xslt" namespace="nitobi.form" name="numberXslProc"/>
+	<xslfile path="xsl/rowXsl.xslt" namespace="nitobi.grid" name="rowXslProc"/>
+	<xslfile path="xsl/sort.xslt" namespace="nitobi.data" name="sortXslProc"/>
+	<xslfile path="xsl/fillColumn.xslt" namespace="nitobi.data" name="fillColumnXslProc"/>
+	<xslfile path="xsl/updategramTranslatorXsl.xslt" namespace="nitobi.data" name="updategramTranslatorXslProc"/>
+
+	<jsfile path="../toolkit/js/nitobi/ui/scrollbar.js"/>
+	<jsfile path="../toolkit/js/nitobi/ui/verticalscrollbar.js"/>
+	<jsfile path="../toolkit/js/nitobi/ui/horizontalscrollbar.js"/>
+	<jsfile path="../toolkit/js/nitobi/ui/idataboundlist.js"/>	
+	
+	<jsfile path="../toolkit/js/nitobi/collections/cachemap.js"/>
+	<jsfile path="../toolkit/js/nitobi/collections/blockmap.js"/>
+	<jsfile path="../toolkit/js/nitobi/collections/cellset.js"/>
+	<jsfile path="../toolkit/js/nitobi/collections/cachenode.js"/>
+	<jsfile path="../toolkit/js/nitobi/collections/range.js"/>	
+
+	<jsfile path="js/nitobi/grid/basegrid.js" />
+	<jsfile path="js/nitobi/grid/cell.js" />
+	<jsfile path="js/nitobi/grid/cellEventArgs.js" />
+	<jsfile path="js/nitobi/grid/rowEventArgs.js" />
+	<jsfile path="js/nitobi/grid/selectioneventargs.js" />
+	<jsfile path="js/nitobi/grid/column.js" />
+	<jsfile path="js/nitobi/grid/columnEventArgs.js" />
+	<jsfile path="js/nitobi/grid/columnresizer.js" />
+	<jsfile path="js/nitobi/grid/gridresizer.js" />
+	<jsfile path="js/nitobi/grid/dataformatconverter.js" />
+	<jsfile path="js/nitobi/grid/datecolumn.js" />
+	<jsfile path="js/nitobi/grid/declaration.js" />
+	<jsfile path="js/nitobi/grid/editcompleteeventargs.js" />
+	<jsfile path="js/nitobi/grid/getcompleteeventargs.js" />
+	<jsfile path="js/nitobi/grid/grid.js" />
+	<jsfile path="js/nitobi/grid/gridlivescrolling.js" />
+	<jsfile path="js/nitobi/grid/gridloadingscreen.js" />
+	<jsfile path="js/nitobi/grid/gridlocalpage.js" />
+	<jsfile path="js/nitobi/grid/gridnonpaging.js" />
+	<jsfile path="js/nitobi/grid/gridstandard.js" />
+	<jsfile path="js/nitobi/grid/numbercolumn.js" />
+	<jsfile path="js/nitobi/grid/oncopyeventargs.js" />
+	<jsfile path="js/nitobi/grid/onpasteeventargs.js" />
+	<jsfile path="js/nitobi/grid/onaftercellediteventargs.js" />
+	<jsfile path="js/nitobi/grid/onaftercolumnresizeeventargs.js" />
+	<jsfile path="js/nitobi/grid/onafterrowdeleteeventargs.js" />
+	<jsfile path="js/nitobi/grid/onafterrowinserteventargs.js" />
+	<jsfile path="js/nitobi/grid/onaftersorteventargs.js" />
+	<jsfile path="js/nitobi/grid/onbeforecellediteventargs.js" />
+	<jsfile path="js/nitobi/grid/onbeforecolumnresizeeventargs.js" />
+	<jsfile path="js/nitobi/grid/onbeforepagingeventargs.js" /><!--empty-->
+	<jsfile path="js/nitobi/grid/onbeforerowdeleteeventargs.js" />
+	<jsfile path="js/nitobi/grid/onbeforerowinserteventargs.js" />
+	<jsfile path="js/nitobi/grid/onbeforesaveeventargs.js" /><!--empty-->
+	<jsfile path="js/nitobi/grid/onbeforesorteventargs.js" />
+	<jsfile path="js/nitobi/grid/onbeforecellclickeventargs.js" />
+	<jsfile path="js/nitobi/grid/oncellblureventargs.js" />
+	<jsfile path="js/nitobi/grid/oncellclickeventargs.js" />
+	<jsfile path="js/nitobi/grid/oncelldblclickeventargs.js" />
+	<jsfile path="js/nitobi/grid/oncellfocuseventargs.js" />
+	<!--<jsfile path="js/nitobi/grid/oncellupdateeventargs.js" />--><!--not used-->
+	<jsfile path="js/nitobi/grid/oncellvalidateeventargs.js" />
+	<jsfile path="js/nitobi/grid/oncontextmenueventargs.js" />
+	<jsfile path="js/nitobi/grid/onheaderclickeventargs.js" />
+	<jsfile path="js/nitobi/grid/onrowblureventargs.js" />
+	<jsfile path="js/nitobi/grid/onrowfocuseventargs.js" />	
+	<!-- <jsfile path="js/nitobi/grid/pasteeventargs.js" /> -->
+	<jsfile path="js/nitobi/grid/row.js" />
+	<jsfile path="js/nitobi/grid/rowrenderer.js" />
+	<jsfile path="js/nitobi/grid/scroller3x3.js" />
+	<jsfile path="js/nitobi/grid/selection.js" />
+	<jsfile path="js/nitobi/grid/surface.js" />
+	<jsfile path="js/nitobi/grid/textcolumn.js" />
+	<jsfile path="js/nitobi/grid/toolbars.js" />
+	<jsfile path="js/nitobi/grid/viewport.js" />
+
+	<jsfile path="../toolkit/js/nitobi/data/dataset.js"/>
+	<jsfile path="../toolkit/js/nitobi/data/datatable.js"/>
+	<jsfile path="../toolkit/js/nitobi/data/datatabledescriptor.js"/>
+	<jsfile path="../toolkit/js/nitobi/data/datatableeventargs.js"/>
+	<jsfile path="../toolkit/js/nitobi/data/getcompleteeventargs.js"/>
+	<jsfile path="../toolkit/js/nitobi/data/savecompleteeventargs.js"/>
+	<jsfile path="../toolkit/js/nitobi/data/onaftersaveeventargs.js"/>
+
+	<jsfile path="../toolkit/js/nitobi/form/base.js"/>
+	<jsfile path="../toolkit/js/nitobi/form/iblurable.js"/>
+	<jsfile path="../toolkit/js/nitobi/form/text.js"/>
+	<jsfile path="../toolkit/js/nitobi/form/checkbox.js"/>
+	<jsfile path="../toolkit/js/nitobi/form/date.js"/>
+	<jsfile path="../toolkit/js/nitobi/form/editorfactory.js"/>
+	<jsfile path="../toolkit/js/nitobi/form/link.js"/>
+	<jsfile path="../toolkit/js/nitobi/form/listbox.js"/>
+	<jsfile path="../toolkit/js/nitobi/form/lookup.js"/>
+	<jsfile path="../toolkit/js/nitobi/form/number.js"/>
+	<jsfile path="../toolkit/js/nitobi/form/password.js"/>
+	<jsfile path="../toolkit/js/nitobi/form/textarea.js"/>
+	<jsfile path="../toolkit/js/nitobi/form/calendar.js"/>
+	<jsfile path="../toolkit/js/nitobi/form/keys.js"/>
+
+	<jsfile path="../toolkit/js/nitobi/toolbar/element.js" />
+	<jsfile path="../toolkit/js/nitobi/toolbar/interactiveelement.js" />
+	<jsfile path="../toolkit/js/nitobi/toolbar/button.js" />
+	<jsfile path="../toolkit/js/nitobi/toolbar/binarystatebutton.js" />
+	<jsfile path="../toolkit/js/nitobi/toolbar/toolbar.js" />
+
+	<cssfile path="css/nitobi.reset.css"></cssfile>
+
+	<cssfile path="css/tiny/nitobi.grid.css"></cssfile>
+	<cssfile path="css/lightblue/nitobi.grid.css"></cssfile>
+	<cssfile path="css/nitobi/nitobi.grid.css"></cssfile>
+	<cssfile path="css/flex/nitobi.grid.css"></cssfile>
+	<cssfile path="css/vista/nitobi.grid.css"></cssfile>
+	<cssfile path="css/xp/nitobi.grid.css"></cssfile>
+	<cssfile path="css/tiger/nitobi.grid.css"></cssfile>
+
+	<jsfile path="../calendar/js/nitobi/calendar/datepicker.js" />
+	<jsfile path="../calendar/js/nitobi/calendar/calrenderer.js" />
+	<jsfile path="../calendar/js/nitobi/calendar/dateinput.js" />
+	<jsfile path="../calendar/js/nitobi/calendar/calendar.js" />
+	<jsfile path="../calendar/js/nitobi/calendar/eventsmanager.js" />
+
+	<cssfile path="../toolkit/css/nitobi/toolbar/default/toolbar.css"/>
+	<cssfile path="../toolkit/css/nitobi/effects/effects.css" />
+
+	<!-- Calendar stuff -->
+	<jsfile path="../toolkit/js/nitobi/base/toolkitdetection.js"/>
+	<jsfile path="../toolkit/js/nitobi/version.js"/>
+	<jsfile path="../toolkit/js/nitobi/expire.js" license="trial"/>
+	<jsfile path="../calendar/js/nitobi/calendar/calendar.js"></jsfile>
+	<jsfile path="../calendar/js/nitobi/calendar/datepicker.js"></jsfile>
+	<jsfile path="../calendar/js/nitobi/calendar/dateinput.js"></jsfile>
+	<jsfile path="../calendar/js/nitobi/calendar/calrenderer.js"></jsfile>
+	<jsfile path="../calendar/js/nitobi/calendar/eventsmanager.js"></jsfile>
+
+	<xslfile path="../calendar/xsl/nitobi/calendar/render.xsl" namespace="nitobi.calendar" name="datePickerTemplate"/>
+
+	<cssfile path="../calendar/css/nitobi.reset.css"></cssfile>	
+	<cssfile path="../calendar/css/gloss/calendar.css"></cssfile>
+	<cssfile path="../calendar/css/minimal/calendar.css"></cssfile>
+	<cssfile path="../calendar/css/minimal_bluestripes/calendar.css"></cssfile>
+	<cssfile path="../calendar/css/minimal_greenstripes/calendar.css"></cssfile>
+	<cssfile path="../calendar/css/minimal_redstripes/calendar.css"></cssfile>
+	<cssfile path="../calendar/css/minimal_stripes/calendar.css"></cssfile>
+	<cssfile path="../calendar/css/outline/calendar.css"></cssfile>
+	<cssfile path="../calendar/css/radial_blue/calendar.css"></cssfile>
+	<cssfile path="../calendar/css/radial/calendar.css"></cssfile>
+	<cssfile path="../calendar/css/radial_orange/calendar.css"></cssfile>
+	<cssfile path="../calendar/css/flex/calendar.css"></cssfile>
+	<cssfile path="../calendar/css/leopard/calendar.css"></cssfile>
+	<cssfile path="../calendar/css/vista/calendar.css"></cssfile>
+		
+</includes>

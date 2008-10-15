@@ -1,0 +1,50 @@
+
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+.ntb-tabstrip-reset div, .ntb-tabstrip-reset span, .ntb-tabstrip-reset iframe, .ntb-tabstrip-reset h1, .ntb-tabstrip-reset h2, .ntb-tabstrip-reset h3, .ntb-tabstrip-reset h4, .ntb-tabstrip-reset h5, .ntb-tabstrip-reset h6, .ntb-tabstrip-reset p, .ntb-tabstrip-reset blockquote, .ntb-tabstrip-reset pre,
+.ntb-tabstrip-reset a, .ntb-tabstrip-reset em, .ntb-tabstrip-reset font, .ntb-tabstrip-reset img, .ntb-tabstrip-reset strong, .ntb-tabstrip-reset ol, .ntb-tabstrip-reset ul, .ntb-tabstrip-reset li, .ntb-tabstrip-reset fieldset, .ntb-tabstrip-reset form, .ntb-tabstrip-reset label, 
+.ntb-tabstrip-reset table, .ntb-tabstrip-reset caption, .ntb-tabstrip-reset tbody, .ntb-tabstrip-reset tfoot, .ntb-tabstrip-reset thead, .ntb-tabstrip-reset tr, .ntb-tabstrip-reset th, .ntb-tabstrip-reset td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	background: transparent;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+.ntb-tabstrip-reset ol,.ntb-tabstrip-reset  ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.ntb-tabstrip-reset table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.ntb-tabstrip-reset caption,.ntb-tabstrip-reset th,.ntb-tabstrip-reset td {
+	text-align: left;
+	font-weight: normal;
+}
+
+.ntb-tabstrip-reset blockquote:before, .ntb-tabstrip-reset blockquote:after, .ntb-tabstrip-reset q:before, q:after {
+	content: "";
+}
+
+.ntb-tabstrip-reset blockquote, q {
+	quotes: "" "";

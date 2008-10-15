@@ -1,0 +1,51 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+.suggests div, .suggests span, .suggests iframe, .suggests h1, .suggests h2, .suggests h3, .suggests h4, .suggests h5, .suggests h6, .suggests p, .suggests blockquote, .suggests pre,
+.suggests a, .suggests em, .suggests font, .suggests img, .suggests strong, .suggests ol, .suggests ul, .suggests li, .suggests fieldset, .suggests form, .suggests label, 
+.suggests table, .suggests caption, .suggests tbody, .suggests tfoot, .suggests thead, .suggests tr, .suggests th, .suggests td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	background: transparent;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+.suggests ol,.suggests  ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.suggests table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.suggests caption,.suggests th,.suggests td {
+	text-align: left;
+	font-weight: normal;
+}
+
+.suggests blockquote:before, .suggests blockquote:after, .suggests q:before, q:after {
+	content: "";
+}
+
+.suggests blockquote, q {
+	quotes: "" "";
+}

@@ -1,0 +1,339 @@
+/* --------------------	*/
+/* Global Attributes	*/
+/* --------------------	*/
+
+/* This is where you set your desired font size. The line-heights 
+   and vertical margins are automatically calculated from this. 
+   The percentage is of 16px (0.625 * 16px = 10px). */
+
+.lightblue { font-size: 62.5%; }
+
+/* Default fonts and colors 
+---------------------------------------------*/
+
+.lightblue, .lightblue td {
+	color:#333333;
+	font-family:Tahoma, Arial, Verdana;
+	font-size: 12px;
+	text-align:left;
+}
+
+.lightblue h1,.lightblue h2,.lightblue h3,.lightblue h4,.lightblue h5,.lightblue h6 { 
+	color:#222222; 
+	font-family:Tahoma, Arial, Verdana;
+}
+
+
+
+/* Links */
+
+/* --------------------	*/
+/* Text  				*/
+/* --------------------	*/
+
+/* Headings
+---------------------------------------------*/
+.lightblue h1, .lightblue h2, .lightblue h3, .lightblue h4, .lightblue h5, .lightblue h6 { 
+	font-weight: normal; 
+}
+
+.lightblue h1 { font-size: 3.6em; line-height: 1; margin-bottom: 0.5em; }
+.lightblue h2 { font-size: 2.4em; margin-bottom: 0.75em; }
+.lightblue h3 { font-size: 1.8em; line-height: 1; margin-bottom: 1em; }
+.lightblue h4 { font-size: 1.4em; line-height: 1.25; margin-bottom: 1.25em; }
+.lightblue h5 { font-size: 1.2em; font-weight: bold; margin-bottom: 1.5em; }
+.lightblue h6 { font-size: 1.2em; font-weight: bold; }
+
+/* Text Elemenets
+---------------------------------------------*/
+
+.lightblue p 			{ font-family:Tahoma, Arial, Verdana; font-size:1.2em; margin: 0 0 1.5em; }
+.lightblue p.last      { margin-bottom: 0; }
+.lightblue p img       { float: left; margin: 0; padding: 0; }
+.lightblue p img.top   { margin-top: 0; } /* Use this if the image is at the top of the <p>. */
+
+/* Forms */
+
+/* Lists */
+
+.lightblue .ntb-grid { 
+	border:#CCCCCC 1px solid; 
+}
+
+.lightblue .ntb-grid-header { 
+	background-image:url('column_deadspace.gif'); 
+}
+
+.lightblue .ntb-column-ascending { 
+	background-color:#EFEFEF; 
+}
+
+.lightblue .ntb-column-descending { 
+	background-color:#EFEFEF; 
+}
+
+.lightblue .ntb-column-indicator { 
+	padding:2px; 
+}
+
+.lightblue .ntb-column-indicator-border,
+.lightblue .ntb-column-indicator-borderhover,
+.lightblue .ntb-column-indicator-borderascending,
+.lightblue .ntb-column-indicator-borderdescending,
+.lightblue .ntb-column-indicator-borderascendinghover,
+.lightblue .ntb-column-indicator-borderdescendinghover {
+    background: url('column_header.gif') right bottom no-repeat;
+    cursor: pointer; /*Firefox*/
+    cursor: hand;
+	height:auto;
+	color:#333333;
+}
+.lightblue .ntb-column-indicator-borderhover {
+    background:url('column_header_over.gif') no-repeat right bottom;
+}
+.lightblue .ntb-column-indicator-borderascending {
+    background:url('column_asc.gif') no-repeat right bottom;
+}
+.lightblue .ntb-column-indicator-borderdescending {
+    background:url('column_desc.gif') no-repeat right bottom;
+}
+.lightblue .ntb-column-indicator-borderascendinghover {
+	background:url('column_asc_over.gif') no-repeat right bottom;
+}
+.lightblue .ntb-column-indicator-borderdescendinghover {
+	background:url('column_desc_over.gif') no-repeat right bottom;
+}
+
+.lightblue .ntb-column-resizeline {
+    filter:alpha(opacity=50);
+    -moz-opacity: .50;
+    opacity: .50;
+    background-color: #736F6E;	/* gray */
+    width: 3px;
+    position:absolute;
+    display:none;
+    top:-5000px;
+    left:-5000px;
+    cursor: w-resize;
+    z-index: 900;
+}
+
+.lightblue .ntb-grid-resizebox {
+    filter:alpha(opacity=50);
+    -moz-opacity: .50;
+    opacity: .50;
+    background-color: #736F6E;	/* gray */
+    width: 3px;
+    position:absolute;
+    display:none;
+    top: -5000px;
+    left: -5000px;
+    cursor: w-resize;
+    z-index: 900;
+}
+
+.lightblue .ntb-row {
+    margin:0px;
+    cursor:default;
+}
+
+.lightblue .ntb-row-hover { 
+	background-color:#E7E3D6 
+}
+
+.lightblue .ntb-row-select { 
+	clear:both; 
+}
+
+.lightblue .ntb-cell {
+	padding:4px 2px 0px 4px;
+    text-decoration:none;
+}
+
+.lightblue .ntb-cell-border {
+	color:#333333;
+	border-bottom:1px solid #c0c0c0;
+}
+
+.lightblue .ntb-cell-hover { 
+	background-color:#FCD661; 
+}
+
+.lightblue .ntb-grid-selection-background {
+    background-color:#F0B604;
+    filter:alpha(opacity=25);
+    -moz-opacity:.25;
+    opacity:.25;
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:10;
+}
+
+.lightblue .ntb-loading {
+    background-color:#FFFFFF;
+    filter:alpha(opacity=85);
+    -moz-opacity:.85;
+    opacity:.85;
+    z-index:200000;
+    position:absolute;
+	cursor:wait;
+}
+
+.lightblue .ntb-loading-icon { 
+	overflow:hidden; 
+	z-index:300000; 
+} 	
+
+/******** Image editor / column ************/
+
+.lightblue .ntb-image {
+}
+
+/******** Checkbox editor / column ************/
+
+.lightblue .ntb-checkbox { 
+	width: 17px; 
+	height: 100%;
+	float: left;
+}
+.lightblue .ntb-checkbox-unchecked {
+	background: transparent url('unchecked.gif') no-repeat center center; 
+}
+.lightblue .ntb-checkbox-checked {
+	background: transparent url('checked.gif') no-repeat center center; 
+}
+.lightblue .ntb-checkbox-text {
+	float:left;
+}
+
+.lightblue input, .lightblue textarea, .lightblue select, .lightblue ntb-input {
+	/*NOTE: Inputs don't inherit front styles*/
+	color:#333333;
+	font-family:Tahoma, Arial, Verdana;
+	font-size: 12px;
+	padding:0px 2px 0px 4px;
+    border:0px solid #000000;
+	width:100px;
+}
+
+.lightblue .ntb-input-border { 
+	border:1px solid #000000; 
+	background-color: #FFFFFF; 
+}
+
+.lightblue .ntb-lookup-text {
+	border-bottom: 1px solid #000000;
+}
+
+.lightblue .ntb-lookup-options {
+	background-color: #ffffff;
+	border: 0px solid #000000;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+.lightblue .ntb-resize-indicator-right {
+	background: transparent url('resize_right.png') no-repeat;
+	position:absolute;
+	bottom:-1px;
+	right:-5px;
+	width:4px;
+	height:10px;
+	line-height:1px;
+	overflow:hidden;
+	cursor: nw-resize;
+}
+
+.lightblue .ntb-resize-indicator-bottom {
+	background: transparent url('resize_bottom.png') no-repeat;
+	position:absolute;
+	bottom:-5px;
+	right:-5px;
+	width:16px;
+	height:4px;
+	line-height:1px;
+	overflow:hidden;
+	cursor: nw-resize;
+}
+
+.lightblue .ntb-grid-selection {
+    background-color:transparent;
+    display:block;
+    height:10px;
+    width:10px;
+    position:absolute;
+    left:-2000px;
+    top:-2000px;
+}
+
+.lightblue .ntb-grid-selection-expander-grabby {
+	/* Note: Always define a generic cursor 
+	at the end of the list in case none of 
+	the url-defined cursors can be used */
+	
+    position:absolute;
+    right:-1px;
+    bottom:-1px;
+    width:5px;
+    height:5px;
+    overflow:hidden;
+    background-color:#000000;
+    cursor:pointer;
+    cursor:hand;
+    z-index:20;
+}
+
+.lightblue .ntb-grid-selection-border {
+    border: 1px solid #000000;
+}
+
+.lightblue .ntb-grid-selection-border-active {
+    border:1px dashed #000000;
+}
+
+.lightblue .ntb-frozenshadow {
+	right:-5px;
+	width:5px;
+	background:url('shadow.png');
+}
+
+.lightblue .ntb-datepicker-button {
+    width:20px;
+    text-align:center;
+}
+
+.lightblue .ntb-datepicker-button a {
+    display:block;
+    height:16px;
+    width:16px;
+    background: transparent url("date.gif") no-repeat;
+}
+.lightblue .ntb-datepicker-button a:hover { background-position: -16px 0; }
+.lightblue .ntb-datepicker-input input { padding:0; margin:0; border:0; }
+.lightblue .ntb-hyperlink-editor { text-decoration: underline; cursor: pointer; color: blue; }
+.lightblue .ntb-hide { display:none; }
+
+.lightblue .ntb-effects-small {
+	clear:both;
+	display:block;
+	float:none;
+	height:0px;
+	//height:1px;
+	overflow:hidden;
+	width:auto;
+}
+
+.lightblue .ntb-clipboard {
+    position:absolute;
+    top:1px;
+    left:1px;
+    height:0px;
+    width:0px;
+    z-index:-1;
+}
+
+/* Text */

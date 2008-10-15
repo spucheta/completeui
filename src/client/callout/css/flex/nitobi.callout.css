@@ -1,0 +1,424 @@
+/*
+
+	Nitobi Callout Stylesheet
+ 	Flex Alert Style
+	v1.1
+*/
+
+.ntbSpot {
+
+}
+
+.ntbMouse {
+	background-image:url(arrow.png);
+	width: 21px;
+	height: 34px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbMouseClick {
+	background-image:url(arrow_click.png);
+	width: 29px;
+	height: 40px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbType {
+	background-image:url(type.png);
+	width: 15px;
+	height: 33px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbWait {
+	background-image:url(wait.png);
+	width: 26px;
+	height: 34px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+.ntbMouse_offset { top: 0px; left: 0px;}
+.ntbMouseClick_offset { top: -7px; left: -7px;}
+.ntbWait_offset { top: 0px; left: 0px;}
+.ntbType_offset { top: -15px; left: 0px;}
+
+.ntbflexCallout_next_off {
+	background-image:url(next_off.gif);
+	width: 56px;
+	height: 23px;	
+	background-position:top left;	
+	background-repeat:no-repeat;
+	cursor: pointer;
+	margin-top: 10px;	
+}
+
+.ntbflexCallout_next_on {
+	background-image:url(next_on.gif);
+	width: 56px;
+	height: 23px;	
+	background-position:top left;	
+	background-repeat:no-repeat;
+	cursor: pointer;
+	margin-top: 10px;	
+}
+
+.ntbflexCallout_closeoffset1, .ntbflexCallout_closeoffset0 {
+	top: 6px;
+	left:-11px;
+}
+.ntbflexCallout_closeoffset2 {
+	top: 6px;
+	left:-11px;
+}
+.ntbflexCallout_closeoffset3 {
+	top: 8px;
+	left:-10px;
+}
+.ntbflexCallout_closeoffset4 {
+	top: 11px;
+	left:-10px;
+}
+.ntbflexCallout_closeoffset5 {
+	top: 5px;
+	left:-10px;
+}
+.ntbflexCallout_closeoffset6 {
+	top: 5px;
+	left:-1px;
+}
+.ntbflexCallout_closeoffset7 {
+	top: 5px;
+	left:-11px;
+}
+.ntbflexCallout_closeoffset8 {
+	top: 5px;
+	left:-11px;
+}
+
+
+.ntbflexCallout_close_off {
+	background-image:url(close_off.gif);
+	width: 10px;
+	height: 10px;	
+	background-position:top left;	
+	background-repeat:no-repeat;
+	cursor: pointer;	
+}
+
+.ntbflexCallout_close_on {
+	background-image:url(close_on.gif);
+	width: 10px;
+	height: 10px;	
+	background-position:top left;	
+	background-repeat:no-repeat;
+	cursor: pointer;
+}
+
+.ntbflexCallout_bodytitlediv1,.ntbflexCallout_bodytitlediv2,.ntbflexCallout_bodytitlediv0 {
+
+	top:7px;
+	left:10px;
+
+}
+
+.ntbflexCallout_bodytitlediv3{
+	top:9px;
+	left:9px;
+}
+
+.ntbflexCallout_bodytitlediv4 {
+	top:12px;
+	left:9px;
+}
+
+.ntbflexCallout_bodytitlediv5 {
+	top:6px;
+	left:13px;
+}
+
+.ntbflexCallout_bodytitlediv6 {
+	top:6px;
+	left:13px;
+}
+.ntbflexCallout_bodytitlediv7,.ntbflexCallout_bodytitlediv8 {
+	top:6px;
+	left:9px;
+}
+
+.ntbflexCallout_bodydiv0,.ntbflexCallout_bodydiv1,.ntbflexCallout_bodydiv2,.ntbflexCallout_bodydiv3,.ntbflexCallout_bodydiv4,.ntbflexCallout_bodydiv5,.ntbflexCallout_bodydiv6,.ntbflexCallout_bodydiv7,.ntbflexCallout_bodydiv8 {
+	position: absolute;
+	top:25px;
+	left:10px;
+	font-size: 11px;
+	line-height:15px;
+	color: #FFF;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	white-space:normal;
+}
+
+.ntbflexCallout_bodydiv3{
+	top:27px;
+	left:10px;
+}
+
+.ntbflexCallout_bodydiv4 {
+	top:30px;
+	left:8px;
+}
+
+.ntbflexCallout_bodydiv5 {
+	top:24px;
+	left:13px;
+}
+
+.ntbflexCallout_bodydiv6 {
+	top:24px;
+	left:13px;
+}
+.ntbflexCallout_bodydiv7,.ntbflexCallout_bodydiv8 {
+	top:24px;
+	left:9px;
+}
+
+
+.ntbflexCallout_titlediv0,.ntbflexCallout_titlediv1,.ntbflexCallout_titlediv2,.ntbflexCallout_titlediv3,.ntbflexCallout_titlediv4,.ntbflexCallout_titlediv5,.ntbflexCallout_titlediv6,.ntbflexCallout_titlediv7,.ntbflexCallout_titlediv8 {
+	position: absolute;
+	top:7px;
+	left:10px;
+	font-weight:bold;
+	font-size: 11px;
+	color: #fff;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	white-space:nowrap;
+	width:auto;
+}
+
+.ntbflexCallout_titlediv3{
+	top:11px;
+	left:10px;
+}
+
+.ntbflexCallout_titlediv4 {
+	top:11px;
+	left:8px;
+}
+
+.ntbflexCallout_titlediv5 {
+	top:6px;
+	left:13px;
+}
+
+.ntbflexCallout_titlediv6 {
+	top:6px;
+	left:14px;
+}
+.ntbflexCallout_titlediv7,.ntbflexCallout_titlediv8 {
+	top:6px;
+	left:9px;
+}
+
+
+
+
+.ntbflexCallout_offset1,.ntbflexCallout_offset0 {
+	top:0px;
+	left:0px;
+	width:15px;
+	height:25px;		
+}
+.ntbflexCallout_offset2 {
+	left:0px;
+	top:0px;
+	width:15px;
+	height:25px;
+}
+.ntbflexCallout_offset3 {
+	left:0px;
+	top:0px;
+	width:15px;
+	height:25px;		
+}
+.ntbflexCallout_offset4 {
+	left:0px;
+	top:0px;
+	width:25px;
+	height:23px;	
+}
+.ntbflexCallout_offset5 {
+	left:0px;
+	top:0px;
+	width:15px;
+	height:25px;	
+}
+.ntbflexCallout_offset6 {
+	left:0px;
+	top:0px;
+	width:15px;
+	height:25px;	
+}
+.ntbflexCallout_offset7 {
+	left:0px;
+	top:0px;
+	width:15px;
+	height:25px;	
+}
+.ntbflexCallout_offset8 {
+	left:0px;
+	top:0px;
+	width:15px;
+	height:25px;	
+}
+
+.ntbflexCallout_mastercontainer {
+	padding: 0px;
+	margin: 0px;
+}
+
+.ntbflexCallout_rt_right {
+	background:url(rt_right.png) top left no-repeat;
+	width: 11px;
+}
+.ntbflexCallout_rt_br {
+	background:url(rt_br.png) top left no-repeat;
+	width: 11px;
+	height: 13px;
+}
+.ntbflexCallout_rb_main {
+	background:url(rb_main.png) top left no-repeat;
+}
+.ntbflexCallout_rb_bottom {
+	background:url(rb_bottom.png) top left no-repeat;
+	height: 11px;
+}
+.ntbflexCallout_rb_right {
+	background:url(rb_right.png) top left no-repeat;
+	width: 11px;
+}
+.ntbflexCallout_rb_rb {
+	background:url(rb_rb.png) top left no-repeat;
+	width: 11px;
+	height: 20px;
+}
+
+.ntbflexCallout_lb_left {
+	background:url(lb_left.png) top left no-repeat;
+	width: 11px;
+}
+.ntbflexCallout_lb_lb {
+	background:url(lb_lb.png) top left no-repeat;
+	width: 11px;
+	height: 19px;	
+}
+.ntbflexCallout_lb_main {
+	background:url(lb_main.png) top left no-repeat;
+}
+.ntbflexCallout_lb_bottom {
+	background:url(lb_bottom.png) top left no-repeat;
+	height: 13px;
+}
+.ntbflexCallout_lb_right {
+	background:url(lb_right.png) top left no-repeat;
+	width: 5px;
+}
+.ntbflexCallout_lb_br {
+	background:url(lb_br.png) top left no-repeat;
+	width: 11px;
+	height: 13px;
+}
+
+.ntbflexCallout_lt_main {
+	background:url(lt_main.png) top left no-repeat;
+}
+.ntbflexCallout_lt_bottom {
+	background:url(lt_bottom.png) top left no-repeat;
+	height: 13px;
+}
+
+.ntbflexCallout_lt_right {
+	background:url(lt_right.png) top left no-repeat;
+	width: 11px;
+}
+
+.ntbflexCallout_lt_br {
+	background:url(lt_br.png) top left no-repeat;
+	width: 11px;
+	height: 13px;
+}
+
+.ntbflexCallout_tl_main {
+	background:url(tl_main.png) top left no-repeat;
+}
+
+.ntbflexCallout_tl_right {
+	background:url(tl_right.png) top left no-repeat;
+	width: 11px;
+}
+
+.ntbflexCallout_tl_br_plain {
+	background:url(br_plain.png) top left no-repeat;
+	width: 11px;
+	height: 13px;
+}
+
+.ntbflexCallout_bl_main {
+	background:url(bl_main.png) top left no-repeat;
+}
+
+.ntbflexCallout_bl_right {
+	background:url(bl_right.png) top left no-repeat;
+	width: 11px;
+}
+
+.ntbflexCallout_bottom_plain {
+	background:url(bottom_plain.png) top left no-repeat;
+	height: 13px;
+}
+
+.ntbflexCallout_br_bottom {
+	background:url(br_bottom.png) top left no-repeat;
+	width: 28px;
+	height: 13px;
+}
+
+
+.ntbflexCallout_bl_bottom {
+	background:url(bl_bottom.png) top left no-repeat;
+	height: 13px;
+}
+
+.ntbflexCallout_br_plain {
+	background:url(br_plain.png) top left no-repeat;
+	width: 11px;
+	height: 13px;
+}
+
+.ntbflexCallout_tr_topright {
+	background:url(tr_topright.png) top left no-repeat;
+	width: 27px;
+	height: 13px;
+}
+
+.ntbflexCallout_tr_topleft {
+	background:url(tr_topleft.png) top left no-repeat;
+	height: 13px;
+}
+.ntbflexCallout_tr_mainpart {
+	background:url(tr_mainpart.png) top left no-repeat;
+}
+
+.ntbflexCallout_tr_right {
+	background:url(tr_right.png) top left no-repeat;
+	width: 11px;
+}
+
+.ntbflexCallout_extender {
+	width: 11px;
+}
+
+.ntbflexCallout_minimums {
+	width: 28px;
+	height:25px;
+}
