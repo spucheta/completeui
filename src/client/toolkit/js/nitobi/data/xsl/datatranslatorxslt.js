@@ -1,0 +1,9 @@
+/*
+ * Nitobi Complete UI 1.0
+ * Copyright(c) 2008, Nitobi
+ * support@nitobi.com
+ * 
+ * http://www.nitobi.com/license
+ */
+var dataTranslatorXslxslt='<?xml version="1.0"?> <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:eba="http://www.ebusinessapplications.ca/ebagrid#"> <xsl:output method="xml" omit-xml-declaration="yes" /> <x:p-x:n-start"x:s-0"></x:p-> <x:p-x:n-id"x:s-\'_default\'"></x:p-> <x:p-x:n-xkField"x:s-\'a\'"></x:p-> <x:t- match="//root"> <eba:grid xmlns:eba="http://www.ebusinessapplications.ca/ebagrid#"> <eba:datasources> <eba:datasource id="{$id}"> <eba:datasourcestructure id="{$id}"> <xsl:attributex:n-FieldNames"><x:v-x:s-@fields" />|_xk</xsl:attribute> <xsl:attributex:n-Keys">_xk</xsl:attribute> </eba:datasourcestructure> <eba:data id="{$id}"> <xsl:for-eachx:s-//e"> <x:at-x:s-."> <x:w-x:n-xi"x:s-position()-1"></x:w-> </x:at-> </xsl:for-each> </eba:data> </eba:datasource> </eba:datasources> </eba:grid> </x:t-> <x:t- match="e"> <x:p-x:n-xi"x:s-0"></x:p-> <eba:e> <xsl:copy-ofx:s-@*[not(name() = \'xk\')]"></xsl:copy-of> <xsl:if test="not(@xi)"><xsl:attributex:n-xi"><x:v-x:s-$start + $xi" /></xsl:attribute></xsl:if> <xsl:attributex:n-{$xkField}"><x:v-x:s-@xk" /></xsl:attribute> </eba:e> </x:t-> <x:t- match="lookups"></x:t-> </xsl:stylesheet>';
+dataTranslatorXslxslt=dataTranslatorXslxslt.replace(/x:c-/g, 'xsl:choose').replace(/x\:wh\-/g, 'xsl:when').replace(/x\:o\-/g, 'xsl:otherwise').replace(/x\:n\-/g, ' name="').replace(/x\:s\-/g, ' select="').replace(/x\:va\-/g, 'xsl:variable').replace(/x\:v\-/g, 'xsl:value-of').replace(/x\:ct\-/g, 'xsl:call-template').replace(/x\:w\-/g, 'xsl:with-param').replace(/x\:p\-/g, 'xsl:param').replace(/x\:t\-/g, 'xsl:template').replace(/x\:at\-/g, 'xsl:apply-templates')

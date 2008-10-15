@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+	<jsfile path="../toolkit/js/nitobi/base/toolkitdetection.js"/>
+	<jsfile path="js/nitobi/callout/callout.js"/>
+	<jsfile path="js/nitobi/callout/hint.js" />
+	<cssfile path="css/vista/nitobi.callout.css" />
+	<cssfile path="css/impact/nitobi.callout.css" />
+	<cssfile path="css/xp/nitobi.callout.css" />
+	<cssfile path="css/clean/nitobi.callout.css" />	
+	<cssfile path="css/peanut_info/nitobi.callout.css" />
+	<cssfile path="css/peanut_talkbubble/nitobi.callout.css" />
+	<cssfile path="css/peanut_exclam/nitobi.callout.css" />
+	<cssfile path="css/peanut_noaccess/nitobi.callout.css" />
+</includes>

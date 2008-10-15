@@ -1,0 +1,51 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+.ntb div, .ntb span, .ntb iframe, .ntb h1, .ntb h2, .ntb h3, .ntb h4, .ntb h5, .ntb h6, .ntb p, .ntb blockquote, .ntb pre,
+.ntb a, .ntb em, .ntb font, .ntb img, .ntb strong, .ntb ol, .ntb ul, .ntb li, .ntb fieldset, .ntb form, .ntb label, 
+.ntb table, .ntb caption, .ntb tbody, .ntb tfoot, .ntb thead, .ntb tr, .ntb th, .ntb td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	background: transparent;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+.ntb ol,.ntb  ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.ntb table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.ntb caption,.ntb th,.ntb td {
+	text-align: left;
+	font-weight: normal;
+}
+
+.ntb blockquote:before, .ntb blockquote:after, .ntb q:before, q:after {
+	content: "";
+}
+
+.ntb blockquote, q {
+	quotes: "" "";
+}

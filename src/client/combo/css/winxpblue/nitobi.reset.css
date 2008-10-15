@@ -1,0 +1,51 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+.winxpblue div, .winxpblue span, .winxpblue iframe, .winxpblue h1, .winxpblue h2, .winxpblue h3, .winxpblue h4, .winxpblue h5, .winxpblue h6, .winxpblue p, .winxpblue blockquote, .winxpblue pre,
+.winxpblue a, .winxpblue em, .winxpblue font, .winxpblue img, .winxpblue strong, .winxpblue ol, .winxpblue ul, .winxpblue li, .winxpblue fieldset, .winxpblue form, .winxpblue label, 
+.winxpblue table, .winxpblue caption, .winxpblue tbody, .winxpblue tfoot, .winxpblue thead, .winxpblue tr, .winxpblue th, .winxpblue td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	background: transparent;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+.winxpblue ol,.winxpblue  ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.winxpblue table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.winxpblue caption,.winxpblue th,.winxpblue td {
+	text-align: left;
+	font-weight: normal;
+}
+
+.winxpblue blockquote:before, .winxpblue blockquote:after, .winxpblue q:before, q:after {
+	content: "";
+}
+
+.winxpblue blockquote, q {
+	quotes: "" "";
+}

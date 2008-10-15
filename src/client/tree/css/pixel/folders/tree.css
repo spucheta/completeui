@@ -1,0 +1,105 @@
+.folders .tree {
+	background-color:transparent;
+}
+
+.folders .hover .node, .folders .hover .leaf { 
+	background-color: #cce9ff; 
+}
+
+.folders .root .node .icon {
+	width:19px;
+	background-color:transparent;
+	background-image:url('base.gif');
+	background-repeat: no-repeat;
+}
+
+.folders .tree .selected .node, .folders .tree .selected .leaf {
+	background-color: #cce9ff;
+}
+
+.folders .sidebar-background {
+	background-image:url('sidebar.gif');
+	background-repeat: repeat-y;
+}
+
+.folders .pipe {
+	width:19px;
+	background-color:transparent;
+	background-image:url('line.gif');
+
+}
+.folders .tee {
+	width:19px;
+	background-color:transparent;
+	background-image:url('joinbottom.gif');
+
+}
+.folders .ell {
+	width:19px;
+	background-color:transparent;
+	background-image:url('join.gif');
+	background-repeat: no-repeat;
+}
+.folders .spacer {
+	width:20px;
+}
+
+.folders .sidebar {
+	width:34px;
+	background-color:transparent;
+}
+	
+.folders .flag {
+	background-color:transparent;
+}
+
+.folders .collapsed .tee {
+	background-image:url('plusbottom.gif');
+}
+
+.folders .expanded .tee {
+	background-image:url('minusbottom.gif');
+}
+
+.folders .collapsed .ell {
+	background-image:url('plus.gif');
+}
+
+.folders .expanded .ell {
+	background-image:url('minus.gif');
+}
+
+.folders .node .icon {
+	width:19px;
+	background-color:transparent;
+	background-image:url('folder.gif');
+	background-repeat: no-repeat;
+}
+
+.folders .expanded .node .icon {
+	background-image:url('folderopen.gif');
+}
+
+.folders .leaf .icon {
+	width:19px;
+	background-color:transparent;
+	background-image:url('page.gif');
+	background-repeat: no-repeat;
+}
+
+.folders .label {
+	font-family: arial;
+	font-size: 12px;
+}
+
+.folders .working .tee {
+	width:19px;
+	background-image:url('indicator.gif');
+	background-repeat: no-repeat;
+}
+
+.folders .working .ell{
+	width:19px;
+	background-image:url('indicator.gif');
+	background-repeat: no-repeat;
+}

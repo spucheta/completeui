@@ -1,0 +1,396 @@
+/* Font settings */ 
+.pixel .ntb-tab-strip, .pixel .ntb-tab-strip a {
+	overflow:hidden;
+	width:100%;
+	height:100%;
+	font-size: 11px; 
+	font-family: Arial, Helvetica, sans-serif;
+	color:#FFFFFF;
+	text-align:left;
+	font-weight:normal;
+	white-space: nowrap;
+	padding:0px;
+	margin:0px;	
+}
+.pixel .ntb-tab a, .pixel .ntb-tab-inactive  .ntb-tab-label a, .pixel .ntb-tab-active .ntb-tab-label a {
+	color: #ffffff;	
+	text-decoration: none;
+	padding-top: 3px;
+}
+.pixel .ntb-tab-active .ntb-tab a {
+	font-weight:bold;
+}
+.pixel .ntb-tab-disabled .ntb-tab,  {
+	font-weight:bold;
+	font-size: 11px; 
+	color:gray;
+	text-align:left;
+	cursor:pointer;
+}
+.pixel .ntb-tab-disabled .ntb-tab a {
+	text-decoration:none;
+	cursor:pointer;
+}
+
+/* default */
+.pixel .ntb-tab-strip-max, .pixel .ntb-tab-strip-body-container {
+	width:100%;
+	height:100%
+}
+.pixel .ntb-tab-strip .ntb-tab-tabs-row {
+	vertical-align:bottom;
+}
+.pixel .ntb-tab-bodies-row {
+	width: 100%;
+	vertical-align:top;
+}
+.pixel .ntb-tab-strip-body-container {
+	border: 1px solid lightgrey;
+}
+.pixel .ntb-tab-mouseover .ntb-tab {
+	font-weight:bold;
+	white-space: nowrap;
+	padding:0px;
+	margin:0px;
+}
+
+/* scroller */
+.pixel .ntb-tab-scrollerbuttoncontainer {
+	width:15px;
+	white-space:normal;
+}
+.pixel .ntb-tab-scrollerbutton {
+	width:14px;
+	height: 14px;
+	font-size:7pt;
+	border: 1px solid black;
+	padding:0px;
+	margin:auto;
+	background-repeat:no-repeat;
+	background-position: center;
+}
+.pixel .ntb-tab-scrollerbutton-left {
+	background-image: url(assets/left.png);
+}
+.pixel .ntb-tab-scrollerbutton-right {
+	background-image: url(assets/right.png);
+}
+
+/* iframe */
+.pixel .ntb-tab-active .ntb-tab-iframecontainer, .pixel .ntb-tab-disabled .ntb-tab-iframecontainer {
+	border:0;
+	position:static;
+	width:100%;
+	height:100%;
+}
+.pixel .ntb-tab-inactive .ntb-tab-iframecontainer {
+	border:0;
+	width:0px;
+	height:0px;
+	top:-1000px;
+	left:-1000px;
+	position:absolute;
+}
+
+/* Other */
+.pixel .ntb-tab-icon-active {
+	width: 15%;
+}
+
+.pixel .ntb-tab-container {
+	overflow:hidden;
+}
+
+.pixel .ntb-leading-tab {
+	border: black 1px solid;
+	background-color: red;
+}
+
+.pixel .ntb-tab-tabs {
+	position:relative;
+	top:0px;
+	table-layout:fixed;
+	border-collapse:collapse;
+}
+.pixel .ntb-tab-inactive  .ntb-tab-label, .pixel .ntb-tab-active .ntb-tab-label {
+	border-collapse: collapse;
+	width:100%;
+	height:30px;
+}
+.pixel .ntb-tab-active .ntb-tab-mouseover .ntb-tab-label {
+	border-collapse: collapse;
+	width:100%;
+}
+.pixel .ntb-tab-inactive  .ntb-tab-bodycontainer {
+	top:-1000px;
+	left:-1000px;
+	position:absolute;
+}
+.pixel .ntb-tab-active .ntb-tab-bodycontainer {
+	position:static;
+}
+.pixel .ntb-tab-mintable {
+	border-collapse:collapse;
+	padding:0;
+	margin:0;
+	table-layout:fixed;
+}
+
+/* load indicator */
+.pixel .ntb-tab-activityindicator {
+	white-space:nowrap;
+	background-image:url(assets/indicator.gif);
+	background-repeat:no-repeat;
+	background-position:center;
+	width:16px;
+	height:16px;
+}
+
+/* Setting z-indexes */
+.pixel .ntb-tab-inactive .ntb-tab a {
+	z-index:302;
+}
+.pixel .ntb-tab-active .ntb-tab-bodycontainer, .pixel .ntb-tab-active .ntb-tab-iframecontainer, .pixel .ntb-tab-disabled .ntb-tab-iframecontainer, .pixel .ntb-tab-active .ntb-tab-table {
+	z-index:300;
+}
+.pixel .ntb-tab-bodycontainer, .pixel .ntb-tab-inactive .ntb-tab-iframecontainer, .pixel .ntb-tab-inactive  .ntb-tab-bodycontainer, .pixel .ntb-tab-inactive .ntb-tab-table {
+	z-index:299;
+}
+.pixel .ntb-tab-active .ntb-tab-body, .pixel .ntb-tab-active .ntb-tab-left, .pixel .ntb-tab-active .ntb-tab-right, .pixel .ntb-tab-active .ntb-tab-mouseover .ntb-tab-body, .pixel .ntb-tab-active .ntb-tab-mouseover .ntb-tab-left, .pixel .ntb-tab-active .ntb-tab-mouseover .ntb-tab-right {
+	z-index:200;
+}
+.pixel .ntb-tab-disabled .ntb-tab-body, .pixel .ntb-tab-disabled .ntb-tab-left, .pixel .ntb-tab-disabled .ntb-tab-right, .pixel .ntb-tab-disabled .ntb-tab-bodycontainer, .pixel .ntb-tab-disabled .ntb-tab-table  {
+	z-index:199;
+}
+.pixel .ntb-tab-inactive .ntb-tab-body .ntb-pulse, .pixel .ntb-tab-inactive  .ntb-tab-left .ntb-pulse, .pixel .ntb-tab-inactive .ntb-tab-right .ntb-pulse {
+	z-index:101;
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+	visibility:hidden;
+	opacity:0.0;
+}
+.pixel .ntb-tab-inactive .ntb-tab-body, .pixel .ntb-tab-inactive  .ntb-tab-left, .pixel .ntb-tab-inactive .ntb-tab-right, .pixel .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab-body, .pixel .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left, .pixel .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab-right {
+	z-index:100;
+}
+
+/* height */
+.pixel .ntb-tab {
+	height:20px !important;
+ }
+
+/* Tab settings */
+.pixel .ntb-tab-inactive .ntb-tab-table, .pixel .ntb-tab-active .ntb-tab-table, .pixel .ntb-tab-disabled .ntb-tab-table, .pixel .ntb-tab-inactive .ntb-tab, .pixel .ntb-tab-inactive .ntb-tab-body .ntb-pulse{
+	width:100%;
+	height:20px;
+	border-collapse:collapse;
+	border:0;
+	table-layout:fixed;			
+	position:relative;
+	cursor:pointer;
+}
+.pixel .ntb-tab-inactive .ntb-tab-left , .pixel .ntb-tab-active .ntb-tab-left , .pixel .ntb-tab-disabled .ntb-tab-left, .pixel .ntb-tab-inactive .ntb-tab-left .ntb-pulse {
+	width: 23px;
+	height:20px;
+}
+.pixel .ntb-tab-inactive .ntb-tab-right, .pixel .ntb-tab-active .ntb-tab-right, .pixel .ntb-tab-disabled .ntb-tab-right, .pixel .ntb-tab-inactive  .ntb-tab-left .ntb-pulse {
+	width:34px;
+	height:20px;
+}
+
+/* Inactive */
+.pixel .ntb-tab-inactive .ntb-tab-body {
+	background:url(tabs/body/inactivebody.png) bottom left repeat-x;
+}
+.pixel .ntb-tab-inactive  .ntb-tab-left {
+	background: url(tabs/left/inactiveleft.png) bottom right no-repeat;
+}
+.pixel .ntb-tab-inactive .ntb-tab-right {
+	background:url(tabs/right/inactiveright.png) bottom left no-repeat;
+}
+/* inactive hover */
+.pixel .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab {
+	white-space:nowrap;
+	padding:0px;
+	margin:0px;
+	text-align:left;
+	padding-top:0px;
+	cursor:pointer;
+}
+.pixel .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/inactivebody_hover.png) bottom left repeat-x;
+}
+.pixel .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left {
+	background: url(tabs/left/inactiveleft_hover.png) bottom right no-repeat;
+}
+.pixel .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/inactiveright_hover.png) bottom left no-repeat;
+}
+
+/* active */
+.pixel .ntb-tab-active .ntb-tab-body {
+	background:url(tabs/body/activebody.png) bottom left repeat-x;
+}
+.pixel .ntb-tab-active .ntb-tab-left {
+	background:url(tabs/left/activeleft.png) bottom right no-repeat;
+}
+.pixel .ntb-tab-active .ntb-tab-right {
+	background: url(tabs/right/activeright.png) bottom left no-repeat;
+}
+/* active hover */
+.pixel .ntb-tab-active .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/activebody_hover.png) bottom left repeat-x;
+}
+.pixel .ntb-tab-active .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/activeleft_hover.png) bottom right no-repeat;
+}
+.pixel .ntb-tab-active .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/activeright_hover.png) bottom left no-repeat;
+}
+
+/* disabled */
+.pixel .ntb-tab-disabled .ntb-tab-body {
+	background:url(tabs/body/inactivebody.png) bottom left repeat-x;
+}
+.pixel .ntb-tab-disabled .ntb-tab-left {
+	background:url(tabs/left/inactiveleft.png) bottom right no-repeat;
+}
+.pixel .ntb-tab-disabled .ntb-tab-right {
+	background:url(tabs/right/inactiveright.png) bottom left no-repeat;
+}
+
+/* pulse */
+.pixel .ntb-tab-inactive .ntb-tab-body .ntb-pulse {
+	background:url(tabs/body/ractivebody_hover.png) bottom left repeat-x;
+}
+.pixel .ntb-tab-inactive .ntb-tab-left .ntb-pulse {
+	background: url(tabs/left/ractiveleft_hover.png) bottom right no-repeat;
+}
+.pixel .ntb-tab-inactive .ntb-tab-right .ntb-pulse {
+	background:url(tabs/right/ractiveright_hover.png) bottom left no-repeat;
+}
+
+/* red tab inactive */
+.pixel .redtab .ntb-tab-inactive  .ntb-tab-body {
+	background:url(tabs/body/inactivebody.png) bottom left repeat-x;
+}
+.pixel .redtab .ntb-tab-inactive  .ntb-tab-left {
+	background:url(tabs/left/inactiveleft.png) bottom right no-repeat;
+}
+.pixel .redtab .ntb-tab-inactive  .ntb-tab-right {
+	background:url(tabs/right/inactiveright.png) bottom left no-repeat;
+}
+/* red tab inactive hover */
+.pixel .redtab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/rinactivebody_hover.png) bottom left repeat-x;
+}
+.pixel .redtab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/rinactiveleft_hover.png) bottom right no-repeat;
+}
+.pixel .redtab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/rinactiveright_hover.png) bottom left no-repeat;
+}
+
+/* red tab active */
+.pixel .redtab .ntb-tab-active  .ntb-tab-body {
+	background:url(tabs/body/activebody.png) bottom left repeat-x;
+}
+.pixel .redtab .ntb-tab-active  .ntb-tab-left {
+	background:url(tabs/left/activeleft.png) bottom right no-repeat;
+}
+.pixel .redtab .ntb-tab-active  .ntb-tab-right {
+	background:url(tabs/right/activeright.png) bottom left no-repeat;
+}
+/* red tab active hover */
+.pixel .redtab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/ractivebody_hover.png) bottom left repeat-x;
+}
+.pixel .redtab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/ractiveleft_hover.png) bottom right no-repeat;
+}
+.pixel .redtab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/ractiveright_hover.png) bottom left no-repeat;
+}
+
+/* green tab inactive */
+.pixel .greentab .ntb-tab-inactive  .ntb-tab-body {
+	background:url(tabs/body/inactivebody.png) bottom left repeat-x;
+}
+.pixel .greentab .ntb-tab-inactive  .ntb-tab-left {
+	background:url(tabs/left/inactiveleft.png) bottom right no-repeat;
+}
+.pixel .greentab .ntb-tab-inactive  .ntb-tab-right {
+	background:url(tabs/right/inactiveright.png) bottom left no-repeat;
+}
+/* green tab inactive hover */
+.pixel .greentab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/ginactivebody_hover.png) bottom left repeat-x;
+}
+.pixel .greentab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/ginactiveleft_hover.png) bottom right no-repeat;
+}
+.ntb-tab-right, .pixel .greentab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/ginactiveright_hover.png) bottom left no-repeat;
+}
+
+/* green tab active */
+.pixel .greentab .ntb-tab-active  .ntb-tab-body {
+	background:url(tabs/body/activebody.png) bottom left repeat-x;
+}
+.pixel .greentab .ntb-tab-active  .ntb-tab-left {
+	background:url(tabs/left/activeleft.png) bottom right no-repeat;
+}
+.pixel .greentab .ntb-tab-active  .ntb-tab-right {
+	background:url(tabs/right/activeright.png) bottom left no-repeat;
+}
+/* green tab active hover */
+.pixel .greentab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/gactivebody_hover.png) bottom left repeat-x;
+}
+.pixel .greentab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/gactiveleft_hover.png) bottom right no-repeat;
+}
+.pixel .greentab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/gactiveright_hover.png) bottom left no-repeat;
+}
+
+/* purple tab inactive */
+.pixel .purpletab .ntb-tab-inactive  .ntb-tab-body {
+	background:url(tabs/body/inactivebody.png) bottom left repeat-x;
+}
+.pixel .purpletab .ntb-tab-inactive  .ntb-tab-left {
+	background:url(tabs/left/inactiveleft.png) bottom right no-repeat;
+}
+.pixel .purpletab .ntb-tab-inactive  .ntb-tab-right {
+	background:url(tabs/right/inactiveright.png) bottom left no-repeat;
+}
+/* purple tab inactive hover */
+.pixel .purpletab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/pinactivebody_hover.png) bottom left repeat-x;
+}
+.pixel .purpletab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/pinactiveleft_hover.png) bottom right no-repeat;
+}
+.pixel .purpletab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/pinactiveright_hover.png) bottom left no-repeat;
+}
+
+/* purple tab active */
+.pixel .purpletab .ntb-tab-active  .ntb-tab-body {
+	background:url(tabs/body/activebody.png) bottom left repeat-x;
+}
+.pixel .purpletab .ntb-tab-active  .ntb-tab-left {
+	background:url(tabs/left/activeleft.png) bottom right no-repeat;
+}
+.pixel .purpletab .ntb-tab-active  .ntb-tab-right {
+	background:url(tabs/right/activeright.png) bottom left no-repeat;
+}
+/* purple tab active hover */
+.pixel .purpletab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/pactivebody_hover.png) bottom left repeat-x;
+}
+.pixel .purpletab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/pactiveleft_hover.png) bottom right no-repeat;
+}
+.pixel .purpletab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/pactiveright_hover.png) bottom left no-repeat;
+}

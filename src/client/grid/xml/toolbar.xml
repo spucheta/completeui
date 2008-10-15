@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<toolbar id="toolbarthis.uid" title="Grid" height="25" width="110" image_directory="http://localhost/vss/EBALib/v13/Common/Toolbar/Styles/default">
+	<items>
+		<button id="save" onclick_event="this.onClick()" height="14" width="14" image="save.gif"
+			image_disabled="save_disabled.gif" tooltip_text="Save Changes" />
+		<!-- <button id="discardChanges" onclick_event="testclick(this);" height="17" width="16" top_offset="-2"
+			image="cancelsave.gif" image_disabled="cancelsave_disabled.gif" tooltip_text="Discard Changes" /> -->
+		<separator id="toolbar1_separator1" height="20" width="5" image="separator.jpg" />
+		<button id="newRecord" onclick_event="this.onClick()" height="11" width="14" image="newrecord.gif"
+			image_disabled="newrecord_disabled.gif" tooltip_text="New Record" />
+		<button id="deleteRecord" onclick_event="this.onClick()" height="11" width="14" image="deleterecord.gif"
+			image_disabled="deleterecord_disabled.gif" tooltip_text="Delete Record" />
+		<separator id="toolbar1_separator2" height="20" width="5" image="separator.jpg" />
+		<button id="refresh" onclick_event="this.onClick()" height="14" width="16" image="refresh.gif"
+			image_disabled="refresh_disabled.gif" tooltip_text="Refresh" />
+		<!--<separator id="toolbar1_separator3" height="20" width="5" image="separator.jpg" />
+		<button id="toolbar1_button4" onclick_event="testclick(this);" height="11" width="10" image="left.gif"
+			image_disabled="left_disabled.gif" tooltip_text="Previous Page" />
+		<button id="toolbar1_button5" onclick_event="testclick(this);" height="11" width="10" image="right.gif"
+			image_disabled="right_disabled.gif" tooltip_text="Next Page" />
+		-->
+	</items>
+</toolbar>

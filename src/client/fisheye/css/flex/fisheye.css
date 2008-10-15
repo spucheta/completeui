@@ -1,0 +1,19 @@
+.flex .ntb-fisheye-menubackground
+{
+	border: 1px solid #6e6f71;
+	opacity: 0.75;
+	background: url(background.png) left bottom repeat-x;
+}
+
+.flex .ntb-fisheye-label
+{
+	padding: 3px 5px;
+	opacity: 0.75;
+	color: #0b333c;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background: #fff;
+	font-size: 12px;
+	text-align: center;
+	font-weight: bold;
+	opacity = 0.85;
+}

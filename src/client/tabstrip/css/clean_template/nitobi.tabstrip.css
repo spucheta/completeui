@@ -1,0 +1,390 @@
+/* Font settings */
+.nitobi .ntb-tab-strip, .nitobi .ntb-tab-strip a {
+	overflow:hidden;
+	width:100%;
+	height:100%;
+	font-size: 16px; 
+	font-family: Trebuchet MS, tahoma, verdana;
+	color:#FFFFFF;
+	text-align:left;
+	font-weight:normal;
+	white-space: nowrap;
+	padding:0px;
+	margin:0px;	
+}
+.nitobi .ntb-tab a, .nitobi .ntb-tab-inactive  .ntb-tab-label a, .nitobi .ntb-tab-active .ntb-tab-label a {
+	color: #ffffff;	
+	text-decoration: none;
+}
+.nitobi .ntb-tab-active .ntb-tab a {
+	font-weight:bold;
+}
+.nitobi .ntb-tab-disabled .ntb-tab,  {
+	font-weight:bold;
+	font-size: 11px; 
+	color:gray;
+	text-align:left;
+	cursor:pointer;
+}
+.nitobi .ntb-tab-disabled .ntb-tab a {
+	text-decoration:none;
+	cursor:pointer;
+}
+
+/* default */
+.nitobi .ntb-tab-strip-max, .nitobi .ntb-tab-strip-body-container {
+	width:100%;
+	height:100%
+}
+.nitobi .ntb-tab-strip .ntb-tab-tabs-row {
+	vertical-align:bottom;
+}
+.nitobi .ntb-tab-bodies-row {
+	width: 100%;
+	vertical-align:top;
+}
+.nitobi .ntb-tab-strip-body-container {
+	border: 1px solid lightgrey;
+}
+.nitobi .ntb-tab-mouseover .ntb-tab {
+	font-weight:bold;
+	white-space: nowrap;
+	padding:0px;
+	margin:0px;
+}
+
+/* scroller */
+.nitobi .ntb-tab-scrollerbuttoncontainer {
+	width:15px;
+	white-space:normal;
+}
+.nitobi .ntb-tab-scrollerbutton {
+	width:14px;
+	height: 14px;
+	font-size:7pt;
+	border: 1px solid black;
+	padding:0px;
+	margin:auto;
+	background-repeat:no-repeat;
+	background-position: center;
+}
+.nitobi .ntb-tab-scrollerbutton-left {
+	background-image: url(assets/left.png);
+}
+.nitobi .ntb-tab-scrollerbutton-right {
+	background-image: url(assets/right.png);
+}
+
+/* iframe */
+.nitobi .ntb-tab-active .ntb-tab-iframecontainer, .nitobi .ntb-tab-disabled .ntb-tab-iframecontainer {
+	border:0;
+	position:static;
+	width:100%;
+	height:100%;
+}
+.nitobi .ntb-tab-inactive .ntb-tab-iframecontainer {
+	border:0;
+	width:0px;
+	height:0px;
+	top:-1000px;
+	left:-1000px;
+	position:absolute;
+}
+
+/* Other */
+.nitobi .ntb-tab-icon-active {
+	width: 15%;
+}
+
+.nitobi .ntb-tab-container {
+	overflow:hidden;
+}
+
+.nitobi .ntb-leading-tab {
+	border: black 1px solid;
+	background-color: red;
+}
+
+.nitobi .ntb-tab-tabs {
+	position:relative;
+	top:0px;
+	table-layout:fixed;
+	border-collapse:collapse;
+}
+.nitobi .ntb-tab-inactive  .ntb-tab-label, .nitobi .ntb-tab-active .ntb-tab-label {
+	border-collapse: collapse;
+	width:100%;
+	height:30px;
+}
+.nitobi .ntb-tab-active .ntb-tab-mouseover .ntb-tab-label {
+	border-collapse: collapse;
+	width:100%;
+}
+.nitobi .ntb-tab-inactive  .ntb-tab-bodycontainer {
+	top:-1000px;
+	left:-1000px;
+	position:absolute;
+}
+.nitobi .ntb-tab-active .ntb-tab-bodycontainer {
+	position:static;
+}
+.nitobi .ntb-tab-mintable {
+	border-collapse:collapse;
+	padding:0;
+	margin:0;
+	table-layout:fixed;
+}
+
+/* load indicator */
+.nitobi .ntb-tab-activityindicator {
+	white-space:nowrap;
+	background-image:url(assets/indicator.gif);
+	background-repeat:no-repeat;
+	background-position:center;
+	width:16px;
+	height:16px;
+}
+
+/* Setting z-indexes */
+.nitobi .ntb-tab-inactive .ntb-tab a {
+	z-index:302;
+}
+.nitobi .ntb-tab-active .ntb-tab-bodycontainer, .nitobi .ntb-tab-active .ntb-tab-iframecontainer, .nitobi .ntb-tab-disabled .ntb-tab-iframecontainer, .nitobi .ntb-tab-active .ntb-tab-table {
+	z-index:300;
+}
+.nitobi .ntb-tab-bodycontainer, .nitobi .ntb-tab-inactive .ntb-tab-iframecontainer, .nitobi .ntb-tab-inactive  .ntb-tab-bodycontainer, .nitobi .ntb-tab-inactive .ntb-tab-table {
+	z-index:299;
+}
+.nitobi .ntb-tab-active .ntb-tab-body, .nitobi .ntb-tab-active .ntb-tab-left, .nitobi .ntb-tab-active .ntb-tab-right, .nitobi .ntb-tab-active .ntb-tab-mouseover .ntb-tab-body, .nitobi .ntb-tab-active .ntb-tab-mouseover .ntb-tab-left, .nitobi .ntb-tab-active .ntb-tab-mouseover .ntb-tab-right {
+	z-index:200;
+}
+.nitobi .ntb-tab-disabled .ntb-tab-body, .nitobi .ntb-tab-disabled .ntb-tab-left, .nitobi .ntb-tab-disabled .ntb-tab-right, .nitobi .ntb-tab-disabled .ntb-tab-bodycontainer, .nitobi .ntb-tab-disabled .ntb-tab-table  {
+	z-index:199;
+}
+.nitobi .ntb-tab-inactive .ntb-tab-body .ntb-pulse, .nitobi .ntb-tab-inactive  .ntb-tab-left .ntb-pulse, .nitobi .ntb-tab-inactive .ntb-tab-right .ntb-pulse {
+	z-index:101;
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+	visibility:hidden;
+	opacity:0.0;
+}
+.nitobi .ntb-tab-inactive .ntb-tab-body, .nitobi .ntb-tab-inactive  .ntb-tab-left, .nitobi .ntb-tab-inactive .ntb-tab-right, .nitobi .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab-body, .nitobi .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left, .nitobi .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab-right {
+	z-index:100;
+}
+
+/* Tab settings */
+.nitobi .ntb-tab-inactive .ntb-tab-table, .nitobi .ntb-tab-active .ntb-tab-table, .nitobi .ntb-tab-disabled .ntb-tab-table, .nitobi .ntb-tab-inactive .ntb-tab, .nitobi .ntb-tab-inactive .ntb-tab-body .ntb-pulse {
+	width:100%;
+	height:30px;
+	border-collapse:collapse;
+	border:0;
+	table-layout:fixed;			
+	position:relative;
+	cursor:pointer;
+}
+.nitobi .ntb-tab-inactive .ntb-tab-left , .nitobi .ntb-tab-active .ntb-tab-left , .nitobi .ntb-tab-disabled .ntb-tab-left, .nitobi .ntb-tab-inactive .ntb-tab-left .ntb-pulse {
+	width: 8px;
+	height:30px;
+}
+.nitobi .ntb-tab-inactive .ntb-tab-right, .nitobi .ntb-tab-active .ntb-tab-right, .nitobi .ntb-tab-disabled .ntb-tab-right, .nitobi .ntb-tab-inactive  .ntb-tab-left .ntb-pulse {
+	width:34px;
+	height:30px;
+}
+
+/* Inactive */
+.nitobi .ntb-tab-inactive .ntb-tab-body {
+	background:url(tabs/body/inactivebody.png) bottom left repeat-x;
+}
+.nitobi .ntb-tab-inactive  .ntb-tab-left {
+	background: url(tabs/left/inactiveleft.png) bottom right no-repeat;
+}
+.nitobi .ntb-tab-inactive .ntb-tab-right {
+	background:url(tabs/right/inactiveright.png) bottom left no-repeat;
+}
+/* inactive hover */
+.nitobi .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab {
+	white-space:nowrap;
+	padding:0px;
+	margin:0px;
+	text-align:left;
+	padding-top:0px;
+	cursor:pointer;
+}
+.nitobi .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/activebody_hover.png) bottom left repeat-x;
+}
+.nitobi .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left {
+	background: url(tabs/left/activeleft_hover.png) bottom right no-repeat;
+}
+.nitobi .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/activeright_hover.png) bottom left no-repeat;
+}
+
+/* active */
+.nitobi .ntb-tab-active .ntb-tab-body {
+	background:url(tabs/body/activebody.png) bottom left repeat-x;
+}
+.nitobi .ntb-tab-active .ntb-tab-left {
+	background:url(tabs/left/activeleft.png) bottom right no-repeat;
+}
+.nitobi .ntb-tab-active .ntb-tab-right {
+	background: url(tabs/right/activeright.png) bottom left no-repeat;
+}
+/* active hover */
+.nitobi .ntb-tab-active .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/activebody_hover.png) bottom left repeat-x;
+}
+.nitobi .ntb-tab-active .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/activeleft_hover.png) bottom right no-repeat;
+}
+.nitobi .ntb-tab-active .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/activeright_hover.png) bottom left no-repeat;
+}
+
+/* disabled */
+.nitobi .ntb-tab-disabled .ntb-tab-body {
+	background:url(tabs/body/disabledbody.png) bottom left repeat-x;
+}
+.nitobi .ntb-tab-disabled .ntb-tab-left {
+	background:url(tabs/left/disabledleft.png) bottom right no-repeat;
+}
+.nitobi .ntb-tab-disabled .ntb-tab-right {
+	background:url(tabs/right/disabledright.png) bottom left no-repeat;
+}
+
+/* pulse */
+.nitobi .ntb-tab-inactive .ntb-tab-body .ntb-pulse {
+	background:url(tabs/body/ractivebody.png) bottom left repeat-x;
+}
+.nitobi .ntb-tab-inactive .ntb-tab-left .ntb-pulse {
+	background: url(tabs/left/ractiveleft.png) bottom right no-repeat;
+}
+.nitobi .ntb-tab-inactive .ntb-tab-right .ntb-pulse {
+	background:url(tabs/right/ractiveright.png) bottom left no-repeat;
+}
+
+/* red tab inactive */
+.nitobi .redtab .ntb-tab-inactive  .ntb-tab-body {
+	background:url(tabs/body/ractivebody.png) bottom left repeat-x;
+}
+.nitobi .redtab .ntb-tab-inactive  .ntb-tab-left {
+	background:url(tabs/left/ractiveleft.png) bottom right no-repeat;
+}
+.nitobi .redtab .ntb-tab-inactive  .ntb-tab-right {
+	background:url(tabs/right/ractiveright.png) bottom left no-repeat;
+}
+/* red tab inactive hover */
+.nitobi .redtab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/ractivebody_hover.png) bottom left repeat-x;
+}
+.nitobi .redtab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/ractiveleft_hover.png) bottom right no-repeat;
+}
+.nitobi .redtab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/ractiveright_hover.png) bottom left no-repeat;
+}
+
+/* red tab active */
+.nitobi .redtab .ntb-tab-active  .ntb-tab-body {
+	background:url(tabs/body/ractivebody.png) bottom left repeat-x;
+}
+.nitobi .redtab .ntb-tab-active  .ntb-tab-left {
+	background:url(tabs/left/ractiveleft.png) bottom right no-repeat;
+}
+.nitobi .redtab .ntb-tab-active  .ntb-tab-right {
+	background:url(tabs/right/ractiveright.png) bottom left no-repeat;
+}
+/* red tab active hover */
+.nitobi .redtab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/ractivebody_hover.png) bottom left repeat-x;
+}
+.nitobi .redtab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/ractiveleft_hover.png) bottom right no-repeat;
+}
+.nitobi .redtab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/ractiveright_hover.png) bottom left no-repeat;
+}
+
+/* green tab inactive */
+.nitobi .greentab .ntb-tab-inactive  .ntb-tab-body {
+	background:url(tabs/body/gactivebody.png) bottom left repeat-x;
+}
+.nitobi .greentab .ntb-tab-inactive  .ntb-tab-left {
+	background:url(tabs/left/gactiveleft.png) bottom right no-repeat;
+}
+.nitobi .greentab .ntb-tab-inactive  .ntb-tab-right {
+	background:url(tabs/right/gactiveright.png) bottom left no-repeat;
+}
+/* green tab inactive hover */
+.nitobi .greentab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/gactivebody_hover.png) bottom left repeat-x;
+}
+.nitobi .greentab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/gactiveleft_hover.png) bottom right no-repeat;
+}
+.ntb-tab-right, .nitobi .greentab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/gactiveright_hover.png) bottom left no-repeat;
+}
+
+/* green tab active */
+.nitobi .greentab .ntb-tab-active  .ntb-tab-body {
+	background:url(tabs/body/gactivebody.png) bottom left repeat-x;
+}
+.nitobi .greentab .ntb-tab-active  .ntb-tab-left {
+	background:url(tabs/left/gactiveleft.png) bottom right no-repeat;
+}
+.nitobi .greentab .ntb-tab-active  .ntb-tab-right {
+	background:url(tabs/right/gactiveright.png) bottom left no-repeat;
+}
+/* green tab active hover */
+.nitobi .greentab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/gactivebody_hover.png) bottom left repeat-x;
+}
+.nitobi .greentab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/gactiveleft_hover.png) bottom right no-repeat;
+}
+.nitobi .greentab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/gactiveright_hover.png) bottom left no-repeat;
+}
+
+/* purple tab inactive */
+.nitobi .purpletab .ntb-tab-inactive  .ntb-tab-body {
+	background:url(tabs/body/pactivebody.png) bottom left repeat-x;
+}
+.nitobi .purpletab .ntb-tab-inactive  .ntb-tab-left {
+	background:url(tabs/left/pactiveleft.png) bottom right no-repeat;
+}
+.nitobi .purpletab .ntb-tab-inactive  .ntb-tab-right {
+	background:url(tabs/right/pactiveright.png) bottom left no-repeat;
+}
+/* purple tab inactive hover */
+.nitobi .purpletab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/pactivebody_hover.png) bottom left repeat-x;
+}
+.nitobi .purpletab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/pactiveleft_hover.png) bottom right no-repeat;
+}
+.nitobi .purpletab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/pactiveright_hover.png) bottom left no-repeat;
+}
+
+/* purple tab active */
+.nitobi .purpletab .ntb-tab-active  .ntb-tab-body {
+	background:url(tabs/body/pactivebody.png) bottom left repeat-x;
+}
+.nitobi .purpletab .ntb-tab-active  .ntb-tab-left {
+	background:url(tabs/left/pactiveleft.png) bottom right no-repeat;
+}
+.nitobi .purpletab .ntb-tab-active  .ntb-tab-right {
+	background:url(tabs/right/pactiveright.png) bottom left no-repeat;
+}
+/* purple tab active hover */
+.nitobi .purpletab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/pactivebody_hover.png) bottom left repeat-x;
+}
+.nitobi .purpletab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/pactiveleft_hover.png) bottom right no-repeat;
+}
+.nitobi .purpletab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/pactiveright_hover.png) bottom left no-repeat;
+}

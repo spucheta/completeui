@@ -1,0 +1,1912 @@
+/**
+		 The ID of the Grid.			<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getID = function()
+   		{
+
+   		}
+
+   		
+		/**
+		The Selection object can be used to progammatically change the Cells in the Grid that are selected.
+		 * @returns {nitobi.components.grid.Selection}
+		 */
+		nitobi.grid.Grid.prototype.getSelection = function()
+   		{
+
+   		}
+
+   		
+		/**
+		The Column Indicator property shows or hides the headers.  By default it's true, so the headers are shown. True if column headers should be shown and 			false otherwise.			<br>			<br>
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isColumnIndicatorsEnabled = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			The Column Indicator property shows or hides the headers.  By default it's true, so the headers are shown. True if column headers should be shown and 			false otherwise.			<br>			<br>
+		 * @param {Boolean} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setColumnIndicatorsEnabled = function(value)
+   		{
+
+   		}
+   		
+		/**
+		The ToolbarEnabled shows or hides the Grid's tool bar for the end user.  The tool bar contains buttons for standard grid operations such as: inserting rows, deleting rows, copy, paste, etc...  True if toolbar should be shown and false otherwise. 		If the paging mode is set to standard, then the pagingToolbar will be shown as 		well as the standardToolbar. &nbsp;&nbsp;<br>		<br>
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isToolbarEnabled = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			The ToolbarEnabled shows or hides the Grid's tool bar for the end user.  The tool bar contains buttons for standard grid operations such as: inserting rows, deleting rows, copy, paste, etc...  True if toolbar should be shown and false otherwise. 		If the paging mode is set to standard, then the pagingToolbar will be shown as 		well as the standardToolbar. &nbsp;&nbsp;<br>		<br>
+		 * @param {Boolean} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setToolbarEnabled = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 The number of frozen columns on the left side. 		These columns will be scroll vertically but will remain locked when horizontal 		scrolling.<br>		<br>
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getFrozenLeftColumnCount = function()
+   		{
+
+   		}
+
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {nitobi.components.grid.Cell}
+		 */
+		nitobi.grid.Grid.prototype.getactiveCell = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {nitobi.components.grid.Cell} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setactiveCell = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {object}
+		 */
+		nitobi.grid.Grid.prototype.getactiveRow = function()
+   		{
+
+   		}
+
+   		
+		/**
+		The RowDeleteEnabled property enables deleting of rows so that the user can delete selected rows with the toolbar buttons or keyboard. Specifies whether the grid allows rows to be deleted 		by the user.		<note>The built-in toolbar button for deleting a row does not insert a row either if this property is set to false. </note>		If this is set to false, then the button for deleting rows will be disabled. 		&nbsp;&nbsp;<br>		<br>
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isRowDeleteEnabled = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			The RowDeleteEnabled property enables deleting of rows so that the user can delete selected rows with the toolbar buttons or keyboard. Specifies whether the grid allows rows to be deleted 		by the user.		<note>The built-in toolbar button for deleting a row does not insert a row either if this property is set to false. </note>		If this is set to false, then the button for deleting rows will be disabled. 		&nbsp;&nbsp;<br>		<br>
+		 * @param {Boolean} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setRowDeleteEnabled = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Specifies whether the grid allows rows to be 			inserted by the user.			<note>The built-in toolbar button for inserting a row does not insert a row either if this property is set to false. </note>			Setting this property to true will enable row insertion.			<br>			<br>
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isRowInsertEnabled = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Specifies whether the grid allows rows to be 			inserted by the user.			<note>The built-in toolbar button for inserting a row does not insert a row either if this property is set to false. </note>			Setting this property to true will enable row insertion.			<br>			<br>
+		 * @param {Boolean} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setRowInsertEnabled = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Specifies whether to automatically add rows to the bottom of 			the grid.			<br>
+   		 * @private
+   		
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isAutoAdd = function()
+   		{
+
+   		}
+
+   		
+		/**
+		The AutoSaveEnabled property activates the auto saving feature in the grid so that data is saved automatically when the cell looses foucs.   Specifies whether the grid should save every change 			immediately back to the server. Use this property to instruct the <code>Grid</code>			object to automatically save updates made by the user. The save operation 			occurs after the user completes editing each cell and after OnCellValidate 			event has completed. If data validation fails, (i.e. the user has entered text 			into a number editor), no data will be saved until the user corrects the 			problem.		</P>		<p>			If the auto-save feature is not enabled, one can still instruct the grid to 			transmit the accumulated user updates to the server by calling the <code>save()</code>			method in the <code>Grid</code> API.		</p>		<p>			Using the built-in autoSave is faster and even works well with high latency 			internet connections than manually transmitting your changes because it sends 			and receives data asynchrously. This allows users to continue updating with 			waiting for the server to respond.		</p>
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isAutoSaveEnabled = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			The AutoSaveEnabled property activates the auto saving feature in the grid so that data is saved automatically when the cell looses foucs.   Specifies whether the grid should save every change 			immediately back to the server. Use this property to instruct the <code>Grid</code>			object to automatically save updates made by the user. The save operation 			occurs after the user completes editing each cell and after OnCellValidate 			event has completed. If data validation fails, (i.e. the user has entered text 			into a number editor), no data will be saved until the user corrects the 			problem.		</P>		<p>			If the auto-save feature is not enabled, one can still instruct the grid to 			transmit the accumulated user updates to the server by calling the <code>save()</code>			method in the <code>Grid</code> API.		</p>		<p>			Using the built-in autoSave is faster and even works well with high latency 			internet connections than manually transmitting your changes because it sends 			and receives data asynchrously. This allows users to continue updating with 			waiting for the server to respond.		</p>
+		 * @param {Boolean} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setAutoSaveEnabled = function(value)
+   		{
+
+   		}
+   		
+		/**
+		The ColumnCount property returns the number of columns in the Grid. Specifies the number of columns in the grid.</p>		<p>
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getColumnCount = function()
+   		{
+
+   		}
+
+   		
+		/**
+		The RowCount property returns the number of rows in the Grid. Specifies the number of rows.		</P>		<p>			Usually this number represents the number of displayed rows. When the grid 			PagingMode is set to LiveScrolling this number reflects the number of rows that 			would be rendered if the user were to scroll through each row.</p>
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getRowCount = function()
+   		{
+
+   		}
+
+   		
+		/**
+		The RowsPerPage property sets the number of viewable rows in the Grid pane. Specifies the size of the default size of the data pages 			to request from the server. The number of rows per paging request. Page size 			should be kept to less than 100 records to ensure good performance. &nbsp;This 			is not used if the PagingMode is set to none. See PagingMode for more 			information.</p>
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getRowsPerPage = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			The RowsPerPage property sets the number of viewable rows in the Grid pane. Specifies the size of the default size of the data pages 			to request from the server. The number of rows per paging request. Page size 			should be kept to less than 100 records to ensure good performance. &nbsp;This 			is not used if the PagingMode is set to none. See PagingMode for more 			information.</p>
+		 * @param {Number} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setRowsPerPage = function(value)
+   		{
+
+   		}
+   		
+		/**
+		The CurrentPageIndex property is the current page index of the grid. The index of the page currently being displayed in the Grid. The set of data on the server is divided into pages having size of RowsPerPage and each page is assigned an index starting from zero: this is the index of the page currently being viewed in the grid. This property only works when the PagingMode is set to Standard. To obtain the starting record number for the page, multiply the CurrentPageIndex by the RowsPerPage.
+		 The index of the page currently being displayed in 			the Grid. The set of data on the server is divided into pages having size of <code>RowsPerPage</code>			and each page is assigned an index starting from zero: this is the index of the 			page currently being viewed in the grid. This property only works when the <code>PagingMode</code>			is set to <code>Standard</code>. To obtain the starting record number for the 			page, multiply the <code>CurrentPageIndex</code> by the <code>RowsPerPage</code>.</p>
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getCurrentPageIndex = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			The CurrentPageIndex property is the current page index of the grid. The index of the page currently being displayed in the Grid. The set of data on the server is divided into pages having size of RowsPerPage and each page is assigned an index starting from zero: this is the index of the page currently being viewed in the grid. This property only works when the PagingMode is set to Standard. To obtain the starting record number for the page, multiply the CurrentPageIndex by the RowsPerPage.
+		 The index of the page currently being displayed in 			the Grid. The set of data on the server is divided into pages having size of <code>RowsPerPage</code>			and each page is assigned an index starting from zero: this is the index of the 			page currently being viewed in the grid. This property only works when the <code>PagingMode</code>			is set to <code>Standard</code>. To obtain the starting record number for the 			page, multiply the <code>CurrentPageIndex</code> by the <code>RowsPerPage</code>.</p>
+		 * @param {Number} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setCurrentPageIndex = function(value)
+   		{
+
+   		}
+   		
+		/**
+		The Height property is the height of the grid in pixels. Specifies the height of the grid in pixels. The height 		specified includes borders, scrollbar and headers. Note: this is an integer 		value. Do not specify this as a string. For example, 400 is a valid value, but 		400px is not. The height of a grid cannot be changed once it has been rendered.<note>Changing this property will have no effect after the <code>InitEBAGrids</code> method has been called.</note><br>		<br>
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getHeight = function()
+   		{
+
+   		}
+
+   		
+		/**
+		The Width property is the width of the grid in pixels. Specifies the width of the entire grid in pixels. The width 		specified includes borders and scrollbar. Note: this is an integer value. Do 		not specify this as a string. For example, 400 is a valid value, but 400px is 		not.		<br>		<br>
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getWidth = function()
+   		{
+
+   		}
+
+   		
+		/**
+		The KeyGenerator property is a unique key for new records. If a KeyGenerator is not specified, a unique numeric key will be generated by the Grid based on a random number and the system date / time Javascript code that, when run, should return a unique 		key for new records. If a <code>KeyGenerator</code> is not specified, a unique 		numeric key will be generated by the Grid based on a random number and the 		system date/time.&nbsp; This function is used when new records are inserted 		into the grid.		<p>			It is the responsibility of the developer to ensure that keys can be reconciled 			with the server-side datasource.</p>		<P>			The value returned by the specified <code>KeyGenerator</code> will be cast to a 			string before it is place into the XML updategram for transmission to the <code>SaveHandler</code>.</P>		<p>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getKeyGenerator = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			The KeyGenerator property is a unique key for new records. If a KeyGenerator is not specified, a unique numeric key will be generated by the Grid based on a random number and the system date / time Javascript code that, when run, should return a unique 		key for new records. If a <code>KeyGenerator</code> is not specified, a unique 		numeric key will be generated by the Grid based on a random number and the 		system date/time.&nbsp; This function is used when new records are inserted 		into the grid.		<p>			It is the responsibility of the developer to ensure that keys can be reconciled 			with the server-side datasource.</p>		<P>			The value returned by the specified <code>KeyGenerator</code> will be cast to a 			string before it is place into the XML updategram for transmission to the <code>SaveHandler</code>.</P>		<p>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setKeyGenerator = function(value)
+   		{
+
+   		}
+   		
+		/**
+		The LastError property is the the description for the last error that occurred. Javascript errors will be thrown by the Grid API whenever possible and should be caught by the calling functions.
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getLastError = function()
+   		{
+
+   		}
+
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getlastSaveHandlerResponse = function()
+   		{
+
+   		}
+
+   		
+		/**
+		The GetHandler property specifies the file name and path of the GetHandler for the grid. Specifies the server-side resource (via a URL) that will 		handle serving the data.		<p>The value of the GetHandler is used to set the DataTable property of the Grid. 			If no GetHandler is specified then a DataTable must be specified either through 			code or the Grid declaration.</p>		<p>			The task of the get handler on the server is to transform database data into 			compressed XML and return it to the browser.</p>		<p class="BodyText">			The grid may return all or none of the following parameters to the gethandler 			(depending on the configuration of the grid) For example:</p>		<code>gethandler?start=0&amp;pagesize=13&amp;sortcolumn=CustomerName&amp;sortdirection=ASC&amp;searchstring=abc</code>		<ul>			<li>				<code>start</code>			- The current page of data to be returned			<li>				<code>pagesize</code>			- How many records to return			<li>				<code>sortcolumn</code>			- The data should be sorted by this xml field			<li>				<code>sortdirection</code>			- The direction the data should be sorted.			<li>				<code>searchstring</code> - The text to search by (Lookup gethandlers only)</li>		</ul>		<p class="BodyText">			If the GetHandler is being written for a Lookup field, only the searchstring 			parameter needs to be accounted for. The searchstring parameter is the text 			that is being typed by the user.</p>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getGetHandler = function()
+   		{
+
+   		}
+
+   		
+		/**
+		The SaveHandler property specifies the file name and path of the SaveHandler for the grid. Specifies the server-side resource (via a URL) that will 		handle saving the data.		<p>			Normally web forms post data back to the server when the user clicks the 			"SUBMIT" button. The Grid, on the other hand, sends data to the server without 			the need for a form submission to occur. This means the browser does not 			navigate to a new page and the user can continue editing data on the current 			page. Some developers may wish to post data entered into the grid along with a 			form submission. This can be accomplished easily by copying the XML from the 			updategram into a hidden HTML form field before the form is submitted.</p>		<p>			In addition some developers may wish to make the grid save "invisibly" or in 			other words, without the user clicking "Save". This is also easy to accomplish 			by calling the save() method during oncellmodified events or any other event 			you may wish to use.</p>		<p>			A "SaveHandler" is a server-side script or program that accepts XML updates 			posted from the browser and processes the updates by updating a database, 			flat-file or external system. Many examples of SaveHandlers are included with 			the Grid but the developer may choose to implement his/her own custom 			SaveHandler to meet the specific needs of the application.</p>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getSaveHandler = function()
+   		{
+
+   		}
+
+   		
+		/**
+		The uniqueID is generated and assigned to the element the first time the property is retrieved. Every subsequent access to the property on the same element returns the same uniqueID.
+		 A new uniqueID is generated and assigned to the element the 		first time the property is retrieved. Every subsequent access to the property 		on the same element returns the same uniqueID. <code>Note</code> The unique ID 		generated is not guaranteed to be the same every time the page is loaded.		<br>		<br>
+		 * @returns {object}
+		 */
+		nitobi.grid.Grid.prototype.getuniqueID = function()
+   		{
+
+   		}
+
+   		
+		/**
+		The current version of the Grid. Specifies the version of the grid. Returns the version number 		of the grid.		<br>		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getVersion = function()
+   		{
+
+   		}
+
+   		
+		/**
+		Mode specifies how the grid deals with data and paging. Options are "standard", "localstandard", "livescrolling", "locallivescrolling", "localnonpaging", "nonpaging", and "pagedlivescrolling" (new!).		<p>			The Mode of the Grid is used to specify the Grid operation in terms of how it 			deals with data and how it deals with paging.		</p>		<p>			The following are value Grid Modes that can be specified through the Grid 			declaration:<br>			standard - Standard paging is used with a remote datasource. This mode also 			requires the GetHandler property to be set which will provide the data to be 			paged through from the server.<br>			localstandard - Standard paging is used with a local datasource. This mode 			requires a DatasourceId property to be set which refers to a local client side 			datasource that will be paged through in the Grid.<br>			livescrolling - Live Scrolling is used with a remote datasource. This mode also 			requires the GetHandler property to be set which will provide the data to be 			scrolled through from the server.<br>			locallivescrolling - Live Scrolling is used with a local datasource. This mode 			requires a DatasourceId property to be set which refers to a local client side 			datasource that will be scrolled through in the Grid.<br>			nonpaging - No paging is used with a remote datasource, however, the data from 			the remote datasource is only accessed once and all the data is retrieved. This 			mode requires a GetHandler property to be set which will provide the data to be 			rendered in the Grid.<br>			localnonpaging - No paging is used with a local datasource. This mode requires 			a DatasourceId property to be set which refers to a local client side 			datasource that will be scrolled through in the Grid.<br>		</p>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getMode = function()
+   		{
+
+   		}
+
+   		
+		/**
+		The LiveScrollingMode specifies how the grid will attempt to determine the final row.  Specifies how the grid will attempt to determine 			the final row.		</p>		<code>&lt;ntb:grid pagingmode="LiveScrolling" livescrollingmode="Leap|Peek" 			datasourcesizeestimate="{integer}" ... /&gt;</code>		<p>			In livescrolling mode the grid will request data from the server only when 			necessary. Because the grid will only know the true size of the datasource once 			it requests the final row, Grid provides a way to set an estimate of the data 			size that it will respect until it learns the actual index of the final row. 			DatasourceSizeEstimate is used by the grid to set the initial size of the 			scrollable area. The scrollbar will reflect this estimated size. As the user 			scrolls through the grid's data, rows are retrieved based on the location of 			the viewable region. Some prefetching is done to ensure that at least one 			'page' ahead and behind the currently viewed page is rendered. When 			LiveScrolling is enabled, the gethandler must respond to certain parameters.		</p>		<pre>gethandler.asp?StartRecordIndex=0&amp;start=0&amp;PageSize=20</pre>		<p>			'StartRecordIndex' and 'start' are always equal. We only include the 'start' 			parameter for backwards compatibility. The role of the gethandler is to return 			XML data that reflects the server side data store's records starting at the 			index specified with the length specified by PageSize.		</p>		<p>			Paging Mode can use one of two ways to determine when the grid has rendered the 			final row available from the server.		</p>		<b id="LeapModedefault">Leap Mode <i>(default)</i></b>		<p>			<span class="searchword0">Leap</span>			mode will inspect data returned from the server every time the user scrolls to 			an un-rendered portion of the grid. If the server returns no data, then we 			reduce the size of the scrollable region to one row fewer than the first row 			requested. That is, if we request rows 18-25 from the server, and the server 			returns no data, then we reduce the scrollable region to 17 rows. If the server 			returns some data, but fewer records than expected, then the scrollable region 			is resized to the number of rows specified by the final record returned.		</p>		<b id="PeekMode">Peek Mode</b>		<p>			Peek Mode will ping the gethandler for one record every second in a modified 			binary search pattern. With peek mode enabled,			<span class="searchword0">leap</span>			mode is also utilized to produce a more accurate picture of the size of the 			data set more quickly.		</p>		<p>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getLiveScrollingMode = function()
+   		{
+
+   		}
+
+   		
+		/**
+		CopyEnabled allows data to be copied from the grid though the toolbar button or by user pressing ctrl + c Specifies if the Grid supports the copy operation or not.			<br>
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isCopyEnabled = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			CopyEnabled allows data to be copied from the grid though the toolbar button or by user pressing ctrl + c Specifies if the Grid supports the copy operation or not.			<br>
+		 * @param {Boolean} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setCopyEnabled = function(value)
+   		{
+
+   		}
+   		
+		/**
+		PasteEnabled allows data to be pasted from the clipboard into the grid.  Can be from another grid or spreadsheet. Specifies if the Grid supports the paste operation or 			not.			<br>
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isPasteEnabled = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			PasteEnabled allows data to be pasted from the clipboard into the grid.  Can be from another grid or spreadsheet. Specifies if the Grid supports the paste operation or 			not.			<br>
+		 * @param {Boolean} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setPasteEnabled = function(value)
+   		{
+
+   		}
+   		
+		/**
+		SortEnabled allows sorting of the grid, the user can do this by clicking on the header of a desired column this will then sort based on that column in ascending or descending order.
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getSortEnabled = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			SortEnabled allows sorting of the grid, the user can do this by clicking on the header of a desired column this will then sort based on that column in ascending or descending order.
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setSortEnabled = function(value)
+   		{
+
+   		}
+   		
+		/**
+		GridResizeEnabled allows resizing of the grid using the mouse. The user can drag the bottom right corner of the Grid to resize it.
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getGridResizeEnabled = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			GridResizeEnabled allows resizing of the grid using the mouse. The user can drag the bottom right corner of the Grid to resize it.
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setGridResizeEnabled = function(value)
+   		{
+
+   		}
+   		
+		/**
+		Specifies the global rowheight of the grid.
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getRowHeight = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			Specifies the global rowheight of the grid.
+		 * @param {Number} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setRowHeight = function(value)
+   		{
+
+   		}
+   		
+		/**
+		Specifies the height of the header bar in pixels.
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getHeaderHeight = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			Specifies the height of the header bar in pixels.
+		 * @param {Number} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setHeaderHeight = function(value)
+   		{
+
+   		}
+   		
+		/**
+		Specifies how sorting will take place in the grid. Options are "local", and "default" which gets the sort mode from the data mode. Ie: In local paging mode, sort mode default is local, but in standard paging mode, sort mode default is remote.
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getSortMode = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			Specifies how sorting will take place in the grid. Options are "local", and "default" which gets the sort mode from the data mode. Ie: In local paging mode, sort mode default is local, but in standard paging mode, sort mode default is remote.
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setSortMode = function(value)
+   		{
+
+   		}
+   		
+		/**
+		Describes the kind of rendering to take place. Ondemand is like livescrolling.
+   		 * @private
+   		
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getRenderMode = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			Describes the kind of rendering to take place. Ondemand is like livescrolling.
+		 * @param {String} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setRenderMode = function(value)
+   		{
+
+   		}
+   		
+		/**
+		EnterTab can be used to determine the behaviour of the Grid cell cursor when the enter key is pressed. Valid values for this property are UP, DOWN, LEFT, and RIGHT, each of which will cause the selected cell indicator by one cell in the specified direction when the enter key is pressed.
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getEnterTab = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			EnterTab can be used to determine the behaviour of the Grid cell cursor when the enter key is pressed. Valid values for this property are UP, DOWN, LEFT, and RIGHT, each of which will cause the selected cell indicator by one cell in the specified direction when the enter key is pressed.
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setEnterTab = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 The columns property is an array of 			nitobi.components.grid.Column objects.			<br>			<br>
+   		 * @private
+   		
+		 * @returns {Column}
+		 */
+		nitobi.grid.Grid.prototype.getColumns = function()
+   		{
+
+   		}
+
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getcellWidth = function()
+   		{
+
+   		}
+
+   		
+		/**
+		Enables the selection of rows rather than just cells in the Grid. When true, the entire row will appear selected when 			the user clicks on any cell within the row.			<br>			<br>
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isRowSelectEnabled = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			Enables the selection of rows rather than just cells in the Grid. When true, the entire row will appear selected when 			the user clicks on any cell within the row.			<br>			<br>
+		 * @param {Boolean} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setRowSelectEnabled = function(value)
+   		{
+
+   		}
+   		
+		/**
+		Enables the selection of multiple rows in the Grid. The selected rows can be accessed through the SelectedRows property.
+			 * @see 
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isMultiRowSelectEnabled = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			Enables the selection of multiple rows in the Grid. The selected rows can be accessed through the SelectedRows property.
+		 * @param {Boolean} value
+		 
+			 * @see 
+		 */
+   		nitobi.grid.Grid.prototype.setMultiRowSelectEnabled = function(value)
+   		{
+
+   		}
+   		
+		/**
+		Contains an Array of the DOM rows in the Grid that are currently selected.
+		 * @returns {Array}
+		 */
+		nitobi.grid.Grid.prototype.getSelectedRows = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			Contains an Array of the DOM rows in the Grid that are currently selected.
+		 * @param {Array} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setSelectedRows = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 True if row Indicators should be shown.			<br>			<br>
+   		 * @private
+   		
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isRowIndicatorsEnabled = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 True if row Indicators should be shown.			<br>			<br>
+		 * @param {Boolean} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setRowIndicatorsEnabled = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isToolTipsEnabled = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {Boolean} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setToolTipsEnabled = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 True if horizontal scrollbar should be shown.		<br>		<br>
+   		 * @private
+   		
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isHScrollbarEnabled = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 True if horizontal scrollbar should be shown.		<br>		<br>
+		 * @param {Boolean} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setHScrollbarEnabled = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isVScrollbarEnabled = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {Boolean} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setVScrollbarEnabled = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.gettop = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {Number} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.settop = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getbottom = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {Number} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setbottom = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getleft = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {Number} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setleft = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getright = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {Number} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setright = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getIndicatorWidth = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {Number} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setIndicatorWidth = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getscrollbarWidth = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {Number} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setscrollbarWidth = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getscrollbarHeight = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {Number} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setscrollbarHeight = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getfreezetop = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {Number} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setfreezetop = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getfreezebottom = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {Number} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setfreezebottom = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getfreezeright = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {Number} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setfreezeright = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getactive = function()
+   		{
+
+   		}
+
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isAsynchronous = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {Boolean} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setAsynchronous = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getcontentHeight = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {Number} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setcontentHeight = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Number}
+		 */
+		nitobi.grid.Grid.prototype.getcontentWidth = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {Number} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setcontentWidth = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Span}
+		 */
+		nitobi.grid.Grid.prototype.getelement = function()
+   		{
+
+   		}
+
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isforceValidate = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {Boolean} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setforceValidate = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.ishwrap = function()
+   		{
+
+   		}
+
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isvwrap = function()
+   		{
+
+   		}
+
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isscrolling = function()
+   		{
+
+   		}
+
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getscrollX = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {String} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setscrollX = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getscrollY = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {String} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setscrollY = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getkeymode = function()
+   		{
+
+   		}
+
+   		
+		/**
+		
+   		 * @private
+   		
+		 * @returns {Boolean}
+		 */
+		nitobi.grid.Grid.prototype.isshowErrors = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {Boolean} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setshowErrors = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run when the user 		clicks a cell.<br>		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnCellClickEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run when the user 		clicks a cell.<br>		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnCellClickEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnDataReadyEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnDataReadyEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run when the user 		double-clicks the grid.<br>		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnCellDoubleClickEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run when the user 		double-clicks the grid.<br>		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnCellDoubleClickEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run before the previous page of data is loaded.		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnBeforeLoadPreviousPageEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run before the previous page of data is loaded.		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnBeforeLoadPreviousPageEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run before the next page of data is loaded.		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnBeforeLoadNextPageEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run before the next page of data is loaded.		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnBeforeLoadNextPageEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run before a page of data is loaded.		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnBeforeLoadDataPageEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run before a page of data is loaded.		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnBeforeLoadDataPageEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run after the previous page of data is loaded.		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnAfterLoadPreviousPageEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run after the previous page of data is loaded.		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnAfterLoadPreviousPageEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run after the next page of data is loaded.		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnAfterLoadNextPageEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run after the next page of data is loaded.		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnAfterLoadNextPageEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run after a page of data is loaded.		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnAfterLoadDataPageEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run after a page of data is loaded.		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnAfterLoadDataPageEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run before the grid is resized.		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnBeforeResizeEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run before the grid is resized.		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnBeforeResizeEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run after the grid has been resized.		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnAfterResizeEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run after the grid has been resized.		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnAfterResizeEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run if the Get Handler or Save Handler encounters an error.		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnHandlerErrorEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run if the Get Handler or Save Handler encounters an error.		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnHandlerErrorEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run before the grid data is refresehed.		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnBeforeRefreshEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run before the grid data is refresehed.		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnBeforeRefreshEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run after the grid has been refreshed.		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnAfterRefreshEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run after the grid has been refreshed.		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnAfterRefreshEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run before any cell is 		put into edit mode. If the code evaluates to false, edit mode is exited.		<p>			This function can be used to customize the editability of a specific cell 			instead of relying on the Editable property which constrains the whole column.</p>		<p>			Editing capability for individual columns can specified with the <code>Editable</code>			attribute in column definitions for the Grid.</p>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnBeforeCellEditEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run before any cell is 		put into edit mode. If the code evaluates to false, edit mode is exited.		<p>			This function can be used to customize the editability of a specific cell 			instead of relying on the Editable property which constrains the whole column.</p>		<p>			Editing capability for individual columns can specified with the <code>Editable</code>			attribute in column definitions for the Grid.</p>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnBeforeCellEditEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run before a row is 		inserted.		<br>		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnBeforeRowInsertEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run before a row is 		inserted.		<br>		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnBeforeRowInsertEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run after a row is 		inserted.		<br>		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnAfterRowInsertEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run after a row is 		inserted.		<br>		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnAfterRowInsertEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run before a column is 		sorted. This event is not fired right after the grid has been initialized. If 		the event evaluates to false, sorting is not executed.		<br>		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnBeforeSortEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run before a column is 		sorted. This event is not fired right after the grid has been initialized. If 		the event evaluates to false, sorting is not executed.		<br>		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnBeforeSortEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run after a column was 		sorted. This event is not fired right after the grid has been initialized.		<br>		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnAfterSortEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run after a column was 		sorted. This event is not fired right after the grid has been initialized.		<br>		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnAfterSortEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run before saving data of 		the grid is executed. If the code evaluates to false, save is not executed.		<br>		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnBeforeSaveEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run before saving data of 		the grid is executed. If the code evaluates to false, save is not executed.		<br>		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnBeforeSaveEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run after saving data of the 		grid has been completed. You can use this function to build your own saving 		animation which hides itself after saving is completed.		<br>		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnAfterSaveEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run after saving data of the 		grid has been completed. You can use this function to build your own saving 		animation which hides itself after saving is completed.		<br>		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnAfterSaveEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run when row focus changes.		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnRowBlurEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run when row focus changes.		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnRowBlurEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run when a cell is selected.		<br>		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnCellFocusEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run when a cell is selected.		<br>		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnCellFocusEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run when a row is 		deleted Calls client-side event handler after a row has been deleted. The row 		will only be deleted if the code evaluates to true.		<br>		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnAfterRowDeleteEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run when a row is 		deleted Calls client-side event handler after a row has been deleted. The row 		will only be deleted if the code evaluates to true.		<br>		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnAfterRowDeleteEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run before a row is 		deleted. It must evaluate to a Boolean value to indicate whether a row should 		really be deleted. If event does not evaluate to true, the row is not deleted 		and the <code>OnAfterRowDeleteEvent</code> event is not triggered.		<br>		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnBeforeRowDeleteEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run before a row is 		deleted. It must evaluate to a Boolean value to indicate whether a row should 		really be deleted. If event does not evaluate to true, the row is not deleted 		and the <code>OnAfterRowDeleteEvent</code> event is not triggered.		<br>		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnBeforeRowDeleteEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run when a cell has been 		modified.		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnCellUpdateEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run when a cell has been 		modified.		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnCellUpdateEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run when a row has been 		clicked.		<p>			This event is only triggered if <code>RowSelectEnabled</code> is set to true.</p>		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnRowFocusEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run when a row has been 		clicked.		<p>			This event is only triggered if <code>RowSelectEnabled</code> is set to true.</p>		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnRowFocusEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run before copying data 		from the grid. If the code evaluates to false, copy is not executed.		<br>		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnBeforeCopyEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run before copying data 		from the grid. If the code evaluates to false, copy is not executed.		<br>		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnBeforeCopyEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run after copying data from 		the grid.		<br>		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnAfterCopyEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run after copying data from 		the grid.		<br>		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnAfterCopyEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run before pasting data to 		the grid. If the event evaluates to false, paste is not executed.		<br>		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnBeforePasteEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run before pasting data to 		the grid. If the event evaluates to false, paste is not executed.		<br>		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnBeforePasteEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run after pasting data to 		the grid.		<br>		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnAfterPasteEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run after pasting data to 		the grid.		<br>		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnAfterPasteEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run when an error occurs.		<br>		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnErrorEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run when an error occurs.		<br>		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnErrorEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnContextMenuEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnContextMenuEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run when data is 		modified.		<p>			If this code evaluates to <code>false</code> the cell value will be reverted to 			its original value.</p>		<p>			The maximum length of data entered into a cell can be limited by specifying the <code>				MaxLength</code> attribute in the column defintion.</p>
+   		 * @private
+   		
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnCellValidateEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run when data is 		modified.		<p>			If this code evaluates to <code>false</code> the cell value will be reverted to 			its original value.</p>		<p>			The maximum length of data entered into a cell can be limited by specifying the <code>				MaxLength</code> attribute in the column defintion.</p>
+		 * @param {String} value
+		 
+   			@private
+   		
+		 */
+   		nitobi.grid.Grid.prototype.setOnCellValidateEvent = function(value)
+   		{
+
+   		}
+   		
+		/**
+		 Javascript code that is run when the data in the Grid is actually		written into the document as HTML. This event is fired every time data is rendered, which means that it will 		be fired several times in any Live Scrolling modes as each block of data is retrieved from the server and 		written into the document as HTML.		<br>
+		 * @returns {String}
+		 */
+		nitobi.grid.Grid.prototype.getOnHtmlReadyEvent = function()
+   		{
+
+   		}
+
+   		
+   		/**
+   			 Javascript code that is run when the data in the Grid is actually		written into the document as HTML. This event is fired every time data is rendered, which means that it will 		be fired several times in any Live Scrolling modes as each block of data is retrieved from the server and 		written into the document as HTML.		<br>
+		 * @param {String} value
+		 
+		 */
+   		nitobi.grid.Grid.prototype.setOnHtmlReadyEvent = function(value)
+   		{
+
+   		}

@@ -1,0 +1,223 @@
+<tabstrips>
+<tabstrip id="tabstrip3" width="800px" height="600px">
+	<tabs height="" align="center" overlap="15">
+		<tab width="190px" tooltip="This is tab one." label="One" source="http://google.com" containertype="iframe"/>
+	   	<tab tooltip="This is tab two" label="Two"/>
+   </tabs>
+</tabstrip>
+
+<tabstrip id="tabstrip9" width="50%" height="600px">
+	<tabs height="" align="center" overlap="15">
+	<tab width="60%">
+	  <tooltip>This is tab one.</tooltip>
+      <label>One at 60%</label>
+      <body>
+      	This tab autosizes.
+      </body>
+   </tab>
+
+   <tab width="40%">
+      <label>
+		Two at 40%
+      </label>
+       <body source="redirect.asp?url=http://google.com">
+      </body> 
+   </tab>
+   </tabs>
+</tabstrip>
+
+
+<tabstrip id="tabstrip_nested" width="800px" height="600px" >
+	<tabs height="" overlap="15">
+	<tab>
+	  <tooltip>This is tab one.</tooltip>
+      <label>
+         One
+      </label>
+      <body>
+      	<tabstrip id="tabstrip_nested2" width="800px" height="600px" cssclassname="ntb-tab-nested">
+			<tabs height="" align="left">
+			<tab icon="http://images.google.ca/images?q=tbn:AIL-RpRyN-BeVM:http://www.ecolab.com/common/images/Word_Icon.gif">
+			  <tooltip>This is tab one.</tooltip>
+		      <label>
+		          Nested One
+		      </label>
+		      <body>
+		      	Welcome to the search engine tabstrip.
+		      </body>
+		   </tab>
+		
+		   <tab width="265px">
+		      <label>
+				Nested Two
+		      </label>
+		       <body source="redirect.asp?url=http://google.com">
+		      </body> 
+		   </tab>
+		   <tab>
+		      <label>
+				Nested Three
+		      </label>
+		       <body source="redirect.asp?url=http://google.com">
+		      </body> 
+		   </tab>
+		   </tabs>
+		</tabstrip>
+      </body>
+   </tab>
+
+   <tab width="265px"  cssclassname="candy">
+      <label>
+		Unique
+      </label>
+       <body source="redirect.asp?url=http://google.com">
+      </body> 
+   </tab>
+   </tabs>
+</tabstrip>
+
+
+
+<tabstrip id="tabstrip2" width="800px" height="600px"  >
+	<tabs height="" align="right">
+	<tab>
+      <label>
+         One
+      </label>
+      <body>
+      	Welcome to the search engine tabstrip.
+      </body>
+   </tab>
+
+   <tab width="265px">
+      <label>
+		Two
+      </label>
+       <body source="redirect.asp?url=http://google.com">
+      </body> 
+   </tab>
+   </tabs>
+</tabstrip>
+<tabstrip id="tabstrip1" width="800px" height="600px" tabheights=""  >
+	<tabs align="left">
+   <tab>
+      <label>
+         <i>Intro to a loooooonnggg  taaaabbbbbb</i>
+      </label>
+      <body>
+      	Welcome to the search engine tabstrip.
+      </body>
+   </tab>
+
+   <tab>
+      <label>
+         <i>Go0000000000ooooooooooo0000000ogleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</i>
+      </label>
+       <body source="redirect.asp?url=http://google.com">
+      </body> 
+   </tab>
+   <tab width="256px">
+      <label>
+         <i>Yahoo</i>
+      </label>
+       <body source="redirect.asp?url=http://yahoo.com">
+      	Tab body 2
+      </body> 
+   </tab>
+   <tab>
+      <label>
+         <i>Ask Jeeves</i>
+      </label>
+       <body souce="redirect.asp?url=http://askjeeves.com">
+      	Tab body 2
+      </body> 
+   </tab>
+	<tab>
+	      <label>
+	         <i>AltaVista</i>
+	      </label>
+	       <body source="redirect.asp?url=http://www.altavista.com">
+	      	Tab body 2
+	      </body> 
+	   </tab>
+	<tab>
+	      <label>
+	         <i>Lycos</i>
+	      </label>
+	       <body source="redirect.asp?url=http://www.lycos.ca">
+	      	
+	      </body> 
+	   </tab>
+	<tab>
+	      <label>
+	         <i>MSN</i>
+	      </label>
+	       <body url="redirect.asp?url=http://search.msn.com">
+
+	      </body> 
+	   </tab>
+	   </tabs>
+</tabstrip>
+
+<tabstrip id="tabstrip4" width="800px" height="600px" tabheights=""  >
+	<tabs align="right">
+   <tab>
+      <label>
+         <i>Intro to a loooooonnggg  taaaabbbbbb</i>
+      </label>
+      <body>
+      	Welcome to the search engine tabstrip.
+      </body>
+   </tab>
+
+   <tab>
+      <label>
+         <i>Go0000000000ooooooooooo0000000ogleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</i>
+      </label>
+       <body url="redirect.asp?url=http://google.com">
+      </body> 
+   </tab>
+   <tab width="256px">
+      <label>
+         <i>Yahoo</i>
+      </label>
+       <body url="redirect.asp?url=http://yahoo.com">
+      	Tab body 2
+      </body> 
+   </tab>
+   <tab>
+      <label>
+         <i>Ask Jeeves</i>
+      </label>
+       <body url="redirect.asp?url=http://askjeeves.com">
+      	Tab body 2
+      </body> 
+   </tab>
+	<tab>
+	      <label>
+	         <i>AltaVista</i>
+	      </label>
+	       <body url="redirect.asp?url=http://www.altavista.com">
+	      	Tab body 2
+	      </body> 
+	   </tab>
+	<tab>
+	      <label>
+	         <i>Lycos</i>
+	      </label>
+	       <body url="redirect.asp?url=http://www.lycos.ca">
+	      	
+	      </body> 
+	   </tab>
+	<tab>
+	      <label>
+	         <i>MSN</i>
+	      </label>
+	       <body url="redirect.asp?url=http://search.msn.com">
+
+	      </body> 
+	   </tab>
+	   </tabs>
+</tabstrip>
+
+</tabstrips>

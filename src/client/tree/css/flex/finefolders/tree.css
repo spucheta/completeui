@@ -1,0 +1,107 @@
+.finefolders .tree {
+	background-color:transparent;
+}
+
+.finefolders .hover .node, .finefolders .hover .leaf { 
+	background-color: #7fceff; 
+	color: white;	
+}
+
+.finefolders .root .node .icon {
+	width:19px;
+	background-color:transparent;
+	background-image:url('base.gif');
+	background-repeat: no-repeat;
+}
+
+.finefolders .tree .selected .node, .finefolders .tree .selected .leaf {
+	background-color: #b2e1ff;
+	color: white;
+}
+
+.finefolders .sidebar-background {
+	background-image:url('sidebar.gif');
+	background-repeat: repeat-y;
+}
+
+.finefolders .pipe {
+	width:19px;
+	background-color:transparent;
+	background-image:url('line.gif');
+
+}
+.finefolders .tee {
+	width:19px;
+	background-color:transparent;
+	background-image:url('join.gif');
+
+}
+.finefolders .ell {
+	width:19px;
+	background-color:transparent;
+	background-image:url('join.gif');
+	background-repeat: no-repeat;
+}
+.finefolders .spacer {
+	width:20px;
+}
+
+.finefolders .sidebar {
+	width:24px;
+	background-color:transparent;
+}
+.finefolders .flag {
+	background-color:transparent;
+}
+
+.finefolders .collapsed .tee {
+	background-image:url('plus.gif');
+}
+
+.finefolders .expanded .tee {
+	background-image:url('minus.gif');
+}
+
+.finefolders .collapsed .ell {
+	background-image:url('plus.gif');
+}
+
+.finefolders .expanded .ell {
+	background-image:url('minus.gif');
+}
+
+.finefolders .node .icon {
+	width:17px;
+	background-color:transparent;
+	background-image:url('foldergroup.gif');
+	background-repeat: no-repeat;
+}
+
+.finefolders .expanded .node .icon {
+	background-image:url('foldergroup.gif');
+}
+
+.finefolders .leaf .icon {
+	width:16px;
+	background-color:transparent;
+	background-image:url('folder.gif');
+	background-repeat: no-repeat;
+}
+
+.finefolders .label {
+	font-size: 11px;
+	color: #0b333c;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	padding-left:3px;
+}
+.finefolders .working .tee {
+	width:19px;
+	background-image:url('indicator.gif');
+	background-repeat: no-repeat;
+}
+
+.finefolders .working .ell{
+	width:19px;
+	background-image:url('indicator.gif');
+	background-repeat: no-repeat;
+}

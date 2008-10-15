@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+	<jsfile path="../toolkit/js/nitobi/base/toolkitdetection.js"/>
+	<jsfile path="js/nitobi/fisheye/fisheye.js"/>
+	<jsfile path="js/nitobi/fisheye/menuitem.js" />
+	<cssfile path="css/nitobi/fisheye.css" />
+	<cssfile path="css/nitobi.reset.css" />
+	<cssfile path="css/clearback/fisheye.css" />
+	<cssfile path="css/osx/fisheye.css" />
+	<xslfile path="xsl/nitobi/fisheye/fisheye.xsl" namespace="nitobi.fisheye" name="renderer"/>
+</includes>

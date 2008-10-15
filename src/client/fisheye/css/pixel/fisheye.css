@@ -1,0 +1,16 @@
+.pixel .ntb-fisheye-menubackground
+{
+	border: 1px solid #fff;
+	background: url(background.png) left bottom repeat-x;
+}
+
+.pixel .ntb-fisheye-label
+{
+	padding: 3px 5px;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	border: 1px solid #fff;
+	background: #414141;
+	font-size: 12px;
+	text-align: center;
+}

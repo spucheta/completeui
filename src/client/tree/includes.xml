@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+	<jsfile path="../toolkit/js/nitobi/base/toolkitdetection.js"/>
+	<xslfile path="xsl/nitobi/tree/render.xsl" namespace="nitobi.tree" name="xslTemplate"/>
+	<xslfile path="xsl/nitobi/tree/datatranslator.xsl" namespace="nitobi.tree" name="dataTranslator"/>
+	<jsfile path="js/nitobi/tree/tree.js" />
+	<jsfile path="js/nitobi/tree/children.js" />
+	<jsfile path="js/nitobi/tree/node.js" />
+	<cssfile path="css/nitobi.reset.css"></cssfile>
+	<cssfile path="css/base/tree.css"></cssfile>
+	<cssfile path="css/documents/tree.css"></cssfile>
+	<cssfile path="css/finefolders/tree.css"></cssfile>
+	<cssfile path="css/folders/tree.css"></cssfile>
+</includes>

@@ -1,0 +1,20 @@
+.osx .ntb-fisheye-menubackground
+{
+	background-color: transparent;
+	background-image: url(lineback.png);
+	background-repeat:repeat;
+	border: 1px solid #FFFFFF;
+	opacity: 0.75;
+}
+
+.osx .ntb-fisheye-label
+{
+	border: 1px solid #666666;
+	padding: 3px 5px;
+	background-color: #FCFCFC;
+	font-family: "trebuchet ms", georgia, tahoma, verdana;
+	font-size: 12px;
+	text-align: center;
+	font-weight: bold;
+	opacity = 0.85;
+}

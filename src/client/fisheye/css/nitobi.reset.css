@@ -1,0 +1,51 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+.ntb-fisheye-reset div, .ntb-fisheye-reset span, .ntb-fisheye-reset iframe, .ntb-fisheye-reset h1, .ntb-fisheye-reset h2, .ntb-fisheye-reset h3, .ntb-fisheye-reset h4, .ntb-fisheye-reset h5, .ntb-fisheye-reset h6, .ntb-fisheye-reset p, .ntb-fisheye-reset blockquote, .ntb-fisheye-reset pre,
+.ntb-fisheye-reset a, .ntb-fisheye-reset em, .ntb-fisheye-reset font, .ntb-fisheye-reset img, .ntb-fisheye-reset strong, .ntb-fisheye-reset ol, .ntb-fisheye-reset ul, .ntb-fisheye-reset li, .ntb-fisheye-reset fieldset, .ntb-fisheye-reset form, .ntb-fisheye-reset label, 
+.ntb-fisheye-reset table, .ntb-fisheye-reset caption, .ntb-fisheye-reset tbody, .ntb-fisheye-reset tfoot, .ntb-fisheye-reset thead, .ntb-fisheye-reset tr, .ntb-fisheye-reset th {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	background: transparent;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+.ntb-fisheye-reset ol,.ntb-fisheye-reset  ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.ntb-fisheye-reset table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.ntb-fisheye-reset caption,.ntb-fisheye-reset th,.ntb-fisheye-reset td {
+	text-align: left;
+	font-weight: normal;
+}
+
+.ntb-fisheye-reset blockquote:before, .ntb-fisheye-reset blockquote:after, .ntb-fisheye-reset q:before, q:after {
+	content: "";
+}
+
+.ntb-fisheye-reset blockquote, q {
+	quotes: "" "";
+}

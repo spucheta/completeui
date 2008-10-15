@@ -1,0 +1,51 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+.outlook div, .outlook span, .outlook iframe, .outlook h1, .outlook h2, .outlook h3, .outlook h4, .outlook h5, .outlook h6, .outlook p, .outlook blockquote, .outlook pre,
+.outlook a, .outlook em, .outlook font, .outlook img, .outlook strong, .outlook ol, .outlook ul, .outlook li, .outlook fieldset, .outlook form, .outlook label, 
+.outlook table, .outlook caption, .outlook tbody, .outlook tfoot, .outlook thead, .outlook tr, .outlook th, .outlook td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	background: transparent;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+.outlook ol,.outlook  ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.outlook table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.outlook caption,.outlook th,.outlook td {
+	text-align: left;
+	font-weight: normal;
+}
+
+.outlook blockquote:before, .outlook blockquote:after, .outlook q:before, q:after {
+	content: "";
+}
+
+.outlook blockquote, q {
+	quotes: "" "";
+}

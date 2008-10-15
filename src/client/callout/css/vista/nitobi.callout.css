@@ -1,0 +1,490 @@
+/*
+
+	Nitobi Callout Stylesheet
+	Windows Vista Alert Style
+	v1.1
+*/
+
+.ntbSpot {
+
+}
+
+.ntbMouse {
+	background-image:url(arrow.png);
+	width: 21px;
+	height: 34px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbMouseClick {
+	background-image:url(arrow_click.png);
+	width: 29px;
+	height: 40px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbType {
+	background-image:url(type.png);
+	width: 15px;
+	height: 33px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbWait {
+	background-image:url(wait.png);
+	width: 26px;
+	height: 34px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+.ntbMouse_offset { top: 0px; left: 0px;}
+.ntbMouseClick_offset { top: -7px; left: -7px;}
+.ntbWait_offset { top: 0px; left: 0px;}
+.ntbType_offset { top: -15px; left: 0px;}
+
+.ntbvistaCallout_next_off {
+	background-image:url(next_off.gif);
+	width: 56px;
+	height: 23px;	
+	background-position:top left;	
+	background-repeat:no-repeat;
+	cursor: pointer;
+	margin-top: 10px;	
+}
+
+.ntbvistaCallout_next_on {
+	background-image:url(next_on.gif);
+	width: 56px;
+	height: 23px;	
+	background-position:top left;	
+	background-repeat:no-repeat;
+	cursor: pointer;
+	margin-top: 10px;	
+}
+
+.ntbvistaCallout_closeoffset1, .ntbvistaCallout_closeoffset0 {
+	top: 6px;
+	left:-11px;
+}
+.ntbvistaCallout_closeoffset2 {
+	top: 6px;
+	left:-11px;
+}
+.ntbvistaCallout_closeoffset3 {
+	top: 8px;
+	left:-10px;
+}
+.ntbvistaCallout_closeoffset4 {
+	top: 11px;
+	left:-10px;
+}
+.ntbvistaCallout_closeoffset5 {
+	top: 5px;
+	left:-10px;
+}
+.ntbvistaCallout_closeoffset6 {
+	top: 5px;
+	left:-1px;
+}
+.ntbvistaCallout_closeoffset7 {
+	top: 5px;
+	left:-11px;
+}
+.ntbvistaCallout_closeoffset8 {
+	top: 5px;
+	left:-11px;
+}
+
+
+.ntbvistaCallout_close_off {
+	background-image:url(close_off.gif);
+	width: 10px;
+	height: 10px;	
+	background-position:top left;	
+	background-repeat:no-repeat;
+	cursor: pointer;	
+}
+
+.ntbvistaCallout_close_on {
+	background-image:url(close_on.gif);
+	width: 10px;
+	height: 10px;	
+	background-position:top left;	
+	background-repeat:no-repeat;
+	cursor: pointer;
+}
+
+.ntbvistaCallout_bodytitlediv1,.ntbvistaCallout_bodytitlediv2,.ntbvistaCallout_bodytitlediv0 {
+
+	top:7px;
+	left:10px;
+
+}
+
+.ntbvistaCallout_bodytitlediv3{
+	top:9px;
+	left:9px;
+}
+
+.ntbvistaCallout_bodytitlediv4 {
+	top:12px;
+	left:9px;
+}
+
+.ntbvistaCallout_bodytitlediv5 {
+	top:6px;
+	left:13px;
+}
+
+.ntbvistaCallout_bodytitlediv6 {
+	top:6px;
+	left:13px;
+}
+.ntbvistaCallout_bodytitlediv7,.ntbvistaCallout_bodytitlediv8 {
+	top:6px;
+	left:9px;
+}
+
+.ntbvistaCallout_bodydiv0,.ntbvistaCallout_bodydiv1,.ntbvistaCallout_bodydiv2,.ntbvistaCallout_bodydiv3,.ntbvistaCallout_bodydiv4,.ntbvistaCallout_bodydiv5,.ntbvistaCallout_bodydiv6,.ntbvistaCallout_bodydiv7,.ntbvistaCallout_bodydiv8 {
+	position: absolute;
+	top:25px;
+	left:10px;
+	font-size: 12px;
+	line-height:15px;
+	font-family:arial, helvetica, sans-serif;
+	white-space:normal;
+	width:auto;
+}
+
+.ntbvistaCallout_bodydiv3{
+	top:27px;
+	left:10px;
+}
+
+.ntbvistaCallout_bodydiv4 {
+	top:30px;
+	left:8px;
+}
+
+.ntbvistaCallout_bodydiv5 {
+	top:24px;
+	left:13px;
+}
+
+.ntbvistaCallout_bodydiv6 {
+	top:24px;
+	left:13px;
+}
+.ntbvistaCallout_bodydiv7,.ntbvistaCallout_bodydiv8 {
+	top:24px;
+	left:9px;
+}
+
+
+.ntbvistaCallout_titlediv0,.ntbvistaCallout_titlediv1,.ntbvistaCallout_titlediv2,.ntbvistaCallout_titlediv3,.ntbvistaCallout_titlediv4,.ntbvistaCallout_titlediv5,.ntbvistaCallout_titlediv6,.ntbvistaCallout_titlediv7,.ntbvistaCallout_titlediv8 {
+	position: absolute;
+	top:7px;
+	left:10px;
+	font-weight:bold;
+	font-size: 12px;
+	font-family:arial, helvetica, sans-serif;
+	white-space:nowrap;
+	width:auto;
+}
+
+.ntbvistaCallout_titlediv3{
+	top:11px;
+	left:10px;
+}
+
+.ntbvistaCallout_titlediv4 {
+	top:11px;
+	left:8px;
+}
+
+.ntbvistaCallout_titlediv5 {
+	top:6px;
+	left:13px;
+}
+
+.ntbvistaCallout_titlediv6 {
+	top:6px;
+	left:14px;
+}
+.ntbvistaCallout_titlediv7,.ntbvistaCallout_titlediv8 {
+	top:6px;
+	left:9px;
+}
+
+
+
+
+.ntbvistaCallout_offset1,.ntbvistaCallout_offset0 {
+	top:0px;
+	left:0px;
+	width:15px;
+	height:25px;		
+}
+.ntbvistaCallout_offset2 {
+	left:0px;
+	top:0px;
+	width:15px;
+	height:25px;
+}
+.ntbvistaCallout_offset3 {
+	left:0px;
+	top:0px;
+	width:15px;
+	height:25px;		
+}
+.ntbvistaCallout_offset4 {
+	left:0px;
+	top:0px;
+	width:25px;
+	height:23px;	
+}
+.ntbvistaCallout_offset5 {
+	left:0px;
+	top:0px;
+	width:15px;
+	height:25px;	
+}
+.ntbvistaCallout_offset6 {
+	left:0px;
+	top:0px;
+	width:15px;
+	height:25px;	
+}
+.ntbvistaCallout_offset7 {
+	left:0px;
+	top:0px;
+	width:15px;
+	height:25px;	
+}
+.ntbvistaCallout_offset8 {
+	left:0px;
+	top:0px;
+	width:15px;
+	height:25px;	
+}
+
+.ntbvistaCallout_mastercontainer {
+	padding: 0px;
+	margin: 0px;
+}
+
+.ntbvistaCallout_rt_right {
+	background-image:url(rt_right.png);
+	width: 8px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+.ntbvistaCallout_rt_br {
+	background-image:url(rt_br.png);
+	width: 8px;
+	height: 11px;	
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+.ntbvistaCallout_rb_main {
+	background-image:url(rb_main.png);
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+.ntbvistaCallout_rb_bottom {
+	background-image:url(rb_bottom.png);
+	height: 7px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+.ntbvistaCallout_rb_right {
+	background-image:url(rb_right.png);
+	width: 8px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+.ntbvistaCallout_rb_rb {
+	background-image:url(rb_rb.png);
+	width: 8px;
+	height: 20px;	
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbvistaCallout_lb_left {
+	background-image:url(lb_left.png);
+	width: 9px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+.ntbvistaCallout_lb_lb {
+	background-image:url(lb_lb.png);
+	width: 9px;
+	height: 19px;	
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+.ntbvistaCallout_lb_main {
+	background-image:url(lb_main.png);
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+.ntbvistaCallout_lb_bottom {
+	background-image:url(lb_bottom.png);
+	height: 7px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+.ntbvistaCallout_lb_right {
+	background-image:url(lb_right.png);
+	width: 5px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+.ntbvistaCallout_lb_br {
+	background-image:url(lb_br.png);
+	width: 5px;
+	height: 9px;	
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbvistaCallout_lt_main {
+	background-image:url(lt_main.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+}
+.ntbvistaCallout_lt_bottom {
+	background-image:url(lt_bottom.png);
+	height: 7px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbvistaCallout_lt_right {
+	background-image:url(lt_right.png);
+	width: 5px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbvistaCallout_lt_br {
+	background-image:url(lt_br.png);
+	width: 5px;
+	height: 8px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbvistaCallout_tl_main {
+	background-image:url(tl_main.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+}
+
+.ntbvistaCallout_tl_right {
+	background-image:url(tl_right.png);
+	width: 5px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbvistaCallout_tl_br_plain {
+	background-image:url(br_plain.png);
+	width: 5px;
+	height: 4px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbvistaCallout_bl_main {
+	background-image:url(bl_main.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+}
+
+.ntbvistaCallout_bl_right {
+	background-image:url(bl_right.png);
+	width: 5px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbvistaCallout_bottom_plain {
+	background-image:url(bottom_plain.png);
+	height: 4px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbvistaCallout_br_bottom {
+	background-image:url(br_bottom.png);
+	width: 28px;
+	height: 7px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+.ntbvistaCallout_bl_bottom {
+	background-image:url(bl_bottom.png);
+	height: 7px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbvistaCallout_br_plain {
+	background-image:url(br_plain.png);
+	width: 5px;
+	height: 4px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbvistaCallout_tr_topright {
+	background-image:url(tr_topright.png);
+	width: 27px;
+	height: 8px;	
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbvistaCallout_tr_topleft {
+	background-image:url(tr_topleft.png);
+	height: 8px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+.ntbvistaCallout_tr_mainpart {
+	background-image:url(tr_mainpart.png);
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbvistaCallout_tr_right {
+	background-image:url(tr_right.png);
+	width: 5px;
+	background-position:top left;	
+	background-repeat:no-repeat;
+}
+
+.ntbvistaCallout_extender {
+	width: 12px;
+}
+
+.ntbvistaCallout_minimums {
+	width: 28px;
+	height:25px;
+}

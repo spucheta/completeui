@@ -1,0 +1,51 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+.visualstudio div, .visualstudio span, .visualstudio iframe, .visualstudio h1, .visualstudio h2, .visualstudio h3, .visualstudio h4, .visualstudio h5, .visualstudio h6, .visualstudio p, .visualstudio blockquote, .visualstudio pre,
+.visualstudio a, .visualstudio em, .visualstudio font, .visualstudio img, .visualstudio strong, .visualstudio ol, .visualstudio ul, .visualstudio li, .visualstudio fieldset, .visualstudio form, .visualstudio label, 
+.visualstudio table, .visualstudio caption, .visualstudio tbody, .visualstudio tfoot, .visualstudio thead, .visualstudio tr, .visualstudio th, .visualstudio td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	background: transparent;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+.visualstudio ol,.visualstudio  ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.visualstudio table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.visualstudio caption,.visualstudio th,.visualstudio td {
+	text-align: left;
+	font-weight: normal;
+}
+
+.visualstudio blockquote:before, .visualstudio blockquote:after, .visualstudio q:before, q:after {
+	content: "";
+}
+
+.visualstudio blockquote, q {
+	quotes: "" "";
+}

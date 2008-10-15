@@ -1,0 +1,937 @@
+<?xml version="1.0" ?>
+<interfaces>
+	<interface name="nitobi.grid.Cell" tagname="ntb:cell" 
+			remarkfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaCellApiDocumentation" 
+			examplefile="http://portal:8090/cgi-bin/trac.cgi/wiki/SharedCodeSnippets" 
+			summaryfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaCellApiDocumentation">
+		<summary>nitobi.grid.Cell represents a single data cell in a Grid.</summary>
+
+		<properties>
+			<property name="Row" type="int" access="public" persist="js" default=""
+				readwrite="read" impact="xsl row" testvalue="1">
+			</property>
+			<property name="Column" type="int" access="public" persist="js" default=""
+				readwrite="read" impact="xsl row" testvalue="1">
+			</property>
+			<property name="DomNode" type="xml" access="public" persist="js" default=""
+				readwrite="read" impact="xsl row" testvalue="1">
+			</property>
+			<property name="DataNode" type="xml" access="public" persist="js" default=""
+				readwrite="read" impact="xsl row" testvalue="1">
+			</property>
+		</properties>
+		<methods>                       
+            <method name="getCellElement" access="private"></method>
+            <method name="getRowNumber" access="private"></method>
+            <method name="getColumnNumber" access="private"></method>                       
+            <method name="Focus" access="public"></method>
+		</methods>
+	</interface>
+	
+	<interface name="nitobi.grid.Columns" ></interface>
+	
+	<interface name="nitobi.grid.Column" tagname="ntb:column" 
+		remarkfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaColumnApiDocumentation" 
+		examplefile="http://portal:8090/cgi-bin/trac.cgi/wiki/SharedCodeSnippets" 
+		summaryfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaColumnApiDocumentation">
+		<summary>nitobi.grid.Column represents a single column of data in a Grid.</summary>
+
+		<properties>
+			<property name="Align" type="string" access="private" persist="model" model="Align" default="&quot;left&quot;"
+				readwrite="readwrite" impact="xsl row " htmltag="align" testvalue="&quot;&quot;">				
+			</property>
+			<property name="ClassName" type="string" access="private" persist="model" model="ClassName" default="&quot;&quot;"
+				readwrite="readwrite" impact="xsl row " htmltag="classname" testvalue="&quot;&quot;">				
+			</property>
+			<property name="CssStyle" type="string" access="private" persist="model" model="CssStyle" default="&quot;&quot;"
+				readwrite="readwrite" impact="xsl row " htmltag="cssstyle" testvalue="&quot;&quot;">				
+			</property>
+			<property name="ColumnName" type="string" access="private" persist="model" model="ColumnName" default="&quot;&quot;"
+				readwrite="readwrite" impact="xsl row" htmltag="columnname" testvalue="&quot;&quot;">
+			</property>
+			<property name="Type" type="string" access="private" persist="model" model="type" code="" default="&quot;text&quot;"
+				impact="row" readwrite="readwrite" htmltag="type" testvalue="&quot;pcm&quot;">
+			</property>
+			<property name="DataType" type="string" access="public" persist="model" model="DataType" default="text" 
+				readwrite="readwrite" impact="xsl row" code="" testvalue="&quot;text&quot;">
+			</property>
+			<property name="Editable" type="bool" access="public" persist="model" model="Editable" default="true" 
+				readwrite="readwrite" impact="model" htmltag="editable" testvalue="false">
+			</property>
+			<property name="Initial" type="string" access="public" default="&quot;&quot;" htmltag="initial"
+				readwrite="readwrite" persist="model" model="Initial" testvalue="&quot;test&quot;">
+			</property>
+			<property name="Label" model="Label" type="string" access="public" default="&quot;&quot;"
+				htmltag="label" readwrite="read" persist="model meta" impact="xsl row" testvalue="&quot;test&quot;">
+			</property>
+			<property name="GetHandler" type="string" access="private" default="&quot;&quot;"
+				persist="model" model="GetHandler" htmltag="gethandler" readwrite="readwrite" impact="xsl row" testvalue="&quot;test&quot;">
+			</property>			
+			<property name="DataSource" type="string" access="private" default="&quot;&quot;"
+				persist="model" model="DataSource" htmltag="datasource" readwrite="readwrite" impact="xsl row" testvalue="&quot;test&quot;">
+			</property>
+			<property name="Template" type="string" access="private" default="&quot;&quot;"
+				persist="model" model="Template" htmltag="template" readwrite="readwrite" impact="xsl row" testvalue="&quot;test&quot;">
+			</property>
+			<property name="TemplateUrl" type="string" access="private" default="&quot;&quot;"
+				persist="model" model="TemplateUrl" htmltag="templateurl" readwrite="readwrite" impact="xsl row" testvalue="&quot;test&quot;">
+			</property>
+			<property name="MaxLength" type="int" access="public" default="255" htmltag="maxlength" readwrite="readwrite"
+				persist="model meta" impact="xsl row" model="maxlength" testvalue="200">
+			</property>
+			<property name="SortDirection" model="SortDirection" type="string" access="public"
+				default="&quot;Desc&quot;" htmltag="sortdirection" readwrite="readwrite" persist="model" impact="sort"
+				testvalue="&quot;Desc&quot;">
+			</property>
+			<property name="SortEnabled" model="SortEnabled" type="bool" access="public"
+				default="true" htmltag="sortenabled" readwrite="readwrite" persist="model" impact="sort"
+				testvalue="true">
+			</property>
+			<property name="Width" model="Width" type="int" access="public" default="100" htmltag="width"
+				readwrite="readwrite" persist="model" impact="size css row" testvalue="200">
+				<include path="//*[@id='widthsample']" type="example"/>
+			</property>
+			<property name="Visible" model="Visible" type="bool" access="private" default="true" htmltag="visible"
+				readwrite="readwrite" persist="model" impact="size css row" testvalue="true">
+			</property>
+			<property name="xdatafld" type="string" access="public" default="&quot;&quot;" readwrite="read"
+				persist="meta model" model="xdatafld" htmltag="xdatafld">
+			</property>
+			<property name="Value" type="string" access="public" default="&quot;&quot;" readwrite="read"
+				persist="meta model" model="Value" htmltag="value">
+			</property>
+			<property name="xi" type="int" access="private" default="100" htmltag="xi" readwrite="read"
+				persist="meta model" model="xi" short="xi">
+			</property>
+			<property name="Editor" model="Editor" namespace="Eba.Grid" type="Editor" access="private" default="Eba.Grid.TextEditor" htmltag="editor"
+				readwrite="readwrite" persist="model" impact="" testvalue="true">
+			</property>
+		</properties>
+		<events>
+			<event name="OnCellClickEvent" model="OnCellClickEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="oncellclickevent"
+				persist="model"></event>
+			<event name="OnBeforeCellClickEvent" model="OnBeforeCellClickEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onbeforecellclickevent"
+				persist="model"></event>
+			<event name="OnCellDblClickEvent" model="OnCellDblClickEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="oncelldblclickevent"
+				persist="model"></event>
+			<event name="OnHeaderDoubleClickEvent" model="OnHeaderDoubleClickEvent" type="string" access="private" default="&quot;&quot;"
+				readwrite="readwrite" htmltag="onheaderdoubleclickevent" persist="model"></event>
+			<event name="OnHeaderClickEvent" model="OnHeaderClickEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onheaderclickevent"
+				persist="model"></event>
+			<event name="OnBeforeResizeEvent" model="OnBeforeResizeEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onbeforeresizeevent"
+				persist="model"></event>
+			<event name="OnAfterResizeEvent" model="OnAfterResizeEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onafterresizeevent"
+				persist="model"></event>			
+			<event name="OnCellValidateEvent" model="OnCellValidateEvent" type="string" access="private" default="&quot;&quot;" readwrite="readwrite" htmltag="oncellvalidateevent"
+				persist="model"></event>
+			<event name="OnBeforeCellEditEvent" model="OnBeforeCellEditEvent" type="String" access="private" default="&quot;&quot;" readwrite="readwrite" htmltag="onbeforecelleditevent"
+				persist="model"></event>
+			<event name="OnAfterCellEditEvent" model="OnAfterCellEditEvent" type="String" access="private" default="&quot;&quot;" readwrite="readwrite" htmltag="onaftercelleditevent"
+				persist="model"></event>
+			<event name="OnCellBlurEvent" model="OnCellBlurEvent" type="String" access="private" default="&quot;&quot;" readwrite="readwrite" htmltag="oncellblurevent"
+				persist="model"></event>
+			<event name="OnCellFocusEvent" model="OnCellFocusEvent" type="String" access="private" default="&quot;&quot;" readwrite="readwrite" htmltag="oncellfocusevent"
+				persist="model"></event>
+			<event name="OnBeforeSortEvent" model="OnBeforeSortEvent" type="String" access="private" default="&quot;&quot;" readwrite="readwrite" htmltag="onbeforesortevent"
+				persist="model"></event>
+			<event name="OnAfterSortEvent" model="OnAfterSortEvent" type="String" access="private" default="&quot;&quot;" readwrite="readwrite" htmltag="onaftersortevent"
+				persist="model"></event>
+			<event name="OnCellUpdateEvent" model="OnCellUpdateEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="oncellupdateevent"
+				persist="model"></event>
+			<event name="OnKeyDownEvent" model="OnKeyDownEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeydownevent" persist="model"></event>
+			<event name="OnKeyUpEvent" model="OnKeyUpEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeyupevent" persist="model"></event>
+			<event name="OnKeyPressEvent" model="OnKeyPressEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeypressevent" persist="model"></event>
+			<event name="OnChangeEvent" model="OnChangeEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onchangeevent" persist="model"></event>
+		</events>
+	</interface>
+	<interface name="EBADateColumn" tagname="ntb:datecolumn" 
+		remarkfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaDateColumnApiDocumentation" 
+		examplefile="http://portal:8090/cgi-bin/trac.cgi/wiki/SharedCodeSnippets" 
+		summaryfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaDateColumnApiDocumentation">
+
+		<properties>
+			<property name="Mask" htmltag="mask" type="string" persist="model" model="Mask"
+				access="public" readwrite="readwrite" default="&quot;M/d/yyyy&quot;">
+				
+			</property>
+			<property name="CalendarEnabled" htmltag="calendarenabled" type="bool" persist="model" model="CalendarEnabled"
+				access="public" readwrite="readwrite" default="true">
+			
+			</property>
+		</properties>
+	</interface>
+	<interface name="EBANumberColumn" tagname="ntb:numbercolumn" 
+		remarkfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaDateColumnApiDocumentation" 
+		examplefile="http://portal:8090/cgi-bin/trac.cgi/wiki/SharedCodeSnippets" 
+		summaryfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaDateColumnApiDocumentation">
+
+		<properties>
+			<property name="Align" type="string" access="private" persist="model" model="Align" default="&quot;right&quot;"
+				readwrite="readwrite" impact="xsl row " htmltag="align" testvalue="&quot;&quot;">				
+			</property>
+
+			<property name="Mask" htmltag="mask" type="string" persist="model" model="Mask" access="public" readwrite="readwrite" default="&quot;#,###.00&quot;" />
+			<property name="NegativeMask" htmltag="negativemask" type="string" persist="model" model="NegativeMask" access="public" readwrite="readwrite" default="&quot;&quot;" />
+			<property name="GroupingSeparator" htmltag="groupingseparator" type="string" persist="model" model="GroupingSeparator"
+				access="public" readwrite="readwrite" default="&quot;,&quot;">
+				
+			</property>
+			<property name="DecimalSeparator" htmltag="decimalseparator" type="string" persist="model" model="DecimalSeparator"
+				access="public" readwrite="readwrite" default="&quot;.&quot;">
+				
+			</property>
+		</properties>
+		<events>
+			<event name="OnKeyDownEvent" model="OnKeyDownEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeydownevent"
+				persist="model"></event>
+			<event name="OnKeyUpEvent" model="OnKeyUpEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeyupevent"
+				persist="model"></event>
+			<event name="OnKeyPressEvent" model="OnKeyPressEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeypressevent"
+				persist="model"></event>
+			<event name="OnChangeEvent" model="OnChangeEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onchangeevent"
+				persist="model"></event>
+		</events>
+	</interface>
+	<interface name="EBATextColumn" tagname="ntb:textcolumn" 
+		remarkfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaTextApiDocumentation" 
+		examplefile="http://portal:8090/cgi-bin/trac.cgi/wiki/SharedCodeSnippets" 
+		summaryfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaTextApiDocumentation">
+
+	</interface>
+
+	<interface name="EBALookupEditor" tagname="ntb:lookupeditor" 
+		remarkfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaLookupEditor" 
+		examplefile="http://portal:8090/cgi-bin/trac.cgi/wiki/SharedCodeSnippets" 
+		summaryfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaLookupEditor">
+		
+		<properties>
+			<property name="DatasourceId" htmltag="datasourceid" type="string" persist="model" model="DatasourceId" 
+				access="public" readwrite="readwrite" default="">
+			</property>
+			<property name="Datasource" htmltag="datasource" type="string" persist="model" model="Datasource" 
+				access="public" readwrite="readwrite" default="">
+			</property>			
+			<property name="GetHandler" htmltag="gethandler" type="string" persist="model" model="GetHandler" 
+				access="public" readwrite="readwrite" default="">
+			</property>
+			<property name="DisplayFields" htmltag="displayfields" type="string" persist="model" model="DisplayFields"
+				access="public" readwrite="readwrite" default="">
+			</property>
+			<property name="ValueField" htmltag="valuefield" type="string" persist="model" model="ValueField"
+				access="public" readwrite="readwrite" default="">
+			</property>
+			<property name="Delay" htmltag="delay" type="string" persist="model" model="Delay"
+				access="public" readwrite="readwrite" default="">
+			</property>
+			<property name="Size" htmltag="size" type="string" persist="model" model="Size"
+				access="public" readwrite="readwrite" default="6">
+			</property>
+			<property name="ForceValidOption" htmltag="forcevalidoption" type="bool" model="ForceValidOption"
+				access="public" readwrite="readwrite" default="false">
+			</property>
+		</properties>
+		<events>
+			<event name="OnKeyDownEvent" model="OnKeyDownEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeydownevent"
+				persist="model"></event>
+			<event name="OnKeyUpEvent" model="OnKeyUpEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeyupevent"
+				persist="model"></event>
+			<event name="OnKeyPressEvent" model="OnKeyPressEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeypressevent"
+				persist="model"></event>
+			<event name="OnChangeEvent" model="OnChangeEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onchangeevent"
+				persist="model"></event>
+		</events>
+	</interface>
+
+	<interface name="EBACheckboxEditor" tagname="ntb:checkboxeditor" 
+		remarkfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaCheckboxEditor" 
+		examplefile="http://portal:8090/cgi-bin/trac.cgi/wiki/SharedCodeSnippets" 
+		summaryfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaCheckboxEditor">
+
+		<properties>
+			<property name="DatasourceId" htmltag="datasourceid" type="string" persist="model" model="DatasourceId" 
+				access="public" readwrite="readwrite" default="">
+				
+				<include path="//*[@id='staticdatacheckboxeditor']" type="example" />				
+			</property>
+			<property name="Datasource" htmltag="datasource" type="string" persist="model" model="Datasource" 
+				access="public" readwrite="readwrite" default="">
+				
+			</property>
+			<property name="GetHandler" htmltag="gethandler" type="string" persist="model" model="GetHandler" 
+				access="public" readwrite="readwrite" default="">
+				<summary>Specifies the URL of the CheckboxEditor's gethandler.  The gethandler must return valid XML data in the EBA format.</summary>
+				
+				<include path="//*[@id='staticdatacheckboxeditor']" type="example" />				
+			</property>
+			<property name="DisplayFields" htmltag="displayfields" type="string" persist="model" model="DisplayFields"
+				access="public" readwrite="readwrite" default="">
+				<summary>Specifies what fields from the datasource specified by DatasourceId or by the GetHandler will populate the CheckboxEditor's listbox.</summary>
+				<remarks>DisplayFields is a pipe-delimited list of data fields (eg. "field1|field2|field3").</remarks>
+				
+				<include path="//*[@id='staticdatacheckboxeditor']" type="example" />
+			</property>
+			<property name="ValueField" htmltag="valuefield" type="string" persist="model" model="ValueField"
+				access="public" readwrite="readwrite" default="">
+				<summary>Specifies the field of the CheckboxEditor's data source that will populate the cell.</summary>
+				
+				<include path="//*[@id='staticdatacheckboxeditor']" type="example" />
+			</property>
+			<property name="CheckedValue" htmltag="checkedvalue" type="string" persist="model" model="CheckedValue"
+				access="public" readwrite="readwrite" default="">
+				
+			</property>
+			<property name="UnCheckedValue" htmltag="uncheckedvalue" type="string" persist="model" model="UnCheckedValue"
+				access="public" readwrite="readwrite" default="">
+				
+			</property>
+		</properties>
+	</interface>
+
+	<interface name="EBAImageEditor" tagname="ntb:imageeditor" 
+		remarkfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaImageEditor" 
+		examplefile="http://portal:8090/cgi-bin/trac.cgi/wiki/SharedCodeSnippets" 
+		summaryfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaImageEditor">
+		
+		<properties>
+			<property name="ImageUrl" htmltag="imageurl" type="string" persist="model" model="ImageUrl"
+				access="public" readwrite="readwrite" default="">
+			</property>
+		</properties>
+	</interface>
+
+	<interface name="EBALinkEditor" tagname="ntb:linkeditor" 
+		remarkfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaLinkEditor" 
+		examplefile="http://portal:8090/cgi-bin/trac.cgi/wiki/SharedCodeSnippets" 
+		summaryfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaLinkEditor">
+
+		<properties>
+		</properties>
+	</interface>
+	
+	<interface name="EBATextEditor" tagname="ntb:texteditor" 
+	remarkfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaTextEditor" 
+    examplefile="http://portal:8090/cgi-bin/trac.cgi/wiki/SharedCodeSnippets" 
+    summaryfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaTextEditor">
+
+		<properties>
+			<property name="MaxLength" htmltag="maxlength" type="int" persist="model" model="MaxLength"
+				access="public" readwrite="readwrite" default="255">
+				
+			</property>
+		</properties>
+		<events>
+			<event name="OnKeyDownEvent" model="OnKeyDownEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeydownevent"
+				persist="model"></event>
+			<event name="OnKeyUpEvent" model="OnKeyUpEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeyupevent"
+				persist="model"></event>
+			<event name="OnKeyPressEvent" model="OnKeyPressEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeypressevent"
+				persist="model"></event>
+			<event name="OnChangeEvent" model="OnChangeEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onchangeevent"
+				persist="model"></event>
+		</events>
+	</interface>
+	<interface name="EBANumberEditor" tagname="ntb:numbereditor">
+		<properties>
+		</properties>
+		<events>
+			<event name="OnKeyDownEvent" model="OnKeyDownEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeydownevent"
+				persist="model"></event>
+			<event name="OnKeyUpEvent" model="OnKeyUpEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeyupevent"
+				persist="model"></event>
+			<event name="OnKeyPressEvent" model="OnKeyPressEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeypressevent"
+				persist="model"></event>
+			<event name="OnChangeEvent" model="OnChangeEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onchangeevent"
+				persist="model"></event>
+		</events>
+	</interface>
+	<interface name="EBATextareaEditor" tagname="ntb:textareaeditor" namespace="Eba.Grid" type="Eba.Grid.TextareaEditor" inherits="Editor" jstype="object" 
+	remarkfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaTextAreaEditor" 
+    examplefile="http://portal:8090/cgi-bin/trac.cgi/wiki/SharedCodeSnippets" 
+    summaryfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaTextAreaEditor">
+		
+		<properties>
+			<property name="MaxLength" htmltag="maxlength" type="int" persist="model" model="MaxLength"
+				access="public" readwrite="readwrite" default="255">
+				
+			</property>
+		</properties>
+		<events>
+			<event name="OnKeyDownEvent" model="OnKeyDownEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeydownevent"
+				persist="model"></event>
+			<event name="OnKeyUpEvent" model="OnKeyUpEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeyupevent"
+				persist="model"></event>
+			<event name="OnKeyPressEvent" model="OnKeyPressEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeypressevent"
+				persist="model"></event>
+			<event name="OnChangeEvent" model="OnChangeEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onchangeevent"
+				persist="model"></event>
+		</events>
+	</interface>
+	<interface name="EBALinkEditor" tagname="ntb:linkeditor">
+		<properties>
+			<property name="OpenWindow" htmltag="openwindow" type="bool" persist="model" model="OpenWindow"
+				access="public" readwrite="readwrite" default="true">
+				
+			</property>
+		</properties>
+	</interface>
+	<interface name="EBADateEditor" tagname="ntb:dateeditor" namespace="Eba.Grid" type="Eba.Grid.DateEditor" inherits="Editor" jstype="object">
+		<properties>
+			<property name="Mask" htmltag="mask" type="string" persist="model" model="Mask"
+				access="public" readwrite="readwrite" default="&quot;M/d/yyyy&quot;">
+				
+			</property>
+			<property name="CalendarEnabled" htmltag="calendarenabled" type="bool" persist="model" model="CalendarEnabled"
+				access="public" readwrite="readwrite" default="true">
+			
+			</property>
+		</properties>
+		<events>
+			<event name="OnKeyDownEvent" model="OnKeyDownEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeydownevent"
+				persist="model"></event>
+			<event name="OnKeyUpEvent" model="OnKeyUpEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeyupevent"
+				persist="model"></event>
+			<event name="OnKeyPressEvent" model="OnKeyPressEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeypressevent"
+				persist="model"></event>
+			<event name="OnChangeEvent" model="OnChangeEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onchangeevent"
+				persist="model"></event>
+		</events>
+	</interface>
+	<interface name="EBAListboxEditor" tagname="ntb:listboxeditor" >
+	
+		<properties>
+			<property name="DatasourceId" htmltag="datasourceid" type="string" persist="model" model="DatasourceId" 
+				access="public" readwrite="readwrite" default="">
+				
+			</property>
+			<property name="Datasource" htmltag="datasource" type="string" persist="model" model="Datasource" 
+				access="public" readwrite="readwrite" default="">
+				
+			</property>
+			<property name="GetHandler" htmltag="gethandler" type="string" persist="model" model="GetHandler" 
+				access="public" readwrite="readwrite" default="">
+				
+			</property>
+			<property name="DisplayFields" htmltag="displayfields" type="string" persist="model" model="DisplayFields"
+				access="public" readwrite="readwrite" default="">
+				
+			</property>
+			<property name="ValueField" htmltag="valuefield" type="string" persist="model" model="ValueField"
+				access="public" readwrite="readwrite" default="">
+				
+			</property>
+		</properties>
+		<events>
+			<event name="OnKeyDownEvent" model="OnKeyDownEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeydownevent"
+				persist="model"></event>
+			<event name="OnKeyUpEvent" model="OnKeyUpEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeyupevent"
+				persist="model"></event>
+			<event name="OnKeyPressEvent" model="OnKeyPressEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeypressevent"
+				persist="model"></event>
+			<event name="OnChangeEvent" model="OnChangeEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onchangeevent"
+				persist="model"></event>
+		</events>
+	</interface>
+	<interface name="nitobi.grid.Row" tagname="ntb:e" namespace="Eba.Grid" type="Eba.Grid.Row" jstype="object">
+		<elements>
+		</elements>
+
+		<properties>
+			<property name="ClassName" type="string" access="private" persist="meta" default="&quot;&quot;"
+				readwrite="readwrite" impact="xsl row " htmltag="ClassName" testvalue="&quot;&quot;">
+				
+			</property>
+			<property name="Height" default="23" code="" type="int" persist="meta" impact="row"
+				access="public" readwrite="readwrite" htmltag="Height" testvalue="50">
+				
+			</property>
+		</properties>
+	</interface>
+	
+		<interface name="nitobi.grid.Grid" tagname="ntb:grid" namespace="Eba" type="Eba.Grid.Grid" jstype="object" 
+	remarkfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaGridApiDocumentation" 
+    examplefile="http://portal:8090/cgi-bin/trac.cgi/wiki/SharedCodeSnippets" 
+    summaryfile="http://portal:8090/cgi-bin/trac.cgi/wiki/EbaGridApiDocumentation">
+
+
+		<elements>
+			<element name="EBADatasources" minoccurs="0" maxoccurs="1" />
+			<element name="nitobi.grid.Columns" minoccurs="0" maxoccurs="1" />
+		</elements>
+                <methods>
+                        <method name="selectRowByIndex" access="private">
+                                <summary>Selects a grid cell by row index.</summary>
+                                <param name="index" type="int">the row index</param>
+                                <returns type="nitobi.grid.Row"></returns>
+                                <include path="//*[@id='work1']" type="example"/>
+                        </method>
+                
+                        <method name="selectRowByKey" access="private">                         
+                                <summary>Selects a grid cell by key.</summary>                          
+                                <param name="key" type="string">the key of grid data</param>                                                            
+                                <returns type="nitobi.grid.Row"></returns>                               
+                        </method>               
+                
+                        <method name="selectCellByCoords" access="public">
+                                <summary>Activates a grid cell. The activated cell is highlighted. 
+                                Subsequent function calls such as deleteCurrentRow, insertAfterCurrentRow, getActiveColumnObject, getActiveRowObject depends on the new active cell.  
+                                The row and colum index starts at 0.
+                                </summary>
+                                <param name="column" type="int">column number</param>
+                                <param name="row" type="int">row number</param>
+                                <returns type=""></returns>     
+                                <include type="remark" />                       
+                        </method>
+                
+                        <method name="save" access="public">
+                                <summary>Saves data in the grid.</summary>
+                                <returns type=""></returns>
+                        </method>               
+                
+                        <method name="insertAfterCurrentRow" access="public">
+                                <summary>Insert a new row after the row of the active cell.</summary>
+                                <returns type=""></returns>
+                        </method>
+                
+                        <method name="deleteCurrentRow" access="public">
+                                <summary>Deletes currently selected row.</summary>
+                                <returns type=""></returns>
+                        </method>
+                        
+                        <method name="insertRow" access="public">
+                                <summary>Inserts a new row into the grid</summary>
+                                <returns type=""></returns>
+                        </method>                       
+                        
+                        <method name="getCellObject" access="public">
+                                <summary>Returns the cell object of a grid.</summary>
+                                <param name="column" type="int">column number</param>
+                                <param name="row" type="int">row number</param>
+                                <returns type="nitobi.grid.Cell"></returns>
+                        </method>
+
+                        <method name="getRowObject" access="public">
+                                <summary>Returns a row object.</summary>
+                                <param></param>
+                                <returns type="nitobi.grid.Row"></returns>
+                        </method>
+                        
+                        <method name="getRowCount" access="public">
+                                <summary>Returns the number of rows in the grid.</summary>
+                                <returns type="int"></returns>
+                        </method>                       
+                        
+                        <method name="getSelectedLookupKey" access="public">
+                                <summary>Returns the selected lookup key</summary>
+                                <returns type="string"></returns>
+                        </method>
+                        
+                        <method name="getSelectedColumnNumber" access="public">
+                                <summary>Returns the column index of the selected cell. </summary>
+                                <param name="rel" type="bool">Specifies whether to compensate for frozen columns.</param>
+                                <returns type="int">Column index of the selected cell.</returns>
+                        </method>
+                        <method name="getSelectedColumnObject" access="public">
+                                <summary>Returns the nitobi.grid.Column object that the selected cell is part of.</summary>
+                                <returns type="nitobi.grid.Column">nitobi.grid.Column object of the selected cell.</returns>
+                                
+                        </method>
+                        <method name="getSelectedRow" access="private">
+                                <summary>Returns the row index of the selected cell. </summary>
+                                <param name="rel" type="bool">Specifies whether to compensate for frozen rows.</param>
+                                <returns type="int">Row index of the selected cell.</returns>
+                                
+                        </method>
+                        <method name="getSelectedRowObject" access="public">
+                                <summary>Returns the nitobi.grid.Row object that the selected cell is part of.</summary>
+                                <returns type="nitobi.grid.Column">nitobi.grid.Row object of the selected cell.</returns>
+                                
+                        </method>
+                        <method name="getSelectedCellObject" access="public">
+                                <summary>Returns a reference to the nitobi.grid.Cell object representing the currently selected cell in the Grid. </summary>
+                                
+                                <returns type="nitobi.grid.Cell">selected nitobi.grid.Cell object.</returns>
+                                <include  path="//*[@id='ebaxml_fielddef_getvalue']" type="remarks" />
+                        </method>
+                        <method name="GridSelection" access="private">
+                                <summary>The selection object is used during select operations by the user. Its members provide the functionality for displaying the selected(highlighted blocks</summary>
+                                <param name="oGrid" type="object">A reference to the grid containing the selection</param>
+                        </method>
+                        <method name="selectionhighlight" access="private">
+                                <summary>Highlights the selected area</summary>
+                        </method>
+                        <method name="deselect" access="private">
+                                <summary>Acts as the opposite of highlight</summary>
+                        </method>
+                        <method name="containsSelection" access="private">
+                                <summary>Returns true if the grid contains a valid selection</summary>
+                        </method>
+                        <method name="cellIsInSelection" access="private">
+                                <summary>Returns true if the given Cell is situated inside the active grid selection and the selection is bigger than just one cell.</summary>
+                        </method>
+                        <method name="copy" access="private">
+                                <summary>Copys the current selection into the clipboard. This method stores the data as text with a tab for every column. This is the same format MS Excel uses and therefore the paste method also works with data copied from a MSExcel spreadsheet.</summary>
+                        </method>
+                        <method name="paste" access="private">
+                                <summary>Pasts data from the clipboard into the grid if it contains tabular data. Also pasts data from MSExcel as Excel places data to the clipboard in the form of tabular data as well.</summary>
+                        </method>
+                        <method name="getPendingSortColumn" access="public">
+                                <summary>Retrieves the pending sort column number.</summary>
+                                <returns type="int">Pending sort column number of the Grid.</returns>
+                                
+                        </method>
+                        <method name="loadNextDataPage" access="public">
+                                <summary>Loads the next page of data from the database.</summary>
+                                <remarks>This method requests the data from a getHandler which is a server-side script designed to deliver the requested data.</remarks>
+                                
+                                <include path="//*[@id='pagingexample']" type="example" />
+                        </method>
+                        <method name="loadPreviousDataPage" access="public">
+                                <summary>Loads the previous page of data from the database.</summary>
+                                <remarks>This method requests the data from a getHandler which is a server-side script designed to deliver the requested data.</remarks>
+                                
+                                <include path="//*[@id='pagingexample']" type="example" />
+                        </method>
+                        <method name="loadDataPage" access="public">
+                                <summary>Loads the specified page of data from the database.</summary>
+                                <param name="nStart" type="int">Recordnumber of record which should be display on top of the page.</param>
+                                
+                                <include path="//*[@id='pagingexample']" type="example" />
+                        </method>
+                        <method name="makeXSL" access="private">
+                                <summary>Makes the main XSL</summary>
+                                <remarks>The makeXSL() method is normally called automatically when the grid is first instantiated.</remarks>
+                        </method>
+                </methods>
+
+		<properties>
+			<property name="ID" htmltag="id" type="string" access="public" persist="js" readwrite="read"></property>
+			<property name="uid" type="string" access="public" persist="xml" readwrite="readwrite"></property>
+			<property name="ToolbarHeight" htmltag="toolbarHeight" type="int" access="public" persist="js" readwrite="readwrite" default="25"></property>			
+			<property name="Selection" type="EBASelection" access="public" persist="js" readwrite="read" default="null"></property>
+			<property name="Bound" type="bool" access="public" persist="js" readwrite="readwrite" default="false"></property>
+			<property name="RegisteredTo" htmltag="registeredto" type="string" access="public" persist="js" default="true"
+				readwrite="read" testvalue="test"></property>
+			<property name="LicenseKey" htmltag="licensekey" type="string" access="public" persist="js" default="true"
+				readwrite="read" testvalue="test"></property>
+			<property name="ToolbarContainerEmpty" type="bool" access="private" persist="xml" default="false"
+				readwrite="readwrite" testvalue="test">
+			</property>
+			<property name="Columns" htmltag="columns" namespace="Eba.Grid" type="Column" access="public" persist="js" default="true"
+				readwrite="read" testvalue="test"></property>
+			<property name="ColumnsDefined" htmltag="columnsdefined" type="bool" access="public" persist="js" default="false"
+				readwrite="readwrite" testvalue="true"></property>
+			<property name="Declaration" htmltag="declaration" type="xml" access="private" persist="js" default="&quot;&quot;"
+				readwrite="readwrite" testvalue="&quot;&quot;"></property>
+			<property name="Datasource" htmltag="datasource" namespace="Eba.Data" type="DatasourceManager" access="public" persist="js" default="true"
+				readwrite="read" testvalue="test"></property>
+			<property name="DatasourceId" htmltag="datasourceid" type="string" access="public" persist="xml" default=""
+				readwrite="read" testvalue="testds"></property>
+			<property name="CurrentPageIndex" htmltag="currentpageindex" type="int" access="public" persist="xml" default="0"
+				readwrite="read" testvalue="0"></property>
+			<property name="ColumnIndicatorsEnabled" htmltag="columnindicatorsenabled" type="bool" access="public" persist="xml" default="true"
+				readwrite="readwrite" testvalue="false"></property>
+			<property name="RowIndicatorsEnabled" type="bool" access="private" persist="xml" default="false"
+				readwrite="readwrite" testvalue="false">
+			</property>
+			<property name="ToolbarEnabled" htmltag="toolbarenabled" type="bool" access="public" persist="xml" default="true" readwrite="readwrite"
+				testvalue="false"></property>
+			<property name="RowHighlightEnabled" htmltag="rowhighlightenabled" type="bool" access="public" persist="xml" default="false" readwrite="readwrite"
+				testvalue="false"></property>
+			<property name="RowSelectEnabled" htmltag="rowselectenabled" type="bool" access="public" persist="xml" default="false" readwrite="readwrite"
+				testvalue="false" >
+			</property>
+			<property name="GridResizeEnabled" htmltag="gridresizeenabled" type="bool" access="public" persist="xml" default="false" readwrite="readwrite"
+				testvalue="false"></property>
+			<property name="WidthFixed" htmltag="widthfixed" type="bool" access="public" persist="xml" default="false" readwrite="readwrite"
+				testvalue="true"></property>			
+			<property name="HeightFixed" htmltag="heightfixed" type="bool" access="public" persist="xml" default="false" readwrite="readwrite"
+				testvalue="true"></property>						
+			<property name="MinWidth" htmltag="minwidth" type="int" access="public" persist="xml" default="20" readwrite="readwrite"
+				testvalue="100"></property>			
+			<property name="MinHeight" htmltag="minheight" type="int" access="public" persist="xml" default="0" readwrite="readwrite"
+				testvalue="100"></property>									
+			<property name="SingleClickEditEnabled" htmltag="singleclickeditenabled" type="bool" access="public" persist="xml" default="false" readwrite="readwrite"
+				testvalue="false"></property>
+			<property name="AutoKeyEnabled" htmltag="autokeyenabled" type="bool" access="public" persist="xml" default="false" readwrite="readwrite"
+				testvalue="false">
+			</property>
+			<property name="ToolTipsEnabled" type="bool" access="private" persist="xml" default="true" readwrite="readwrite"
+				testvalue="false">
+			</property>
+			<property name="EnterTab" type="string" access="public" persist="xml" default="down" readwrite="readwrite"
+				htmltag="entertab" testvalue="up">
+			</property>
+			<property name="HScrollbarEnabled" type="bool" access="private" persist="xml" default="true" readwrite="readwrite"
+				testvalue="false">
+			</property>
+			<property name="VScrollbarEnabled" type="bool" access="private" persist="xml" default="true" readwrite="readwrite"
+				testvalue="false">
+			</property>
+			<property name="RowHeight" type="int" access="private" persist="xml" default="23" readwrite="read"
+				htmltag="rowheight" testvalue="50">
+			</property>
+			<property name="HeaderHeight" type="int" persist="xml" access="private" default="23" readwrite="readwrite"
+				htmltag="headerheight" testvalue="50">
+			</property>
+			<property name="top" default="0" type="int" persist="xml" access="private" readwrite="readwrite"
+				impact="css xsl row" testvalue="200">
+			</property>
+			<property name="scrollbarWidth" type="int" persist="xml" access="private" readwrite="readwrite"
+				testvalue="22" default="22">
+			</property>
+			<property name="scrollbarHeight" type="int" persist="xml" access="private" readwrite="readwrite"
+				testvalue="22" default="22">
+			</property>
+			<property name="freezetop" default="0" type="int" persist="xml" access="private" readwrite="readwrite"
+				impact="size css xsl row" testvalue="2">
+			</property>
+			<property name="FrozenLeftColumnCount" htmltag="frozenleftcolumncount" default="0" type="int" persist="xml" access="public" readwrite=""
+				testvalue="2">
+				
+			</property>
+			<property name="RowInsertEnabled" type="bool" access="public" persist="xml" default="true" htmltag="rowinsertenabled"
+				readwrite="readwrite">
+				
+			</property>
+			<property name="RowDeleteEnabled" type="bool" persist="xml" access="public" default="true" htmltag="rowdeleteenabled" readwrite="readwrite">
+				
+			</property>
+			<property name="Asynchronous" type="bool" access="private" persist="xml" default="true" readwrite="readwrite"
+				htmltag="asynchronous" testvalue="false">
+				
+			</property>
+			<property name="AutoAdd" type="bool" access="private" default="false" htmltag="autoadd">
+				
+			</property>
+			<property name="AutoSaveEnabled" type="bool" access="public" persist="xml" default="false" readwrite="readwrite"
+				htmltag="autosaveenabled" testvalue="true">
+				
+			</property>
+			<property name="ColumnCount" type="int" access="public" persist="xml" default="0" readwrite="read"
+				 testvalue="20">
+				
+			</property>
+			<property name="RowsPerPage" type="int" access="public" persist="xml" default="20" readwrite="readwrite"
+				htmltag="rowsperpage" testvalue="20">
+				
+				<include path="//*[@id='pagingexample']" type="example" />
+			</property>
+			<property name="ForceValidate" type="bool" access="private" persist="xml" default="false"
+				readwrite="readwrite">
+			</property>
+			<property name="Height" code="" persist="xml" type="int" access="public" default="100" readwrite="read"
+				htmltag="height" testvalue="200">
+				
+			</property>
+			<property name="keymode" type="string" access="private" default="&quot;&quot;" htmltag="keymode">
+			</property>
+			<property name="KeyGenerator" type="string" access="public" default="&quot;&quot;"
+				readwrite="readwrite" htmltag="keygenerator" persist="js">
+				<include path="//*[@id='keygeneration']" type="example" />
+				
+			</property>
+			<property name="LastError" type="string" access="public" default="&quot;&quot;" readwrite="read"
+				persist="xml" testvalue="&quot;testError&quot;">
+				
+			</property>
+			<property name="lastSaveHandlerResponse" type="string" access="private" default="&quot;&quot;">
+				
+			</property>
+			<property name="MultiRowSelectEnabled" type="bool" access="public" persist="xml" default="false" readwrite="readwrite"
+				testvalue="false" htmltag="multirowselectenabled">
+			</property>
+			<property name="MultiRowSelectField" type="string" access="public" persist="xml" default="" readwrite="readwrite"
+			 	testvalue="" htmltag="multirowselectfield">
+			</property>
+			<property name="MultiRowSelectAttr" type="string" access="private" persist="xml" default="" readwrite="readwrite"
+			 	>
+			</property>
+			<property name="scrolling" type="bool" access="private" default="false">
+			</property>
+			<property name="GetHandler" type="string" access="public" persist="xml" default="&quot;&quot;" htmltag="gethandler">
+				
+				<include path="//*[@id='saveget']" type="example" />
+			</property>
+			<property name="SaveHandler" type="string" access="public" persist="xml" default="&quot;&quot;" htmltag="savehandler">
+				
+				<include path="//*[@id='saveget']" type="example" />
+			</property>
+			<property name="showErrors" type="bool" access="private" default="false" readwrite="readwrite"
+				htmltag="showErrors">
+				
+			</property>
+			<property name="uniqueID" default="&quot;&quot;" code="" type="object" access="public" readwrite="read">
+				
+			</property>
+			<property name="Version" default="3.01" code="" type="string" persist="js" access="public"
+				readwrite="read" htmltag="version">
+				
+			</property>
+			<property name="Width" type="int" access="public" persist="xml" readwrite="read" htmltag="width"
+				testvalue="1000">
+				
+			</property>
+			<property name="PagingMode" type="string" access="public" persist="xml" readwrite="read" htmltag="pagingmode" default="&quot;LiveScrolling&quot;">
+				
+			</property>
+			<property name="DataMode" type="string" access="public" persist="xml" readwrite="read" htmltag="datamode" default="&quot;Caching&quot;">
+				
+			</property>
+			<property name="RenderMode" type="string" access="public" persist="xml" readwrite="read" htmltag="rendermode" default="&quot;&quot;">
+				
+			</property>
+			<property name="CopyEnabled" type="bool" access="public" persist="xml" readwrite="readwrite" htmltag="copyenabled" default="true">
+			</property>
+			<property name="PasteEnabled" type="bool" access="public" persist="xml" readwrite="readwrite" htmltag="pasteenabled" default="true">
+			</property>
+			<property name="SortEnabled" model="SortEnabled" type="bool" access="public"
+				default="true" htmltag="sortenabled" readwrite="readwrite" persist="xml" impact="sort"
+				testvalue="true"></property>
+			<property name="SortMode" model="SortMode" type="string" access="public"
+				default="default" htmltag="sortmode" readwrite="readwrite" persist="xml" impact="sort"
+				testvalue="default"></property>
+		</properties>
+		<events>
+			<event name="OnCellClickEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="oncellclickevent" persist="event"></event>
+			<event name="OnBeforeCellClickEvent" model="OnBeforeCellClickEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onbeforecellclickevent"
+				persist="event"></event>
+			<event name="OnCellDblClickEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="oncelldblclickevent" persist="event"></event>
+			<event name="OnDataReadyEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="ondatareadyevent" persist="event"></event>
+			<event name="OnHtmlReadyEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onhtmlreadyevent" persist="event"></event>
+			<event name="OnDataRenderedEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="ondatarenderevent" persist="event"></event>
+			<event name="OnCellDoubleClickEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="oncelldoubleclickevent"
+				persist="event">
+			</event>
+			<event name="OnAfterLoadDataPageEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onafterloaddatapageevent"
+				persist="event">
+			</event>
+			<event name="OnBeforeLoadDataPageEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onbeforeloaddatapageevent"
+				persist="event">
+			</event>
+			<event name="OnAfterLoadPreviousPageEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onafterloadpreviouspageevent"
+				persist="event">
+			</event>
+			<event name="OnBeforeLoadPreviousPageEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onbeforeloadpreviouspageevent"
+				persist="event">
+			</event>
+			<event name="OnAfterLoadNextPageEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onafterloadnextpageevent"
+				persist="event">
+			</event>
+			<event name="OnBeforeLoadNextPageEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onbeforeloadnextpageevent"
+				persist="event">
+			</event>
+
+			<event name="OnBeforeCellEditEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onbeforecelleditevent"
+				persist="event">
+				
+			</event>
+			<event name="OnAfterCellEditEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onaftercelleditevent"
+				persist="event">
+				
+			</event>
+
+			<event name="OnBeforeRowInsertEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onbeforerowinsertevent"
+				persist="event">
+				
+			</event>
+			<event name="OnAfterRowInsertEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onafterrowinsertevent"
+				persist="event">
+				
+			</event>
+			<event name="OnBeforeSortEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onbeforesortevent"
+				persist="event">
+			</event>
+			<event name="OnAfterSortEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onaftersortevent"
+				persist="event">
+			</event>
+			<event name="OnBeforeRefreshEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onbeforerefreshevent"
+				persist="event">
+			</event>
+			<event name="OnAfterRefreshEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onafterrefreshevent"
+				persist="event">
+			</event>			
+			<event name="OnBeforeSaveEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onbeforesaveevent"
+				persist="event">
+				
+			</event>
+			<event name="OnAfterSaveEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onaftersaveevent"
+				persist="event">
+				
+			</event>
+			<event name="OnHandlerErrorEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onhandlererrorevent"
+				persist="event">
+				
+			</event>
+			
+			<event name="OnRowBlurEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onrowblurevent"
+				persist="event">
+				
+			</event>
+			<event name="OnCellFocusEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="oncellfocusevent"
+				persist="event">
+			</event>
+			<event name="OnFocusEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onfocusevent"
+				persist="event">
+			</event>			
+			<event name="OnCellBlurEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="oncellblurevent"
+				persist="event">				
+			</event>
+			<event name="OnAfterRowDeleteEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onafterrowdeleteevent"
+				persist="event">
+				
+			</event>
+			<event name="OnBeforeRowDeleteEvent" type="string" access="public" default="&quot;true&quot;" readwrite="readwrite" htmltag="onbeforerowdeleteevent"
+				persist="event">
+				
+			</event>
+			<event name="OnCellUpdateEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="oncellupdateevent"
+				persist="event">
+			</event>
+			<event name="OnRowFocusEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onrowfocusevent"
+				persist="event">
+				
+			</event>
+			<event name="OnBeforeCopyEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onbeforecopyevent"
+				persist="event">
+				
+			</event>
+			<event name="OnAfterCopyEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onaftercopyevent"
+				persist="event">
+				
+			</event>
+			<event name="OnBeforePasteEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onbeforepasteevent"
+				persist="event">
+				
+			</event>
+			<event name="OnAfterPasteEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onafterpasteevent"
+				persist="event">
+				
+			</event>
+			<event name="OnErrorEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onerrorevent"
+				persist="event">
+				
+			</event>
+			<event name="OnContextMenuEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="oncontextmenuevent"
+				persist="event">
+			</event>
+
+			<event name="OnFocusEvent" type="string" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onfocusvent"
+				persist="event">				
+			</event>
+			<event name="OnCellValidateEvent" type="string" access="private" default="&quot;&quot;"
+				readwrite="readwrite" persist="event" htmltag="oncellvalidateevent">
+				<include path="//*[@id='datavalidation']" type="example" />
+			</event>
+			<event name="OnKeyDownEvent" model="OnKeyDownEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeydownevent" persist="event"></event>
+			<event name="OnKeyUpEvent" model="OnKeyUpEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeyupevent" persist="event"></event>
+			<event name="OnKeyPressEvent" model="OnKeyPressEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onkeypressevent" persist="event"></event>
+			<event name="OnMouseOverEvent" model="OnMouseOverEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onmouseoverevent" persist="event"></event>
+			<event name="OnMouseOutEvent" model="OnMouseOutEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onmouseoutevent" persist="event"></event>
+			<event name="OnMouseMoveEvent" model="OnMouseMoveEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onmousemoveevent" persist="event"></event>
+			<event name="OnHitRowEndEvent" model="OnHitRowEndEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onhitrowendevent" persist="event"></event>
+			<event name="OnHitRowStartEvent" model="OnHitRowStartEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onhitrowstartevent" persist="event"></event>
+			<event name="OnAfterDragFillEvent" model="OnAfterDragFillEvent" type="String" access="public" default="&quot;&quot;" readwrite="readwrite" htmltag="onafterdragfillevent" persist="event"></event>
+		</events>
+	</interface>
+
+</interfaces>

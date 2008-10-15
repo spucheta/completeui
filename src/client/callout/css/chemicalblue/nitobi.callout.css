@@ -1,0 +1,248 @@
+/* Nitobi Callout Stylesheet Alert Style v1.1 */
+.ntbSpot {
+}
+.ntbMouse {
+background:url(assets/arrow.png) top left no-repeat;
+width: 21px;
+height: 34px;
+}
+.ntbMouseClick {
+background:url(assets/arrow_click.png) top left no-repeat;
+width: 29px;
+height: 40px;
+}
+.ntbType {
+background:url(assets/type.png) top left no-repeat;
+width: 15px;
+height: 33px;
+}
+.ntbWait {
+background:url(assets/wait.png) top left no-repeat;
+width: 26px;
+height: 34px;
+}
+.ntbMouse_offset { top: 0px; left: 0px;}
+.ntbMouseClick_offset { top: -7px; left: -7px;}
+.ntbWait_offset { top: 0px; left: 0px;}
+.ntbType_offset { top: -15px; left: 0px;}
+
+.ntbchemicalblueCallout_next_off {
+background:url(assets/next_off.gif) top left no-repeat;
+width: 56px;
+height: 23px;
+cursor: pointer;
+margin-top: 10px;	
+}
+.ntbchemicalblueCallout_next_on {
+background:url(assets/next_on.gif) top left no-repeat;
+width: 56px;
+height: 23px;
+cursor: pointer;
+margin-top: 10px;	
+}
+.ntbchemicalblueCallout_closeoffset1, .ntbchemicalblueCallout_closeoffset0, .ntbchemicalblueCallout_closeoffset2, .ntbchemicalblueCallout_closeoffset3, .ntbchemicalblueCallout_closeoffset4, .ntbchemicalblueCallout_closeoffset5, .ntbchemicalblueCallout_closeoffset6, .ntbchemicalblueCallout_closeoffset7, .ntbchemicalblueCallout_closeoffset8 {
+top: 41px;
+left:-0px;
+}
+.ntbchemicalblueCallout_close_off {
+background:url(assets/close_off.gif) top left no-repeat;
+width: 10px;
+height: 10px;
+cursor: pointer;	
+}
+.ntbchemicalblueCallout_close_on {
+background:url(assets/close_on.gif) top left no-repeat;
+width: 10px;
+height: 10px;
+cursor: pointer;
+}
+.ntbchemicalblueCallout_bodytitlediv1,.ntbchemicalblueCallout_bodytitlediv2,.ntbchemicalblueCallout_bodytitlediv0 {
+top:50px;
+left:40px;
+}
+.ntbchemicalblueCallout_bodytitlediv3, .ntbchemicalblueCallout_bodytitlediv4, .ntbchemicalblueCallout_bodytitlediv5, .ntbchemicalblueCallout_bodytitlediv6, .ntbchemicalblueCallout_bodytitlediv7,.ntbchemicalblueCallout_bodytitlediv8 {
+top:50px;
+left:20px;
+}
+.ntbchemicalblueCallout_bodydiv0,.ntbchemicalblueCallout_bodydiv1,.ntbchemicalblueCallout_bodydiv2,.ntbchemicalblueCallout_bodydiv3,.ntbchemicalblueCallout_bodydiv4,.ntbchemicalblueCallout_bodydiv5,.ntbchemicalblueCallout_bodydiv6,.ntbchemicalblueCallout_bodydiv7,.ntbchemicalblueCallout_bodydiv8 {
+position: absolute;
+top:80px;
+left:40px;
+font-size: 12px;
+line-height:15px;
+color: #5f5f5f;
+font-family: Arial, Helvetica, sans-serif;
+white-space:normal;
+font-weight: normal;
+}
+.ntbchemicalblueCallout_bodydiv3{
+top:80px;
+left:40px;
+}
+.ntbchemicalblueCallout_bodydiv4 {
+top:80px;
+left:40px;
+}
+.ntbchemicalblueCallout_bodydiv5 {
+top:80px;
+left:40px;
+}
+.ntbchemicalblueCallout_bodydiv6 {
+top:80px;
+left:40px;
+}
+.ntbchemicalblueCallout_bodydiv7,.ntbchemicalblueCallout_bodydiv8 {
+top:80px;
+left:40px;
+}
+.ntbchemicalblueCallout_titlediv0,.ntbchemicalblueCallout_titlediv1,.ntbchemicalblueCallout_titlediv2,.ntbchemicalblueCallout_titlediv3,.ntbchemicalblueCallout_titlediv4,.ntbchemicalblueCallout_titlediv5,.ntbchemicalblueCallout_titlediv6,.ntbchemicalblueCallout_titlediv7,.ntbchemicalblueCallout_titlediv8 {
+position: absolute;
+top:40px;
+left:40px;
+font-weight:bold;
+font-size: 16px;
+color: #5f5f5f;
+font-family: Arial, Helvetica, sans-serif;
+white-space:nowrap;
+width:auto;
+}
+.ntbchemicalblueCallout_offset1,.ntbchemicalblueCallout_offset0,
+.ntbchemicalblueCallout_offset2, .ntbchemicalblueCallout_offset3, .ntbchemicalblueCallout_offset4, .ntbchemicalblueCallout_offset5, .ntbchemicalblueCallout_offset6, .ntbchemicalblueCallout_offset7, .ntbchemicalblueCallout_offset8 {
+left:0px;
+top:0px;
+width:30px;
+height:25px;
+}
+.ntbchemicalblueCallout_offset6 {
+width:0px;
+}
+.ntbchemicalblueCallout_mastercontainer {
+padding: 0px;
+margin: 0px;
+}
+.ntbchemicalblueCallout_rt_right {
+background:url(slices/arrow_lb.png) top left no-repeat;
+width: 50px;/**/
+}
+.ntbchemicalblueCallout_rt_br {
+background:url(slices/bottomleft.png) top left no-repeat;
+width: 50px;/**/
+height: 50px;/**/
+}
+.ntbchemicalblueCallout_rb_main {
+background:url(slices/topleft_large.png) top left no-repeat;
+}
+.ntbchemicalblueCallout_rb_bottom {
+background:url(slices/bottomright.png) top left no-repeat;
+height: 50px;/**/
+}
+.ntbchemicalblueCallout_rb_right {
+background:url(slices/topright.png) top left no-repeat;
+width: 50px;/**/
+}
+.ntbchemicalblueCallout_rb_rb {
+background:url(slices/arrow_lt.png) top left no-repeat;
+width: 50px;/**/
+height: 100px;
+}
+.ntbchemicalblueCallout_lb_left {
+background:url(slices/topleft_thin.png) top left no-repeat;
+width: 50px;/**/
+}
+.ntbchemicalblueCallout_lb_lb {
+background:url(slices/arrow_rt.png) top left no-repeat;
+width: 50px;/**/
+height: 100px;	
+}
+.ntbchemicalblueCallout_lb_main {
+background:url(slices/topcenter.png) top left no-repeat;
+}
+.ntbchemicalblueCallout_lb_bottom {
+background:url(slices/topbottom.png) top left no-repeat;
+height: 50px;/**/
+}
+.ntbchemicalblueCallout_lb_right {
+background:url(slices/topright.png) top left no-repeat;
+width: 50px;/**/
+}
+.ntbchemicalblueCallout_lb_br {
+background:url(slices/bottomleft.png) top left no-repeat;
+width: 50px;/**/
+height: 50px;/**/
+}
+.ntbchemicalblueCallout_lt_main {
+background:url(slices/arrow_rb.png) top left no-repeat;
+}
+.ntbchemicalblueCallout_lt_bottom {
+background:url(slices/bottomright.png) top left no-repeat;
+height: 50px;/**/
+}
+.ntbchemicalblueCallout_lt_right {
+background:url(slices/topright.png) top left no-repeat;
+width: 50px;/**/
+}
+.ntbchemicalblueCallout_lt_br {
+background:url(slices/bottomleft.png) top left no-repeat;
+width: 50px;/**/
+height: 50px;/**/
+}
+.ntbchemicalblueCallout_tl_main {
+background:url(slices/arrow_br.png) top left no-repeat;
+}
+.ntbchemicalblueCallout_tl_right {
+background:url(slices/topright.png) top left no-repeat;
+width: 50px;/**/
+}
+.ntbchemicalblueCallout_tl_br_plain {
+background:url(slices/bottomleft.png) top left no-repeat;
+width: 50px;/**/
+height: 50px;/**/
+}
+.ntbchemicalblueCallout_bl_main {
+background:url(slices/topleft_large.png) top left no-repeat;
+}
+.ntbchemicalblueCallout_bl_right {
+background:url(slices/topright.png) top left no-repeat;
+width: 50px;/**/
+}
+.ntbchemicalblueCallout_bottom_plain {
+background:url(slices/bottomright.png) top left no-repeat;
+height: 100px;/**/
+}
+.ntbchemicalblueCallout_br_bottom {
+background:url(slices/arrow_tl.png) top left no-repeat;
+width: 100px;
+height: 50px;/**/
+}
+.ntbchemicalblueCallout_bl_bottom {
+background:url(slices/arrow_tr.png) top left no-repeat;
+height: 50px;/**/
+}
+.ntbchemicalblueCallout_br_plain {
+background:url(slices/bottomleft.png) top left no-repeat;
+width: 50px;/**/
+height: 50px;/**/
+}
+.ntbchemicalblueCallout_tr_topright {
+background:url(slices/arrow_bl.png) top left no-repeat;
+width: 100px;
+height: 50px;/**/
+}
+.ntbchemicalblueCallout_tr_topleft {
+background:url(slices/topleft.png) top left no-repeat;
+height: 50px;/**/
+}
+.ntbchemicalblueCallout_tr_mainpart {
+background:url(slices/middleleft.png) top left no-repeat;
+}
+.ntbchemicalblueCallout_tr_right {
+background:url(slices/middleright.png) top left no-repeat;
+width: 50px;/**/
+}
+.ntbchemicalblueCallout_extender {
+width: 12px;/**/
+}
+.ntbchemicalblueCallout_minimums {
+width: 13px;/**/
+height: 10px;/**/
+}

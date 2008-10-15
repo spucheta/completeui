@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+	<jsfile path="../toolkit/js/nitobi/base/toolkitdetection.js"/>
+	<jsfile path="js/nitobi/calendar/calendar.js"></jsfile>
+	<jsfile path="js/nitobi/calendar/datepicker.js"></jsfile>
+	<jsfile path="js/nitobi/calendar/dateinput.js"></jsfile>
+	<jsfile path="js/nitobi/calendar/calrenderer.js"></jsfile>
+	<jsfile path="js/nitobi/calendar/eventsmanager.js"></jsfile>
+	<xslfile path="xsl/nitobi/calendar/render.xsl" namespace="nitobi.calendar" name="datePickerTemplate"/>
+	<cssfile path="css/nitobi.reset.css"></cssfile>	
+	<cssfile path="css/gloss/calendar.css"></cssfile>
+	<cssfile path="css/minimal/calendar.css"></cssfile>
+	<cssfile path="css/minimal_bluestripes/calendar.css"></cssfile>
+	<cssfile path="css/minimal_greenstripes/calendar.css"></cssfile>
+	<cssfile path="css/minimal_redstripes/calendar.css"></cssfile>
+	<cssfile path="css/minimal_stripes/calendar.css"></cssfile>
+	<cssfile path="css/outline/calendar.css"></cssfile>
+	<cssfile path="css/radial_blue/calendar.css"></cssfile>
+	<cssfile path="css/radial/calendar.css"></cssfile>
+	<cssfile path="css/radial_orange/calendar.css"></cssfile>
+	<cssfile path="css/flex/calendar.css"></cssfile>
+	<cssfile path="css/leopard/calendar.css"></cssfile>
+	<cssfile path="css/vista/calendar.css"></cssfile>
+</includes>

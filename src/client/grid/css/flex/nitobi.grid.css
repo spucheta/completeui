@@ -1,0 +1,363 @@
+/* --------------------	*/
+/* Global Attributes	*/
+/* --------------------	*/
+
+/* This is where you set your desired font size. The line-heights 
+   and vertical margins are automatically calculated from this. 
+   The percentage is of 16px (0.625 * 16px = 10px). */
+
+.flex { font-size: 62.5%; }
+
+/* Default fonts and colors 
+---------------------------------------------*/
+
+.flex {
+	color:#333333;
+	font-family:Tahoma, Arial, Verdana;
+	font-size: 12px;
+	text-align:left;
+}
+
+.flex h1,.flex h2,.flex h3,.flex h4,.flex h5,.flex h6 { 
+	color:#222222; 
+	font-family:Tahoma, Arial, Verdana;
+}
+
+/* Links */
+
+/* --------------------	*/
+/* Text  				*/
+/* --------------------	*/
+
+/* Headings
+---------------------------------------------*/
+.flex h1, .flex h2, .flex h3, .flex h4, .flex h5, .flex h6 { 
+	font-weight: normal; 
+}
+
+.flex h1 { font-size: 3.6em; line-height: 1; margin-bottom: 0.5em; }
+.flex h2 { font-size: 2.4em; margin-bottom: 0.75em; }
+.flex h3 { font-size: 1.8em; line-height: 1; margin-bottom: 1em; }
+.flex h4 { font-size: 1.4em; line-height: 1.25; margin-bottom: 1.25em; }
+.flex h5 { font-size: 1.2em; font-weight: bold; margin-bottom: 1.5em; }
+.flex h6 { font-size: 1.2em; font-weight: bold; }
+
+/* Text Elemenets
+---------------------------------------------*/
+
+.flex p 			{ font-family:Tahoma, Arial, Verdana; font-size:1.2em; margin: 0 0 1.5em; }
+.flex p.last      { margin-bottom: 0; }
+.flex p img       { float: left; margin: 0; padding: 0; }
+.flex p img.top   { margin-top: 0; } /* Use this if the image is at the top of the <p>. */
+
+/* Forms */
+
+/* Lists */
+
+.flex .ntb-grid { 
+}
+
+.flex .ntb-grid-header {
+	background: url(assets/header.png) left top repeat-x;
+	border-bottom: #b7babc 1px solid;
+	height: 21px;
+}
+
+.flex .ntb-column-descending { 
+	background-color:#7fceff;
+	border-right: #b7babc 1px solid;
+	border-bottom: #ebeff2 1px solid; 
+}
+
+.flex .ntb-column-ascending { 
+	background-color:#7fceff; 
+	border-right: #b7babc 1px solid;
+	border-bottom: #ebeff2 1px solid;
+}
+
+.flex .ntb-column-indicator { 
+	padding: 0px 5px;
+}
+
+.flex .ntb-column-indicator-border,
+.flex .ntb-column-indicator-borderhover,
+.flex .ntb-column-indicator-borderascending,
+.flex .ntb-column-indicator-borderdescending,
+.flex .ntb-column-indicator-borderascendinghover,
+.flex .ntb-column-indicator-borderdescendinghover {
+	border-right: #b7babc 1px solid;
+    cursor: pointer; /*Firefox*/
+    cursor: hand;
+	height:auto;
+	color:#0b333c;
+	font-weight: bold;
+}
+.flex .ntb-column-indicator-borderhover {
+	background-color: #b2e1ff;
+}
+.flex .ntb-column-indicator-borderascending {
+	background: url(assets/arrow_up.gif) no-repeat right top;
+}
+.flex .ntb-column-indicator-borderdescending {
+	background: url(assets/arrow_down.gif) no-repeat right top;
+}
+.flex .ntb-column-indicator-borderascendinghover {
+	background: url(assets/arrow_up.gif) no-repeat right top;
+}
+.flex .ntb-column-indicator-borderdescendinghover {
+	background: url(assets/arrow_down.gif) no-repeat right top;
+}
+
+.flex .ntb-column-resizeline {
+    filter:alpha(opacity=50);
+    -moz-opacity: .50;
+    opacity: .50;
+    background-color: #736F6E;	/* gray */
+    width: 3px;
+    position:absolute;
+    display:none;
+    top:-5000px;
+    left:-5000px;
+    cursor: w-resize;
+    z-index: 900;
+}
+
+.flex .ntb-grid-resizebox {
+    filter:alpha(opacity=50);
+    -moz-opacity: .50;
+    opacity: .50;
+    background-color: #736F6E;	/* gray */
+    width: 3px;
+    position:absolute;
+    display:none;
+    top: -5000px;
+    left: -5000px;
+    cursor: w-resize;
+    z-index: 900;
+}
+
+.flex .ntb-row {
+    margin:0px;
+    cursor:default;
+}
+
+.flex .ntb-row-hover { 
+	background-color:#b2e1ff; 
+}
+
+.flex .ntb-row-select { 
+	clear:both; 
+}
+
+.flex .ntb-cell {
+    text-decoration:none;
+	padding:0px 2px 0px 4px;
+	white-space:nowrap;
+}
+
+.flex .ntb-cell-border {
+	color:#0b333c;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-align:left;
+	border-right: #b7babc 1px solid;
+}
+.flex .ntb-row-alternate {
+	background-color: #f5f5f5;
+}
+
+.flex .ntb-cell-hover { 
+	background-color: #44b7fe; 
+}
+
+.flex .ntb-grid-selection-background {
+    background-color: #7fceff;
+    filter:alpha(opacity=25);
+    -moz-opacity:.25;
+    opacity:.25;
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:15;
+}
+
+.flex .ntb-loading {
+    background-color:#FFFFFF;
+    filter:alpha(opacity=85);
+    -moz-opacity:.85;
+    opacity:.85;
+    z-index:200000;
+    position:absolute;
+	cursor:wait;
+}
+
+.flex .ntb-loading-icon { 
+	overflow:hidden; 
+	z-index:300000; 
+}
+
+/******** Image editor / column ************/
+
+.nitobi .ntb-image {
+}
+
+/******** Checkbox editor / column ************/
+
+.flex .ntb-checkbox {
+	height:100%;
+	width:15px;
+	margin-right: 5px;
+	float:left;
+}
+
+.flex .ntb-checkbox-unchecked {
+	background: url(assets/checkbox_off.png) no-repeat center center;
+}
+
+.flex .ntb-checkbox-checked {
+	background: url(assets/checkbox_on.png) no-repeat center center;
+}
+.flex .ntb-checkbox-text {
+	float:left;
+}
+
+.flex input, .flex textarea, .flex select, .flex ntb-input {
+	/*NOTE: Inputs don't inherit front styles*/
+	color:#0b333c;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+    border:0px solid #000000;
+    padding:0px 2px 0px 4px;
+    width: 100px;
+}
+
+.flex .ntb-input-border { 
+	border:1px solid #000000; 
+	background-color: #FFFFFF; 
+}
+
+.flex .ntb-lookup-options {
+	background-color: #ffffff;
+	border-top: 1px solid #000000;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+.flex .ntb-resize-indicator-right {
+	background: transparent url('resize_right.png') no-repeat;
+	position:absolute;
+	bottom:-1px;
+	right:-5px;
+	width:4px;
+	height:10px;
+	line-height:1px;
+	overflow:hidden;
+}
+
+.flex .ntb-resize-indicator-bottom {
+	background: transparent url('resize_bottom.png') no-repeat;
+	position:absolute;
+	bottom:-5px;
+	right:-5px;
+	width:16px;
+	height:4px;
+	line-height:1px;
+	overflow:hidden;
+}
+
+.flex .ntb-grid-selection {
+    background-color:transparent;
+    display:block;
+    height:10px;
+    width:10px;
+    position:absolute;
+    left:-2000px;
+    top:-2000px;
+}
+
+.flex .ntb-grid-selection-grabby {
+	/* Note: Always define a generic cursor 
+	at the end of the list in case none of 
+	the url-defined cursors can be used */
+	
+    position:absolute;
+    right:-1px;
+    bottom:-1px;
+    width:5px;
+    height:5px;
+    overflow:hidden;
+    background-color:#000000;
+    cursor:pointer;
+    cursor:hand;
+    z-index:20;
+}
+
+.flex .ntb-grid-selection-border {
+    border: 1px solid #000000;
+}
+
+.flex .ntb-grid-selection-border-active {
+    border:1px dashed #000000;
+}
+
+.flex .ntb-frozenshadow {
+	right:-5px;
+	width:5px;
+	background:url('shadow.png');
+}
+
+.flex .ntb-datepicker-button {
+	/* change class name from .ntb-dp-input .ntb-dp-inputbutton */
+    width:20px;
+    text-align:center;
+}
+
+.flex .ntb-datepicker-button a {
+	/* changed from .ntb-dp-input .ntb-dp-inputbutton a */
+    display:block;
+    height:16px;
+    width:16px;
+    background: transparent url("date.gif") no-repeat;
+}
+.flex .ntb-datepicker-button a:hover { background-position: -16px 0; }
+.flex .ntb-datepicker-input input { padding:0; margin:0; border:0; }
+.flex .ntb-hyperlink-editor { text-decoration: underline; cursor: pointer; color: blue; }
+.flex .ntb-hide { display:none; }
+
+.flex .ntb-effects-small {
+	clear:both;
+	display:block;
+	float:none;
+	height:0px;
+	//height:1px;
+	overflow:hidden;
+	width:auto;
+}
+
+.flex .ntb-clipboard {
+    position:absolute;
+    top:1px;
+    left:1px;
+    height:1px;
+    width:1px;
+    z-index:-1;
+}
+
+/*
+	border-top: #b7babc 1px solid;*/
+/* Toolbar Overwrite */
+.flex .ntbtoolbarcontainer {
+	border-top: #b7babc 1px solid !important;
+}
+.flex .ntb-toolbar {
+	background: #efefef url(assets/toolbar_base.png) right top repeat-x !important;
+}
+.flex .ntb-button-highlight {
+	background-color: #b2e1ff !important;
+}
+.flex .ntb-button-down {
+	background-color: #7fceff !important;
+}

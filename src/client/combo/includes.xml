@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+	<jsfile path="../toolkit/js/nitobi/base/toolkitdetection.js"/>
+	<jsfile path="js/nitobi/combo/browser-compat.js"/>
+	<jsfile path="js/nitobi/combo/drawing-compat.js"/>
+	<jsfile path="js/nitobi/combo/button.js"/>
+	<jsfile path="js/nitobi/combo/combo.js"/>
+	<jsfile path="js/nitobi/combo/iframe.js"/>
+	<jsfile path="js/nitobi/combo/languagepack.js"/>
+	<jsfile path="js/nitobi/combo/list.js"/>
+	<jsfile path="js/nitobi/combo/listcolumndefinition.js"/>
+	<jsfile path="js/nitobi/combo/textbox.js"/>
+	<jsfile path="js/nitobi/combo/xbrowser.js"/>
+	<jsfile path="js/nitobi/combo/xmldatasource.js"/>
+
+	<cssfile path="css/nitobi.reset.css"/>
+	<cssfile path="css/basicgrey/nitobi.combo.css"/>
+	<cssfile path="css/bluetrim/nitobi.combo.css"/>
+	<cssfile path="css/cmail/nitobi.combo.css"/>
+	<cssfile path="css/contactsearch/nitobi.combo.css"/>
+	<cssfile path="css/desktopsearch/nitobi.combo.css"/>
+	<cssfile path="css/flex/nitobi.combo.css"/>
+	<cssfile path="css/ice/nitobi.combo.css"/>
+	<cssfile path="css/outlook/nitobi.combo.css"/>
+	<cssfile path="css/outlookmini/nitobi.combo.css"/>
+	<cssfile path="css/recordsearch/nitobi.combo.css"/>
+	<cssfile path="css/suggests/nitobi.combo.css"/>
+	<cssfile path="css/tiger/nitobi.combo.css"/>
+	<cssfile path="css/vista/nitobi.combo.css"/>
+	<cssfile path="css/visualstudio/nitobi.combo.css"/>
+	<cssfile path="css/winofficexp/nitobi.combo.css"/>
+	<cssfile path="css/winxpblue/nitobi.combo.css"/>
+	<cssfile path="css/winxpsilver/nitobi.combo.css"/>
+
+	<langfile path="js/language/de.js" />
+	<langfile path="js/language/es.js" />
+	<langfile path="js/language/fr.js" />
+	<langfile path="js/language/it.js" />
+	<langfile path="js/language/ja.utf8.js" />
+	<langfile path="js/language/ko.utf8.js" />
+	<langfile path="js/language/pt.js" />
+</includes>

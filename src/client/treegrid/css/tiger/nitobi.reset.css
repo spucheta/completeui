@@ -1,0 +1,51 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+.nitobi div, .nitobi span, .nitobi iframe, .nitobi h1, .nitobi h2, .nitobi h3, .nitobi h4, .nitobi h5, .nitobi h6, .nitobi p, .nitobi blockquote, .nitobi pre,
+.nitobi a, .nitobi em, .nitobi font, .nitobi img, .nitobi strong, .nitobi ol, .nitobi ul, .nitobi li, .nitobi fieldset, .nitobi form, .nitobi label, 
+.nitobi table, .nitobi caption, .nitobi tbody, .nitobi tfoot, .nitobi thead, .nitobi tr, .nitobi th, .nitobi td {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	outline: 0px;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	background: transparent;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0px;
+}
+
+.nitobi ol,.nitobi  ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.nitobi table {
+	border-collapse: separate;
+	border-spacing: 0px;
+}
+
+.nitobi caption,.nitobi th,.nitobi td {
+	text-align: left;
+	font-weight: normal;
+}
+
+.nitobi blockquote:before, .nitobi blockquote:after, .nitobi q:before, q:after {
+	content: "";
+}
+
+.nitobi blockquote, q {
+	quotes: "" "";
+}

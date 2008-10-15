@@ -1,0 +1,213 @@
+/* Set default font */
+.tiger, .tiger input, .tiger textarea {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000;
+}
+
+/* General settings */
+.tiger .ntb-combobox-text-container, .tiger .ntb-combobox-text-container-disabled {
+	padding-left:3px; 
+	padding-top:2px; 
+	padding-bottom:0px; 
+	margin:0px; 
+}
+
+.tiger .ntb-combobox-text-ie, .tiger .ntb-combobox-text-moz {
+	border-style:none;
+	padding:0px;
+	border:0px;
+	height:16px;
+}
+.tiger .ntb-combobox-text-moz {
+	height:18px;
+}
+
+/* Main container */
+.tiger .ntb-combobox-input-disabled {
+	background: #CCCCCC;
+}
+.tiger .ntb-combobox-text-container {
+	background: url(assets/shadow.png) left top no-repeat;
+}
+.tiger .ntb-combobox-text-container-disabled {
+	background: #CCCCCC;
+}
+
+/* Defines the button */
+.tiger .ntb-combobox-button {
+	cursor:pointer;
+}
+.tiger .ntb-combobox-button-img, .tiger .ntb-combobox-button-img-over, .tiger .ntb-combobox-button-img-disabled,
+.tiger .ntb-combobox-button-img-pressed {
+	vertical-align:text-bottom;
+	width:26px;
+	height:24px;
+}
+
+/* Defines the button's IMG tag */
+.tiger .ntb-combobox-button-img {
+	background:url(assets/button.gif);
+}
+.tiger .ntb-combobox-button-img-over {
+	background:url(assets/button_hl.gif);
+}
+.tiger .ntb-combobox-button-img-disabled {
+	background:url(assets/button_hl.gif);
+}
+.tiger .ntb-combobox-button-img-pressed {
+	background:url(assets/button_pressed.gif);
+}
+
+
+/* The list container; contains the list's header, body, footer. */
+.tiger .ntb-combobox-list {
+	border: silver 1px solid;
+	background-color: #fff;
+	z-index: 1000;
+	visibility: hidden;
+	display: none;
+	position: absolute;
+	text-align: left;
+	scrollbar-face-color:#D5DFF9;
+	scrollbar-highlight-color:#FFFFFF;
+	scrollbar-3dlight-color:#EBEFF7;
+	scrollbar-darkshadow-color:#5D5A6D;
+	scrollbar-shadow-color:#4D6185;
+	scrollbar-arrow-color:#000000;
+	scrollbar-track-color:#F4F1EC;
+}
+
+.tiger .ntb-combobox-list-iframe, .tiger .ntb-combobox-list-body, .tiger .ntb-combobox-list-header, .tiger .ntb-combobox-list-body-table, .tiger .ntb-combobox-list-footer, .tiger .ntb-combobox-column-labels, .tiger .ntb-combobox-column-label, .tiger .ntb-combobox-list-footer-page-next-button-highlight, .tiger .ntb-combobox-list-footer-page-next-button, .tiger .ntb-combobox-text-container, .tiger .ntb-combobox-text-container-disabled, .tiger .ntb-combobox-button {
+	float:left;
+}
+
+/* The list's body; the middle container in the list container. */
+.tiger .ntb-combobox-list-body {
+	background:#F9F9F9;
+	overflow:auto;
+	_overflow-x:hidden;
+	_overflow-y:auto;
+}
+
+/* The list's header; the topmost container in the list container. */
+.tiger .ntb-combobox-list-header {
+	background: url(assets/footer.gif) repeat-x left top;	
+	overflow:hidden;
+	height: 20px;
+}
+
+/* The footer that sits underneath the list. */
+.tiger .ntb-combobox-list-footer {
+	background: url(assets/footer.gif) repeat-x left top;	
+	border-top:1px solid #D8D2BD;
+	vertical-align:middle;
+	height:20px;
+	overflow:hidden;
+}
+
+/* The table storing the actual list data */
+.tiger .ntb-combobox-list-body-table {
+	background:#F6F6F6;
+	border-collapse:collapse;
+	table-layout:fixed;
+}
+
+/* A row in the table. */
+.tiger .ntb-combobox-list-body-table-row {
+	border-collapse:collapse;
+	height:16px;
+	color: #0000CC;
+	cursor:pointer;	
+	table-layout:fixed;
+}
+
+/* The style used when the user selects or mouses over a row */
+.tiger .ntb-combobox-list-body-table-row-highlighted {
+	color:#FFFFFF;
+}
+
+/* The column labels at the top of the columns. This style is applied to the whole row of labels. */
+.tiger .ntb-combobox-column-labels {
+	vertical-align: text-top;
+	border-collapse:collapse;
+	height: 16px;
+}
+
+/* The style applied to the individual label. */
+.tiger .ntb-combobox-column-label {
+	font-weight: bold;
+	vertical-align: text-top;
+	padding-left: 3px;	
+	position:relative;
+	top:0px;
+}
+
+/* The text inside the individual label (to prevent overflow) */
+.tiger .ntb-combobox-column-label-text {
+	height:17px;
+	overflow: hidden;
+}
+
+.tiger .ntb-combobox-list-column-definition {
+	height:18px;
+	min-height:18px;
+	cursor:pointer;	
+	white-space: nowrap;
+	overflow:hidden;
+	color: #0000CC;
+}
+
+.tiger .ntb-combobox-list-column-definition-cell {
+    padding-left: 3px;
+	white-space: nowrap;
+}
+
+.tiger .ntb-combobox-list-footer-page-next-button {
+	background: url(assets/paging.gif) no-repeat right top;
+	padding-left: 2px;
+	padding-top: 2px;
+	height:20px;
+	cursor:hand;
+	color: #666;
+}
+
+.tiger .ntb-combobox-list-footer-page-next-button-highlight {
+	background: url(assets/paging.gif) no-repeat right top;
+	padding-left: 2px;
+	padding-top: 2px;
+	height:20px;
+	cursor:hand;
+	color: #000;
+}
+
+/* affects the color of the list's outer border */
+/* PLEASE DO NOT put anything else into this style */
+/* this style is provided solely to change this one attribute */
+.tiger .ntb-combobox-list-outer-border {
+      border-color:#000;
+}
+
+/*
+* These are seperate because it causes the superclass to disappear and re-appear if we try and collapse these down
+* any further in Firefox 2
+*/
+.tiger .ntb-combobox-combo-menus {
+	overflow:hidden;
+	background-color: #F0F0E5;
+	cursor: pointer;
+	cursor: hand;
+}
+.tiger .ntb-combobox-combo-menu, .tiger .ntb-combobox-combo-menu-highlight {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	background: url(assets/bar1.png) top left repeat-x;
+	color: #fff;
+}
+.tiger .ntb-combobox-combo-menu-highlight {
+	background: url(assets/bar2.png) top left repeat-x;
+}
+
+.tiger .ntb-combobox-combo-menu-icon
+{
+}

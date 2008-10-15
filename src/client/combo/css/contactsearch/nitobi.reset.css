@@ -1,0 +1,51 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+.contactsearch div, .contactsearch span, .contactsearch iframe, .contactsearch h1, .contactsearch h2, .contactsearch h3, .contactsearch h4, .contactsearch h5, .contactsearch h6, .contactsearch p, .contactsearch blockquote, .contactsearch pre,
+.contactsearch a, .contactsearch em, .contactsearch font, .contactsearch img, .contactsearch strong, .contactsearch ol, .contactsearch ul, .contactsearch li, .contactsearch fieldset, .contactsearch form, .contactsearch label, 
+.contactsearch table, .contactsearch caption, .contactsearch tbody, .contactsearch tfoot, .contactsearch thead, .contactsearch tr, .contactsearch th, .contactsearch td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	background: transparent;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+.contactsearch ol,.contactsearch  ul {
+	list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+.contactsearch table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.contactsearch caption,.contactsearch th,.contactsearch td {
+	text-align: left;
+	font-weight: normal;
+}
+
+.contactsearch blockquote:before, .contactsearch blockquote:after, .contactsearch q:before, q:after {
+	content: "";
+}
+
+.contactsearch blockquote, q {
+	quotes: "" "";
+}

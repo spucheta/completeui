@@ -1,0 +1,392 @@
+/* Font settings */
+.flex .ntb-tab-strip, .flex .ntb-tab-strip a {
+	overflow:hidden;
+	width:100%;
+	height:100%;
+	font-size: 12px; 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color:#173d45;
+	text-align:left;
+	font-weight:normal;
+	white-space: nowrap;
+	padding:0px;
+	margin:0px;	
+}
+.flex .ntb-tab a, .flex .ntb-tab-inactive  .ntb-tab-label a, .flex .ntb-tab-active .ntb-tab-label a {
+	color: #173d45;	
+	text-decoration: none;
+	display:block;
+	padding-top: 8px;
+}
+.flex .ntb-tab-active .ntb-tab a {
+	font-weight:bold;
+}
+.flex .ntb-tab-disabled .ntb-tab,  {
+	font-weight:bold;
+	font-size: 11px; 
+	color:gray;
+	text-align:left;
+	cursor:pointer;
+}
+.flex .ntb-tab-disabled .ntb-tab a {
+	text-decoration:none;
+	cursor:pointer;
+}
+
+/* default */
+.flex .ntb-tab-strip-max, .flex .ntb-tab-strip-body-container {
+	width:100%;
+	height:100%
+}
+.flex .ntb-tab-strip .ntb-tab-tabs-row {
+	vertical-align:bottom;
+}
+.flex .ntb-tab-bodies-row {
+	width: 100%;
+	vertical-align:top;
+}
+.flex .ntb-tab-strip-body-container {
+	border: 1px solid lightgrey;
+}
+.flex .ntb-tab-mouseover .ntb-tab {
+	font-weight:bold;
+	white-space: nowrap;
+	padding:0px;
+	margin:0px;
+}
+
+/* scroller */
+.flex .ntb-tab-scrollerbuttoncontainer {
+	width:15px;
+	white-space:normal;
+}
+.flex .ntb-tab-scrollerbutton {
+	width:14px;
+	height: 14px;
+	font-size:7pt;
+	border: 1px solid black;
+	padding:0px;
+	margin:auto;
+	background-repeat:no-repeat;
+	background-position: center;
+}
+.flex .ntb-tab-scrollerbutton-left {
+	background-image: url(assets/left.png);
+}
+.flex .ntb-tab-scrollerbutton-right {
+	background-image: url(assets/right.png);
+}
+
+/* iframe */
+.flex .ntb-tab-active .ntb-tab-iframecontainer, .flex .ntb-tab-disabled .ntb-tab-iframecontainer {
+	border:0;
+	position:static;
+	width:100%;
+	height:100%;
+}
+.flex .ntb-tab-inactive .ntb-tab-iframecontainer {
+	border:0;
+	width:0px;
+	height:0px;
+	top:-1000px;
+	left:-1000px;
+	position:absolute;
+}
+
+/* Other */
+.flex .ntb-tab-icon-active {
+	width: 15%;
+}
+
+.flex .ntb-tab-container {
+	overflow:hidden;
+}
+
+.flex .ntb-leading-tab {
+	border: black 1px solid;
+	background-color: red;
+}
+
+.flex .ntb-tab-tabs {
+	position:relative;
+	top:0px;
+	table-layout:fixed;
+	border-collapse:collapse;
+}
+.flex .ntb-tab-inactive  .ntb-tab-label, .flex .ntb-tab-active .ntb-tab-label {
+	border-collapse: collapse;
+	width:100%;
+	height:30px;
+}
+.flex .ntb-tab-active .ntb-tab-mouseover .ntb-tab-label {
+	border-collapse: collapse;
+	width:100%;
+}
+.flex .ntb-tab-inactive  .ntb-tab-bodycontainer {
+	top:-1000px;
+	left:-1000px;
+	position:absolute;
+}
+.flex .ntb-tab-active .ntb-tab-bodycontainer {
+	position:static;
+}
+.flex .ntb-tab-mintable {
+	border-collapse:collapse;
+	padding:0;
+	margin:0;
+	table-layout:fixed;
+}
+
+/* load indicator */
+.flex .ntb-tab-activityindicator {
+	white-space:nowrap;
+	background-image:url(assets/indicator.gif);
+	background-repeat:no-repeat;
+	background-position:center;
+	width:16px;
+	height:16px;
+}
+
+/* Setting z-indexes */
+.flex .ntb-tab-inactive .ntb-tab a {
+	z-index:302;
+}
+.flex .ntb-tab-active .ntb-tab-bodycontainer, .flex .ntb-tab-active .ntb-tab-iframecontainer, .flex .ntb-tab-disabled .ntb-tab-iframecontainer, .flex .ntb-tab-active .ntb-tab-table {
+	z-index:300;
+}
+.flex .ntb-tab-bodycontainer, .flex .ntb-tab-inactive .ntb-tab-iframecontainer, .flex .ntb-tab-inactive  .ntb-tab-bodycontainer, .flex .ntb-tab-inactive .ntb-tab-table {
+	z-index:299;
+}
+.flex .ntb-tab-active .ntb-tab-body, .flex .ntb-tab-active .ntb-tab-left, .flex .ntb-tab-active .ntb-tab-right, .flex .ntb-tab-active .ntb-tab-mouseover .ntb-tab-body, .flex .ntb-tab-active .ntb-tab-mouseover .ntb-tab-left, .flex .ntb-tab-active .ntb-tab-mouseover .ntb-tab-right {
+	z-index:200;
+}
+.flex .ntb-tab-disabled .ntb-tab-body, .flex .ntb-tab-disabled .ntb-tab-left, .flex .ntb-tab-disabled .ntb-tab-right, .flex .ntb-tab-disabled .ntb-tab-bodycontainer, .flex .ntb-tab-disabled .ntb-tab-table  {
+	z-index:199;
+}
+.flex .ntb-tab-inactive .ntb-tab-body .ntb-pulse, .flex .ntb-tab-inactive  .ntb-tab-left .ntb-pulse, .flex .ntb-tab-inactive .ntb-tab-right .ntb-pulse {
+	z-index:101;
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+	visibility:hidden;
+	opacity:0.0;
+}
+.flex .ntb-tab-inactive .ntb-tab-body, .flex .ntb-tab-inactive  .ntb-tab-left, .flex .ntb-tab-inactive .ntb-tab-right, .flex .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab-body, .flex .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left, .flex .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab-right {
+	z-index:100;
+}
+
+/* Tab settings */
+.flex .ntb-tab-inactive .ntb-tab-table, .flex .ntb-tab-active .ntb-tab-table, .flex .ntb-tab-disabled .ntb-tab-table, .flex .ntb-tab-inactive .ntb-tab, .flex .ntb-tab-inactive .ntb-tab-body .ntb-pulse {
+	width:100%;
+	height:30px;
+	border-collapse:collapse;
+	border:0;
+	table-layout:fixed;			
+	position:relative;
+	cursor:pointer;
+}
+.flex .ntb-tab-inactive .ntb-tab-left , .flex .ntb-tab-active .ntb-tab-left , .flex .ntb-tab-disabled .ntb-tab-left, .flex .ntb-tab-inactive .ntb-tab-left .ntb-pulse {
+	width: 10px;
+	height:30px;
+}
+.flex .ntb-tab-inactive .ntb-tab-right, .flex .ntb-tab-active .ntb-tab-right, .flex .ntb-tab-disabled .ntb-tab-right, .flex .ntb-tab-inactive  .ntb-tab-left .ntb-pulse {
+	width:15px;
+	height:30px;
+}
+
+/* Inactive */
+.flex .ntb-tab-inactive .ntb-tab-body {
+	background:url(tabs/body/inactivebody.png) bottom left repeat-x;
+}
+.flex .ntb-tab-inactive  .ntb-tab-left {
+	background: url(tabs/left/inactiveleft.png) bottom right no-repeat;
+}
+.flex .ntb-tab-inactive .ntb-tab-right {
+	background:url(tabs/right/inactiveright.png) bottom left no-repeat;
+}
+/* inactive hover */
+.flex .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab {
+	white-space:nowrap;
+	padding:0px;
+	margin:0px;
+	text-align:left;
+	padding-top:0px;
+	cursor:pointer;
+}
+.flex .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/inactivebody_hover.png) bottom left repeat-x;
+}
+.flex .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left {
+	background: url(tabs/left/inactiveleft_hover.png) bottom right no-repeat;
+}
+.flex .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/inactiveright_hover.png) bottom left no-repeat;
+}
+
+/* active */
+.flex .ntb-tab-active .ntb-tab-body {
+	background:url(tabs/body/activebody.png) bottom left repeat-x;
+}
+.flex .ntb-tab-active .ntb-tab-left {
+	background:url(tabs/left/activeleft.png) bottom right no-repeat;
+}
+.flex .ntb-tab-active .ntb-tab-right {
+	background: url(tabs/right/activeright.png) bottom left no-repeat;
+}
+/* active hover */
+.flex .ntb-tab-active .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/activebody.png) bottom left repeat-x;
+}
+.flex .ntb-tab-active .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/activeleft.png) bottom right no-repeat;
+}
+.flex .ntb-tab-active .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/activeright.png) bottom left no-repeat;
+}
+
+/* disabled */
+.flex .ntb-tab-disabled .ntb-tab-body {
+	background:url(tabs/body/disabledbody.png) bottom left repeat-x;
+}
+.flex .ntb-tab-disabled .ntb-tab-left {
+	background:url(tabs/left/disabledleft.png) bottom right no-repeat;
+}
+.flex .ntb-tab-disabled .ntb-tab-right {
+	background:url(tabs/right/disabledright.png) bottom left no-repeat;
+}
+
+/* pulse */
+.flex .ntb-tab-inactive .ntb-tab-body .ntb-pulse {
+	background:url(tabs/body/ractivebody.png) bottom left repeat-x;
+}
+.flex .ntb-tab-inactive .ntb-tab-left .ntb-pulse {
+	background: url(tabs/left/ractiveleft.png) bottom right no-repeat;
+}
+.flex .ntb-tab-inactive .ntb-tab-right .ntb-pulse {
+	background:url(tabs/right/ractiveright.png) bottom left no-repeat;
+}
+
+/* red tab inactive */
+.flex .redtab .ntb-tab-inactive  .ntb-tab-body {
+	background:url(tabs/body/rinactivebody.png) bottom left repeat-x;
+}
+.flex .redtab .ntb-tab-inactive  .ntb-tab-left {
+	background:url(tabs/left/rinactiveleft.png) bottom right no-repeat;
+}
+.flex .redtab .ntb-tab-inactive  .ntb-tab-right {
+	background:url(tabs/right/rinactiveright.png) bottom left no-repeat;
+}
+/* red tab inactive hover */
+.flex .redtab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/rinactivebody_hover.png) bottom left repeat-x;
+}
+.flex .redtab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/rinactiveleft_hover.png) bottom right no-repeat;
+}
+.flex .redtab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/rinactiveright_hover.png) bottom left no-repeat;
+}
+
+/* red tab active */
+.flex .redtab .ntb-tab-active  .ntb-tab-body {
+	background:url(tabs/body/ractivebody.png) bottom left repeat-x;
+}
+.flex .redtab .ntb-tab-active  .ntb-tab-left {
+	background:url(tabs/left/ractiveleft.png) bottom right no-repeat;
+}
+.flex .redtab .ntb-tab-active  .ntb-tab-right {
+	background:url(tabs/right/ractiveright.png) bottom left no-repeat;
+}
+/* red tab active hover */
+.flex .redtab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/ractivebody.png) bottom left repeat-x;
+}
+.flex .redtab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/ractiveleft.png) bottom right no-repeat;
+}
+.flex .redtab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/ractiveright.png) bottom left no-repeat;
+}
+
+/* green tab inactive */
+.flex .greentab .ntb-tab-inactive  .ntb-tab-body {
+	background:url(tabs/body/ginactivebody.png) bottom left repeat-x;
+}
+.flex .greentab .ntb-tab-inactive  .ntb-tab-left {
+	background:url(tabs/left/ginactiveleft.png) bottom right no-repeat;
+}
+.flex .greentab .ntb-tab-inactive  .ntb-tab-right {
+	background:url(tabs/right/ginactiveright.png) bottom left no-repeat;
+}
+/* green tab inactive hover */
+.flex .greentab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/ginactivebody_hover.png) bottom left repeat-x;
+}
+.flex .greentab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/ginactiveleft_hover.png) bottom right no-repeat;
+}
+.ntb-tab-right, .flex .greentab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/ginactiveright_hover.png) bottom left no-repeat;
+}
+
+/* green tab active */
+.flex .greentab .ntb-tab-active  .ntb-tab-body {
+	background:url(tabs/body/gactivebody.png) bottom left repeat-x;
+}
+.flex .greentab .ntb-tab-active  .ntb-tab-left {
+	background:url(tabs/left/gactiveleft.png) bottom right no-repeat;
+}
+.flex .greentab .ntb-tab-active  .ntb-tab-right {
+	background:url(tabs/right/gactiveright.png) bottom left no-repeat;
+}
+/* green tab active hover */
+.flex .greentab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/gactivebody.png) bottom left repeat-x;
+}
+.flex .greentab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/gactiveleft.png) bottom right no-repeat;
+}
+.flex .greentab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/gactiveright.png) bottom left no-repeat;
+}
+
+/* purple tab inactive */
+.flex .purpletab .ntb-tab-inactive  .ntb-tab-body {
+	background:url(tabs/body/pinactivebody.png) bottom left repeat-x;
+}
+.flex .purpletab .ntb-tab-inactive  .ntb-tab-left {
+	background:url(tabs/left/pinactiveleft.png) bottom right no-repeat;
+}
+.flex .purpletab .ntb-tab-inactive  .ntb-tab-right {
+	background:url(tabs/right/pinactiveright.png) bottom left no-repeat;
+}
+/* purple tab inactive hover */
+.flex .purpletab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/pinactivebody_hover.png) bottom left repeat-x;
+}
+.flex .purpletab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/pinactiveleft_hover.png) bottom right no-repeat;
+}
+.flex .purpletab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/pinactiveright_hover.png) bottom left no-repeat;
+}
+
+/* purple tab active */
+.flex .purpletab .ntb-tab-active  .ntb-tab-body {
+	background:url(tabs/body/pactivebody.png) bottom left repeat-x;
+}
+.flex .purpletab .ntb-tab-active  .ntb-tab-left {
+	background:url(tabs/left/pactiveleft.png) bottom right no-repeat;
+}
+.flex .purpletab .ntb-tab-active  .ntb-tab-right {
+	background:url(tabs/right/pactiveright.png) bottom left no-repeat;
+}
+/* purple tab active hover */
+.flex .purpletab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-body {
+	background:url(tabs/body/pactivebody.png) bottom left repeat-x;
+}
+.flex .purpletab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-left {
+	background:url(tabs/left/pactiveleft.png) bottom right no-repeat;
+}
+.flex .purpletab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-right {
+	background:url(tabs/right/pactiveright.png) bottom left no-repeat;
+}
