@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<memberNation CountryCode="ae" FlagImage="images/flags//ae_flag.gif">الإمارات العربيّة المتّحدة</memberNation>
+<memberNation CountryCode="am" FlagImage="images/flags//am_flag.gif">Հայաստան </memberNation>
+<memberNation CountryCode="as" FlagImage="images/flags//as_flag.gif">American Samoa</memberNation>
+<memberNation CountryCode="at" FlagImage="images/flags//at_flag.gif">Österreich</memberNation>
+<memberNation CountryCode="az" FlagImage="images/flags//az_flag.gif">Azərbaycan</memberNation>
+<memberNation CountryCode="be" FlagImage="images/flags//be_flag.gif">België</memberNation>
+<memberNation CountryCode="bi" FlagImage="images/flags//bi_flag.gif">Burundi</memberNation>
+<memberNation CountryCode="ca" FlagImage="images/flags//ca_flag.gif">Canada</memberNation>
+<memberNation CountryCode="cd" FlagImage="images/flags//cd_flag.gif">Rep. Dem. du Congo</memberNation>
+<memberNation CountryCode="cg" FlagImage="images/flags//cg_flag.gif">Rep. du Congo</memberNation>
+<memberNation CountryCode="ch" FlagImage="images/flags//ch_flag.gif">Schweiz</memberNation>
+<memberNation CountryCode="ci" FlagImage="images/flags//ci_flag.gif">Cote D'Ivoire</memberNation>
+<memberNation CountryCode="cl" FlagImage="images/flags//cl_flag.gif">Chile</memberNation>
+<memberNation CountryCode="co.ck" FlagImage="images/flags//ck_flag.gif">Cook Islands</memberNation>
+<memberNation CountryCode="co.cr" FlagImage="images/flags//cr_flag.gif">Costa Rica</memberNation>
+<memberNation CountryCode="co.hu" FlagImage="images/flags//hu_flag.gif">Magyarország</memberNation>
+<memberNation CountryCode="co.id" FlagImage="images/flags//id_flag.gif">Indonesia</memberNation>
+<memberNation CountryCode="co.il" FlagImage="images/flags//il_flag.gif">מדינת ישראל</memberNation>
+<memberNation CountryCode="co.in" FlagImage="images/flags//in_flag.gif">India</memberNation>
+<memberNation CountryCode="co.je" FlagImage="images/flags//je_flag.gif">Jersey</memberNation>
+<memberNation CountryCode="co.jp" FlagImage="images/flags//jp_flag.gif">日本</memberNation>
+<memberNation CountryCode="co.ke" FlagImage="images/flags//ke_flag.gif">Kenya</memberNation>
+<memberNation CountryCode="co.kr" FlagImage="images/flags//kr_flag.gif">한국 </memberNation>
+<memberNation CountryCode="co.ls" FlagImage="images/flags//ls_flag.gif">Lesotho</memberNation>
+<memberNation CountryCode="co.nz" FlagImage="images/flags//nz_flag.gif">New Zealand</memberNation>
+<memberNation CountryCode="co.th" FlagImage="images/flags//th_flag.gif">ประเทศไทย</memberNation>
+<memberNation CountryCode="co.ug" FlagImage="images/flags//ug_flag.gif">Uganda</memberNation>
+<memberNation CountryCode="co.uk" FlagImage="images/flags//uk_flag.gif">UK</memberNation>
+<memberNation CountryCode="co.ve" FlagImage="images/flags//ve_flag.gif">Venezuela</memberNation>
+<memberNation CountryCode="co.vi" FlagImage="images/flags//vi_flag.gif">Virgin Islands</memberNation>
+<memberNation CountryCode="co.za" FlagImage="images/flags//za_flag.gif">South Africa</memberNation>
+<memberNation CountryCode="com.ag" FlagImage="images/flags//ag_flag.gif">Antigua and Barbuda</memberNation>
+<memberNation CountryCode="com.ar" FlagImage="images/flags//ar_flag.gif">Argentina</memberNation>
+<memberNation CountryCode="com.au" FlagImage="images/flags//au_flag.gif">Australia</memberNation>
+<memberNation CountryCode="com.bo" FlagImage="images/flags//bo_flag.gif">Bolivia</memberNation>
+<memberNation CountryCode="com.br" FlagImage="images/flags//br_flag.gif">Brasil</memberNation>
+<memberNation CountryCode="com.bz" FlagImage="images/flags//bz_flag.gif">Belize</memberNation>
+<memberNation CountryCode="com.co" FlagImage="images/flags//co_flag.gif">Colombia</memberNation>
+<memberNation CountryCode="com.cu" FlagImage="images/flags//cu_flag.gif">Cuba</memberNation>
+<memberNation CountryCode="com.do" FlagImage="images/flags//do_flag.gif">Rep. Dominicana</memberNation>
+<memberNation CountryCode="com.ec" FlagImage="images/flags//ec_flag.gif">Ecuador</memberNation>
+<memberNation CountryCode="com.fj" FlagImage="images/flags//fj_flag.gif">Fiji</memberNation>
+<memberNation CountryCode="com.gi" FlagImage="images/flags//gi_flag.gif">Gibraltar</memberNation>
+<memberNation CountryCode="com.gr" FlagImage="images/flags//gr_flag.gif">Ελληνική Δημοκρατία</memberNation>
+<memberNation CountryCode="com.gt" FlagImage="images/flags//gt_flag.gif">Guatemala</memberNation>
+<memberNation CountryCode="com.hk" FlagImage="images/flags//hk_flag.gif">香港</memberNation>
+<memberNation CountryCode="com.jm" FlagImage="images/flags//jm_flag.gif">Jamaica</memberNation>
+<memberNation CountryCode="com.mt" FlagImage="images/flags//mt_flag.gif">Malta</memberNation>
+<memberNation CountryCode="com.mx" FlagImage="images/flags//mx_flag.gif">México</memberNation>
+<memberNation CountryCode="com.my" FlagImage="images/flags//my_flag.gif">Malaysia</memberNation>
+<memberNation CountryCode="com.na" FlagImage="images/flags//na_flag.gif">Namibia</memberNation>
+<memberNation CountryCode="com.nf" FlagImage="images/flags//nf_flag.gif">Norfolk Island</memberNation>
+<memberNation CountryCode="com.ni" FlagImage="images/flags//ni_flag.gif">Nicaragua</memberNation>
+<memberNation CountryCode="com.np" FlagImage="images/flags//np_flag.gif">नेपाल</memberNation>
+<memberNation CountryCode="com.pa" FlagImage="images/flags//pa_flag.gif">Panamá</memberNation>
+<memberNation CountryCode="com.pe" FlagImage="images/flags//pe_flag.gif">Per</memberNation>
+<memberNation CountryCode="com.ph" FlagImage="images/flags//ph_flag.gif">Pilipinas</memberNation>
+<memberNation CountryCode="com.pk" FlagImage="images/flags//pk_flag.gif">Pakistan</memberNation>
+<memberNation CountryCode="com.pr" FlagImage="images/flags//pr_flag.gif">Puerto Rico</memberNation>
+<memberNation CountryCode="com.py" FlagImage="images/flags//py_flag.gif">Paraguay</memberNation>
+<memberNation CountryCode="com.sa" FlagImage="images/flags//sa_flag.gif">المملكة العربية السعودية</memberNation>
+<memberNation CountryCode="com.sg" FlagImage="images/flags//sg_flag.gif">Singapore</memberNation>
+<memberNation CountryCode="com.sv" FlagImage="images/flags//sv_flag.gif">El Salvador</memberNation>
+<memberNation CountryCode="com.tr" FlagImage="images/flags//tr_flag.gif">Türkiye</memberNation>
+<memberNation CountryCode="com.tw" FlagImage="images/flags//tw_flag.gif">台灣 </memberNation>
+<memberNation CountryCode="com.uy" FlagImage="images/flags//uy_flag.gif">Uruguay</memberNation>
+<memberNation CountryCode="com.vc" FlagImage="images/flags//vc_flag.gif">Saint Vincent and the Grenadines</memberNation>
+<memberNation CountryCode="com.vn" FlagImage="images/flags//vn_flag.gif">Việt Nam</memberNation>
+<memberNation CountryCode="de" FlagImage="images/flags//de_flag.gif">Deutschland</memberNation>
+<memberNation CountryCode="dj" FlagImage="images/flags//dj_flag.gif">Djibouti</memberNation>
+<memberNation CountryCode="dk" FlagImage="images/flags//dk_flag.gif">Danmark</memberNation>
+<memberNation CountryCode="es" FlagImage="images/flags//es_flag.gif">España</memberNation>
+<memberNation CountryCode="fi" FlagImage="images/flags//fi_flag.gif">Suomi</memberNation>
+<memberNation CountryCode="fm" FlagImage="images/flags//fm_flag.gif">Micronesia</memberNation>
+<memberNation CountryCode="fr" FlagImage="images/flags//fr_flag.gif">France</memberNation>
+<memberNation CountryCode="gg" FlagImage="images/flags//gg_flag.gif">Guernsey</memberNation>
+<memberNation CountryCode="gl" FlagImage="images/flags//gl_flag.gif">Grønlands</memberNation>
+<memberNation CountryCode="gm" FlagImage="images/flags//gm_flag.gif">The Gambia</memberNation>
+<memberNation CountryCode="hn" FlagImage="images/flags//hn_flag.gif">Honduras</memberNation>
+<memberNation CountryCode="ie" FlagImage="images/flags//ie_flag.gif">Ireland</memberNation>
+<memberNation CountryCode="it" FlagImage="images/flags//it_flag.gif">Italia</memberNation>
+<memberNation CountryCode="kg" FlagImage="images/flags//kg_flag.gif">Кыргызстан</memberNation>
+<memberNation CountryCode="kz" FlagImage="images/flags//kz_flag.gif">Қазақстан Республикасы</memberNation>
+<memberNation CountryCode="li" FlagImage="images/flags//li_flag.gif">Liechtenstein</memberNation>
+<memberNation CountryCode="lt" FlagImage="images/flags//lt_flag.gif">Lietuvos</memberNation>
+<memberNation CountryCode="lu" FlagImage="images/flags//lu_flag.gif">Luxemburg</memberNation>
+<memberNation CountryCode="lv" FlagImage="images/flags//lv_flag.gif">Latvija</memberNation>
+<memberNation CountryCode="mn" FlagImage="images/flags//mn_flag.gif">Монгол улс </memberNation>
+<memberNation CountryCode="ms" FlagImage="images/flags//ms_flag.gif">Montserrat</memberNation>
+<memberNation CountryCode="mu" FlagImage="images/flags//mu_flag.gif">Mauritius</memberNation>
+<memberNation CountryCode="mw" FlagImage="images/flags//mw_flag.gif">Malawi</memberNation>
+<memberNation CountryCode="nl" FlagImage="images/flags//nl_flag.gif">Nederland</memberNation>
+<memberNation CountryCode="no" FlagImage="images/flags//no_flag.gif">Norge</memberNation>
+<memberNation CountryCode="off.ai" FlagImage="images/flags//ai_flag.gif">Anguilla</memberNation>
+<memberNation CountryCode="pl" FlagImage="images/flags//pl_flag.gif">Polska</memberNation>
+<memberNation CountryCode="pn" FlagImage="images/flags//pn_flag.gif">Pitcairn Islands</memberNation>
+<memberNation CountryCode="pt" FlagImage="images/flags//pt_flag.gif">Portugal</memberNation>
+<memberNation CountryCode="ro" FlagImage="images/flags//ro_flag.gif">Rom¢nia</memberNation>
+<memberNation CountryCode="ru" FlagImage="images/flags//ru_flag.gif">Россия</memberNation>
+<memberNation CountryCode="rw" FlagImage="images/flags//rw_flag.gif">Rwanda</memberNation>
+<memberNation CountryCode="sc" FlagImage="images/flags//sc_flag.gif">Seychelles</memberNation>
+<memberNation CountryCode="se" FlagImage="images/flags//se_flag.gif">Sverige</memberNation>
+<memberNation CountryCode="sh" FlagImage="images/flags//sh_flag.gif">Saint Helena</memberNation>
+<memberNation CountryCode="sk" FlagImage="images/flags//sk_flag.gif">Slovenskej republiky</memberNation>
+<memberNation CountryCode="sm" FlagImage="images/flags//sm_flag.gif">San Marino</memberNation>
+<memberNation CountryCode="tm" FlagImage="images/flags//tm_flag.gif">T¼rkmenistan </memberNation>
+<memberNation CountryCode="to" FlagImage="images/flags//to_flag.gif">Tonga</memberNation>
+<memberNation CountryCode="tt" FlagImage="images/flags//tt_flag.gif">Trinidad and Tobago</memberNation>
+<memberNation CountryCode="uz" FlagImage="images/flags//uz_flag.gif">O'zbekiston</memberNation>
+<memberNation CountryCode="vg" FlagImage="images/flags//vg_flag.gif">British Virgin Islands</memberNation>
+</root>

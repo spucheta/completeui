@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Nitobi Tabstrip Demos - Tab Types</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/tabstrip/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+
+<script>
+	function onLoad()
+	{
+		var t1 = nitobi.loadComponent('tabstrip1');
+	}
+</script>
+</head>
+
+<body onload="onLoad();" >
+<p class="intro">This sample demonstrates the different ways to display html in the tabs.</p>
+<ul class="instructions">
+	<li>The first tab is an iframe tab.</li>
+	<li>The second tab uses a dom element declared on this page.</li>
+	<li>Lastly, the third tab makes an Ajax request for its content when it is set to active.</li>
+</ul>
+<p class="notes">Note that the Ajax tab uses the loadondemandenabled attribute, thus the Ajax request isn't made until the tab is clicked.
+</p>
+<ntb:tabstrip id="tabstrip1" width="800px" height="600px" theme="nitobi">
+	<ntb:tabs height="" align="center" overlap="15">
+		<ntb:tab width="190px" tooltip="Welcome." label="IFrame Tab" source="http://www.nitobi.com" containertype="iframe" ></ntb:tab>
+		<ntb:tab width="190px" tooltip="Welcome." label="DOM Tab" source="tab2"></ntb:tab>
+		<ntb:tab width="190px" tooltip="Welcome." label="Ajax Tab" source="tab3.html" loadondemandenabled="true"></ntb:tab>
+	</ntb:tabs>
+</ntb:tabstrip>
+
+<div id="tab2">
+<h1>DOM Tab</h1>
+<img src="images\nitobi.jpg"/>
+</div>
+</body>
+</html>

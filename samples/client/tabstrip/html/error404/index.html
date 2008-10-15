@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Nitobi Tabstrip Demos - Error Handling</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/tabstrip/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+
+<script>
+	nitobi.error.onError.subscribe(handleError);
+	function onLoad()
+	{
+		var t1 = nitobi.loadComponent('tabstrip1');
+	}
+	
+	function handleError(err)
+	{
+		if (nitobi.error.isError(err.description,nitobi.error.HttpRequestError))
+		{
+			alert("There was a problem loading the tab '" + err.source.getLabel() +  "'. Put your custom code here.");
+		}
+	}
+</script>
+</head>
+
+<body onload="onLoad();" >
+<p class="intro">This sample demonstrates how to handle 404s an other errors.</p>
+<ul class="instructions">
+	<li>Click the second tab labelled "Click for 404" to see a custom error handling message.</li>
+</ul>
+
+
+<ntb:tabstrip id="tabstrip1" width="800px" height="600px" theme="nitobi">
+	<ntb:tabs height="" align="center" overlap="15">
+		<ntb:tab width="190px" tooltip="Welcome." label="Tab 1" source="http://www.nitobi.com" containertype="iframe" ></ntb:tab>
+		<ntb:tab width="290px" tooltip="Welcome." label="Click for 404" loadondemandenabled="true" source="thisisnotvalid"></ntb:tab>
+	</ntb:tabs>
+</ntb:tabstrip>
+
+</body>
+</html>

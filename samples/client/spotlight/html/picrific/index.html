@@ -1,0 +1,98 @@
+<!-- It's important to use the ntb namespace in the HTML tag or the grid will not render -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Spotlight Demos - Rich Interaction Demo</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/spotlight/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<!-- This demo has some behaviours. We've packaged them into a single JavaScript file. No tour scripting is present in this -->
+<script language="javascript" src="picrific.js"></script>
+<link type="text/css" rel="stylesheet" href="picrific.css"></link>
+
+<script>
+
+function runTour() {
+	var wT = new nitobi.spotlight.Spotlight('NONE', 'clean');
+	
+	wT.createCalloutStep(null, 'Welcome to Picrific', 'We\'ll quickly show you a few of the features in the photo screen that you can play with.<br><br>Note: this is really a tour of Nitobi Spotlight, to show how complex interactions can be scripted using the Spotlight API.');
+	wT.createMouseStep('APPEARONOBJECT', '',400); // You dont have to specify an ID. it will just appear in the center of the page
+	wT.createCalloutStep('photoStreamBox', 'This is just one of many photos!', 'By browsing your photostream you can see all of the images in your Picrific photo album!');
+	wT.createMouseStep('CLICKONOBJECT', 'photoStreamBox',500);
+	wT.createMouseStep('CLICKONOBJECT', 'photoStreamBox',500);
+	wT.createMouseStep('CLICKONOBJECT', 'photoStreamBox',1500);
+	wT.createCalloutStep('titleBox', 'Easily Rename your Photos In-line', 'To rename a photo or change the description, just click on the title and type a new name!');
+	wT.createMouseStep('CLICKONOBJECT', 'titleBox',500);
+	wT.createFormHelperStep('PhotoDetails:field_titleBox', "TYPETEXT", 500, "Engine from Plane Crash");
+	wT.createMouseStep('CLICKONOBJECT', 'descBox',500);
+	wT.createFormHelperStep('PhotoDetails:field_descBox', "TYPETEXT", 1500, "Midway up grouse mountain we found this old engine. ");
+	wT.createCalloutStep('commentsBox', 'Adding Comments is easy!', 'Adding a comment is as easy as clicking on the comment field.');
+	wT.createMouseStep('CLICKONOBJECT', 'commentsBox',500);
+	wT.createFormHelperStep('PhotoComments:field_commentsBox', "TYPETEXT", 500, "Wow this is neat. I wonder if we\'ll be able to find it when we go hiking this weekend!");
+	wT.createCalloutStep('tags', 'Add or Remove Tags', 'The tagging feature makes your photos easy to sort and find.');
+	wT.createCalloutStep('deli2', 'Delete a tag in-line', 'There\'s no need to wait for page refreshes. Just click on the [x] to remove a tag.');
+	wT.createMouseStep('MOVETOOBJECT', 'deli2',1000);
+	wT.createMouseStep('CLICKONOBJECT', 'deli2',500);
+	wT.createMouseStep('CLICKONOBJECT', 'deli0',500);
+	wT.createMouseStep('CLICKONOBJECT', 'deli1',500);			
+	wT.createCalloutStep('tags', 'Now they\'re gone!', 'But don\'t worry we can add it back.');
+	wT.createFormHelperStep('addTagForm:addTagField', "TYPETEXT", 1000, "hiking");
+	wT.createCodeStep("addTag('hiking');", 500);
+	wT.createFormHelperStep('addTagForm:addTagField', "TYPETEXT", 1000, "planecrash");
+	wT.createCodeStep("addTag('planecrash');", 500);
+	wT.createFormHelperStep('addTagForm:addTagField', "TYPETEXT", 1000, "vancouver");
+	wT.createCodeStep("addTag('vancouver');", 500);
+	wT.createCalloutStep(null, 'That\'s it!', 'We have just demonstrated how to use Spotlight to script complex interations using JavaScript, mouse movements, and forms.');
+	wT.play();
+}	
+
+function runSuggestion() {
+	nitobi.html.Css.precacheImages();
+	// now we create a new one
+	myCallout = new nitobi.callout.Callout("Clean");
+	// we attach it to the element with ID myName
+	myCallout.attachToElement('tourButton');
+	myCallout.setTitle('Click Here for the Tour');
+	myCallout.setBody('To watch the tour, click here. You can also try interacting with this page on your own first.');
+	myCallout.setExpire(5000);
+	// now we show it.
+	setTimeout("myCallout.show()", 2000);
+
+	
+}	
+	
+</script>
+
+</head>
+<body onLoad="setupPage();runSuggestion();">
+<table cellpadding=0 cellspacing=0><tr><td valign=top><img src="images/prtop.png"></td><td  align=right valign=top ><table cellpadding=0 cellspacing=0 ><tr><td align=right><a href="#" onclick="runTour(); return false;"><img src="images/tourbutton.png" border=0 id=tourButton></a></td></tr><tr style="background-image:url(images/searchback.png); background-align:bottom;"><td align=right><img src="images/searchbox.png" align=right></td></tr></table></td></tr></table>
+<table>
+	<tr><td valign=bottom>
+		<form name="PhotoDetails" onsubmit="return false">
+		<div class="titleBox" id="titleBox" name="titleBox">Mysterious Equipment</div>
+		<div class="descBox" id="descBox" name="descBox">We saw this piece of machinery in the forest. Still wondering what it is..</div>
+		</form>
+		
+	</td><td><img src="images/uploadedby.png"></td></tr>
+	<tr><td><img src="images/mainimage.jpg"></td><td valign=top><img id="photoStreamBox" src="images/photostreambox.png" style="cursor:pointer;" onmousedown="switchPhotoStreamState();"><br><img id=tagstitle src="images/tagstitle.png"></td></tr>
+	<tr><td colspan=2>
+		
+		<form name="PhotoComments"  onsubmit="return false">
+			<div id="commentsBox" class="titleBox commentsBox">Type your comment here.</div>
+		</form>
+		
+	</td></tr>
+</table>
+<img src="images/photosoverlay.png" class="hiddenImage" id="photosOverlay" style="cursor:pointer;" onmousedown="switchPhotoStreamState();">
+<div id=tags class="hiddenDiv"></div>
+<div id=addTag class="addTag">
+	<form name="addTagForm"  onsubmit="return false">
+		<table><tr><td class="addTagTD">Add a tag: <input type=text class=addTagField id=addTagField name="addTagField"> </td><td><button class=addTagButton onclick="addTag(document.forms['addTagForm']['addTagField'].value); return false;" id="addTagButton">Add</button></td></tr></table>
+	</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+.nitobi .redtab .ntb-tab-active  .ntb-tab-left
+{
+	background-image:url('ri1.png');
+}
+
+.nitobi .redtab .ntb-tab-inactive  .ntb-tab-left
+{
+	background-image:url('ri1.png');
+}
+
+.nitobi .redtab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-left
+{
+	background-image:url('ri1_hover.png');
+}
+
+.nitobi .redtab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-left
+{
+	background-image:url('ri1_hover.png');
+}
+
+.nitobi .redtab .ntb-tab-active  .ntb-tab-body
+{
+	background-image:url('ri2.png');
+}
+
+.nitobi .redtab .ntb-tab-inactive  .ntb-tab-body
+{
+	background-image:url('ri2.png');
+}
+
+.nitobi .redtab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-body
+{
+	background-image:url('ri2_hover.png');
+}
+
+.nitobi .redtab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-body
+{
+	background-image:url('ri2_hover.png');
+}
+
+.nitobi .redtab .ntb-tab-active  .ntb-tab-right
+{
+	background-image:url('ri3.png');
+}
+
+.nitobi .redtab .ntb-tab-inactive  .ntb-tab-right
+{
+	background-image:url('ri3.png');
+}
+
+.nitobi .redtab .ntb-tab-active  .ntb-tab-mouseover .ntb-tab-right
+{
+	background-image:url('ri3_hover.png');
+}
+
+.nitobi .redtab .ntb-tab-inactive  .ntb-tab-mouseover .ntb-tab-right
+{
+	background-image:url('ri3_hover.png');
+}
+
+.nitobi .redtab .ntb-tab-inactive .ntb-tab-table
+{
+}
+
+.nitobi .redtab .ntb-tab-active .ntb-tab a
+{
+	font-size:11pt;
+}
+
+.nitobi .redtab .ntb-tab-inactive .ntb-tab a
+{
+	color:#990000;
+}
+.nitobi .redtab .ntb-tab-inactive .ntb-tab
+{
+}
+.nitobi .redtab .ntb-tab-inactive .ntb-tab-mouseover .ntb-tab
+{
+}
+
+.nitobi .redtab .ntb-tab-inactive  .ntb-tab-iframecontainer
+{
+}
+
+.nitobi .redtab .ntb-tab-inactive .ntb-tab-bodycontainer
+{
+}

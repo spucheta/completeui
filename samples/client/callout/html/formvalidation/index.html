@@ -1,0 +1,77 @@
+<!-- It's important to use the ntb namespace in the HTML tag or the grid will not render -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Callout Demos - Form Validation</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/callout/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<script>
+
+var valueHistory = new Array();
+
+function validateLength(formField, minLength, maxLength) {
+	
+	// we check to see if the name field has more than 5 characters and less than 21
+	if ((formField.value.length > 0) && (valueHistory[formField.id] != formField.value))
+	if ((formField.value.length < 5) || (formField.value.length > 20)) {
+		// first we delete the last callout (if any)
+		nitobi.callout.destroyLast();
+		// now we create a new one
+		var myCallout = new nitobi.callout.Callout("vista");
+		// we attach it to the element with ID myName
+		myCallout.attachToElement(formField.id);
+		myCallout.setTitle('Please try again');
+		myCallout.setBody('Your entry must be at least 5 letters long, and no longer than 20 letters long.');
+		// now we show it.
+		myCallout.show();
+		valueHistory[formField.id] = formField.value;
+	} else {
+		// it passed validation.. lets destroy all the callouts
+		nitobi.callout.destroyAll();	
+	}
+	
+}
+
+function validateNumeric(formField) {
+	// we check to see if the field is a number or not
+	var realNumRE = /^-?\d+([.]\d+)?$/;
+	if ((formField.value.length > 0) && (valueHistory[formField.id] != formField.value))
+	if (!realNumRE.test(formField.value)) {
+		// first we delete the last callout (if any)
+		nitobi.callout.destroyLast();
+		// now we create a new one
+		var myCallout = new nitobi.callout.Callout("vista");
+		// we attach it to the element with ID myName
+		myCallout.attachToElement(formField.id);
+		myCallout.setTitle('Please try again - numbers only');
+		myCallout.setBody('Your entry must be a number.');
+		// now we show it.
+		myCallout.show();
+		valueHistory[formField.id] = formField.value;
+	} else {
+		// it passed validation.. lets destroy all the callouts
+		nitobi.callout.destroyAll();	
+	}
+	
+}
+</script>
+
+</head>
+<body>
+      <p class="intro">Callout can be used to provide helpful feedback during data entry.</p>
+	  <ul class="instructions">
+	  	<li>In the first field, enter in a string that is less that 5 characters.</li>
+	  	<li>In the second field, enter in a non-numeric value as the height.</li>
+	  </ul>
+	   <form name="myForm">
+	  <p>Please enter your name: <input type="text" name="myName" id="myName" onblur="validateLength(this, 5,20)"></p>
+	  <p>Please enter your height (in inches): <input type="text" name="myHeight" id="myHeight" onblur="validateNumeric(this)"></p>
+	  <input type=submit disabled>
+	  </form>	  
+</body>
+</html>

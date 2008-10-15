@@ -1,0 +1,26 @@
+<html>
+<!--
+//*****************************************************************************
+//* @Title: Large Dump Window
+//* @File: dump.html
+//* @Author: EBA_DC\ngentleman
+//* @Date: 7/26/2005 1:30:30 PM
+//* @Purpose: This is the page dumpContent(); calls to show dynamic source
+//* @Notes: 
+//*****************************************************************************
+-->
+<head>
+<title>Large Dump Window</title>
+<script type="text/javascript">
+// This is the real code in dumpContent();
+function getDump()
+{
+	document.getElementById('dumpArea').value = window.opener.document.getElementsByTagName('html')[0].innerHTML;
+}
+</script>
+</head>
+<body onload="getDump();" style="padding:0;margin:0;">
+<!-- in a textarea so the HTML in doesn't get parsed into a second copy of the first page -->
+<textarea style="width:100%;height:100%;border:0;padding:0;margin:0;" id="dumpArea"></textarea>
+</body>
+</html>

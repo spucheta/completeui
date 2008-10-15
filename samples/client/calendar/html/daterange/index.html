@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- It's important to use the ntb namespace in the HTML tag or the datepicker will not render -->
+<html xmlns:ntb="http://www.nitobi.com">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Calendar Demos - Date Range</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/calendar/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<script>
+	function load()
+	{
+		if (!nitobi.browser.IE) 
+		{
+			$("jscode").innerHTML = $("component").innerHTML;
+			$("jscode").innerHTML += $("component1").innerHTML;
+		}
+		var datePicker = nitobi.loadComponent("dp");
+		var dp1 = nitobi.loadComponent("dp1");
+		
+		dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+		dp.SyntaxHighlighter.HighlightAll('code');
+	}	
+	
+	function setMin(e)
+	{
+		var start = e.source;
+		var minDate = start.getSelectedDate();
+		nitobi.base.DateMath.add(minDate, 'd', 1);
+		var end = nitobi.getComponent("dp1");
+		end.setMinDate(minDate);
+		end.render();
+	}
+	
+	function setMax(e)
+	{
+		var end = e.source;
+		var maxDate = end.getSelectedDate();
+		nitobi.base.DateMath.subtract(maxDate, 'd', 1);
+		var start = nitobi.getComponent("dp");
+		start.setMaxDate(maxDate);
+		start.render();
+	}
+	nitobi.html.attachEvent(window, "load", load);
+</script>
+</head>
+<body>
+	<h2>
+		Date Ranges
+	</h2>
+	<p class="intro">
+		The Nitobi Calendar comes replete with a robust javascript API.  Using that API, it is easy to wire together two (or more) Calendar components
+		to create a composite date range selector.
+	</p>
+	<h3 style="margin-top: 10px;">
+		Description
+	</h3>
+	<div class="notes" style="margin-top: 5px;" id="desc">
+		Using the javascript API, we are going to set the mindate of the second Calendar to be the selected date of the first.  That way, we can
+		ensure the selected range will be valid.
+	</div>
+	<div id="component">
+		Start Date:
+		<ntb:datepicker id="dp" theme="flex" selecteddate="today" ondateselected="setMin(eventArgs)">
+			<ntb:dateinput></ntb:dateinput>
+			<ntb:calendar></ntb:calendar>
+		</ntb:datepicker>
+	</div>
+	<div id="component1" style="margin-top:25px;">
+		End Date:
+		<ntb:datepicker id="dp1" theme="flex" mindate="tomorrow" ondateselected="setMax(eventArgs)">
+			<ntb:dateinput></ntb:dateinput>
+			<ntb:calendar></ntb:calendar>
+		</ntb:datepicker>
+	</div>
+	<h3 style="margin-top: 35px;margin-bottom: 0px;">
+		Example Source Code
+	</h3>
+	<div id="source">
+		<div class="" style="margin-top: 10px;">
+			<div>
+				Calendar Markup
+			</div>
+			<div class="codearea">
+				<textarea name="code" class="html" id="jscode">
+					<ntb:datepicker id="dp" theme="flex" selecteddate="today" ondateselected="setMin(eventArgs)">
+						<ntb:dateinput></ntb:dateinput>
+						<ntb:calendar></ntb:calendar>
+					</ntb:datepicker>
+					
+					<ntb:datepicker id="dp1" theme="flex" mindate="tomorrow">
+						<ntb:dateinput></ntb:dateinput>
+						<ntb:calendar></ntb:calendar>
+					</ntb:datepicker>
+				</textarea>
+			</div>
+		</div>
+		<div style="margin-top: 10px;">
+			<div>
+				Javascript
+			<div class="codearea">
+				<textarea name="code" class="js" cols="20">
+					function load()
+					{
+						var dp = nitobi.loadComponent("dp");
+						var dp1 = nitobi.loadComponent("dp1");
+					}
+					
+					function setMin(e)
+					{
+						var start = e.source;
+						var minDate = start.getSelectedDate();
+						nitobi.base.DateMath.add(minDate, 'd', 1);
+						var end = nitobi.getComponent("dp1");
+						end.setMinDate(minDate);
+						end.render();
+					}
+					
+					function setMax(e)
+					{
+						var end = e.source;
+						var maxDate = end.getSelectedDate();
+						nitobi.base.DateMath.subtract(maxDate, 'd', 1);
+						var start = nitobi.getComponent("dp");
+						start.setMaxDate(maxDate);
+						start.render();
+					}
+					
+					// Load the component when the page loads.
+					nitobi.html.attachEvent(window, "load", load);
+				</textarea>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+-------------------
+--- Nitobi Grid V3
+-------------------
+
+You will need to set up a few datatables in MYSQL for some of these demos to run (including this one). Please use the SQL syntax file "NitobiSampleDatabases.sql" in the root of the demo folder. 
+
+Then in each of 
+- load_data.php
+- save_data.php
+- lookuphandler.php (for grids with lookup fields)
+- getnextrecord.php (in some of the demos that use key handlers)
+- allocaterecord.php (in the remotedata/ sample)
+
+you will need to change the database connection string.

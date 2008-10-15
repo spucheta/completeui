@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Nitobi Fisheye Demos - Maintaining the State Of The Fisheye Menu</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/fisheye/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+
+<script>
+	var saveState=true;
+	function onLoad()
+	{
+		var cookie = nitobi.browser.Cookies.get("nitobi.fisheye");
+		var xml=(cookie == null || cookie=="" ? $("declaration").value : cookie);
+		var node = nitobi.xml.createXmlDoc(xml).documentElement;
+		var f1 = new nitobi.fisheye.FishEye(node);
+		f1.setContainer($("container"));
+		f1.render();
+		
+		nitobi.html.attachEvent(window, "unload", onUnload);
+	}
+		
+	function onUnload()
+	{
+		if (saveState)
+		{
+			var t1 = nitobi.getComponent('fisheye1');
+			var xml = t1.serializeToXml();
+			nitobi.browser.Cookies.set("nitobi.fisheye",xml,365);
+		}
+	}
+	
+	function addItem()
+	{
+		var f1 = nitobi.getComponent("fisheye1");
+		var item = new nitobi.fisheye.MenuItem();
+		item.setLabel("Dynamically added item");
+		item.setImageSource("images/info.png");
+		
+		f1.add(item);
+		f1.render();	
+	}
+	
+	function disableCookie()
+	{
+		nitobi.browser.Cookies.remove("nitobi.fisheye");
+		saveState=false;	
+	}
+</script>
+</head>
+
+<body onload="onLoad();">
+<p class="intro">This demonstrates that fisheye's ability to serialize itself to XML. In this case, the XML is stored in a cookie.
+The next time the fisheye loads, the fisheye is restored to the previous state. 
+</p>
+<ul class="instructions">
+	<li><a href="#" onclick="addItem()">Add an item</a></li>
+	<li><a href="#" onclick="disableCookie()">Clear and disable cookie</a></li>
+	<li><a href="#" onclick="window.location.reload(true)">Refresh page</a></li>
+</ul>
+
+<textarea id="declaration" style="display:none">
+<ntb:fisheye xmlns:ntb="http://www.nitobi.com" id="fisheye1" growpercent="200" opendirection="down" expanddirection="right" iconwidth="50" theme="nitobi">
+	<ntb:menuitem imagesrc="images/file_new.png" 	 label="New File"></ntb:menuitem>
+	<ntb:menuitem imagesrc="images/file_del.png"  	 label="Delete File"></ntb:menuitem>
+	<ntb:menuitem imagesrc="images/file_edit.png"  	 label="Edit File"></ntb:menuitem>
+	<ntb:menuitem imagesrc="images/file_explore.png" label="Search File"></ntb:menuitem>
+	<ntb:menuitem imagesrc="images/file_export.png"  label="Export File"></ntb:menuitem>
+	<ntb:menuitem imagesrc="images/file_attention.png" label="Flag File"></ntb:menuitem>
+</ntb:fisheye>
+</textarea>
+<div id="container" style="margin-top: 50px"></div>
+
+</body>
+</html>

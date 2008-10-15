@@ -1,0 +1,67 @@
+<!-- This page is the main page in the sample. It places the combo on the webpage. -->
+<!-- Note the namespace defined in the HTML tag. -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi ComboBox V3 Demos</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/combo/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<link type="text/css" rel="stylesheet" href="$STYLE$/samples.css"></link>
+
+<!-- Now we include the CSS for the component -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/client/style/nitobi.combo.css"></link>
+
+<!-- First we include the Toolkit JavaScript -->
+<script language="javascript" src="$STYLE$/client/script/nitobi.toolkit.js"></script>
+
+<!-- Now we include the component JavaScript -->
+<script language="javascript" src="$STYLE$/client/script/nitobi.combo.js"></script>
+
+<script type="text/javascript">
+	// Initializes the combo controls.
+	function initialize(){
+		try{
+			nitobi.initCombo('cmbCustomers');
+			nitobi.initCombo('cmbCustomers2');
+		}catch(err){
+			alert("Initializing the combo boxes failed. Is the .js file correctly referenced and being served by your server?");
+		}
+
+	}
+
+</script>
+<title>Nitobi ComboBox V3 Demo</title>
+</head>
+<!-- The body of the webpage. Note the call to 'initialize()' that initializes
+	 any combos on the page when it loads. -->
+<body onLoad="initialize()">
+<p>This sample illustrates the search mode 'Filter' which allows the developer to provide compact autocompeting listboxes across many browsers. Both comboboxes are bound to a database of 1,000 customer records.</p>
+<p><strong>Filter Search Mode- </strong>In this mode, the dropdown element is bound 'tightly' to the remote dataset. It only appears as the user types and returns a concise list of suggestions. Features used include type-ahead and autosizing listbox. No clickable button appears in this mode. </p>
+Select a Customer:
+<ntb:Combo id="cmbCustomers" Mode="filter" InitialSearch="Rosalyn" theme="outlook">
+  <ntb:ComboTextBox Width="250px" DataFieldIndex=0 ></ntb:ComboTextBox>
+  <!-- A list which allows paging and search. The datasource is a separate asp file. -->
+  <ntb:ComboList Width="360px" DatasourceUrl="get.cfm" PageSize="10" >
+    <ntb:ComboColumnDefinition ColumnType="IMAGE" Width="16px" DataFieldIndex=4 HeaderLabel="<img src=scustomerimage.gif>"></ntb:ComboColumnDefinition>
+    <ntb:ComboColumnDefinition Width="130px" HeaderLabel="Customer Name" DataFieldIndex=0 ></ntb:ComboColumnDefinition>
+    <ntb:ComboColumnDefinition Width="200px" DataFieldIndex=1></ntb:ComboColumnDefinition>
+  </ntb:ComboList>
+</ntb:Combo>
+<p><em>(Try typing 'shar' - watch how the listbox changes as you type)</em></p>
+Select a Customer:
+<ntb:Combo id="cmbCustomers2" Mode="filter" theme="outlook">
+  <ntb:ComboTextBox Width="250px" DataFieldIndex=0></ntb:ComboTextBox>
+  <!-- A list which allows paging and search. The datasource is a separate asp file. -->
+  <ntb:ComboList Width="360px" DatasourceUrl="get.cfm" PageSize="20">
+    <ntb:ComboColumnDefinition ColumnType="IMAGE" Width="16px" DataFieldIndex=4 ></ntb:ComboColumnDefinition>
+    <ntb:ComboColumnDefinition Width="130px" DataFieldIndex=0 ></ntb:ComboColumnDefinition>
+    <ntb:ComboColumnDefinition Width="200px" DataFieldIndex=1></ntb:ComboColumnDefinition>
+  </ntb:ComboList>
+</ntb:Combo>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!-- It's important to use the ntb namespace in the HTML tag or the grid will not render -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Spotlight Demos - Tax Form</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/spotlight/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<script>
+//var wT;
+function runTour() {
+	// NONE, GREYSWIPE, MODAL
+	var taxForm = document.forms[0];
+	
+	var wT = new nitobi.spotlight.Spotlight('GREYSWIPE', 'peanut_talkbubble', 'square');
+	wT.createCalloutStep(null, 'We\'ll Help', 'Now we\'ll give you a rundown of this form and try to explain how to run through it. Click the arrow to continue');	
+	wT.createCalloutStep('personalInfo', 'Your Personal Details', 'Here you just need to provide some basic information about yourself so we know who you are: your name, date of birth, Social Insurance Number, and so-on.<Br><br>Click the arrow to continue.');
+	wT.createMouseStep('APPEARONOBJECT', 'personalInfo',400);
+	wT.createFormHelperStep(taxForm['lname'], "TYPETEXT", 400, "Doe");
+	wT.createFormHelperStep(taxForm['fname'], "TYPETEXT", 400, "John T.");
+	wT.createFormHelperStep(taxForm['dbirth'], "TYPETEXT", 400, "1975/03/10");
+	wT.createCalloutStep('enumber', 'Employee Number', 'This field is optional. <b>It only applies if you were employed in the previous tax year.</i>', 2000);
+	wT.createFormHelperStep(taxForm['enumber'], "TYPETEXT", 400, "7432423872");
+	wT.createFormHelperStep(taxForm['caddress'], "TYPETEXT", 400, "3468 Sofa Ave.\nNorth Vancouver, WA\nV7N3I9\nUSA");
+	wT.createCalloutStep('cresidence', 'Country of Residence', 'This field is optional. <b>It only applies if you lived in another country for more than 180 days last year.</i>', 400);	
+	wT.createCalloutStep('SSN', 'Social Security Number', 'This field is mandatory. <b>It is a 10 digit number. You will find it on your SSN card or last year\'s tax return.</i>', 400);	
+	wT.createFormHelperStep(taxForm['SSN'], "TYPETEXT", 400, "1234567890");
+
+	wT.createCalloutStep('fm2_1', 'Basic Personal Amount', 'This you will find on your T4 form. It is the amount of income you earned from your employers last year.', 400);	
+	wT.createFormHelperStep(taxForm['fm2_1'], "TYPETEXT", 400, "$45,000");
+
+	wT.createCalloutStep('fm2_2', 'Age Amount (Optional)', 'This only applies if you were 65 or older as of December 31, 2007. It won\'t be more than $30,936.', 400);	
+	wT.createFormHelperStep(taxForm['fm2_2'], "TYPETEXT", 400, "$30,936");	
+	
+	wT.createCalloutStep('fm2_3', 'Pension Income Amount (Optional)', 'This only applies if you received pension payments last year.<br><br>This does not include CPP, QPP, OAS, or GIS.. only private pension plans.', 400);		
+	wT.createFormHelperStep(taxForm['fm2_3'], "TYPETEXT", 400, "$2,000");
+	
+	wT.createCalloutStep('fm2_4', 'Educational Payments (Optional)', 'Read the instructions here, but keep in mind that you can deduct only amounts that you paid on text books for <b>full time</b> study.', 400);	
+	wT.createFormHelperStep(taxForm['fm2_4'], "TYPETEXT", 400, "$4,500");		
+
+	wT.createCalloutStep('fm2_5', 'Disability Amount (Optional)', 'If the taxpayer was disabled during the last year, enter your Tax Credit amount, the maximum of which is $6890.', 400);	
+	wT.createFormHelperStep(taxForm['fm2_5'], "TYPETEXT", 400, "$0");		
+
+	wT.createCalloutStep('fm2_6', 'Spousal Amount (Optional)', 'If you are supporting your spouse whose net income is less than $759, enter $7,581 here.', 400);	
+	wT.createFormHelperStep(taxForm['fm2_6'], "TYPETEXT", 400, "$0");	
+	wT.createCalloutStep('finishButton', 'Click here to Save', 'When you\'re done click here to save your data.', 400);		
+		
+	wT.createCodeStep("clearForm()", 10);	
+	wT.createCalloutStep(null, 'For more support..', 'That\'s it! If you need more assitance, call our 24 hour hotline at 1-800-555-1234. Operaters will be happy to assit you.');	
+	wT.play();
+}
+
+function clearForm() {
+	var taxForm = document.forms[0];
+	for (var i = 0; i <taxForm.length; i++) {
+		if ((taxForm[i].type == 'text') || (taxForm[i].type == 'textarea')) {
+			taxForm[i].value = '';
+		}	
+	}
+}
+
+
+function runSuggestion() {
+	nitobi.html.Css.precacheImages();
+	// now we create a new one
+	myCallout = new nitobi.callout.Callout("peanut_talkbubble");
+	// we attach it to the element with ID myName
+	myCallout.attachToElement('getHelp');
+	myCallout.setTitle('Need help?');
+	myCallout.setBody('Click here for a brief explanation of this form.');
+	myCallout.setExpire(5000);
+	// now we show it.
+	setTimeout("myCallout.show()", 2000);
+
+	
+}
+
+</script>
+<style>
+	body {padding:20px; font-family:Trebuchet MS, Verdana;font-size:10px;}
+	table {padding:0px;margin:0px;}
+	td {font-size:11px; color:#666666; vertical-align:top; text-align:left;}
+	textarea, input {width:300px; margin:0px;border:0px; color: #000066; background-color:#f0f0f0; padding:3px; font-family:"Courier New", Courier, monospace; font-size:12px;}
+	input {width:150px}
+</style>
+</head>
+<body onLoad="clearForm(); runSuggestion()">
+<p><img src="images/tformlogo.gif"></p>
+<p><a href="#" onClick="runTour(); return false;"><img src="images/assistance.gif" border=0 title="Click for assistance!" id="getHelp"></a></p>
+<form name="form1" method="post" action="">
+  <table border="0" cellpadding=0 cellspacing=1 id="personalInfo">
+    <tr>
+      <td valign="top">Last Name</td>
+      <td valign="top">First name and initial(s)</td>
+      <td valign="top">Date of birth (YYYY/MM/DD)</td>
+      <td valign="top">Employee Number</td>
+    </tr>
+    <tr>
+      <td valign="top"><input type="text" name="lname" id="lname"></td>
+      <td valign="top"><input type="text" name="fname" id="fname"></td>
+      <td valign="top"><input type="text" name="dbirth" id="dbirth"></td>
+      <td valign="top"><input type="text" name="enumber" id="enumber"></td>
+    </tr>
+    <tr>
+      <td colspan="2" valign="top">Address including postal code</td>
+      <td valign="top">For non residents only - Country of permenant residence</td>
+      <td valign="top">SSN</td>
+    </tr>
+    <tr>
+      <td colspan="2" valign="top"><textarea name="caddress" id="caddress" cols="45" rows="3"></textarea></td>
+      <td valign="top"><textarea name="cresidence" id="cresidence" cols="45" rows="3"></textarea></td>
+      <td valign="top"><input type="text" name="SSN" id="SSN"></td>
+    </tr>
+  </table>
+  <Br>
+  <table width="755">
+    <tr>
+      <td width="504">1. <strong>Basic personal amount</strong> – Every resident of Canada can claim this amount. If you will have more than one employer or payer at the same time in 2007, see the section called &quot;Income from other employers or payers&quot; on the back page. If you are a non-resident, see the section called &quot;Non-residents&quot; on the back page.</td>
+      <td><input type="text" name="fm2_1" id="fm2_1"></td>
+    </tr>
+    <tr>
+      <td>2. <strong>Age amount</strong> – If you will be 65 or older on December 31, 2007, and your net income from all sources will be $30,936 or less, enter $5,177. If your net income will be between $30,936 and $65,449 and you want to calculate a partial claim, get the Worksheet for the 2007 Personal Tax Credits Return (TD1-WS) and complete the appropriate section.</td>
+      <td><input type="text" name="fm2_2" id="fm2_2"></td>
+    </tr>
+    <tr>
+      <td>3. <strong>Pension income amount</strong> – If you will receive regular pension payments from a pension plan or fund (excluding Canada Pension Plan, Quebec Pension Plan, Old Age Security, or Guaranteed Income Supplement payments), enter $2,000 or your estimated annual pension income, whichever is less.</td>
+      <td><input type="text" name="fm2_3" id="fm2_3"></td>
+    </tr>
+    <tr>
+      <td>4. <strong>Tuition, education and textbook amounts</strong> (full time and part time) – If you are a student enrolled at a university, college, or educational institution certified by Human Resources and Social Development, and you will pay more than $100 per institution in tuition fees, complete this section. If you are enrolled full time, or if you have a mental or physical disability and are enrolled part time, enter the total of the tuition fees you will pay, plus $400 for each month that you will be enrolled, plus $65 per month for textbooks. If you are enrolled part time and do not have a mental or physical disability, enter the total of the tuition fees you will pay, plus $120 for each month that you will be enrolled part time, plus $20 per month for textbooks.</td>
+      <td><input type="text" name="fm2_4" id="fm2_4"></td>
+    </tr>
+    <tr>
+      <td>5. <strong>Disability amount</strong> – If you will claim the disability amount on your income tax return by using Form T2201, Disability Tax Credit Certificate, enter $6,890.</td>
+      <td><input type="text" name="fm2_5" id="fm2_5"></td>
+    </tr>
+    <tr>
+      <td>6. <strong>Spouse or common-law partner amount</strong> – If you are supporting your spouse or common-law partner who lives with you, and whose net income for the year will be $759 or less, enter $7,581. If his or her net income for the year will be between $759 and $8,340 and you want to calculate a partial claim, get the Worksheet for the 2007 Personal Tax Credits Return (TD1-WS) and complete the appropriate section.</td>
+      <td><input type="text" name="fm2_6" id="fm2_6"></td>
+    </tr>
+  </table>
+  <p>
+    <input type="button" name="finishButton" id="finishButton" value="Save and Continue">
+  </p>
+</form>
+<p>&nbsp;</p>
+</body>
+</html>

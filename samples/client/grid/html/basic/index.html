@@ -1,0 +1,83 @@
+<!-- It's important to use the ntb namespace in the HTML tag or the grid will not render -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Grid Demos - Editors</title>
+
+<!-- EBA_REMOVE_START --><link type="text/css" rel="stylesheet" href="../../../../samples/css/samples.css"></link><link type="text/css" rel="stylesheet" href="../../../../samples/css/sh.css"></link><script src="../../../../samples/js/sh.js"></script><script language="javascript" src="../../../../../test/client/grid/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/samples.css"></link>
+
+<!-- Now we include the CSS for the component -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/nitobi.grid.css"></link>
+
+<!-- First we include the Toolkit JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.toolkit.js"></script>
+
+<!-- Now we include the component JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.grid.js"></script>
+<!-- End of Demo-related Includes -->
+
+<script>
+function init()
+{
+	var SimpGrid = nitobi.loadComponent('SimpleGrid');
+}
+</script>
+<style>
+li h4 {
+	margin-top:0px;
+	margin-bottom:0px;
+}
+</style>
+</head>
+<body onLoad="init()">
+
+      <p class="intro">Getting started with a basic grid involves just a little preparation of your page.</p>
+	  <ul class="instructions">
+	  <li>Set up your Namespace:
+	  Your HTML tag should look like this: <code>&lt;html xmlns:ntb="http://www.nitobi.com"&gt;</code></li>
+	  <li>Include the Grid Stylesheet:
+	  Choose which grid theme you would like to use and include its <code>nitobi.grid.css</code> file in your page</li>  
+	  <li>Include the Grid JavaScript:
+	  Include the <code>nitobi.grid.js</code> javascript file in your page.</li>  
+	  <li>Put a Grid Tag on the Page</li>  
+	  <li>Instantiate the Grid:
+	  Subscribe a call to <code>nitobi.loadComponent('&lt;YOUR GRID ID&gt;');</code> to the onload event for the web page.</li>  	  	  	  	  	  
+	  </ul>	  
+<br />	  
+		<ntb:grid id="SimpleGrid" 
+		  width="350"
+		  height="300"
+		  mode="localnonpaging" 
+		  datasourceid="data"
+		  rowhighlightenabled="true"
+		  toolbarenabled="true"
+		  theme="nitobi">
+		 <ntb:datasources>
+			<ntb:datasource id="data">
+				<ntb:datasourcestructure FieldNames="Name|FavColor|FavAnimal"  ></ntb:datasourcestructure>
+				<ntb:data>
+					<ntb:e xi="1" a="Tammara Farley" b="blue" c="cat" ></ntb:e>
+					<ntb:e xi="2" a="Dwana Barton" b="red" c="dog"></ntb:e>
+					<ntb:e xi="3" a="Lucas Blake" b="green" c="ferret"></ntb:e>
+					<ntb:e xi="4" a="Lilli Bender" b="grey" c="squirrel"></ntb:e>
+					<ntb:e xi="5" a="Emilia Foster" b="orange" c="pig"></ntb:e>
+					<ntb:e xi="6" a="Steve Irwin" b="beige" c="crocodile"></ntb:e>
+					<ntb:e xi="7" a="Crystal House" b="brown" c="horse"></ntb:e>
+					<ntb:e xi="8" a="Lindsay Cohen" b="cyan" c="cow"></ntb:e>
+					<ntb:e xi="9" a="Blake Farley" b="blue" c="cat" ></ntb:e>
+					<ntb:e xi="10" a="Farley Barton" b="red" c="dog"></ntb:e>
+					<ntb:e xi="11" a="Bender Dwana" b="green" c="ferret"></ntb:e>
+					<ntb:e xi="12" a="Lindsay Bender" b="grey" c="squirrel"></ntb:e>
+					<ntb:e xi="13" a="Emilia Foster" b="orange" c="pig"></ntb:e>
+					<ntb:e xi="14" a="Dwana Irwin" b="beige" c="crocodile"></ntb:e>
+					<ntb:e xi="15" a="Steve Lilli" b="brown" c="horse"></ntb:e>
+					<ntb:e xi="16" a="Lindsay Dwana" b="cyan" c="cow"></ntb:e>					
+				</ntb:data>
+			</ntb:datasource>									
+		  </ntb:datasources>  
+	   
+		</ntb:grid>
+
+</body>
+</html>

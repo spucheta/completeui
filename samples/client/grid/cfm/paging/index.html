@@ -1,0 +1,62 @@
+<!-- It's important to use the ntb namespace in the HTML tag or the grid will not render -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Grid Demos - Paging</title>
+
+<!-- EBA_REMOVE_START --><link type="text/css" rel="stylesheet" href="../../../../samples/css/samples.css"></link><link type="text/css" rel="stylesheet" href="../../../../samples/css/sh.css"></link><script src="../../../../samples/js/sh.js"></script><script language="javascript" src="../../../../../test/client/grid/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/samples.css"></link>
+
+<!-- Now we include the CSS for the component -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/nitobi.grid.css"></link>
+
+<!-- First we include the Toolkit JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.toolkit.js"></script>
+
+<!-- Now we include the component JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.grid.js"></script>
+<!-- End of Demo-related Includes -->
+
+<script>
+
+function init()
+{
+	var LSGrid2 = nitobi.loadComponent('PagingGrid2');	
+}
+
+function GetNewRecordID()
+{
+		// Use the native cross-browser nitobi Ajax object
+		var myAjaxRequest = new nitobi.ajax.HttpRequest();
+		
+		// Define the url for your generatekey script
+		myAjaxRequest.handler = 'getnextrecord.cfm?rnd=' + Math.random();
+		myAjaxRequest.async = false;
+		myAjaxRequest.get();
+		
+		// return the result to the grid
+		return myAjaxRequest.httpObj.responseText;
+}
+</script>
+</head>
+<body onLoad="init()">
+	<p class="intro">Even with the seamless access to large data that LiveScrolling provides, 
+	there are still circumstances where traditional Paging is appropriate. Paging can be performed 
+	on <strong>dynamic</strong> data (via ajax requests).</p>  
+	<ul class="instructions">
+		<li>Use the paging buttons to page forward and back through the data.</li>
+		<li>Notice that whenever a new page is loaded a request is made to the server.</li>
+	</ul>
+    <ntb:grid id="PagingGrid2" 
+				  width="630"
+				  height="210"
+				  mode="standard"
+				  rowsperpage="6"
+				  keygenerator="GetNewRecordID()"
+				  gethandler="load_data.cfm"
+				  savehandler="save_data.cfm"
+				  toolbarenabled="true"
+				  theme="tiger">
+	</ntb:grid>
+</body>
+</html>

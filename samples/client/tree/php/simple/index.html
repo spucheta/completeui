@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ntb="http://www.nitobi.com">
+<head>
+<title>Nitobi Tree Demos - Simple Gethandler</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/tree/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<link type="text/css" rel="stylesheet" href="$STYLE$/samples.css"></link>
+<!-- Now we include the CSS for the component -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/nitobi.tree.css"></link>
+
+<!-- First we include the Toolkit JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.toolkit.js"></script>
+
+<!-- Now we include the component JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.tree.js"></script>
+
+<script language="javascript">
+	function init()
+	{
+		nitobi.loadComponent('tree1');	
+	}
+</script>
+</head>
+<body onload="init();">
+<p class="intro">
+In this sample we use a simple tree with a single gethandler.  When the page loads, the tree calls the gethandler
+with only the tree ID as a parameter in the query string.  The gethandler returns the top level of nodes, those 
+without a parent.  Attached to each node is metadata describing whether or not they have children.
+</p>
+<ul class="instructions">
+<li>If the user attempts to expand a 
+node whose metadata indicates has children and there are no children loaded, another call is made to the 
+gethandler.</li>
+<li>Calls to the gethandler are made with query string containing parameters for the tree's id, the node's id, and all other 
+metadata associated with the node.</li> 
+</ul>
+<br />
+<ntb:tree id="tree1" theme="folders" gethandler="simplegethandler.php"></ntb:tree>
+</body>
+</html>

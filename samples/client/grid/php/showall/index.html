@@ -1,0 +1,190 @@
+<!-- It's important to use the ntb namespace in the HTML tag or the grid will not render -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Grid Demos - Show All</title>
+
+<!-- EBA_REMOVE_START --><link type="text/css" rel="stylesheet" href="../../../../samples/css/samples.css"></link><link type="text/css" rel="stylesheet" href="../../../../samples/css/sh.css"></link><script src="../../../../samples/js/sh.js"></script><script language="javascript" src="../../../../../test/client/grid/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/samples.css"></link>
+
+<!-- Now we include the CSS for the component -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/nitobi.grid.css"></link>
+
+<!-- First we include the Toolkit JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.toolkit.js"></script>
+
+<!-- Now we include the component JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.grid.js"></script>
+<!-- End of Demo-related Includes -->
+
+<script>
+
+function init()
+{
+	var LSGrid1 = nitobi.loadComponent('ShowAllGrid1');
+	var LSGrid2 = nitobi.loadComponent('ShowAllGrid2');				
+}
+
+function GetNewRecordID()
+{
+		// Use the native cross-browser nitobi Ajax object
+		var myAjaxRequest = new nitobi.ajax.HttpRequest();
+		
+		// Define the url for your generatekey script
+		myAjaxRequest.handler = 'getnextrecord.php?rnd=' + Math.random();
+		myAjaxRequest.async = false;
+		myAjaxRequest.get();
+		
+		// return the result to the grid
+		return myAjaxRequest.httpObj.responseText;
+}
+</script>
+</head>
+<body onLoad="init()">
+	<p class="intro">In ShowAll mode, grid will retrieve every row available to it up-front and 
+	display it - irrespective of its size. This makes sense if you need all of the data available 
+	on the client at once, for example if you needed to use it somewhere else on the page or 
+	perform calculations. ShowAll mode works with both <code>static</code> (embedded in the 
+	HTML) or <code>dynamic</code> data (via ajax requests).</p>
+	<ul class="instructions">
+		<li class="heading">Local Data:</li>
+		<li>The data is embedded in the page.</li>
+		<li>As the gird loads it renders every available row.</li>
+	</ul>	  	  
+	<ntb:grid id="ShowAllGrid1" 
+	  width="630"
+	  height="200"
+	  mode="localnonpaging" 
+	  datasourceid="data" 
+	  toolbarenabled="true"
+	  theme="nitobi">
+	 <ntb:datasources>
+		<ntb:datasource id="data">
+			<ntb:datasourcestructure FieldNames="ContactName|ContactEmail|JobTitle|CompanyName|PhoneNumber|Address"  Keys="ContactName" types="text|text|text|text|text|text" defaults="| | | | | | "></ntb:datasourcestructure>
+			<ntb:data>
+				<ntb:e xi="97382" a="Tammara Farley" b="tamfarley@halifax.com" c="Media Director" d="BookNorthern Ltd" e="(157) 363-2527" f="511 Collie Hill Way, Fernandina Beach, Fl, 97326"></ntb:e>
+				<ntb:e xi="97383" a="Dwana Barton" b="dwabarton@ebadev.com" c="Budget Analyst" d="Alfa Components" e="(381) 462-7258" f="926 Hill View Circle, Humboldt, Ne, 54952"></ntb:e><ntb:e xi="97384" a="Mercedes Carpenter" b="mcarpenter@purosync.net" c="Finance Manager" d="Com Plan Ltd." e="(576) 434-3413" f="3 Kogru Place, Posen, Mi, 83641"></ntb:e>
+				<ntb:e xi="97385" a="Lucas Blake" b="lblak@freeinterweb.com" c="Marketing Manager" d="Makoro Pad Ltd" e="(188) 788-3178" f="5 Upper Canyon Drive, Homestead, Or, 54822"></ntb:e>
+				<ntb:e xi="97386" a="Lilli Bender" b="lbender@sharesync.com" c="Purchaser" d="CapFoot" e="(296) 888-4437" f="59 Lee Street, Kingsbury, Nv, 48455"></ntb:e><ntb:e xi="97387" a="Jose Bishop" b="josebishop@voxcom.ca" c="Branch Manager" d="Red Pad" e="(944) 617-2373" f="6 Pintail Street, Houghton Lake, Mi, 68336"></ntb:e>
+				<ntb:e xi="97388" a="Emilia Foster" b="efoster@extreme.net" c="Payroll Manager" d="Iron Capital Ltd." e="(667) 337-2378" f="467 Contrary Court, Delhi, Ia, 28477"></ntb:e>
+				<ntb:e xi="97389" a="Vernice Young" b="veyoung@glue.it.com" c="Developer" d="InterAlbertson" e="(724) 351-2612" f="1110 Jackson Drive, Griswold, Ia, 42717"></ntb:e>
+				<ntb:e xi="97390" a="Cyrstal House" b="chouse@universalweb.com" c="Product Manager" d="Loop Byte Inc." e="(418) 477-6895" f="8 Tamarra Circle, Zumbro Falls, Mn, 21427"></ntb:e>
+				<ntb:e xi="97391" a="Lindsay Cohen" b="lindsaycohen@jitterbug.org" c="Developer" d="Willow Dream" e="(564) 149-1447" f="95 Pine Valley Court, Mount Sterling, Il, 79592"></ntb:e>
+				<ntb:e xi="97392" a="Amalia Oneal" b="amaoneal@flashpoint.org" c="Business Development Manager" d="ScrExports Llc." e="(466) 832-8835" f="5 Shady Lane, Riverside, Ca, 35177"></ntb:e>
+				<ntb:e xi="97393" a="Pasty Rosario" b="prosario@sfx.ca" c="Tax Director" d="Intermark Group" e="(266) 433-7222" f="41 Trails End Road, Elgin, Ia, 23778"></ntb:e>
+				<ntb:e xi="97394" a="Milford Downs" b="milfodowns@vancouver.com" c="VP Marketing" d="AmwestExports Inc" e="(686) 787-7887" f="92 Albion Circle, Middletown, Ct, 53366"></ntb:e>
+				<ntb:e xi="97395" a="Josephina Cook" b="joscook@superinternet.com" c="Procurement Manager" d="New mediaMedia Ltd" e="(594) 782-2484" f="83 Thunderbrush Circle, Coquille, Or, 58275"></ntb:e>
+				<ntb:e xi="97887" a="Mildred Macdonald" b="mildrmacdon@megadecision.net" c="Copywriter" d="Panama Sonic Llc." e="(578) 872-4677" f="10 Westwind Court, Fort Madison, Ia, 86224"></ntb:e>
+				<ntb:e xi="97888" a="Yon Powell" b="ypowel@calgary.net" c="Web Architect" d="Van Research" e="(688) 827-8233" f="811 Berry Patch Drive, Montgomery City, Mo, 74472"></ntb:e>
+				<ntb:e xi="97889" a="Sheryl Villarreal" b="sher_villarreal@extreme.net" c="Associate" d="InterPixel Ltd." e="(487) 754-6766" f="35 Katahdin Drive, Laguna Beach, Ca, 52613"></ntb:e>
+				<ntb:e xi="97890" a="Refugio Carson" b="refugcarso@dotsterworld.net" c="Advertising Manager" d="Flash Logistics" e="(483) 725-2857" f="5 Skyhills Drive, Sparta, Nc, 86652"></ntb:e>
+				<ntb:e xi="97891" a="Carolina Delgado" b="c.delga@halifax.com" c="Billing Supervisor" d="Xeba Eastern " e="(493) 239-4375" f="15 East 41st Avenue, Madrid, Al, 74423"></ntb:e><ntb:e xi="97892" a="Fredda Haley" b="frehaley@intl.fr" c="Advertising Clerk" d="BionicWeb" e="(839) 678-5796" f="77 Talon Circle, Kenyon, Mn, 86359"></ntb:e>
+				<ntb:e xi="97893" a="Francoise Horn" b="franhorn@realnews.ca" c="Tax Director" d="Van Logistics Ltd." e="(334) 445-5961" f="9 Tazlina Avenue, West Bend, Ia, 22223"></ntb:e>
+				<ntb:e xi="97894" a="Elly Herman" b="ellherman@professional.com" c="Payroll Manager" d="Ec Imports Inc." e="(595) 258-1268" f="621 Majestic Drive, Badger, Ia, 56842"></ntb:e>
+				<ntb:e xi="97895" a="Latosha Casey" b="latocasey@zedtec.com" c="HR Manager" d="YeoBerry Ltd" e="(686) 378-4377" f="108 Tarsus Drive, Youngtown, Az, 63325"></ntb:e>
+				<ntb:e xi="97896" a="Nicky Baker" b="nbaker@tjyworld.com" c="Advertising Executive" d="SparkGraphics Llc." e="(292) 368-2265" f="746 Mumford Street, Gillespie, Il, 17491"></ntb:e>
+				<ntb:e xi="97897" a="Darlena Shields" b="darle.shields@scriptshq.ca" c="Copywriter" d="EdbBridge Llc." e="(425) 842-7846" f="5 Louinda Circle, Forks, Wa, 96334"></ntb:e>
+				<ntb:e xi="97898" a="Dania Wilkerson" b="dawilke@dotsterworld.net" c="CEO" d="MicroSalmon" e="(592) 337-7551" f="84 Adrian Lane, Olympic Valley, Ca, 74334"></ntb:e>
+				<ntb:e xi="97899" a="Rhea Fry" b="r-fry@superinternet.com" c="President" d="Edb Apps" e="(218) 685-5523" f="6 Sunstone Circle, Bonita, Ca, 93147"></ntb:e>
+				<ntb:e xi="97900" a="Maritza Kane" b="marit.kane@scriptshq.ca" c="Marketing Assistant" d="FrontGroup" e="(235) 752-5348" f="107 Ricky Way, Trenton, Nj, 52111"></ntb:e>
+				<ntb:e xi="97901" a="Thalia Hyde" b="thalihyde@aeresources.com" c="Budget Analyst" d="RadianceFoot" e="(816) 795-9797" f="8 Mountain Circle, Riverside, Al, 13146"></ntb:e>
+				<ntb:e xi="97902" a="Mikki Reed" b="mireed@hotmail.com" c="HR Manager" d="EditionComponents Llc." e="(264) 442-1687" f="112 Jadewood Circle, Leesburg, Fl, 55116"></ntb:e>
+				<ntb:e xi="97903" a="Daphine Higgins" b="daphhiggins@professional.com" c="Branch Manager" d="OdysseyEbc" e="(846) 326-8147" f="89 Gstaad Way, Shreveport, La, 72335"></ntb:e>
+				<ntb:e xi="97904" a="Tomi Osborn" b="t-osborn@ebadev.com" c="Billing Clerk" d="AmwestCentric Llc" e="(884) 278-4473" f="6810 East 82nd Avenue, Fayston, Vt, 84213"></ntb:e>
+				<ntb:e xi="97905" a="Caryl Michael" b="cary_micha@newyork.com" c="Auditing Supervisor" d="Loop Web Ltd" e="(858) 622-6891" f="611 Dorchester Street, Middletown, Ct, 76591"></ntb:e>
+				<ntb:e xi="97906" a="Raeann Savage" b="r_savage@northvan.com" c="Office Manager" d="Quanta Media Llc" e="(172) 855-6917" f="22 Coffey Lane, Backus, Mn, 78583"></ntb:e>
+				<ntb:e xi="97907" a="Leida Horne" b="le.horne@caridonet.ca" c="User Interface Architect" d="Radiant Smith Inc." e="(635) 754-6568" f="937 Buckingham Way, Malvern, Al, 59871"></ntb:e>
+				<ntb:e xi="97908" a="Parker Lucas" b="parker_lucas@sharesync.com" c="C++ Developer" d="Wild Dex Inc." e="(763) 495-6763" f="22 Tahoe Drive, Concord, Mi, 42366"></ntb:e>
+				<ntb:e xi="97909" a="Joy Randolph" b="jrandolph@programmer.com" c="Development Coordinator" d="SoftedFocus Llc" e="(946) 779-5613" f="3 Sinina Circle, Eagar, Az, 51458"></ntb:e>
+				<ntb:e xi="97910" a="Tula Russo" b="tularusso@cnn.com" c="Media Buyer" d="SwitchVibes Ltd" e="(355) 555-4157" f="110 Laoana Court, Williamston, Nc, 56557"></ntb:e>
+				<ntb:e xi="97911" a="Roselle Cote" b="r.cote@yerta.com" c="Secretary" d="QuantaExports Ltd" e="(425) 125-3358" f="104 Elder Drive, Ridgeland, Ms, 23735"></ntb:e>
+				<ntb:e xi="97912" a="Yan Martin" b="ymartin@ebusinessapps.com" c="Budget Analyst" d="MetalMarketing Ltd" e="(736) 623-3364" f="111 West 57th Avenue, Chase, Ks, 22628"></ntb:e>
+				<ntb:e xi="97913" a="Vera Newton" b="vera_newton@megadecision.net" c="Web Designer" d="Amwest Byte Ltd" e="(283) 695-8444" f="96 Mary Anne Road, Sunset Hills, Mo, 75247"></ntb:e>
+				<ntb:e xi="97914" a="Yolande Brennan" b="yola_brennan@qbooks.com" c="President" d="Command Systems Inc" e="(739) 642-5452" f="2 Leigh Street, Rainsville, Al, 87724"></ntb:e>
+				<ntb:e xi="97915" a="Kimberly Holt" b="kholt@mydomains.org" c="Copywriter" d="GreyPartners" e="(993) 673-3671" f="483 Morphy Court, Woodruff, Ut, 95619"></ntb:e>
+				<ntb:e xi="97916" a="Lorriane Nash" b="lonash@universalweb.com" c="VP Purchasing" d="Ex Box Inc." e="(331) 483-4412" f="88 Wills Way, Paso Robles, Ca, 81681"></ntb:e>
+				<ntb:e xi="97999" a="Manual Mccoy" b="mmccoy@fastserver.com" c="VP Public Relations" d="Intra Data Inc" e="(756) 782-4767" f="110 Ryoaks Place, Montreal, Wa, 41738"></ntb:e>
+				<ntb:e xi="98000" a="Gwendolyn Lang" b="gwendolynlang@mie.com" c="Development Coordinator" d="IronFox Ltd" e="(684) 383-7327" f="1010 Sweetwater Circle, Clinton, Mn, 17655"></ntb:e>
+				<ntb:e xi="98001" a="Margaret Hawkins" b="margarethawkins@election.com" c="User Interface Architect" d="Denver Applications" e="(882) 895-4628" f="56 Platinum Circle, Northwest, Mi, 72682"></ntb:e>
+				<ntb:e xi="98002" a="Sandie Glass" b="sandi.glass@freeinterweb.com" c="Advertising Sales Director" d="Flash Atomica Llc." e="(787) 564-9342" f="468 Genny Circle, Shell Beach, Ca, 31844"></ntb:e>
+				<ntb:e xi="98003" a="Tony Hart" b="tonyhart@palod.ca" c="Copywriter" d="Silver Express Llc" e="(314) 181-5545" f="3 Fergy Circle, Ansonia, Ct, 87671"></ntb:e><ntb:e xi="98004" a="Ruthie Barry" b="ruthie_barry@ottawa.ca" c="Office Manager" d="Spin Door" e="(859) 462-7444" f="11 Dicks Street, Lennox, Sd, 14593"></ntb:e>
+				<ntb:e xi="98005" a="Kayla Fisher" b="kaylafisher@mezzotop.com" c="Advertising Sales Director" d="Book Dex Llc." e="(461) 142-4378" f="4105 Old Lake Otis Parkway, Union Grove, Al, 78642"></ntb:e>
+				<ntb:e xi="98006" a="Sunny Schneider" b="suschneide@topreproducer.com" c="Business Development Manager" d="Equip Sciences" e="(613) 514-2357" f="26 Boniface Parkway, Kismet, Ks, 51332"></ntb:e>
+				<ntb:e xi="98007" a="Angelica Pearson" b="apearson@yerta.com" c="Advertising Executive" d="Tech Robot Llc" e="(266) 834-1527" f="67 Aircraft Drive, Kinney, Mn, 58735"></ntb:e>
+				<ntb:e xi="98008" a="Ping Henson" b="phenson@ucase.ca" c="Sales Promotion Manager" d="Honeywell Sciences Ltd." e="(664) 728-7841" f="117 Southwind Circle, Myrtlewood, Al, 31441"></ntb:e>
+				<ntb:e xi="98009" a="Jeannette Galloway" b="jeannegalloway@intl.fr" c="Advertising Manager" d="Infra Albertson Llc." e="(871) 477-8454" f="3 Tony Circle, Saint Joseph, Mo, 63173"></ntb:e>
+				<ntb:e xi="98010" a="Alix Burgess" b="aliburges@ebusinessapps.com" c="Office Manager" d="Riverdale Graphics Llc." e="(822) 428-7592" f="34 Jarvis Avenue, Butler, Ga, 58721"></ntb:e>
+				<ntb:e xi="98011" a="Dawna Branch" b="dawnbranch@ajito.net" c="Advertising Sales Director" d="Open Xpress Ltd." e="(538) 344-1748" f="1 Lang Street, Emerson, Ia, 59969"></ntb:e>
+				<ntb:e xi="98012" a="Oralee Gomez" b="ogomez@pilates.org" c="Chief Software Architect" d="TechGraphics Ltd." e="(633) 563-5758" f="3 Sun Valley Drive, Wenona, Il, 89438"></ntb:e>
+				<ntb:e xi="98013" a="Orval Parsons" b="orvalparsons@kabama.it" c="Account Manager" d="AlphaNorthern Ltd" e="(896) 255-1224" f="16 Aspen Road, Alba, Mi, 27866"></ntb:e>
+				<ntb:e xi="98014" a="Conchita Gregory" b="cgregory@yukatan.net" c="Marketing Research Executive" d="ShopResearch Ltd." e="(835) 412-6749" f="66 Chamber Lane, Tecumseh, Mo, 84341"></ntb:e>
+				<ntb:e xi="98015" a="Lindsay Joyner" b="ljoyne@fastserver.com" c="VP Finance" d="BioResearch Inc." e="(757) 586-5686" f="78 Keri Court, Ruby, Mi, 27353"></ntb:e>
+				<ntb:e xi="98016" a="Beula Roman" b="broman@yayamailserv.net" c="Bookkeeper" d="Softed Logistics Ltd" e="(838) 868-4384" f="8 Jeanne Road, Spruce Pine, Nc, 66556"></ntb:e>
+				<ntb:e xi="98017" a="Jose Lloyd" b="joselloyd@mozilla.org" c="Developer" d="Alfa Voice Inc" e="(756) 714-3222" f="481 Castner Lane, Mazeppa, Mn, 34975"></ntb:e>
+				<ntb:e xi="98018" a="Kori Christensen" b="kochristen@appsdom.com" c="Developer" d="Nord Fox Ltd" e="(453) 477-9755" f="6 Murphy Circle, Monroe, Ga, 27149"></ntb:e>
+				<ntb:e xi="98019" a="Bennett Gilbert" b="bgilbert@calgary.net" c="Secretary" d="InterKey Ltd" e="(437) 733-5733" f="310 East 58th Avenue, Leighton, Al, 82125"></ntb:e>
+				<ntb:e xi="98020" a="Anabel Lawrence" b="alawre@universalweb.com" c="Advertising Sales Director" d="Ida Pool Ltd." e="(636) 352-1266" f="16 Tracy Road, Hanover, Mi, 97777"></ntb:e>
+				<ntb:e xi="98021" a="Hui Byers" b="hubyers@flashpoint.org" c="Media Director" d="AmericanVibes" e="(258) 159-8296" f="4109 Stockdale Circle, Chickamaw Beach, Mn, 43727"></ntb:e>
+				<ntb:e xi="98022" a="Loree Hutchinson" b="lhutchin@dotsterworld.net" c="Office Manager" d="DFoot" e="(773) 863-6673" f="8119 Coronado Road, Green, Ks, 17513"></ntb:e>
+				<ntb:e xi="98023" a="Tomeka Figueroa" b="t.figue@quickweb.ca" c="Accountant" d="Spin Gateway Ltd." e="(357) 326-3737" f="23 West 37th Avenue, Bardwell, Ky, 64672"></ntb:e>
+				<ntb:e xi="98024" a="Roy Rosario" b="royrosario@toronto.com" c="Tax Director" d="BlueGroup" e="(475) 282-1858" f="6 Toklat Street, Fairview, Ok, 68244"></ntb:e>
+				<ntb:e xi="98025" a="Ozie Spencer" b="ozispencer@professional.com" c="Director of Development" d="GreyGroup Llc." e="(767) 684-8578" f="319 Wranglers Way, Chelsea, Ia, 25245"></ntb:e>
+				<ntb:e xi="98026" a="Margarito Ruiz" b="margarruiz@mezzotop.com" c="HR Manager" d="Inno Byte" e="(824) 849-7123" f="118 Colony Loop, Deshler, Ne, 23884"></ntb:e>
+				<ntb:e xi="98027" a="Tamala Thompson" b="tamathompson@applicationstop.com" c="VP Business Development" d="Alfa Systems" e="(196) 857-5872" f="5 Halyards Circle, Dickson, Tn, 95945"></ntb:e>
+				<ntb:e xi="98028" a="Tatiana Gallegos" b="tgalle@ubc.ca" c="VP Purchasing" d="TechConstruction Inc." e="(498) 259-2275" f="79 Captain Cook Estates Circle, Hopkins, Mn, 25588"></ntb:e>
+				<ntb:e xi="98197" a="Loris Sandoval" b="lsandoval@greatresources.net" c="User Interface Architect" d="Local Pool" e="(971) 739-9388" f="488 Jackson Drive, Rincon, Ga, 71858"></ntb:e>
+				<ntb:e xi="98198" a="Lavenia Mccoy" b="l_mccoy@universalweb.com" c="Marketing Research Executive" d="Air Start Llc." e="(442) 919-7251" f="92 Nash Street, Lambertville, Nj, 82184"></ntb:e>
+				<ntb:e xi="98199" a="Claudio Myers" b="clmyers@aeresources.com" c="Advertising Executive" d="ForwardSlate Inc" e="(277) 861-5443" f="66 Anchorage Port Road, Marvin, Nc, 58519"></ntb:e>
+				<ntb:e xi="98200" a="Sanjuanita Newton" b="sanewton@yayamailserv.net" c="Director of Innovation" d="IndigoExports Ltd." e="(792) 539-9835" f="91 Mariner Drive, Whitethorn, Ca, 56861"></ntb:e>
+				<ntb:e xi="98201" a="Myrtle Marks" b="mmarks@ubc.ca" c="Media Director" d="B Investigations Llc." e="(322) 543-3432" f="31 Goodpaster Circle, Brookings, Sd, 36937"></ntb:e>
+				<ntb:e xi="98202" a="Merissa Beasley" b="merissabeasley@quickstyle.com" c="Auditing Supervisor" d="Web Media Llc." e="(544) 778-3743" f="711 Buttermilk Way, Crestwood, Ky, 58922"></ntb:e>
+				<ntb:e xi="98203" a="Candance Spence" b="candaspence@mydomains.org" c="VP Marketing" d="Premier Xpress Inc." e="(288) 879-6193" f="78 Beverly Drive, Montague, Ca, 47254"></ntb:e>
+				<ntb:e xi="98204" a="Rosalee Russell" b="r.russel@gmail.com" c="Payroll Manager" d="Auto Systems" e="(941) 561-7823" f="1010 Forest Village Drive, Beaver, Ok, 57554"></ntb:e>
+				<ntb:e xi="98205" a="Gale Wynn" b="g.wynn@megadecision.net" c="Salesperson" d="North Security Inc" e="(673) 486-6819" f="13 East Chichagof Loop, Merrimack, Nh, 67812"></ntb:e>
+				<ntb:e xi="98206" a="Deonna Sears" b="deonnasears@sfu.ca" c="Billing Supervisor" d="IpoJohnson Inc" e="(835) 358-8635" f="92 Boeing Avenue, Woodstock, Mn, 46885"></ntb:e>
+				<ntb:e xi="98207" a="Shirly Mercado" b="shirmercado@interchange.ubc.ca" c="Advertising Executive" d="Nord Gateway" e="(786) 596-4528" f="5 Seton Circle, Maidstone, Vt, 96843"></ntb:e>
+				<ntb:e xi="98208" a="Cammie Martin" b="cammiemartin@realnews.ca" c="HR Manager" d="WhitfieldLogistics" e="(112) 765-6423" f="689 Harbor Landing Circle, Deephaven, Mn, 25975"></ntb:e>
+				<ntb:e xi="98209" a="Fatima Ochoa" b="fochoa@newyork.com" c="VP Research" d="White Nation" e="(465) 255-9321" f="5 Caribou Street, Seaford, De, 92761"></ntb:e>
+				<ntb:e xi="98210" a="Ray Vazquez" b="ray.vazquez@ebusinessapps.com" c="VP Public Relationsrtrr" d="Tech Focus Llc." e="(417) 745-9578" f="86 Durenda Circle, Sawyerville, Al, 56349"></ntb:e>
+				<ntb:e xi="98211" a="Johnny Fleming" b="johnnyfleming@freeinterweb.com" c="Analyst" d="GreenGraphics Llc." e="(384) 718-1287" f="23 Upper Huffman Road, Tabor, Ia, 33577"></ntb:e>
+				<ntb:e xi="98212" a="Noma Green" b="n.green@calgary.net" c="Marketing Assistant" d="New Torch Inc" e="(389) 685-3655" f="884 Emory Street, Independence, Tx, 52667"></ntb:e>
+				<ntb:e xi="98213" a="Eura Barron" b="eubarron@gov.sask.ca" c="Chief Software Architect" d="National Cast Inc." e="(298) 542-8868" f="2 Micheal Court, Alamo Heights, Tx, 72253"></ntb:e>
+				<ntb:e xi="98214" a="Dreama Moody" b="dreamamoody@calgary.net" c="VP Sales and Marketing" d="Hotspot Scape Ltd" e="(945) 688-4236" f="429 Bruce Lane, Fort Gibson, Ok, 57867"></ntb:e>
+				<ntb:e xi="98215" a="Kimbery Cross" b="kicross@palod.ca" c="Director of Innovation" d="FutureGateway Llc." e="(477) 214-6887" f="52 Heide Drive, Eclectic, Al, 62266"></ntb:e>
+				<ntb:e xi="98216" a="Magnolia Rosario" b="magn_rosar@purosync.net" c="Payroll Manager" d="IdaStart Llc." e="(245) 227-6855" f="47 Westbury Drive, Rockwood, Mi, 13543"></ntb:e>
+				<ntb:e xi="98217" a="Jame Daniel" b="jdani@caridonet.ca" c="Brand Manager" d="Steel Ebc Llc" e="(536) 543-7943" f="3 Timberlane Circle, Larimore, Nd, 63392"></ntb:e>
+				<ntb:e xi="98218" a="Lonnie Reeves" b="lonn.reeves@yayamailserv.net" c="Marketing Research Executive" d="PowerXpress Llc" e="(458) 142-6445" f="25 Suncrest Drive, Burlington, Mi, 54254"></ntb:e>
+				<ntb:e xi="98219" a="Blossom Sharpe" b="bsharpe@mydomains.org" c="Bookkeeper" d="HomefrontBridge Inc." e="(273) 738-6288" f="73 Columbine Street, Vicksburg, Mi, 86252"></ntb:e>
+				<ntb:e xi="98220" a="Joel Hampton" b="jhampt@kabama.it" c="HR Manager" d="Tele Lion" e="(847) 971-7745" f="69 Mars Drive, Ashley, Il, 72617"></ntb:e><ntb:e xi="98221" a="Magda Roberts" b="magrober@dbtestdata.com" c="Purchaser" d="NordInvestigations" e="(882) 253-5264" f="36 Hoyt Street, Burt, Ia, 36324"></ntb:e>
+				<ntb:e xi="98222" a="Toby Phillips" b="toby_phillips@flashpoint.org" c="Associate" d="U.s.Pool " e="(648) 382-2535" f="869 Cardinal Circle, Olds, Ia, 57372"></ntb:e>
+				<ntb:e xi="98223" a="Ahmed Ferrell" b="ahmeferrell@glue.it.com" c="Budget Analyst" d="Tech Pool" e="(636) 828-2349" f="472 Lupine Road, Wabasso, Mn, 88116"></ntb:e>
+				<ntb:e xi="98224" a="Lazaro Gutierrez" b="lgutierre@cipdr.fr" c="Analyst" d="Riverdale Fox Inc." e="(483) 526-5154" f="445 Iris Street, Shelton, Wa, 74517"></ntb:e>
+				<ntb:e xi="98225" a="Cheryle Keith" b="cher-keith@caridonet.ca" c="Procurement Director" d="TechLink Inc." e="(557) 744-8528" f="10 Aircraft Drive, Dora, Nm, 68328"></ntb:e>
+				<ntb:e xi="98226" a="Celena Elliott" b="cel_elliott@ucase.ca" c="Salesperson" d="Info Net  Inc." e="(716) 621-8334" f="9 Glenn Nb On D Ramp, Hazel Green, Al, 42318"></ntb:e>
+			</ntb:data>
+		</ntb:datasource>
+	  </ntb:datasources>  
+	  <ntb:columns>
+		  <ntb:textcolumn   label="Contact Name"    xdatafld="ContactName"		width="200"></ntb:textcolumn>
+		  <ntb:textcolumn 	label="Contact Email"  	xdatafld="ContactEmail"     width="200"></ntb:textcolumn>
+		  <ntb:textcolumn 	label="Job Title"  		xdatafld="JobTitle"    		width="200"></ntb:textcolumn>
+      </ntb:columns>
+	</ntb:grid>
+	
+      <ul class="instructions">
+        <li class="heading">Remote Data:</li>
+        <li>The <code>getHandler</code> is invoked to provide all the data for this grid in one request.</li>
+        <li>Upon receiving the data, the grid renders every row.</li>
+      </ul>
+    <ntb:grid id="ShowAllGrid2" 
+			  width="630"
+			  height="210"
+			  mode="nonpaging"
+			  gethandler="load_data.php"
+			  savehandler="save_data.php"
+			  autosaveenabled="true"			  
+			  toolbarenabled="true"
+			  theme="nitobi">
+	</ntb:grid>
+</body>
+</html>

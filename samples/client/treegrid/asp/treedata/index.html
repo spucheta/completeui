@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- It's important to use the ntb namespace in the HTML tag or the grid will not render -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Tree Grid</title>
+
+<!-- EBA_REMOVE_START --><link type="text/css" rel="stylesheet" href="../../../../samples/css/samples.css"></link><link type="text/css" rel="stylesheet" href="../../../../samples/css/sh.css"></link><script src="../../../../samples/js/sh.js"></script><script language="javascript" src="../../../../../../test/client/treegrid/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/samples.css"></link>
+
+<!-- Now we include the CSS for the component -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/nitobi.treegrid.css"></link>
+
+<!-- First we include the Toolkit JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.toolkit.js"></script>
+
+<!-- Now we include the component JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.treegrid.js"></script>
+<!-- End of Demo-related Includes -->
+
+<script>
+
+function init()
+{
+	nitobi.loadComponent('TreeGrid');
+}
+
+function click()
+{
+console.log("click");
+}
+
+function switchStyles(evt)
+{
+	var grid = nitobi.getComponent('TreeGrid');
+	var container = grid.element;
+	oldStyle = grid.getTheme();
+	var source = (nitobi.browser.IE?evt.srcElement:evt.target);
+	newStyle = source.options[source.selectedIndex].value;
+	grid.setTheme(newStyle);
+	nitobi.html.Css.swapClass(container, oldStyle, newStyle);
+}
+</script>
+</head>
+<body onLoad="init()">
+<p class="intro">
+		Tree Grid allows for the rendering of hierarchical data.  In this simple example, we have 
+		a list of customers, their orders, and the products in those orders displayed in a single Tree Grid.
+	</p>  
+	<ul class="instructions">
+		<li>Use the paging buttons to page forward and back through the data.</li>
+		<li>Notice that whenever a new page is loaded a request is made to the server.</li>
+	</ul>
+	<div class="theme">
+		<span>Theme:</span>
+		<select style="width:150px;" onchange="switchStyles(event)">
+			<option selected="true" value="flex">Flex</option>
+			<option value="nitobi">Nitobi</option>
+			<option value="plastik">Plastik</option>
+			<option value="tiger">Tiger</option>
+			<option value="tiny">Tiny</option>
+			<option value="vista">Vista</option>
+			<option value="xp">XP</option>
+		</select>
+	</div>
+    <ntb:treegrid id="TreeGrid" 
+				  width="630"
+				  height="500"
+				  mode="standard"
+				  rowsperpage="20"  
+				  gethandler="load_customers.asp"
+				  savehandler="save_customers.asp"
+				  toolbarenabled="true"
+				  rootcolumns="customers"
+				  theme="flex" 
+				  groupoffset="20"
+				  effectsenabled="true"
+				  oncelldblclickevent="click(eventArgs)"
+		
+				  >
+		  <ntb:columns id="customers">
+			<ntb:expandcolumn childcolumnset="orders" width="50"></ntb:expandcolumn>
+			<ntb:textcolumn label="Customer Name" xdatafld="CustomerName" width="130"></ntb:textcolumn>
+	   		<ntb:textcolumn label="Contact Name" xdatafld="ContactName" width="130"></ntb:textcolumn>
+		  	<ntb:textcolumn label="Email" xdatafld="ContactEmail" width="150"></ntb:textcolumn>
+		  	<ntb:textcolumn label="Phone Number" xdatafld="PhoneNumber" width="100"></ntb:textcolumn>
+		  </ntb:columns>
+		  
+		   <ntb:columns id="orders" gethandler="load_orders.asp" savehandler="save_orders.asp" headerenabled="true">
+		  	<ntb:expandcolumn childcolumnset="products" width="50"></ntb:expandcolumn>
+		  	<ntb:numbercolumn label="Order ID" editable="false" xdatafld="OrderID" width="100"></ntb:numbercolumn>
+		  	<ntb:textcolumn label="Order Date" xdatafld="OrderDate" width="140"></ntb:textcolumn>
+		  	<ntb:textcolumn label="Shipped Date" xdatafld="ShippedDate" width="140"></ntb:textcolumn>
+		  </ntb:columns>
+		  
+		  <ntb:columns id="products" gethandler="load_products.asp">
+		  	<ntb:textcolumn label="Product Name" xdatafld="ProductName" width="150"></ntb:textcolumn>
+		  	<ntb:textcolumn label="Price" xdatafld="ProductPrice"></ntb:textcolumn>
+		  </ntb:columns>
+	</ntb:treegrid>
+</body>
+</html>

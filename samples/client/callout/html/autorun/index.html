@@ -1,0 +1,47 @@
+<!-- It's important to use the ntb namespace in the HTML tag or the grid will not render -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Callout Demos - AutoRun</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/callout/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<script>
+
+var myCallout;
+
+function runCallout() {
+	
+	// now we create a new one
+	myCallout = new nitobi.callout.Callout("impact");
+	// we attach it to the element with ID myName
+	myCallout.attachToElement('newaccount');
+	myCallout.setTitle('First visit?');
+	myCallout.setBody('Click here to get started! Account signup will take less than 30 seconds!');
+	// now we show it.
+	setTimeout("myCallout.show()", 2000);
+
+	
+}
+
+</script>
+
+</head>
+<body onload="runCallout()">
+      <p class="intro">You can easily instantiate a callout when the page loads.  
+      Here we are bringing up a callout after a few seconds to draw attention to the signup button.</p>
+	  <br>
+	  <div style="background-image: url(loginscreen.png); background-repeat:no-repeat; width: 452px; height:354px; padding-top: 70px; padding-left: 27px;">
+	  <form name="myForm">
+	  <p>Username: <input type="text" name="myName" id="myName" disabled></p>
+	  <p>Password: <input type="text" name="myPassword" id="myPassword" disabled></p><br><br>
+	  <input type=submit disabled>
+	  <div id="newaccount" style="cursor:pointer; width:305px; height:50px; margin-left:105px;margin-top:60px;">&nbsp;</div>
+	  </form>	  
+	  </div>
+</body>
+</html>

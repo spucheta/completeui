@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- It's important to use the ntb namespace in the HTML tag or the datepicker will not render -->
+<html xmlns:ntb="http://www.nitobi.com">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Calendar Demos - Standalone Components</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/calendar/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<script>
+	function load()
+	{
+		if (!nitobi.browser.IE)
+		{
+			$("jscode").innerHTML = $("component1").innerHTML;
+			$("jscode").innerHTML += $("component2").innerHTML;
+		}
+		
+		
+		var datePicker = nitobi.loadComponent("dp");
+		var datePicker1 = nitobi.loadComponent("dp1");
+		dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+		dp.SyntaxHighlighter.HighlightAll('code');
+		
+		
+	}	
+	nitobi.html.attachEvent(window, "load", load);
+</script>
+</head>
+<body>
+	<h2>
+		Standalone Components
+	</h2>
+	<p class="intro">
+		With the Nitobi Calendar, you can use it as either a standalone input field or as a standalone calendar.
+	</p>
+	<h3 style="margin-top: 10px;">
+		Description
+	</h3>
+	<div class="notes" style="margin-top: 5px;" id="desc">
+		Using the Nitobi Calendar as either an input or a calendar will still give you all the features of each invididual part.  The input field
+		will still provide date masking for display and for input.  And the Calendar will still support multimonth view, quick nav, etc.
+	</div>
+	<div id="component1">
+		<ntb:datepicker id="dp" theme="leopard" selecteddate="today">
+			<ntb:dateinput displaymask="EE MMM dd yyyy" editmask="yyyy-MM-dd"></ntb:dateinput>
+		</ntb:datepicker>
+	</div>
+	
+	<div id="component2" style="margin-top:25px;">
+		<ntb:datepicker id="dp1" theme="minimal" mindate="yesterday" >
+			<ntb:calendar monthrows="2" monthcolumns="2"></ntb:calendar>
+		</ntb:datepicker>
+	</div>
+	
+	<h3 style="margin-top: 35px;margin-bottom: 0px;">
+		Example Source Code
+	</h3>
+	<div id="source">
+		<div class="" style="margin-top: 10px;">
+			<div>
+				Calendar Markup
+			</div>
+			<div class="codearea">
+				<textarea name="code" class="html" id="jscode">
+					<ntb:datepicker id="dp" theme="leopard" selecteddate="today">
+						<ntb:dateinput displaymask="EE MMM dd yyyy" editmask="yyyy-MM-dd"></ntb:dateinput>
+					</ntb:datepicker>
+		
+					<ntb:datepicker id="dp1" theme="minimal" mindate="yesterday">
+						<ntb:calendar monthrows="2" monthcolumns="2"></ntb:calendar>
+					</ntb:datepicker>
+				</textarea>
+			</div>
+		</div>
+		<div style="margin-top: 10px;">
+			<div>
+				Javascript
+			<div class="codearea">
+				<textarea name="code" class="js" cols="20">
+					function load()
+					{
+						var datePicker = nitobi.loadComponent("dp");
+						var datePicker1 = nitobi.loadComponent("dp1");
+					}
+					
+					// Load the component when the page loads.
+					nitobi.html.attachEvent(window, "load", load);
+				</textarea>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

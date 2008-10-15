@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Nitobi Tabstrip Demos - Adding and Removing Tabs</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/tabstrip/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+
+<script>
+	function onLoad()
+	{
+		var t1 = nitobi.loadComponent('tabstrip1');
+	}
+	
+	function add()
+	{
+		var t1 = nitobi.getComponent("tabstrip1");
+		var tabs = t1.getTabs();
+		var tab = new nitobi.tabstrip.Tab();
+		tab.setLabel("W3C");
+		tab.setContainerType("iframe");	
+		tab.setSource("http://www.w3.org/");
+		tab.setWidth("190px");
+		tabs.add(tab);
+		t1.render();
+	}
+	
+	function remove()
+	{
+		var t1 = nitobi.getComponent("tabstrip1");
+		var tabs = t1.getTabs();
+		tabs.remove(3);
+		t1.render();
+		
+	}
+</script>
+</head>
+
+<body onload="onLoad();" >
+<p class="intro">This sample demonstrates adding and removing tabs.</p>
+<ul class="instructions">
+	<li>Click <a href="#" onclick="add()">add</a> to add a tab.</li>
+	<li>Click <a href="#" onclick="remove()">remove</a> to remove a tab.</li>
+	<li>Note that the content of the existing tabs don't change when adding and removing tabs</li>
+</ul>
+<ntb:tabstrip id="tabstrip1" width="800px" height="600px" theme="nitobi">
+	<ntb:tabs height="" align="center" overlap="15">
+		<ntb:tab width="190px" tooltip="Welcome." label="Home" source="http://www.bbc.co.uk" containertype="iframe" ></ntb:tab>
+		<ntb:tab width="190px" tooltip="Welcome." label="Forums" source="http://forums.ebusiness-apps.com" containertype="iframe" ></ntb:tab>
+		<ntb:tab width="190px" tooltip="Welcome." label="KB" source="http://www.google.com" containertype="iframe" cssclass="custom" ></ntb:tab>
+	</ntb:tabs>
+</ntb:tabstrip>
+
+
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- It's important to use the ntb namespace in the HTML tag or the datepicker will not render -->
+<html xmlns:ntb="http://www.nitobi.com">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Calendar Demos - Themes</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/calendar/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<script>
+	var oldClass;
+	var current;
+	function load()
+	{
+		if (!nitobi.browser.IE)
+			$("jscode").innerHTML = $("component").innerHTML;
+		var datePicker = nitobi.loadComponent("dp");
+		oldClass = datePicker.getAttribute("theme");
+		current = document.getElementById(oldClass);
+		if (current)
+			nitobi.html.Css.addClass(current, "selected");
+		dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+		dp.SyntaxHighlighter.HighlightAll('code');
+	}	
+	
+	
+	function setTheme(element)
+	{
+		var theme = element.getAttribute("id");
+		var dp = nitobi.getComponent("dp");
+		nitobi.html.Css.swapClass(dp.getHtmlNode(), oldClass, theme);
+		oldClass = theme;
+		nitobi.html.Css.addClass(element, "selected");
+		if (current)
+			nitobi.html.Css.removeClass(current, "selected");
+		element.style.backgroundColor = "";
+		current = element;
+	}
+	
+	function highlight(element)
+	{
+		if (!nitobi.html.Css.hasClass(element, "selected"))
+			element.style.backgroundColor = "#FF3333";
+	}
+	
+	function clearHighlight(element)
+	{
+		if (!nitobi.html.Css.hasClass(element, "selected"))
+			element.style.backgroundColor = "#99ff99";
+	}
+	nitobi.html.attachEvent(window, "load", load);
+</script>
+<style>
+div.themes {
+	padding: 5px;
+	border: 1px dotted #666699;
+	background-color: #99ff99;
+	margin-bottom:10px;
+}
+
+div.themes img {
+	cursor: pointer;
+}
+
+div.selected {
+	background-color: #3399FF;
+}
+</style>
+</head>
+<body>
+	<h2>
+		Themes
+	</h2>
+	<p class="intro">
+		The Nitobi Calendar comes with a number of attractive themes to get you going right away.  Better still,
+		it is easy to create your own themes!
+	</p>
+	<h3 style="margin-top: 10px;">
+		Description
+	</h3>
+	<div class="notes" style="margin-top: 5px;" id="desc">
+		Just click on a theme from below to preview it on this page.
+	</div>
+	<div id="component">
+		<ntb:datepicker id="dp" theme="flex" selecteddate="today">
+			<ntb:dateinput></ntb:dateinput>
+			<ntb:calendar></ntb:calendar>
+		</ntb:datepicker>
+	</div>
+	<div class="themepicker">
+		<table cellpadding="0" cellspacing="15px" border="0" style="margin-top:15px;">
+			<tbody>
+				<tr>
+					<td>
+						<div>
+							flex
+						</div>
+						<div onclick="setTheme(this)" class="themes" id="flex" onmouseover="highlight(this)" onmouseout="clearHighlight(this)">
+							<img src="images/flex.png"/>
+						</div>
+					</td>
+					<td>
+						<div>
+							gloss
+						</div>
+						<div onclick="setTheme(this)" class="themes" id="gloss" onmouseover="highlight(this)" onmouseout="clearHighlight(this)">
+							<img src="images/gloss.png"/>
+						</div>
+					</td>
+					<td>
+						<div>
+							leopard
+						</div>
+						<div onclick="setTheme(this)" class="themes" id="leopard" onmouseover="highlight(this)" onmouseout="clearHighlight(this)">
+							<img src="images/leopard.png"/>
+						</div>
+					</td>
+					<td>
+						<div>
+							minimal
+						</div>
+						<div onclick="setTheme(this)" class="themes" id="minimal" onmouseover="highlight(this)" onmouseout="clearHighlight(this)">
+							<img src="images/minimal.png"/>
+						</div>
+					</td>
+					<td>
+						<div>
+							minimal_bluestripes
+						</div>
+						<div onclick="setTheme(this)" class="themes" id="minimal_bluestripes" onmouseover="highlight(this)" onmouseout="clearHighlight(this)">
+							<img src="images/minimal_bluestripes.png"/>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div>
+							minimal_greenstripes
+						</div>
+						<div onclick="setTheme(this)" class="themes" id="minimal_greenstripes" onmouseover="highlight(this)" onmouseout="clearHighlight(this)">
+							<img src="images/minimal_greenstripes.png"/>
+						</div>
+					</td>
+					<td>
+						<div>
+							minimal_redstripes
+						</div>
+						<div onclick="setTheme(this)" class="themes" id="minimal_redstripes" onmouseover="highlight(this)" onmouseout="clearHighlight(this)">
+							<img src="images/minimal_redstripes.png"/>
+						</div>
+					</td>
+					<td>
+						<div>
+							minimal_stripes
+						</div>
+						<div onclick="setTheme(this)" class="themes" id="minimal_stripes" onmouseover="highlight(this)" onmouseout="clearHighlight(this)">
+							<img src="images/minimal_stripes.png"/>
+						</div>
+					</td>
+					<td>
+						<div>
+							outline
+						</div>
+						<div onclick="setTheme(this)" class="themes" id="outline" onmouseover="highlight(this)" onmouseout="clearHighlight(this)">
+							<img src="images/outline.png"/>
+						</div>
+					</td>
+					<td>
+						<div>
+							radial
+						</div>
+						<div onclick="setTheme(this)" class="themes" id="radial" onmouseover="highlight(this)" onmouseout="clearHighlight(this)">
+							<img src="images/radial.png"/>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					
+					<td>
+						<div>
+							radial_blue
+						</div>
+						<div onclick="setTheme(this)" class="themes" id="radial_blue" onmouseover="highlight(this)" onmouseout="clearHighlight(this)">
+							<img src="images/radial_blue.png"/>
+						</div>
+					</td>
+					<td>
+						<div>
+							radial_orange
+						</div>
+						<div onclick="setTheme(this)" class="themes" id="radial_orange" onmouseover="highlight(this)" onmouseout="clearHighlight(this)">
+							<img src="images/radial_orange.png"/>
+						</div>
+					</td>
+					<td>
+						<div>
+							vista
+						</div>
+						<div onclick="setTheme(this)" class="themes" id="vista" onmouseover="highlight(this)" onmouseout="clearHighlight(this)">
+							<img src="images/vista.png"/>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h3 style="margin-top: 35px;margin-bottom: 0px;">
+		Example Source Code
+	</h3>
+	<div id="source">
+		<div class="" style="margin-top: 10px;">
+			<div>
+				Calendar Markup
+			</div>
+			<div class="codearea">
+				<textarea name="code" class="html" id="jscode">
+					<ntb:datepicker id="dp" theme="flex" selecteddate="today">
+						<ntb:dateinput></ntb:dateinput>
+						<ntb:calendar></ntb:calendar>
+					</ntb:datepicker>
+				</textarea>
+			</div>
+		</div>
+		<div style="margin-top: 10px;">
+			<div>
+				Javascript
+			<div class="codearea">
+				<textarea name="code" class="js" cols="20">
+					function load()
+					{
+						var datePicker = nitobi.loadComponent("dp");
+					}
+					
+					// Load the component when the page loads.
+					nitobi.html.attachEvent(window, "load", load);
+				</textarea>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

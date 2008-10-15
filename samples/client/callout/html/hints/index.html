@@ -1,0 +1,55 @@
+<!-- It's important to use the ntb namespace in the HTML tag or the grid will not render -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Callout Demos - Hints Mode</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/callout/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<script>
+
+function addSomeHints() {
+
+	var myToolTips = new nitobi.callout.Hint();
+	myToolTips.addHint('left', "Go Back", "This will take you back to the previous page.");
+	myToolTips.addHint('right', "Go Forward", "This will take you back to the previous page.");
+	myToolTips.addHint('refresh', "Refresh the Document", "This will take you back to the previous page.");
+	myToolTips.addHint('up', "Move Up one Record", "This will take you back to the previous page.");
+	myToolTips.addHint('down', "Move Down one Record", "This will take you back to the previous page.");
+	myToolTips.addHint('into', "Go Into", "This will take you back to the previous page.");
+	myToolTips.addHint('cancel', "Cancel this Action", "This will take you back to the previous page.");
+	
+}
+
+</script>
+
+<style TYPE="text/css"> 
+
+	a:link, a:visited { width:49px; height:49px; border:1px solid transparent; float:left;}
+	a:hover { border:1px solid #FFFFFF;}
+
+</style>
+
+</head>
+<body onload="addSomeHints()">
+      <p class="intro">Callout can be used to provide tooltip-like hints on any DOM object.</p>
+	  <ul class="instructions">
+	  	<li>Use your mouse to hover over the toolbar items below - wait 1 second to see the 'hint'.</li>
+	  </ul>
+	  <div style="background-image: url(toolbar_back.png); background-repeat:no-repeat; width:410px; height:54px; padding-left:12px; padding-top: 2px;">
+	  <a href="#"><img src="blank.gif" border=0 id="left"></a>
+	  <a href="#"><img src="blank.gif" border=0 id="right"></a>
+	  <a href="#"><img src="blank.gif" border=0 id="refresh"></a>
+	  <a href="#"><img src="blank.gif" border=0 id="up"></a>
+	  <a href="#"><img src="blank.gif" border=0 id="down"></a>
+	  <a href="#"><img src="blank.gif" border=0 id="into"></a>
+	  <a href="#"><img src="blank.gif" border=0 id="cancel"></a>
+	  
+	  
+	  </div>
+</body>
+</html>

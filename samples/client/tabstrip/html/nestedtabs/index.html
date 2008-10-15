@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Nitobi Tabstrip Demos - Nested Tabs</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/tabstrip/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+
+<script>
+	function onLoad()
+	{
+		nitobi.loadComponent("tabstrip1");
+	}
+		
+</script>
+</head>
+
+<body onload="onLoad()">
+<p class="intro">This sample demonstrates how to create nested tabs.  Two tabstrip declarations are place on the page. The first tabstrip is the master, and its
+second tab references the second tabstrip. Each tab is loaded ondemand. On load, only the first tabstrip is ininitialized.</p>
+<p class="notes" style="margin-top:15px">
+Note how after the first tabstrip has loaded, it will automatically include, and initialize the second (innermost) tabstrip.
+The CSS class chosen for the innermost tabstrip is designed to fit squarely into the outer tabs body. You can of course, pick any CSS class for either
+tabstrip.
+</p>
+<ntb:tabstrip id="tabstrip1" width="1000px" height="600px" cssstyle="float:left" theme="nitobi">
+	<ntb:tabs height="" align="left" overlap="15">
+		<ntb:tab width="190px" label="Nitobi"
+			source="http://www.nitobi.com" containertype="iframe"></ntb:tab>
+		<ntb:tab label="Grid Demos" width="200px" source="tabstrip2" loadondemandenabled="true"></ntb:tab>
+	</ntb:tabs>
+</ntb:tabstrip>
+
+<ntb:tabstrip id="tabstrip2" width="100%"
+	height="567px" theme="innertabstrip"> 
+	<ntb:tabs height="" align="left" overlap="15" >
+		<ntb:tab width="190px" label="AjaxInfo.com"
+			source="http://www.ajaxinfo.com" containertype="iframe"></ntb:tab>
+		<ntb:tab label="Alexei@Nitobi"
+			source="http://blogs.nitobi.com/alexei/" containertype="iframe" loadondemandenabled="true"></ntb:tab>
+		<ntb:tab label="Ajaxian"
+			source="http://www.ajaxian.com" containertype="iframe" loadondemandenabled="true"></ntb:tab>
+	</ntb:tabs>
+</ntb:tabstrip> 
+
+</body>
+</html>

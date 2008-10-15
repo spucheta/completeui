@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Note the namespace defined in the HTML tag. -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Nitobi Fisheye Demo</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/fisheye/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+
+<script>
+	function onLoad()
+	{
+		var f3 = nitobi.loadComponent("fisheye3");
+	}
+
+</script>
+
+</head>
+<!-- The body of the webpage. Note the call to 'init()' that inits
+	 any combos on the page when it loads. -->
+<body onload="onLoad()">
+<p class="intro">This sample just demonstrates a sample mockup and usage for the fisheye in a possible web desktop interface</p>
+<table align=left style="background-image:url(background.jpg);" width="600" height="400" cellpadding=20><tr><td align=center valign=bottom>
+<ntb:fisheye id="fisheye3" growpercent="250" opendirection="up" expanddirection="center" iconwidth="54" theme="nitobi">
+	<ntb:menuitem imagesrc="images/fer.png" 	label="Address Book"></ntb:menuitem>
+	<ntb:menuitem imagesrc="images/home.png"  		label="My Application" ></ntb:menuitem>
+	<ntb:menuitem imagesrc="images/id.png" 			label="Draw"></ntb:menuitem>
+	<ntb:menuitem imagesrc="images/info.png"  	label="Contact Organizer"></ntb:menuitem>
+	<ntb:menuitem imagesrc="images/chat.png"  			label="Organizer"></ntb:menuitem>
+	<ntb:menuitem imagesrc="images/messages.png" 			label="Storage"></ntb:menuitem>
+</ntb:fisheye></td></tr>
+</table>
+</body>
+</html>

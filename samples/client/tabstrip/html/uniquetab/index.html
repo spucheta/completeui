@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Nitobi Tabstrip Demos - Runtime Tabs</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/tabstrip/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+
+<!-- Include the css for the uniquely styled tab -->
+<link type="text/css" rel="stylesheet" href="style/uniquetab.css"></link>
+
+<script>
+	function onLoad()
+	{
+		var t1 = nitobi.loadComponent('tabstrip1');
+	}
+</script>
+</head>
+
+<body onload="onLoad();" >
+<p class="intro" style="margin-bottom:15px">This sample demonstrates how to create a unique tab.  The included CSS shows you the CSS classes that need to be created. It allows
+you to make as many or few changes as you wish. If a change is not supplied then the default CSS theme is applied.  In this case,
+a css class called redtab is constructed in the css and used on the last tab.</p>
+<ntb:tabstrip id="tabstrip1" width="800px" height="600px" theme="nitobi">
+	<ntb:tabs height="" align="center" overlap="15">
+		<ntb:tab width="190px" tooltip="Welcome." label="Home" source="http://www.nitobi.com" containertype="iframe" ></ntb:tab>
+		<ntb:tab width="190px" tooltip="Welcome." label="Forums" source="http://forums.ebusiness-apps.com" containertype="iframe" ></ntb:tab>
+		<ntb:tab width="190px" tooltip="Welcome." label="KB" source="http://www.nitobi.com/kb/" containertype="iframe" cssclass="greentab" ></ntb:tab>
+	</ntb:tabs>
+</ntb:tabstrip>
+
+
+</body>
+</html>

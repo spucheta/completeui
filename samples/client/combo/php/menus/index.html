@@ -1,0 +1,224 @@
+<!-- This page is the main page in the sample. It places the combo on the webpage. -->
+<!-- Note the namespace defined in the HTML tag. -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi ComboBox V3 Demos</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/combo/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<link type="text/css" rel="stylesheet" href="$STYLE$/samples.css"></link>
+
+<!-- Now we include the CSS for the component -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/nitobi.combo.css"></link>
+
+<!-- First we include the Toolkit JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.toolkit.js"></script>
+
+<!-- Now we include the component JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.combo.js"></script>
+
+<script type="text/javascript">
+	// Initializes the combo controls.
+	function initialize(){
+		try{
+			nitobi.initCombo('cmbCustomers');
+			nitobi.initCombo('cmbCustomers2');
+			nitobi.initCombo('cmbCustomers3');
+			nitobi.initCombo('cmbCustomers4');
+			nitobi.initCombo('cmbUnboundCombo');
+
+		}catch(err){
+			alert("Initializing the combo boxes failed. Is the .js file correctly referenced and being served by your server?");
+		}
+
+	}
+
+</script>
+<title>Nitobi ComboBox V3 Demo</title>
+</head>
+<!-- The body of the webpage. Note the call to 'initialize()' that initializes
+	 any combos on the page when it loads. -->
+<body onLoad="initialize()"><div id="NitobiBanner"></div>
+<table width="100%" cellpadding=0 cellspacing=0>
+  <tr>
+    <td width=85%><h2>Using the Menu Feature</h2>
+      <p>Combobox supports the addition of simple menus right inside the dropdown. This can be useful for giving quick access to application features that relate to the list data (for example, adding a new record, or performing a different kind of search). See the examples below for a demonstration.</p>
+
+
+<p>Find a Customer (classic):
+
+			<ntb:Combo id="cmbCustomers" Mode="classic" theme="outlook">
+				<ntb:ComboTextBox Width="175px" DataFieldIndex=0 ></ntb:ComboTextBox>
+				<!-- A list which allows paging and search. The datasource is a separate.php file. -->
+					<ntb:ComboList Width="360px" Height="200px" DatasourceUrl="get.php" PageSize="10" >
+					<ntb:ComboMenu icon="add.gif" OnClickEvent="alert('You clicked add customer')" text=" &nbsp;Add customer..."></ntb:ComboMenu>
+					<ntb:ComboMenu icon="search.gif" OnClickEvent="alert('You clicked Fulltext search')" text="Perform fulltext search.."></ntb:ComboMenu>
+					<ntb:ComboColumnDefinition Width="130px" HeaderLabel="Customer Name" DataFieldIndex=0 ></ntb:ComboColumnDefinition>
+					<ntb:ComboColumnDefinition Width="200px" DataFieldIndex=1></ntb:ComboColumnDefinition>
+				</ntb:ComboList>
+			</ntb:Combo></p>
+
+<p>Find a Customer (filter):
+
+			<ntb:Combo id="cmbCustomers2" Mode="filter" theme="outlook">
+				<ntb:ComboTextBox Width="175px" DataFieldIndex=0 ></ntb:ComboTextBox>
+				<!-- A list which allows paging and search. The datasource is a separate.php file. -->
+				<ntb:ComboList Width="360px" Height="200px" DatasourceUrl="get.php" PageSize="5" >
+					<ntb:ComboMenu icon="search.gif" OnClickEvent="alert('You clicked Fulltext search')" text="Perform fulltext search.."></ntb:ComboMenu>
+					<ntb:ComboMenu icon="add.gif" OnClickEvent="alert('You clicked Add dept')" text="Add department..."></ntb:ComboMenu>
+					<ntb:ComboColumnDefinition Width="130px" DataFieldIndex=0 ></ntb:ComboColumnDefinition>
+					<ntb:ComboColumnDefinition Width="200px" DataFieldIndex=1></ntb:ComboColumnDefinition>
+				</ntb:ComboList>
+			</ntb:Combo></p>
+
+<p>Find a Customer (smartsearch):
+
+			<ntb:Combo id="cmbCustomers3" Mode="smartsearch" theme="outlook">
+				<ntb:ComboTextBox Width="175px" DataFieldIndex=0 ></ntb:ComboTextBox>
+				<!-- A list which allows paging and search. The datasource is a separate.php file. -->
+				<ntb:ComboList Width="360px" Height="200px" DatasourceUrl="getsmart.php" PageSize="5" >
+					<ntb:ComboMenu icon="add.gif" OnClickEvent="alert('You clicked add customer')" text="Add customer..."></ntb:ComboMenu>
+					<ntb:ComboMenu icon="add.gif" OnClickEvent="alert('You clicked Add dept')" text="Add department..."></ntb:ComboMenu>
+					<ntb:ComboColumnDefinition Width="130px" DataFieldIndex=0 ></ntb:ComboColumnDefinition>
+					<ntb:ComboColumnDefinition Width="200px" DataFieldIndex=1></ntb:ComboColumnDefinition>
+				</ntb:ComboList>
+			</ntb:Combo></p>
+
+<p>Find a Customer (smartlist):
+
+			<ntb:Combo id="cmbCustomers4" Mode="smartlist" theme="outlook">
+				<ntb:ComboTextBox Width="400px" Height="60px" DataFieldIndex=0 ></ntb:ComboTextBox>
+				<!-- A list which allows paging and search. The datasource is a separate.php file. -->
+				<ntb:ComboList Width="360px" Height="200px" DatasourceUrl="getsmart.php" PageSize="5" >
+					<ntb:ComboMenu icon="add.gif" OnClickEvent="alert('You clicked add customer')" text="Add customer..."></ntb:ComboMenu>
+					<ntb:ComboMenu icon="add.gif" OnClickEvent="alert('You clicked Add dept')" text="Add department..."></ntb:ComboMenu>
+					<ntb:ComboColumnDefinition Width="130px" DataFieldIndex=0 ></ntb:ComboColumnDefinition>
+					<ntb:ComboColumnDefinition Width="200px" DataFieldIndex=1></ntb:ComboColumnDefinition>
+				</ntb:ComboList>
+			</ntb:Combo></p>
+
+<p>Find a City (unbound):
+			<ntb:Combo
+				id="cmbUnboundCombo"
+				Mode="unbound" 
+				theme="outlook"
+				>
+
+				<ntb:ComboTextBox
+					DataFieldIndex=0 >
+				</ntb:ComboTextBox>
+
+				<ntb:ComboList
+					Width="250px"
+					AllowPaging="false"
+					Height="180px" >
+
+				<ntb:ComboMenu icon="add.gif" OnClickEvent="alert('You clicked add customer')" text="Add customer..."></ntb:ComboMenu>
+				<ntb:ComboMenu icon="add.gif" OnClickEvent="alert('You clicked Add dept')" text="Add department..."></ntb:ComboMenu>
+
+				<ntb:ComboColumnDefinition
+					Width="100px"
+					DataFieldIndex=0>
+				</ntb:ComboColumnDefinition>
+				<ntb:ComboColumnDefinition
+					Width="70px"
+					DataFieldIndex=1>
+				</ntb:ComboColumnDefinition>
+				</ntb:ComboList>
+
+				<ntb:ComboValues fields="City|Population">
+					<ntb:ComboValue a="Vancouver" b="3,000,000" ></ntb:ComboValue>
+					<ntb:ComboValue a="Toronto" b="4,500,000" ></ntb:ComboValue>
+					<ntb:ComboValue a="Ottawa" b="1,000,000" ></ntb:ComboValue>
+					<ntb:ComboValue a="California" b="4,500,000" ></ntb:ComboValue>
+					<ntb:ComboValue a="Halifax" b="900,000" ></ntb:ComboValue>
+					<ntb:ComboValue a="Calgary" b="1,500,000" ></ntb:ComboValue>
+					<ntb:ComboValue a="Red Deer" b="100,000" ></ntb:ComboValue>
+					<ntb:ComboValue a="Prince George" b="200,000" ></ntb:ComboValue>
+					<ntb:ComboValue a="Portland" b="1,500,000" ></ntb:ComboValue>
+					<ntb:ComboValue a="Atlanta" b="4,500,000" ></ntb:ComboValue>
+				</ntb:ComboValues>
+			</ntb:Combo> </p>
+
+		<h3><a  class="anch" name="1">Using the Menu Declaration</a></h3>
+		<p>The ntb:ComboMenu tag will automatically insert and configure menu items. In the example below we add two menu items and configure them to show an alert box when they're clicked. The OnClickEvent can also be used to load a new page (using window.location) or call a JavaScript function.</p>
+		<textarea name="nitobicode" class="html" rows="15" cols="100">
+
+			<ntb:Combo
+				id="cmbCustomers"
+				Mode="classic"
+				theme="outlook">
+
+				<ntb:ComboTextBox
+					Width="175px"
+					DataFieldIndex=0 >
+				</ntb:ComboTextBox>
+
+				<ntb:ComboList
+					Width="360px"
+					Height="200px"
+					DatasourceUrl="get.php"
+					PageSize="10" >
+
+					<ntb:ComboMenu
+						icon="search.gif"
+						OnClickEvent="alert('You clicked Fulltext search')"
+						text="Perform fulltext search..">
+					</ntb:ComboMenu>
+					<ntb:ComboMenu
+						icon="add.gif"
+						OnClickEvent="alert('You clicked add customer')"
+						text="Add customer...">
+					</ntb:ComboMenu>
+
+					<ntb:ComboColumnDefinition
+						Width="130px"
+						HeaderLabel="Customer Name"
+						DataFieldIndex=0 >
+					</ntb:ComboColumnDefinition>
+					<ntb:ComboColumnDefinition
+						Width="200px"
+						DataFieldIndex=1>
+					</ntb:ComboColumnDefinition>
+				</ntb:ComboList>
+			</ntb:Combo>
+
+		</textarea>
+
+
+    </td>
+    <td valign=top><h2>Demo Options</h2>
+      <ul>
+        <li class=BodyList><a href="#" onClick="RunProductTour('menucombo')" >Explain this demo <img src="http://www.nitobi.com/images/demos/template/permalink.gif" border=0 align=absmiddle></a></li>
+        <li class=BodyList><a href="http://www.nitobi.com/kb/docs/"  >Documentation</a></li>
+        <li class=BodyList><a href="http://forums.ebusiness-apps.com" target="_blank" >Support forums</a></li>
+        <li class=BodyList><a href="http://www.nitobi.com/download/" onClick="return false" >Download Latest Trial</a></li>
+      </ul>
+      <h2>Demos</h2>
+      <ul>
+        <li class=BodyList><a href="../../Basic/Basic/index.html"  >Basic Demo</a></li>
+        <li class=BodyList><a href="../../Basic/Classic/index.html"  >Classic Mode</a></li>
+        <li class=BodyList><a href="../../Basic/Compact/index.html" >Compact Mode</a></li>
+        <li class=BodyList><a href="../../Basic/Filter/index.html" >Filter Mode</a></li>
+        <li class=BodyList><a href="../../Basic/SmartList/index.html" >SmartList Mode</a></li>
+        <li class=BodyList><a href="../../Basic/SmartSearch/index.html" >SmartSearch Mode</a></li>
+        <li class=BodyList><a href="../../Basic/Unbound/index.html" >Unbound Mode (Static data)</a></li>
+        <li class=BodyList><a href="../../Basic/Unicode/index.html" >i18n Unicode Demo</a></li>
+        <li class=BodyList><a href="../../Advanced/Menus/index.html"  >Adding a Menu</a></li>
+        <li class=BodyList><a href="../../Advanced/ComboEvents/index.html"  >Working with Events</a></li>
+        <li class=BodyList><a href="../../Advanced/LinkedCombos/index.html"  >Linked ComboBoxes</a></li>
+      </ul>
+      <div style="width:220px"></div></td>
+  </tr>
+</table>
+<!-- The following includes are for the code formatting and are not required for the demo -->
+<script class="javascript" src="http://www.nitobi.com/includes/syntaxhighlighter/shCore_concat.js"></script>
+<script class="javascript">dp.SyntaxHighlighter.HighlightAll('nitobicode');</script>
+<!-- End of optional includes -->
+</body>
+</html>
