@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- It's important to use the ntb namespace in the HTML tag or the datepicker will not render -->
+<html xmlns:ntb="http://www.nitobi.com">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Calendar Demos - Validation</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/calendar/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<script>
+	function load()
+	{
+		if (!nitobi.browser.IE)
+			$("jscode").innerHTML = $("component").innerHTML;
+		
+		var datePicker = nitobi.loadComponent("dp");
+		dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+		dp.SyntaxHighlighter.HighlightAll('code');
+	}	
+	
+	function handleInvalid(e)
+	{
+		$("warning").innerHTML = "The date you have selected is invalid.";
+	}
+	
+	function handleOutOfRange(e)
+	{
+		$("warning").innerHTML = "The date you have selected is out of range.";
+	}
+	
+	function resetError()
+	{
+		$("warning").innerHTML = "&nbsp;";
+	}
+	
+	
+	nitobi.html.attachEvent(window, "load", load);
+</script>
+</head>
+<body>
+	<h2>
+		Validation
+	</h2>
+	<p class="intro">
+		Using the Nitobi Calendar's rich javascript API, you can hook into a number of validation events to alert the user of invalid dates
+		before submitting to the server to provide full client-side validation.
+	</p>
+	<h3 style="margin-top: 10px;">
+		Description
+	</h3>
+	<div class="notes" style="margin-top: 5px;" id="desc">
+		The Nitobi Calendar distinguishes between three kinds of validation:
+		<ol>
+			<li>Invalid Dates:  Dates that are of invalid format and cannot be parsed.  E.g. "aldskfj", "Januakdjf 4, 1998"</li>
+			<li>Out Of Range Dates:  Dates that don't fall between the <code>mindate</code> and <code>maxdate</code>.</li>
+			<li>Disabled Dates:  Dates that are defined as disabled.</li>
+		</ol>
+		The corresponding event attributes are as follows:
+		<ol>
+			<li><code>onsetinvaliddate</code></li>
+			<li><code>onsetoutofrangedate</code></li>
+			<li><code>onsetdisableddate</code></li>
+		</ol>
+		<p>
+			In addition to firing the above events, the component will highlight the input field to visually demonstrate to the user the
+			selected date is invalid.  But it is up to the developer to distinguish between the three types of invalid dates.
+		</p>
+	</div>
+	<div id="component">
+		<ntb:datepicker id="dp" theme="leopard" mindate="yesterday" ondateselected="resetError()" onsetinvaliddate="handleInvalid(eventArgs)" onsetoutofrangedate="handleOutOfRange(eventArgs)">
+			<ntb:dateinput displaymask="dd MMM yyyy" editmask="yyyy-MM-dd"></ntb:dateinput>
+			<ntb:calendar></ntb:calendar>
+		</ntb:datepicker>
+	</div>
+
+	<div id="warning" style="color:red;">
+		&nbsp;
+	</div>	
+	<h3 style="margin-top: 35px;margin-bottom: 0px;">
+		Example Source Code
+	</h3>
+	<div id="source">
+		<div class="" style="margin-top: 10px;">
+			<div>
+				Calendar Markup
+			</div>
+			<div class="codearea">
+				<textarea name="code" class="html" id="jscode">
+					<ntb:datepicker id="dp" theme="leopard" mindate="yesterday" ondateselected="resetError()" onsetinvaliddate="handleInvalid(eventArgs)" onsetoutofrangedate="handleOutOfRange(eventArgs)">
+						<ntb:dateinput displaymask="dd MMM yyyy" editmask="yyyy-MM-dd"></ntb:dateinput>
+						<ntb:calendar></ntb:calendar>
+					</ntb:datepicker>
+				</textarea>
+			</div>
+		</div>
+		<div style="margin-top: 10px;">
+			<div>
+				Javascript
+			<div class="codearea">
+				<textarea name="code" class="js" cols="20">
+					function load()
+					{
+						var datePicker = nitobi.loadComponent("dp");
+					}
+					
+					function handleInvalid(e)
+					{
+						$("warning").innerHTML = "The date you have selected is invalid.";
+					}
+					
+					function handleOutOfRange(e)
+					{
+						$("warning").innerHTML = "The date you have selected is out of range.";
+					}
+					
+					function resetError()
+					{
+						$("warning").innerHTML = "";
+					}
+					
+					// Load the component when the page loads.
+					nitobi.html.attachEvent(window, "load", load);
+				</textarea>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

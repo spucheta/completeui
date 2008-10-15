@@ -1,0 +1,86 @@
+<!-- This page is the main page in the sample. It places the combo on the webpage. -->
+<!-- Note the namespace defined in the HTML tag. -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi ComboBox V3 Demos</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/combo/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<link type="text/css" rel="stylesheet" href="$STYLE$/samples.css"></link>
+
+<!-- Now we include the CSS for the component -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/nitobi.combo.css"></link>
+
+<!-- First we include the Toolkit JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.toolkit.js"></script>
+
+<!-- Now we include the component JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.combo.js"></script>
+
+<script type="text/javascript">
+	// Initializes the combo controls.
+	function initialize(){
+		try{
+			nitobi.initCombo('cmbCountry');
+			nitobi.initCombo('cmbProvince');
+		}catch(err){
+			alert("Initializing the combo boxes failed. Is the .js file correctly referenced and being served by your server?");
+		}
+
+	}
+
+	// Fires when the user clicks on the country combo.
+	function cmbCountry_Select(){
+		// Get the combo objects using their ids.
+		provinceCombo = document.getElementById("cmbProvince").object;
+		countryCombo = document.getElementById("cmbCountry").object;
+
+		// Get the selected country id.
+		var countryId = countryCombo.GetFieldFromActiveRow("CountryId");
+
+		// Clear the list and any other selected values.
+		provinceCombo.GetList().Clear();
+
+		// Use a postback to get data from the datasource.
+		provinceCombo.GetList().SetDatasourceUrl("get.cfm?table=tblProvinces&whereClause=" + escape("CountryId=" + countryId) );
+		provinceCombo.GetList().GetPage(0,0,"");
+
+		provinceCombo.SetTextValue("[Select a province]");
+
+	}
+
+
+
+	</script>
+<title>Nitobi ComboBox V3 Demo</title>
+</head>
+<!-- The body of the webpage. Note the call to 'initialize()' that initializes
+	 any combos on the page when it loads. -->
+<body onLoad="initialize()">
+<p><b>Note: for these Coldfusion demos to run you must set up the sample datasource. <a href="http://www.nitobi.com/kb/printable/?artid=217" target="_blank">Instructions here</a>.</b></p>
+<p>This sample illustrates how to set up two combos that have a master-detail relationship.</p>
+<p><strong>Instructions</strong>: Select a value from the first combo, then notice that the values in the second combo change based on your selection.</p>
+<!-- The country combo -->
+<!-- Note the DataFieldIndex bindings on the textbox and list. These
+are references to the table columns index. -->
+<ntb:Combo id="cmbCountry" OnSelectEvent="cmbCountry_Select()" Mode="classic" theme="outlook">
+  <ntb:ComboTextBox Width="175px" DataFieldIndex=1 Editable="false" Value="[Select Value]"></ntb:ComboTextBox>
+  <ntb:ComboList Width="250px" DatasourceUrl="get.cfm?table=tblCountries">
+    <ntb:ComboColumnDefinition HeaderLabel="Country" Width="100%" DataFieldIndex=1></ntb:ComboColumnDefinition>
+  </ntb:ComboList>
+</ntb:Combo>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!-- The province combo -->
+<ntb:Combo id="cmbProvince" Mode="classic" theme="outlook">
+  <ntb:ComboTextBox Width="175px" DataFieldIndex=1 Editable="false" Value=""></ntb:ComboTextBox>
+  <ntb:ComboList Width="250px" DatasourceUrl="get.cfm?table=tblProvinces&whereClause=false">
+    <ntb:ComboColumnDefinition HeaderLabel="Province" Width="100%" DataFieldIndex=1></ntb:ComboColumnDefinition>
+  </ntb:ComboList>
+</ntb:Combo>
+</body>
+</html>

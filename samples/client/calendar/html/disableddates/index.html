@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- It's important to use the ntb namespace in the HTML tag or the datepicker will not render -->
+<html xmlns:ntb="http://www.nitobi.com">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Calendar Demos - Disabled Dates</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/calendar/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<script>
+	function load()
+	{
+		if (!nitobi.browser.IE)
+			$("jscode").innerHTML = $("component").innerHTML;
+		var datePicker = nitobi.loadComponent("dp");
+		
+		dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+		dp.SyntaxHighlighter.HighlightAll('code');
+	}	
+	nitobi.html.attachEvent(window, "load", load);
+</script>
+</head>
+<body>
+	<h2>
+		Disabled Dates
+	</h2>
+	<p class="intro">
+		You can choose to disable any date using a separate xml file.  The Nitobi Calendar will issue an XHR to load that file when it initializes.
+	</p>
+	<h3 style="margin-top: 10px;">
+		Description
+	</h3>
+	<div class="notes" style="margin-top: 5px;" id="desc">
+		The xml file that you supply to the Calendar to define disabled dates must be of a particular format.  If you've used other databound
+		Nitobi components, the format will be familiar.  Here is an example:
+		<code>
+			&lt;?xml version="1.0" encoding="utf-8"?&gt;
+			<br/>
+			&lt;root fields="startdate|enddate|location|description|type"&gt;
+			<br/>
+				&lt;e a="2008-01-01" e="disabled" /&gt;
+			<br/>
+				&lt;e a="2008-07-01" e="disabled" /&gt;
+			<br/>
+				&lt;e a="2008-07-04" e="disabled" /&gt;
+			<br/>
+				&lt;e a="2008-12-25" e="disabled" /&gt;
+			<br/>
+			&lt;/root&gt;
+		</code>
+		<br/>
+		Note that the dates are in ISO 8601 format.
+	</div>
+	<div id="component">
+		<ntb:datepicker id="dp" theme="flex" selecteddate="July 2, 2008" eventsurl="disabled.xml">
+			<ntb:dateinput></ntb:dateinput>
+			<ntb:calendar></ntb:calendar>
+		</ntb:datepicker>
+	</div>
+	<h3 style="margin-top: 35px;margin-bottom: 0px;">
+		Example Source Code
+	</h3>
+	<div id="source">
+		<div class="" style="margin-top: 10px;">
+			<div>
+				Calendar Markup
+			</div>
+			<div class="codearea">
+				<textarea name="code" class="html" id="jscode">
+					<ntb:datepicker id="dp" theme="flex" selecteddate="July 2, 2008" eventsurl="disabled.xml">
+						<ntb:dateinput></ntb:dateinput>
+						<ntb:calendar></ntb:calendar>
+					</ntb:datepicker>
+				</textarea>
+			</div>
+		</div>
+		<div style="margin-top: 10px;">
+			<div>
+				Javascript
+			<div class="codearea">
+				<textarea name="code" class="js" cols="20">
+					function load()
+					{
+						var datePicker = nitobi.loadComponent("dp");
+					}
+					
+					// Load the component when the page loads.
+					nitobi.html.attachEvent(window, "load", load);
+				</textarea>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

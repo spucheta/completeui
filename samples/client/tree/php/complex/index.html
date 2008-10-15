@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ntb="http://www.nitobi.com">
+<head>
+<title>Nitobi Tree Demos - Complex Gethandler</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/tree/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<link type="text/css" rel="stylesheet" href="$STYLE$/samples.css"></link>
+<!-- Now we include the CSS for the component -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/nitobi.tree.css"></link>
+
+<!-- First we include the Toolkit JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.toolkit.js"></script>
+
+<!-- Now we include the component JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.tree.js"></script>
+
+<script language="javascript">
+	function init()
+	{
+		nitobi.loadComponent('tree1');	
+	}
+</script>
+</head>
+<body onload="init();">
+<p class="intro">
+In this sample we use a pre-populated tree with a single gethandler.  The gethandler uses two pieces of metadata 
+we've attached to each node. The @type attribute describes what kind of node it is: continent, region, country, 
+district, or city.  The @key attribute acts as a key for looking up the node's children in the database. When the 
+page loads only the first level of nodes, those pre-populated in the declaration, are displayed.
+</p>
+<ul class="instructions">
+<li>We use the @key attribute rather than the @id attribute to store the node's database lookup key because in this 
+particular dataset the keys are not guaranteed to be unique.  For example, 'Antarctica' serves as the name for a 
+continent, region, and country.</li>  
+<li>Check out the gethandler's source code for a look at how we pulled data out of two
+separate tables to populate the tree.</li>
+</ul>
+<br />
+<ntb:tree id="tree1" theme="folders" gethandler="complexgethandler.php">
+	<ntb:children>
+		<ntb:node key="Africa" label="Africa" type="continent" nodetype="node" haschildren="true"></ntb:node>
+		<ntb:node key="Antarctica" label="Antarctica" type="continent" nodetype="node" haschildren="true"></ntb:node>
+		<ntb:node key="Asia" label="Asia" type="continent" nodetype="node" haschildren="true"></ntb:node>
+		<ntb:node key="Europe" label="Europe" type="continent" nodetype="node" haschildren="true"></ntb:node>
+		<ntb:node key="North America" label="North America" type="continent" nodetype="node" haschildren="true"></ntb:node>
+		<ntb:node key="Oceania" label="Oceana" type="continent"nodetype="node" haschildren="true"></ntb:node>
+		<ntb:node key="South America" label="South America" type="continent" nodetype="node" haschildren="true"></ntb:node>
+	</ntb:children>
+</ntb:tree>
+</body>
+</html>

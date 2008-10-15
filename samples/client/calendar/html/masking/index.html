@@ -1,0 +1,96 @@
+<!-- It's important to use the ntb namespace in the HTML tag or the datepicker will not render -->
+<html xmlns:ntb="http://www.nitobi.com">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Calendar Demos - Date Masking</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/calendar/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<script>
+	function load()
+	{
+		if (!nitobi.browser.IE)
+			$("jscode").innerHTML = $("component").innerHTML;
+		var datePicker = nitobi.loadComponent("dp");
+		
+		dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+		dp.SyntaxHighlighter.HighlightAll('code');
+	}	
+	nitobi.html.attachEvent(window, "load", load);
+</script>
+</head>
+<body>
+	<h2>
+		Date Masking
+	</h2>
+	<p class="intro">
+		Nitobi Calendar supports a robust date masking syntax to help you format the dates to your liking.  Masks can be applied to the
+		input field.  You can also apply a mask to the input when it is focussed to make date entry easier.
+	</p>
+	<h3 style="margin-top: 10px;">
+		Description
+	</h3>
+	<div class="notes" style="margin-top: 5px;" id="desc">
+		The following tokens are available for date masking (using January 4, 2008 as an example):
+		<ul>
+			<li><code>y</code>: 2008</li>
+			<li><code>yy</code>: 08</li>
+			<li><code>yyyy</code>: 2008</li>
+			<li><code>M</code>: 1</li>
+			<li><code>MM</code>: 01</li>
+			<li><code>MMM</code>: January</li>
+			<li><code>NNN</code>: Jan</li>
+			<li><code>d</code>: 4</li>
+			<li><code>dd</code>: 04</li>
+			<li><code>E</code>: Friday</li>
+			<li><code>EE</code>: Fri</li>
+		</ul>
+		If the date entered the the text field doesn't match the mask, the selected date is cleared and a class is applied
+		to the input to notify the user that the date is invalid.
+	</div>
+	<div id="component">
+		<ntb:datepicker id="dp" theme="minimal" selecteddate="today">
+			<ntb:dateinput displaymask="EE MMM d, yyyy" editmask="yyyy-MM-dd" width="200"></ntb:dateinput>
+			<ntb:calendar monthcolumns="2" monthrows="1"></ntb:calendar>
+		</ntb:datepicker>
+	</div>
+	
+	<h3 style="margin-top: 35px;margin-bottom: 0px;">
+		Example Source Code
+	</h3>
+	<div id="source">
+		<div class="" style="margin-top: 10px;">
+			<div>
+				Calendar Markup
+			</div>
+			<div class="codearea">
+				<textarea name="code" class="html" id="jscode">
+					<ntb:datepicker id="dp" theme="minimal" selecteddate="today">
+						<ntb:dateinput displaymask="EE MMM d, yyyy" editmask="yyyy-MM-dd" width="200"></ntb:dateinput>
+						<ntb:calendar monthcolumns="2" monthrows="1"></ntb:calendar>
+					</ntb:datepicker>
+				</textarea>
+			</div>
+		</div>
+		<div style="margin-top: 10px;">
+			<div>
+				Javascript
+			<div class="codearea">
+				<textarea name="code" class="js" style="width: 600px;">
+					function load()
+					{
+						var datePicker = nitobi.loadComponent("dp");
+					}
+					
+					// Load the component when the page loads.
+					nitobi.html.attachEvent(window, "load", load);
+				</textarea>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

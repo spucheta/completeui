@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<ntb:children xmlns:ntb="http://www.nitobi.com">
+	<ntb:node label="An external node">
+		<ntb:children>
+			<ntb:node label="sub-node"></ntb:node>
+			<ntb:node label="node 1">
+				<ntb:children>
+					<ntb:node label="node 1">
+						<ntb:children></ntb:children>
+					</ntb:node>
+					<ntb:node label="node 2"></ntb:node>
+					<ntb:node label="node 3">
+						<ntb:children>
+							<ntb:node label="sub-node"></ntb:node>
+						</ntb:children>
+					</ntb:node>
+				</ntb:children>
+			</ntb:node>
+			<ntb:node label="node 2"></ntb:node>
+			<ntb:node label="node 3">
+				<ntb:children>
+					<ntb:node label="sub-node"></ntb:node>
+					<ntb:node label="node 1">
+						<ntb:children></ntb:children>
+					</ntb:node>
+					<ntb:node label="node 2"></ntb:node>
+					<ntb:node label="node 3">
+						<ntb:children>
+							<ntb:node label="sub-node"></ntb:node>
+						</ntb:children>
+					</ntb:node>
+				</ntb:children>
+			</ntb:node>
+		</ntb:children>
+	</ntb:node>
+	<ntb:node label="A leaf (external too)"></ntb:node>
+	<ntb:node label="An empty external node">
+		<ntb:children></ntb:children>
+	</ntb:node>
+</ntb:children>

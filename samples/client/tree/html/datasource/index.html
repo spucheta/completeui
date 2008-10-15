@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ntb="http://www.nitobi.com">
+<head>
+<title>Nitobi Tree Demos - Run-time Datasource Switching</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/tree/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<script language="javascript">
+	function init()
+	{
+		nitobi.loadComponent('tree1');	
+	}
+
+	function changeDataSource() 
+	{
+		var tree = $('tree1').jsObject;
+		var selectedNodes = tree.getSelected();
+		if (selectedNodes.length)
+		{
+			var node = selectedNodes[0];
+			node.setGetHandler('datasource.xml');
+			node.loadData();
+		}
+		else
+		{
+			tree.setGetHandler('datasource.xml');
+			tree.onDataReady.subscribeOnce(nitobi.component.renderComponent)
+			tree.loadData();		
+		}
+	}
+</script>
+</head>
+<body onload="init();">
+<p class="intro">This sample demonstrates the tree's ability to accept a new data source at run-time.  In this case, the XML is stored in a file
+on the server.</p>
+<ul class="instructions">
+<li>Click one of the nodes.</li>
+<li>Click this <a href="javascript:changeDataSource();">Change Data</a>.</li>
+<li>Watch as that node's children are replaced by the children specified in the file.</li>
+</ul>
+<p class="notes">
+Note: If no nodes are selected, we will change the datasource for the tree itself.
+</p>
+<ntb:tree id="tree1" theme="documents">
+	<ntb:children>
+		<ntb:node label="A node (without any children)">
+			<ntb:children></ntb:children>
+		</ntb:node>
+		<ntb:node label="A leaf (no possibility of children)"></ntb:node>
+		<ntb:node label="A node (with children)" expanded="false">
+			<ntb:children>
+				<ntb:node label="A leaf"></ntb:node>
+				<ntb:node label="A node">
+					<ntb:children>
+						<ntb:node label="A node">
+							<ntb:children></ntb:children>
+						</ntb:node>
+						<ntb:node label="A leaf"></ntb:node>
+						<ntb:node label="A node">
+							<ntb:children>
+								<ntb:node label="A leaf"></ntb:node>
+							</ntb:children>
+						</ntb:node>
+					</ntb:children>
+				</ntb:node>
+				<ntb:node label="A leaf"></ntb:node>
+				<ntb:node label="A node">
+					<ntb:children>
+						<ntb:node label="A leaf"></ntb:node>
+						<ntb:node label="A node">
+							<ntb:children></ntb:children>
+						</ntb:node>
+						<ntb:node label="A leaf"></ntb:node>
+						<ntb:node label="A node">
+							<ntb:children>
+								<ntb:node label="A leaf"></ntb:node>
+							</ntb:children>
+						</ntb:node>
+					</ntb:children>
+				</ntb:node>
+			</ntb:children>
+		</ntb:node>
+	</ntb:children>
+</ntb:tree>
+</body>
+</html>

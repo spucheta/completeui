@@ -1,0 +1,69 @@
+<!-- It's important to use the ntb namespace in the HTML tag or the grid will not render -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Callout Demos - API Examples</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/callout/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<script>
+
+var timerObj;
+
+function moveCallout(objref) {
+	
+	var myPosition = objref.getXY();
+	//objref.destroy();
+	objref.moveTo(myPosition.x+2, myPosition.y+2);
+	
+	objref.setTitle('New X: ' + (myPosition.x+2) + ' / New Y: ' + (myPosition.y+2));
+	timerObj = setTimeout(function() {moveCallout(objref)}, 10)
+
+
+}
+
+function createCallout(formobj, moveAfterward) {
+
+	// now we create a new one
+	var myCallout = new nitobi.callout.Callout(formobj.skin.value);
+	myCallout.setCalloutDirection(parseInt(formobj.cdir.value));
+	myCallout.moveTo(formobj.x.value, formobj.y.value);	
+	myCallout.setTitle('This is a test title');
+	myCallout.setBody('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ');	
+	// now we show it.
+	myCallout.show();
+	
+	if (moveAfterward) {
+	
+		myCallout.setOnAppear(function() {moveCallout(myCallout)})
+		myCallout.setOnDestroy(function() {clearTimeout(timerObj)})	
+	
+	}
+	
+}
+
+</script>
+
+</head>
+<body>
+      <p class="intro">The Callout control is handled entirely by script.  This sample
+      demonstrates some simple API calls for Callout.</p>
+		<ul class="instructions">
+			<li>Use the controls below to dictate how the Callout is rendered.</li>
+			<li>Position, style and direction of the callout can be controlled.</li>
+		</ul>
+	  <form name="myCallout" style="border: 1px solid #cccccc; padding:15px;">
+	  <p>X: <input type="text" name="x" id="x" value=400></p>
+	  <p>Y: <input type="text" name="y" id="y" value=350></p>
+	  <p>Skin: <select name=skin><option value="peanut_noaccess">Peanut (No Access)</option><option value="peanut_talkbubble">Peanut (Talk Bubble)</option><option value="peanut_info">Peanut (Information mark)</option><option value="peanut_exclam">Peanut (Exclamation mark)</option><option value="clean">Clean</option><option value="xp">XP</option><option value="vista">Vista</option><option value="impact">Impact</option></select></p>	  
+	  <p>Callout Direction: <select name=cdir><option value=0 selected>No Direction</option><option value=1>Top Left</option><option value=2>Top Right</option><option value=3>Bottom Right</option><option value=4>Bottom Left</option><option value=5>Right Bottom</option><option value=6>Right Top</option><option value=7>Left Bottom</option><option value=8>Left Top</option></select></p>
+	  <button onclick="createCallout(this.form); return false;">Draw</button>
+	  <button onclick="createCallout(this.form, true); return false;">Draw Then Move</button>
+	  </form>	  
+	 
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!-- It's important to use the ntb namespace in the HTML tag or the grid will not render -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Grid Demos - Editors</title>
+
+<!-- EBA_REMOVE_START --><link type="text/css" rel="stylesheet" href="../../../../samples/css/samples.css"></link><link type="text/css" rel="stylesheet" href="../../../../samples/css/sh.css"></link><script src="../../../../samples/js/sh.js"></script><script language="javascript" src="../../../../../test/client/grid/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/samples.css"></link>
+
+<!-- Now we include the CSS for the component -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/nitobi.grid.css"></link>
+
+<!-- First we include the Toolkit JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.toolkit.js"></script>
+
+<!-- Now we include the component JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.grid.js"></script>
+<!-- End of Demo-related Includes -->
+
+<script>
+
+function init()
+{
+	var LSGrid1 = nitobi.loadComponent('EditorsGrid');
+}
+
+function GetNewRecordID()
+{
+		// Use the native cross-browser nitobi Ajax object
+		var myAjaxRequest = new nitobi.ajax.HttpRequest();
+
+		// Define the url for your generatekey script
+		myAjaxRequest.handler = 'getnextrecord.php?rnd=' + Math.random();
+		myAjaxRequest.async = false;
+		myAjaxRequest.get();
+
+		// return the result to the grid
+		return myAjaxRequest.httpObj.responseText;
+}
+</script>
+</head>
+<body onLoad="init()">
+      <p class="intro">Each column in a Grid can have its own editor and datatype. An editor is 
+      something that changes data, like a textbox, or a checkbox. Certain kinds of editors can change 
+      data from different data types. For example textboxes and lookups can edit dates, 
+      alphanumeric strings, and numeric strings.  This sample demonstrates each of the available
+      editors in Nitobi Grid.</p>
+      <ul class="instructions">
+      	<li>Edit a cell by double-clicking on it with the mouse, or navigate to the cell and begin typing. </li>
+      	<li>Pressing ENTER will signal that your edit has completed.</li>
+      	<li>Pressing ESC will cancel your edit.</li>
+      </ul>
+	<ntb:grid id="EditorsGrid"
+		width="630"
+		height="407"
+		mode="livescrolling"
+		keygenerator="GetNewRecordID()"
+		gethandler="load_data.php"
+		savehandler="save_data.php"
+		rowhighlightenabled="true"
+		autosaveenabled="true"
+		toolbarenabled="true"
+		theme="vista">
+
+		<ntb:columns>
+			<ntb:textcolumn		label="Image"		xdatafld="ProductIcon"	sortenabled="false"	width="75" initial="docicon.gif">
+				<ntb:imageeditor></ntb:imageeditor>
+			</ntb:textcolumn>
+			<ntb:textcolumn		label="Checkbox"	xdatafld="BulkAction"	sortenabled="false"	width="75">
+				<ntb:checkboxeditor datasource="[{value:'yes',display:'Yes!'},{value:'no',display:'No'}]" checkedvalue="yes" uncheckedvalue="no" displayfields="display" valuefield="value"></ntb:checkboxeditor>
+			</ntb:textcolumn>
+			<ntb:textcolumn		label="Text"		xdatafld="ProductName"	width="200"></ntb:textcolumn>
+			<ntb:textcolumn		label="Lookup"		xdatafld="ProductCategoryName" width="150">
+				<ntb:lookupeditor  delay="1000" gethandler="lookuphandler.php" displayfields="ProductCategoryName" valuefield="ProductCategoryName" ></ntb:lookupeditor>
+			</ntb:textcolumn>
+			<ntb:textcolumn		label="Lookup"		xdatafld="ProductCategoryName" width="150">
+				<ntb:lookupeditor  delay="1000" gethandler="lookuphandler.php" displayfields="ProductCategoryName" valuefield="ProductCategoryName" ></ntb:lookupeditor>
+			</ntb:textcolumn>
+			<ntb:numbercolumn 	label="Number (with mask)"	xdatafld="ProductSKU" mask="#,##0"	width="150"></ntb:numbercolumn>
+			<ntb:numbercolumn 	label="Number (with currency mask)"	xdatafld="ProductPrice" mask="$#,##0.00"	width="150"></ntb:numbercolumn>
+			<ntb:textcolumn 	label="Text Area"  	xdatafld="ProductQuantityPerUnit"   width="200"><ntb:textareaeditor></ntb:textareaeditor></ntb:textcolumn>
+			<ntb:datecolumn 	label="Date"  		xdatafld="LastUpdated"		sortenabled="false"		mask="yyyy.MM.dd G 'at' hh:mm:ss z"	width="100"></ntb:datecolumn>
+			<ntb:textcolumn 	label="Hyperlink"  	xdatafld="ProductLink"		sortenabled="false"  width="240"><ntb:linkeditor></ntb:linkeditor openwindow="true" ></ntb:textcolumn>
+			<ntb:textcolumn 	label="Password"  	xdatafld="ProductPassword"	sortenabled="false"  width="240"><ntb:passwordeditor></ntb:passwordeditor></ntb:textcolumn>
+			<ntb:textcolumn		label="Listbox"		xdatafld="ProductCategoryName" width="150">
+				<ntb:listboxeditor  gethandler="lookuphandler.php" displayfields="ProductCategoryName" valuefield="ProductCategoryName" ></ntb:listboxeditor>
+			</ntb:textcolumn>
+		</ntb:columns>
+	</ntb:grid>
+
+</body>
+</html>

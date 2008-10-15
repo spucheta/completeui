@@ -1,0 +1,8 @@
+-------------------
+--- Nitobi ComboBox V3 - Coldfusion MX Edition
+-------------------
+
+For a full explanation of setting up the datasource for these demos see:
+http://www.nitobi.com/kb/?artid=217
+
+You will need to set up a few datatables in Coldfusion Administrator for some of these demos to run. Please use the MS Access database "nitobitestdb.mdb" for this purpose. The datasource name is "NitobiTestDB".

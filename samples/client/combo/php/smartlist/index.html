@@ -1,0 +1,58 @@
+<!-- This page is the main page in the sample. It places the combo on the webpage. -->
+<!-- Note the namespace defined in the HTML tag. -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi ComboBox V3 Demos</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/combo/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<link type="text/css" rel="stylesheet" href="$STYLE$/samples.css"></link>
+
+<!-- Now we include the CSS for the component -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/nitobi.combo.css"></link>
+
+<!-- First we include the Toolkit JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.toolkit.js"></script>
+
+<!-- Now we include the component JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.combo.js"></script>
+
+<script type="text/javascript">
+	// Initializes the combo controls.
+	function initialize(){
+		try{
+			nitobi.initCombo('cmbEmail');
+		}catch(err){
+			alert("Initializing the combo boxes failed. Is the .js file correctly referenced and being served by your server?");
+		}
+
+	}
+
+</script>
+<title>Nitobi ComboBox V3 Demo</title>
+</head>
+<!-- The body of the webpage. Note the call to 'initialize()' that initializes
+	 any combos on the page when it loads. -->
+<body onLoad="initialize()">
+      <p>This sample illustrates the search mode 'SmartList' (with <em>Intelligent Autocomplete</em>) which allows the developer to assist the formation of data driven lists in a text-area.</p>
+<p><strong>Instructions</strong>: put your cursor in the &quot;To:&quot; field and start typing. The listbox will contain selections from the database based on your search string and the <em>order of priority</em> (in this case, the frequency of emails for that contact). Select a contact and press enter. Notice you may perform multiple searches and add multiple records to the text area.</p>
+<p><em>(hint: try typing 'jacob', 'pope', or 'moon') </em></p>
+<div style="background-image: url(mailbackground.png);background-position: top left; background-repeat: no-repeat; padding-top:3px; padding-left: 59px; height: 322px; width:568px;">
+	<!-- Here is our Combo Tag using SmartList mode -->
+
+	<ntb:Combo id="cmbEmail" Mode="smartlist" theme="outlook">
+		<ntb:ComboTextBox Width="505" Height="50" DataFieldIndex=0></ntb:ComboTextBox>
+		<!-- A list which allows paging and search. The datasource is a separate asp file. -->
+		<ntb:ComboList Width="400px" DatasourceUrl="get.php" PageSize="10" ClipLength="10" BackgroundHighlightColor="#C4E4FF" ForegroundHighlightColor="#0000CC" >
+			<ntb:ComboColumnDefinition Width="100%" DataFieldIndex=0 TextColor="#0000CC"></ntb:ComboColumnDefinition>
+		</ntb:ComboList>
+	</ntb:Combo>
+</div>
+
+</body>
+</html>

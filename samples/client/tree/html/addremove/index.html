@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ntb="http://www.nitobi.com">
+<head>
+<title>Nitobi Tree Demos - Add and Remove Nodes</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/tree/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<script language="javascript">
+	function init()
+	{
+		nitobi.loadComponent('tree1');	
+	}
+	addedNodes = 0;
+	insertedNodes = 0;
+	
+	function insertNode()
+	{
+		var tree = $('tree1').jsObject;
+		var selectedNodes = tree.getSelected();
+		if (selectedNodes.length)
+		{
+			var node = selectedNodes[0];
+			var siblings = node.getParentObject();
+			var newNode = new nitobi.tree.Node();
+			newNode.setLabel('Inserted Node Number '+ (++insertedNodes));
+			siblings.insert(siblings.indexOf(node),newNode);
+		}
+	}
+	function addChild() 
+	{
+		var tree = $('tree1').jsObject;
+		var selectedNodes = tree.getSelected();
+		if (selectedNodes.length)
+		{
+			var node = selectedNodes[0];
+			var children = node.getChildren();
+			if (children)
+			{
+				var newNode = new nitobi.tree.Node();
+				newNode.setLabel('Added Node Number '+ (++addedNodes));
+				children.add(newNode);
+			}
+			else
+			{
+				alert('Please choose another node, this node is a leaf.');
+			}
+		}
+		else
+		{
+			alert('Select the node to insert the new node in front of.');
+		}
+	}
+	function removeNode()
+	{
+		var tree = $('tree1').jsObject;
+		var selectedNodes = tree.getSelected();
+		if (selectedNodes.length)
+		{
+			var node = selectedNodes[0];
+			var siblings = node.getParentObject();
+			siblings.remove(node);
+		}
+		else
+		{
+			alert('Select the node you wish to remove.');
+		}
+	}
+	
+</script>
+</head>
+<body onload="init();">
+<p class="intro">This sample demonstrates the tree's ability add and remove nodes programmatically.  to accept a new data source at run-time.  In this case, the XML is stored in a file
+on the server.</p>
+<ul class="instructions">
+<li class="heading">Insert a Node</li>
+<li>Click one of the nodes.</li>
+<li>Click <a href="javascript:insertNode();">Insert Node</a> to insert a node before the currently selected node.</li>
+<li class="heading">Add a Child Node</li>
+<li>Click one of the non-leaf nodes.</li>
+<li>Click <a href="javascript:addChild();">Add Child</a> to add a child node to the currently selected node.</li>
+<li class="heading">Remove a Node</li>
+<li>Click on any node.</li>
+<li>Click <a href="javascript:removeNode();">Remove Node</a> to remove a node from the tree.</li>
+</ul>
+<p class="notes">
+Note: If no nodes are selected, an error message will appear.
+</p>
+<ntb:tree id="tree1" theme="documents">
+	<ntb:children>
+		<ntb:node label="A node (without any children)">
+			<ntb:children></ntb:children>
+		</ntb:node>
+		<ntb:node label="A leaf (no possibility of children)"></ntb:node>
+		<ntb:node label="A node (with children)" expanded="false">
+			<ntb:children>
+				<ntb:node label="A leaf"></ntb:node>
+				<ntb:node label="A node">
+					<ntb:children>
+						<ntb:node label="A node">
+							<ntb:children></ntb:children>
+						</ntb:node>
+						<ntb:node label="A leaf"></ntb:node>
+						<ntb:node label="A node">
+							<ntb:children>
+								<ntb:node label="A leaf"></ntb:node>
+							</ntb:children>
+						</ntb:node>
+					</ntb:children>
+				</ntb:node>
+				<ntb:node label="A leaf"></ntb:node>
+				<ntb:node label="A node">
+					<ntb:children>
+						<ntb:node label="A leaf"></ntb:node>
+						<ntb:node label="A node">
+							<ntb:children></ntb:children>
+						</ntb:node>
+						<ntb:node label="A leaf"></ntb:node>
+						<ntb:node label="A node">
+							<ntb:children>
+								<ntb:node label="A leaf"></ntb:node>
+							</ntb:children>
+						</ntb:node>
+					</ntb:children>
+				</ntb:node>
+			</ntb:children>
+		</ntb:node>
+	</ntb:children>
+</ntb:tree>
+</body>
+</html>

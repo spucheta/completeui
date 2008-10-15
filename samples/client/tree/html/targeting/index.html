@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ntb="http://www.nitobi.com">
+<head>
+<title>Nitobi Tree Demos - Frame Targeting</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/tree/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<script language="javascript">
+	function init()
+	{
+		nitobi.loadComponent('tree1');	
+	}
+</script>
+<style>
+	#treeframe {
+		height:400px;
+		width:200px;
+	}
+	#targetframe {
+		padding-left:5px;
+		border:none;
+		border-left:1px solid gray;
+		width:700px;
+		height:400px;
+	}
+</style>
+</head>
+
+<body onload="init();" >
+<p class="intro">This sample demonstrates the Nitobi Tree's ability to change the URL of a target frame in the page.  
+Specifying a <code>targetframe</code> in the tree's XML declaration, and a <code>url</code> 
+attribute on each node will result in a simple frame navigation system. 
+</p>
+<ul class="instructions">
+<li>Click one of the leaves.</li>
+<li>Watch the iframe change locations.</li>
+</ul>
+<br />
+<table>
+<tr><td>
+<div id="treeframe">
+<ntb:tree xmlns:ntb="http://www.nitobi.com" hoverhighlight="true" theme="folders" id="tree1" expanded="true" targetframe="targetframe">
+	<ntb:children>
+		<ntb:node label="Search">
+			<ntb:children>
+				<ntb:node label="Google" url="http://www.google.com"></ntb:node>
+				<ntb:node label="Ask" url="http://www.ask.com"></ntb:node>
+				<ntb:node label="Yahoo!" url="http://www.yahoo.com"></ntb:node>
+			</ntb:children>
+		</ntb:node>
+		<ntb:node label="Photos">
+			<ntb:children>
+				<ntb:node label="Photobucket" url="http://www.photobucket.com"></ntb:node>
+				<ntb:node label="Flickr" url="http://www.flickr.com"></ntb:node>
+			</ntb:children>
+		</ntb:node>
+		<ntb:node label="Video">
+			<ntb:children>
+				<ntb:node label="Youtube" url="http://www.youtube.com"></ntb:node>
+				<ntb:node label="Google Video" url="http://video.google.com"></ntb:node>
+				<ntb:node label="Revver" url="http://www.revver.com"></ntb:node>				
+			</ntb:children>
+		</ntb:node>
+		<ntb:node label="Newspapers">
+			<ntb:children>
+				<ntb:node label="New York Times" url="http://www.nytimes.com"></ntb:node>
+				<ntb:node label="Globe and Mail" url="http://www.globeandmail.com"></ntb:node>
+				<ntb:node label="Telegraph" url="http://www.telegraph.co.uk/"></ntb:node>				
+			</ntb:children>
+		</ntb:node>
+
+	</ntb:children>				
+</ntb:tree>
+</div> <!-- treeframe -->
+</td><td>
+<iframe name="targetframe" id="targetframe" frameborder="0" border="0" width="600" height="500"></iframe>
+</td></tr>
+</table>
+</body>
+</html>

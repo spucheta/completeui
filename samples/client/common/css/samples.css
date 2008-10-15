@@ -1,0 +1,57 @@
+body {
+	font-family: Verdana, Arial;
+	font-size:12px;
+	line-height:16px;
+}
+/*
+h1, h2 {
+	color: #666666;
+	border-right: 2px dotted #FF9900;
+	border-bottom: 2px solid #FF9900;
+}
+*/
+p.intro {
+	margin:0px;
+	margin-top:10px;
+	border: 1px dotted #111111;
+	padding: 4px;
+	background-color: #DDDDDD;
+}
+
+.notes {
+	margin:0px;
+	margin-bottom: 10px;
+	border: 1px dotted #D2550F;
+	padding: 4px;
+	background-color: #FFC67F;
+}
+
+ul.instructions {
+	margin:0px;
+	margin-top: 10px;
+	margin-bottom:10px;
+	border: 1px dotted #666699;
+	padding:0px;
+	padding-left: 15px;
+	text-indent: -1em;
+	background-color: #DCE6EC;
+	list-style-position: inside;
+}
+ul.instructions li.heading {
+	list-style-type: none;
+	font-weight:bold;
+}
+ul.instructions li {
+	padding-top:2px;
+	padding-bottom:2px;
+}
+div.theme {
+	padding: 5px;
+	border: 1px dotted #666699;
+	background-color: #99ff99;
+	margin-bottom:10px;
+}
+
+.codearea {
+	width: 850px;
+}

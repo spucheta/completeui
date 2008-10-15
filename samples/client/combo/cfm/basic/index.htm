@@ -1,0 +1,65 @@
+<!-- This page is the main page in the sample. It places the combo on the webpage. -->
+<!-- Note the namespace defined in the HTML tag. -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi ComboBox V3 Demos</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/combo/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<link type="text/css" rel="stylesheet" href="$STYLE$/samples.css"></link>
+
+<!-- Now we include the CSS for the component -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/nitobi.combo.css"></link>
+
+<!-- First we include the Toolkit JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.toolkit.js"></script>
+
+<!-- Now we include the component JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.combo.js"></script>
+
+<script type="text/javascript">
+	// Initializes the combo controls.
+	function initialize(){
+		try{
+			nitobi.initCombo('cmbCustomers');
+		}catch(err){
+			alert("Initializing the combo boxes failed. Is the .js file correctly referenced and being served by your server?");
+		}
+
+	}
+
+</script>
+<title>Nitobi ComboBox V3 Demo</title>
+</head>
+<!-- The body of the webpage. Note the call to 'initialize()' that initializes
+	 any combos on the page when it loads. -->
+<body onLoad="initialize()">
+<p>Getting started with a basic grid involves just a little preparation of your page.</p>
+<ul>
+  <li class=BodyList>Set up your Namespace</a>
+  &lt;html xmlns:ntb&gt;
+  <li class=BodyList>Include the Combo Stylesheet</a>
+  <li class=BodyList>Include the Combo JavaScript</a>
+  - nitobi.combo.js 
+  <li class=BodyList>Include the Combo Language Pack (optional)</a>
+  <li class=BodyList>Put a Combo Tag on the Page</a>
+  <li class=BodyList>Write a Data Handler</a>
+  <li class=BodyList>Instantiate the Combo</a> - nitobi.initCombo('cmbCustomers');<br>
+</ul>
+<p>Select a Customer:
+			<ntb:Combo id="cmbCustomers" Mode="classic" InitialSearch="Rosalyn" theme="outlook">
+				<ntb:ComboTextBox Width="175px" DataFieldIndex=0 ></ntb:ComboTextBox>
+				<!-- A list which allows paging and search. The datasource is a separate asp file. -->
+				<ntb:ComboList Width="360px" Height="200px" DatasourceUrl="get.cfm" PageSize="15" >
+					<ntb:ComboColumnDefinition Width="130px" HeaderLabel="Customer Name" DataFieldIndex=0 ></ntb:ComboColumnDefinition>
+					<ntb:ComboColumnDefinition Width="200px" DataFieldIndex=1></ntb:ComboColumnDefinition>
+				</ntb:ComboList>
+			</ntb:Combo>
+</p>
+</body>
+</html>

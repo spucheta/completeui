@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Nitobi Tabstrip Demos - Runtime Tabs</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/tabstrip/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+
+<script>
+	function createTab()
+	{
+		// First, locate in the page where you want to 
+		// place the tab.
+		var container = document.createElement("div");
+		document.body.appendChild(container);
+		
+		// Then make the tab.
+		var t1 = new nitobi.tabstrip.TabStrip(nitobi.component.getUniqueId());
+		t1.setWidth("900px");
+		t1.setHeight("600px");
+		var tabs = new nitobi.tabstrip.Tabs();
+		var tab = new nitobi.tabstrip.Tab();
+		tab.setWidth("200px");
+		tab.setLabel("Nitobi");
+		tab.setContainerType("iframe");
+		tab.setSource("http://nitobi.com");
+		tabs.add(tab);
+		t1.setTabs(tabs);
+		t1.setContainer(container);
+		t1.render();
+	}
+	
+</script>
+</head>
+
+<body>
+<p class="intro">This sample demonstrates how create a tab at runtime.</p>
+<ul class="instructions">
+	<li>Click <a href="#" onclick="createTab()">create</a> to create a tab programatically.</li>
+</ul>
+
+</body>
+</html>

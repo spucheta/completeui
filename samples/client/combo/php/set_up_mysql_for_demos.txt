@@ -1,0 +1,7 @@
+-------------------
+--- Nitobi ComboBox V3
+-------------------
+
+You will need to set up a few datatables in MYSQL for some of these demos to run (including this one). Please use the SQL syntax file "NitobiSampleDatabases.sql" in the root of the demo folder. 
+
+Then, in "get.php" you will need to change the database connection string.

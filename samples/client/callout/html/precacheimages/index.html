@@ -1,0 +1,46 @@
+<!-- It's important to use the ntb namespace in the HTML tag or the grid will not render -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Callout Demos - Pre-cache Images Example</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/callout/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<script>
+
+function preLoadImages() {
+
+	nitobi.html.Css.precacheImages();
+	
+}
+
+function runCallout(buttonid, styletype) {
+
+	var myCallout = new nitobi.callout.Callout(styletype);
+	myCallout.attachToElement(buttonid);
+	myCallout.setTitle('Preload Success');
+	myCallout.setBody('These images should all be pre-loaded, meaning the user will not see pieces of the callout appear gradually as they are downloaded.');
+	myCallout.show();
+	
+}
+
+</script>
+
+
+
+</head>
+<body onload="preLoadImages()">
+      <p class="intro">It's possible to pre-cache all the images in callout so that the images don't need to load when first called.</p>
+	  This demo pre-loads all necessary images when the page is downloaded to your browser. </p>
+	  <ul class="instructions">
+	  	<li><a href="#" onclick="runCallout(this.id, 'xp'); return false;">Click to run XP Callout</a></li>
+	  	<li><a href="#" onclick="runCallout(this.id, 'vista'); return false;">Click to run Vista Callout</a></li>
+	  	<li><a href="#" onclick="runCallout(this.id, 'impact'); return false;">Click to run Impact Callout</a></li>
+	  	<li><a href="#" onclick="runCallout(this.id, 'clean'); return false;">Click to run Clean Callout</a></li>
+	  </ul> 
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ntb="http://www.nitobi.com">
+<head>
+<title>Nitobi Tree Demos - Statefulness</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/tree/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<script>
+	var saveState=true;
+	function onLoad()
+	{
+		var cookie = nitobi.browser.Cookies.get("nitobi.tree");
+		var xml=(cookie == null || cookie=="" ? $("declaration").value : cookie);
+		var node = nitobi.xml.createXmlDoc(xml).documentElement;
+		var t1 = new nitobi.tree.Tree(node);
+		t1.setContainer($("container"));
+		t1.render();
+		
+		nitobi.html.attachEvent(window, "unload", onUnload);
+	}
+		
+	function onUnload()
+	{
+		if (saveState)
+		{
+			var t1 = nitobi.getComponent('tree1');
+			var xml = t1.serializeToXml();
+			nitobi.browser.Cookies.set("nitobi.tree",xml,365);
+		}
+	}
+	
+	function disableCookie()
+	{
+		nitobi.browser.Cookies.remove("nitobi.tree");
+		saveState=false;	
+	}
+</script>
+</head>
+
+<body onload="onLoad();">
+<p class="intro">This sample demonstrates thee tree's ability to serialize itself to XML. In this case, 
+the XML is stored in a cookie. The next time the tree loads, the tree is restored to the previous state. 
+</p>
+<ul class="instructions">
+<li>Click one of the nodes.</li>
+<li>Select a node so that it is highlighted</li>
+<li><a href="javascript:window.location.href = window.location.href">Reload</a> the page</li>
+<li>To restore the default, click <a href="javascript:disableCookie();">Clear &amp; Disable Cookie</a> and then reload the page.</li>
+</ul>
+<p class="notes">
+Note that the tree is preserved, including the last selected node.
+</p>
+<textarea id="declaration" style="display:none;">
+<ntb:tree xmlns:ntb="http://www.nitobi.com" theme="finefolders" id="tree1" expanded="false">
+	<ntb:children>
+		<ntb:node label="Dinosauria">
+			<ntb:children>
+				<ntb:node label="Theropods">
+					<ntb:children>
+						<ntb:node label="Herrerasauria">
+							<ntb:children>
+								<ntb:node label="Saltopodidae">
+								</ntb:node>
+							</ntb:children>
+						</ntb:node>
+						<ntb:node label="Ceratosauria">
+						</ntb:node>						
+						<ntb:node label="Coelurosauria">
+						</ntb:node>						
+					</ntb:children>
+				</ntb:node>
+				<ntb:node label="Ornithopods ">
+				</ntb:node>
+				<ntb:node label="Ceratopians ">
+				</ntb:node>
+				<ntb:node label="Thyreophorans ">
+				</ntb:node>
+				<ntb:node label="Saurischians ">
+				</ntb:node>
+				<ntb:node label="Ornithischians ">
+				</ntb:node>
+				<ntb:node label="Sauropods">
+					<ntb:children>
+						<ntb:node label="Prosauropoda ">
+						</ntb:node>
+						<ntb:node label="Sauropoda ">
+						</ntb:node>						
+					</ntb:children>
+				</ntb:node>
+			</ntb:children>
+		</ntb:node>	
+	</ntb:children>				
+</ntb:tree>
+</textarea>
+<div id="container"></div>
+</body>
+</html>

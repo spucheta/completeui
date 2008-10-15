@@ -1,0 +1,92 @@
+<!-- This page is the main page in the sample. It places the combo on the webpage. -->
+<!-- Note the namespace defined in the HTML tag. -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi ComboBox V3 Demos</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/combo/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<link type="text/css" rel="stylesheet" href="$STYLE$/samples.css"></link>
+
+<!-- Now we include the CSS for the component -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/nitobi.combo.css"></link>
+
+<!-- First we include the Toolkit JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.toolkit.js"></script>
+
+<!-- Now we include the component JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.combo.js"></script>
+
+<script type="text/javascript">
+	// Initializes the combo controls.
+	function initialize(){
+		try{
+			nitobi.initCombo('cmbCustomers');
+		}catch(err){
+			alert("Initializing the combo boxes failed. Is the .js file correctly referenced and being served by your server?");
+		}
+
+	}
+
+	function ShowTopCustomer(){
+		// need to execute form value assignments in a separate thread
+		// (i.e. setTimeout()) or else form value assignments won't
+		// render
+		window.setTimeout("PopulateBusinessCard();",0);
+	}
+
+	function PopulateBusinessCard()
+	{
+		var name = window.document.getElementById("ContactName");
+		var email = window.document.getElementById("ContactEmail");
+		var jobtitle = window.document.getElementById("JobTitle");
+		var company = window.document.getElementById("CompanyName");
+		var combo = window.document.getElementById("cmbCustomers").object;
+
+		var vname = combo.GetFieldFromActiveRow("ContactName");
+		if(vname!=null && name.innerHTML !=vname)
+			name.innerHTML  = vname || "";
+		var vemail = combo.GetFieldFromActiveRow("ContactEmail");
+		if(vemail!=null && email.innerHTML !=vemail)
+			email.innerHTML  = vemail || "";
+		var vjobtitle = combo.GetFieldFromActiveRow("JobTitle");
+		if(vjobtitle!=null && jobtitle.innerHTML !=vjobtitle)
+			jobtitle.innerHTML  = vjobtitle || "";
+		var vcompany = combo.GetFieldFromActiveRow("CompanyName");
+		if(vcompany!=null && company.innerHTML !=vcompany)
+			company.innerHTML  = vcompany || "";
+	}
+</script>
+<title>Nitobi ComboBox V3 Demo</title>
+</head>
+<!-- The body of the webpage. Note the call to 'initialize()' that initializes
+	 any combos on the page when it loads. -->
+<body onLoad="initialize()">
+<p>This sample illustrates the use of the Compact Search Mode. In this mode, no dropdown will appear. All the same paging behaviors will occur and you can access all the events as you would in a normal combobox, but the only autocompletion happening is type-ahead.</p>
+<p>In this demo the <strong>GetFieldFromActiveRow</strong> method is being used with the <strong>OnAfterSearch</strong> event to populate a 'business card' area with the data for that record. </p>
+<p><strong>Instructions</strong></strong>: put your cursor in the text box and start typing.</p>
+<!-- The combo -->
+<!-- Note the DataFieldIndex bindings on the textbox and list. These
+		are references to the table columns index. -->
+<ntb:Combo id="cmbCustomers" Mode="compact" theme="outlook">
+  <ntb:ComboTextBox Width="250px" DataFieldIndex=0></ntb:ComboTextBox>
+  <ntb:ComboList OnAfterSearchEvent="ShowTopCustomer()" DatasourceUrl="get.cfm"></ntb:ComboList>
+</ntb:Combo>
+<p>(Try typing 'neo', 'ale', or 'ter')</p>
+<h3>Customer Details:</h3>
+<table style=" border: 1px solid #CCCCCC; width: 300px; height: 125px;" id="myBusinessCard">
+  <tr>
+    <td valign=top style="padding-top:10px; padding-right:10px; padding-bottom:10px; padding-left: 50px; background-image:url(resources/contacticong.gif); background-position:left top; background-repeat:no-repeat;"><div id="ContactName" name="ContactName" style="font-family: arial, verdana; font-size: 24px;">Customer Name</div>
+      <div id="JobTitle" name="JobTitle" style="font-family: arial, verdana; font-size: 14px;">Job Title</div>
+      <div id="CompanyName" name="CompanyName" style="font-family: arial, verdana; font-size: 14px;">Company</div>
+      <br>
+      <div id="ContactEmail" name="ContactEmail"></div></td>
+  </tr>
+</table>
+</body>
+</html>

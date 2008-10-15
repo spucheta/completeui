@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root fields="startdate|enddate|location|description|type">
+	<e a="2008-01-01" e="disabled" />
+	<e a="2008-07-01" e="disabled" />
+	<e a="2008-07-04" e="disabled" />
+	<e a="2008-12-25" e="disabled" />
+</root>

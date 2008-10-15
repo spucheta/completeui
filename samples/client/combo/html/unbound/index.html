@@ -1,0 +1,65 @@
+<!-- This page is the main page in the sample. It places the combo on the webpage. -->
+<!-- Note the namespace defined in the HTML tag. -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi ComboBox V3 Demos</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/combo/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<link type="text/css" rel="stylesheet" href="$STYLE$/samples.css"></link>
+
+<!-- Now we include the CSS for the component -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/nitobi.combo.css"></link>
+
+<!-- First we include the Toolkit JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.toolkit.js"></script>
+
+<!-- Now we include the component JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.combo.js"></script>
+
+<script type="text/javascript">
+	// Initializes the combo controls.
+	function initialize(){
+		try{
+			nitobi.initCombo('myCombo');
+		}catch(err){
+			alert("Initializing the combo boxes failed. Is the .js file correctly referenced and being served by your server?");
+		}
+
+	}
+
+</script>
+<title>Nitobi ComboBox V3 Demo</title>
+</head>
+<!-- The body of the webpage. Note the call to 'initialize()' that initializes
+	 any combos on the page when it loads. -->
+<body onLoad="initialize()">
+<p>This demo shows a basic unbound combobox. The buttons at the bottom make modifications to the list data. </p>
+<p><strong>Unbound Search Mode</strong>: In this mode, all the data for the list is contained inside the combo tag (much like an HTML select control). Type-ahead and autocompletion are utilized to enhance search capabilities.</p>
+<p><strong> Instructions</strong>: put your cursor in the text box and start typing. Use the hyperlinks at the bottom to make changes to the list data.</p>
+<ntb:Combo id="myCombo" Mode="unbound" theme="outlook">
+  <ntb:ComboTextBox  DataFieldIndex=0 ></ntb:ComboTextBox>
+  <ntb:ComboList Width="200px" AllowPaging="false" Height="180px" >
+    <ntb:ComboColumnDefinition Width="100px" DataFieldIndex=0></ntb:ComboColumnDefinition>
+    <ntb:ComboColumnDefinition Width="70px" DataFieldIndex=1></ntb:ComboColumnDefinition>
+  </ntb:ComboList>
+  <ntb:ComboValues fields="City|Population">
+    <ntb:ComboValue a="Vancouver" b="3,000,000" ></ntb:ComboValue>
+    <ntb:ComboValue a="Toronto" b="4,500,000" ></ntb:ComboValue>
+    <ntb:ComboValue a="Ottawa" b="1,000,000" ></ntb:ComboValue>
+    <ntb:ComboValue a="California" b="4,500,000" ></ntb:ComboValue>
+    <ntb:ComboValue a="Halifax" b="900,000" ></ntb:ComboValue>
+    <ntb:ComboValue a="Calgary" b="1,500,000" ></ntb:ComboValue>
+    <ntb:ComboValue a="Red Deer" b="100,000" ></ntb:ComboValue>
+    <ntb:ComboValue a="Prince George" b="200,000" ></ntb:ComboValue>
+    <ntb:ComboValue a="Portland" b="1,500,000" ></ntb:ComboValue>
+    <ntb:ComboValue a="Atlanta" b="4,500,000" ></ntb:ComboValue>
+  </ntb:ComboValues>
+</ntb:Combo>
+</body>
+</html>

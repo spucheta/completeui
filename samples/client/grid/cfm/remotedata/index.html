@@ -1,0 +1,64 @@
+<!-- It's important to use the ntb namespace in the HTML tag or the grid will not render -->
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Grid Demos - Remote Data</title>
+
+<!-- EBA_REMOVE_START --><link type="text/css" rel="stylesheet" href="../../../../samples/css/samples.css"></link><link type="text/css" rel="stylesheet" href="../../../../samples/css/sh.css"></link><script src="../../../../samples/js/sh.js"></script><script language="javascript" src="../../../../../test/client/grid/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/samples.css"></link>
+
+<!-- Now we include the CSS for the component -->
+<link type="text/css" rel="stylesheet" href="$STYLE$/nitobi.grid.css"></link>
+
+<!-- First we include the Toolkit JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.toolkit.js"></script>
+
+<!-- Now we include the component JavaScript -->
+<script language="javascript" src="$SCRIPT$/nitobi.grid.js"></script>
+<!-- End of Demo-related Includes -->
+
+<script>
+
+function init()
+{
+	var DBGrid = nitobi.loadComponent('DataboundGrid');
+}
+
+function GetNewRecordID()
+{
+		// Use the native cross-browser nitobi Ajax object
+		var myAjaxRequest = new nitobi.ajax.HttpRequest();
+		
+		// Define the url for your generatekey script
+		myAjaxRequest.handler = 'allocaterecord.cfm?rnd=' + Math.random();
+		myAjaxRequest.async = false;
+		myAjaxRequest.get();
+		
+		// return the result to the grid
+		return parseInt(myAjaxRequest.httpObj.responseText);
+}
+</script>
+</head>
+<body onLoad="init()">
+	<p class="intro">Nitobi Grid uses <code>XMLHttpRequest</code>s to load and save data to a database. 
+	An API is provided to format data according to the Nitobi XML schema on a variety of platforms 
+	including Java, PHP, Classic ASP, and Coldfusion.</p>
+	<ul class="instructions">
+		<li class="heading">A grid's server resources:</li>
+		<li><code>getHandler</code> - As the page loads, the grid makes a call to its <code>getHandler</code> for its initial page of data.  Whenever the user requests more data (a paging event, or scrolling into unloaded rows) the <code>getHandler</code> is called again.</li>
+		<li><code>saveHandler</code> - When the user makes changes to the grid and clicks the <code>SAVE</code> button, the <code>saveHandler</code> is invoked and the grid's log of changes is posted to the server.</li>
+		<li><code>keyGenerator</code> - When a row is inserted, the <code>keyGenerator</code> is invoked to request a primary key for this new row.</li>
+	</ul>
+	<ntb:grid id="DataboundGrid" 	
+		width="630"
+		height="407"
+		mode="livescrolling"	
+		keygenerator="GetNewRecordID();"
+		autosaveenabled="false"
+		gethandler="load_data.cfm"
+		savehandler="save_data.cfm"
+		toolbarenabled="true"
+		theme="nitobi">
+	</ntb:grid>
+</body>
+</html>

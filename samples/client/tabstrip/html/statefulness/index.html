@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ntb>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Nitobi Tabstrip Demos - Maintaining the State Of The Tabstrip</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/tabstrip/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+
+<script>
+	var saveState=true;
+	function onLoad()
+	{
+		var cookie = nitobi.browser.Cookies.get("nitobi.tabstrip");
+		var xml=(cookie == null || cookie=="" ? $("declaration").value : cookie);
+		var node = nitobi.xml.createXmlDoc(xml).documentElement;
+		var t1 = new nitobi.tabstrip.TabStrip(node);
+		t1.setContainer($("container"));
+		t1.render();
+
+		nitobi.html.attachEvent(window, "unload", onUnload);
+	}
+		
+	function onUnload()
+	{
+		if (saveState)
+		{
+			var t1 = nitobi.getComponent('tabstrip1');
+			var xml = t1.serializeToXml();
+			nitobi.browser.Cookies.set("nitobi.tabstrip",xml,365);
+		}
+	}
+	
+	function changeTabLabel(name)
+	{
+		var t1 = nitobi.getComponent('tabstrip1');
+		t1.getTabs().get(2).setLabel(name);
+	}
+	
+	function addTab()
+	{
+		var t1 = nitobi.getComponent('tabstrip1');
+		var tabs = t1.getTabs();
+		var tab = new nitobi.tabstrip.Tab();
+		tab.setLabel("W3C");
+		tab.setContainerType("iframe");
+		tab.setSource("http://www.w3.org/");
+		tabs.add(tab);
+		t1.render();
+	}
+	
+	function disableCookie()
+	{
+		nitobi.browser.Cookies.remove("nitobi.tabstrip");
+		saveState=false;	
+	}
+
+</script>
+</head>
+
+<body onload="onLoad();">
+<p class="intro">This demonstrates that tabstrip's ability to serialize itself to XML. In this case, the XML is stored in a cookie.
+The next time the tab loads, the tab is restored to the previous state.</p>
+
+<ul class="instructions">
+	<li>Click one of the tabs.</li>
+	<li>Use the tab to modify the tabstrip.</li>
+	<li><a href="#" onclick="window.location.reload(true)">Reload</a> the page.</li>
+</ul>
+<p class="notes">Note that the active tab is the last tab selected, and that the state of thet tabstrip is preserved in the cookie. </p>
+<br/>
+<textarea id="declaration" style="display:none">
+	<ntb:tabstrip xmlns:ntb="http://www.nitobi.com" id="tabstrip1" width="800px" height="600px" theme="nitobi">
+		<ntb:tabs height="" align="center" overlap="15">
+			<ntb:tab width="190px" tooltip="Welcome." label="Welcome" source="tabone" ></ntb:tab>
+			<ntb:tab tooltip="Click here to add a tab" label="Add Tab" source="tabtwo"></ntb:tab>
+			<ntb:tab tooltip="Click here to rename this tab" label="Rename Tab" source="tabthree"></ntb:tab>
+		</ntb:tabs>
+	</ntb:tabstrip>
+</textarea>
+<div id="container"></div>
+<div id="tabone">Welcome to the Nitobi tabstrip.</div>
+<div id="tabtwo">
+	<input type="button" value="Add a Tab" onclick="addTab()"/> 
+</div>
+<div id="tabthree">This is tab three.
+Rename this tab: <input type="text" id="tabthreename" onkeyup="changeTabLabel(this.value)"/>
+</div>
+</body>
+</html>

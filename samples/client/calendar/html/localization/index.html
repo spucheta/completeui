@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- It's important to use the ntb namespace in the HTML tag or the datepicker will not render -->
+<html xmlns:ntb="http://www.nitobi.com">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Nitobi Calendar Demos - Localization</title>
+
+<link type="text/css" rel="stylesheet" href="../../../common/css/samples.css"></link>
+<link type="text/css" rel="stylesheet" href="../../../common/css/sh.css"></link>
+<script src="../../../common/js/sh.js"></script>
+
+<!-- EBA_REMOVE_START --><script language="javascript" src="../../../../../test/client/calendar/base.js"></script><script language="javascript"> initTest(); </script><!-- EBA_REMOVE_END -->
+
+<script>
+	nitobi.calendar.DatePicker.longMonthNames = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Julliet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+	nitobi.calendar.DatePicker.longDayNames = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samdi'];
+	nitobi.calendar.DatePicker.minDayNames = ["D", "L", "M", "M", "J", "V", "S"];
+</script>
+
+<script>
+	function load()
+	{
+		if (nitobi.browser.MOZ)
+			$("jscode").innerHTML = $("component").innerHTML;
+		
+		var datePicker = nitobi.loadComponent("dp");
+		dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+		dp.SyntaxHighlighter.HighlightAll('code');
+	}
+	
+	nitobi.html.attachEvent(window, "load", load);
+</script>
+</head>
+<body>
+	<h2>
+		Localization
+	</h2>
+	<p class="intro">
+		Using the Nitobi Calendar, you can easily adapt it to any region.  Localization can be achieved on a per instance basis or
+		it can be quickly applied to all instances in one fell swoop.
+	</p>
+	<h3 style="margin-top: 10px;">
+		Description
+	</h3>
+	<div class="notes" style="margin-top: 5px;" id="desc">
+		There are 9 attributes you can use to localize the Calendar:
+		<ul>
+			<li><code>longmonthnames</code>:  e.g. January, February, March, etc.</li>
+			<li><code>shortmonthnames</code>:  e.g. Jan, Feb, Mar, etc.</li>
+			<li><code>longdaynames</code>:  e.g. Sunday, Monday, Tuesday, etc.</li>
+			<li><code>shortdaynames</code>:  e.g. Sun, Mon, Tue, etc.</li>
+			<li><code>mindaynames</code>:  e.g. S, M, T, etc.</li>
+			<li><code>navconfirmtext</code>:  The text for the quick nav button that confirms the date.</li>
+			<li><code>navcanceltext</code>:  The text for the quick nav button that cancels the date change.</li>
+			<li><code>navinvalidyeartext</code>:  The text displayed when an invalid year is entered in the quick nav panel.</li>
+			<li><code>navoutofrangetext</code>:  The text displayed when the date selected in the quick nav panel isn't in the range defined by mindate/maxdate.</li>
+		</ul>
+		<p>
+			The values for the attributes can be either the name of an array, or a literal JSON array.
+		</p>
+		Alternatively, you can use the following javascript properties to set the locale for all Calendars on a page:
+		<ul>
+			<li><code>nitobi.calendar.DatePicker.longMonthNames</code></li>
+			<li><code>nitobi.calendar.DatePicker.shortMonthNames</code></li>
+			<li><code>nitobi.calendar.DatePicker.longDayNames</code></li>
+			<li><code>nitobi.calendar.DatePicker.shortDayNames</code></li>
+			<li><code>nitobi.calendar.DatePicker.minDayNames</code></li>
+			<li><code>nitobi.calendar.DatePicker.navConfirmText</code></li>
+			<li><code>nitobi.calendar.DatePicker.navCancelText</code></li>
+			<li><code>nitobi.calendar.DatePicker.navInvalidYearText</code></li>
+			<li><code>nitobi.calendar.DatePicker.navOutOfRangeText</code></li>
+		</ul>
+	</div>
+	<div id="component">
+		<ntb:datepicker id="dp" theme="flex" selecteddate="today"
+			longdaynames="['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samdi']">
+			<ntb:dateinput></ntb:dateinput>
+			<ntb:calendar></ntb:calendar>
+		</ntb:datepicker>
+	</div>
+	
+	<h3 style="margin-top: 35px;">
+		Example Source Code
+	</h3>
+	<div>
+		<div style="margin-top: 10px;">
+			<div class="samples_title">
+				Calendar Markup
+			</div>
+			<div class="codearea">
+				<textarea name="code" class="html" id="jscode">
+					<ntb:datepicker id="dp" theme="flex" selecteddate="today"
+						longdaynames="['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samdi']">
+						<ntb:dateinput></ntb:dateinput>
+						<ntb:calendar></ntb:calendar>
+					</ntb:datepicker>
+				</textarea>
+			</div>
+		</div>
+		<div style="margin-top: 10px;">
+			<div>
+				Javascript
+			<div class="codearea">
+				<textarea name="code" class="js" cols="20">
+					// By setting these variables, the localization to French will be applied to all instance of the Calendar on this page
+					nitobi.calendar.DatePicker.longMonthNames = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Julliet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+					nitobi.calendar.DatePicker.longDayNames = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samdi'];
+					nitobi.calendar.DatePicker.minDayNames = ["D", "L", "M", "M", "J", "V", "S"];
+					
+					
+					function load()
+					{
+						var datePicker = nitobi.loadComponent("dp");
+					}
+					
+					// Load the component when the page loads.
+					nitobi.html.attachEvent(window, "load", load);
+				</textarea>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
