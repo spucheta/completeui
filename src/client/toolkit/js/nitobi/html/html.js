@@ -196,11 +196,12 @@ nitobi.html.highlight = function(o,x,end)
 	{
 		// Make sure the object has the focus, otherwise you select the whole page.
 		o.focus();
-		var r=document.selection.createRange().duplicate();
+		// Create the text range based off the original object so as to avoid weird IE browser window shift bugs.
+		var r=o.createTextRange();
 		r.move("character",0-end);
 		r.move("character",x);
-//		r.moveEnd("textedit",1);
-//		r.select();
+		r.moveEnd("textedit",1);
+		r.select();
 	}else if(o.setSelectionRange){
 		o.focus();
 		o.setSelectionRange(x,end);
@@ -216,7 +217,8 @@ nitobi.html.setCursor = function(o,x)
 	{
 		// Make sure the object has the focus, otherwise you select the whole page.
 		o.focus();
-		var r=document.selection.createRange().duplicate();
+		// Create the text range based off the original object so as to avoid weird IE browser window shift bugs.
+		var r=o.createTextRange();
 		r.move("character",0-o.value.length);
 		r.move("character",x);
 		r.select();

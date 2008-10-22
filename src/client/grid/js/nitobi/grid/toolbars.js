@@ -183,6 +183,8 @@ nitobi.ui.Toolbars.prototype.render= function()
 	// using a foreach loop and a switch statement allows users to create toolbars without some buttons
 	// was previously causing an error with custom toolbars
 	for (eachbutton in buttons) {
+		// Check for 'empty' buttons and skip over.
+		if (buttons[eachbutton].m_HtmlElementHandle == null) { continue; }
 		buttons[eachbutton].toolbar = this;
 		buttons[eachbutton].grid = this.grid;
 
@@ -252,6 +254,8 @@ nitobi.ui.Toolbars.prototype.render= function()
 	var _this = this;
 
 	for (eachPbutton in buttonsPaging) {
+		// Check for empty buttons and skip over if necessary.
+		if (buttonsPaging[eachPbutton].m_HtmlElementHandle == null) { continue; }
 		buttonsPaging[eachPbutton].toolbar = this;
 		buttonsPaging[eachPbutton].grid = this.grid;
 
