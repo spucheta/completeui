@@ -2143,7 +2143,6 @@ nitobi.grid.TreeGrid.prototype.columnResize= function(column, width)
 			var id = columns.getAttribute("id");
 			var surfaceStyle = C.getClass(".ntb-grid-surfacewidth" + this.uid + "-" + id);
 			var width = (id == rootId?maxWidth:maxWidth - (depth * parseInt(groupOffset)) - (depth + 1));
-			console.log(width);
 			surfaceStyle.width = width + "px";
 			var childId = this.findChildColumnSet(id);
 			columns = this.model.selectSingleNode("//ntb:columns[@id='" + childId + "']");
@@ -4035,7 +4034,6 @@ nitobi.grid.TreeGrid.prototype.generateFrameCssSafari = function()
 		var colset = colsets[i];
 		var id = colset.getAttribute("id");
 		var colwidth = 0;
-		console.log("i = " + i);
 		for (var j = 1, childs = colset.childNodes; j <= childs.length; j++)
 		{
 			var col = childs[j-1];
@@ -4044,10 +4042,8 @@ nitobi.grid.TreeGrid.prototype.generateFrameCssSafari = function()
 			var colRule = this.rules[".ntb-column"+u+(id!=""?"_"+id:"")+"_" +(j)];
 	 		if (colRule == null)
 				colRule = this.rules[".ntb-column"+u+(id!=""?"_"+id:"")+"_" +(j)] = addRule(ss, ".ntb-column"+u+(id!=""?"_"+id:"")+"_" +(j));
-			console.log(".ntb-column"+u+(id!=""?"_"+id:"")+"_" +(j));
 			// Need to account for cell border?
 			colRule.style.width = colW + "px";
-			console.log("width: " + colRule.style.width);
 
 	 		var colDataRule = this.rules[".ntb-column-data"+u+(id!=""?"_"+id:"")+"_" +(j)];
 	 		if (colDataRule == null)
@@ -4063,9 +4059,7 @@ nitobi.grid.TreeGrid.prototype.generateFrameCssSafari = function()
 	
 		if (id == this.getRootColumns())
 		{
-			console.log(".ntb-grid-surfacewidth"+u+"-"+id);
 			var rule = addRule(ss, ".ntb-grid-surfacewidth"+u+"-"+id, "width:" + this.getViewableWidth() + "px;");
-			console.log("surfacewidth: " + rule.style.width);
 		}
 		else
 		{
@@ -5133,6 +5127,10 @@ nitobi.grid.TreeGrid.prototype.insertAfterCurrentRow= function()
 nitobi.grid.TreeGrid.prototype.insertRow= function(rowIndex, surfacePath) 
 {
 	var surface = this.Scroller.getSurface(surfacePath);
+	// In case no cell object is selected, set the current surface to the root surface.
+	if (surface == null && this.getSelectedCellObject() == null) {
+		surface = this.Scroller.surface;
+	}
 	var rows = parseInt(surface.rows);
 	var xi = 0;
 	if (rowIndex != null)
@@ -6198,6 +6196,8 @@ nitobi.grid.TreeGrid.prototype.expand = function(rowIndex, surfacePath)
 		topBlock = surface.splitBlock(rowIndex).top;
 	}
 	var subSurface = new nitobi.grid.Surface(this.scroller, this, surfacePath + "_" + rowIndex, rowIndex);
+	// All events that apply to all surfaces should be hooked in - probably not here but in surface.js somewhere.
+	subSurface.onHtmlReady.subscribe(this.handleHtmlReady, this);
 	
 	subSurface.columnSetId = this.findChildColumnSet(surface.columnSetId);
 	subSurface.columnsNode = this.model.selectSingleNode("//ntb:columns[@id='" + subSurface.columnSetId + "']");
