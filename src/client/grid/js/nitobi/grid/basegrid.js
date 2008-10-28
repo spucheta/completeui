@@ -966,6 +966,12 @@ nitobi.grid.Grid.prototype.handleCellMouseDown=function(evt)
 		var clickEventArgs = new nitobi.grid.OnCellClickEventArgs(this, this.getSelectedCellObject());
 		if (!this.fire("BeforeCellClick", clickEventArgs) || (!!activeColumn && !nitobi.event.evaluate(activeColumn.getOnBeforeCellClickEvent(), clickEventArgs))) return;
 
+		//Becomes the order of mouseup/mousedown events can get reversed in firefox, we need to make sure the mouseup
+		//doesnt activate cell highlighting before mousedown completes.  All references to waitt are about controlling
+		//this.  Without this fix, FireFox can start a cell highlight select process, especially if there are event handlers
+		//hooked onto the mouse down processing.
+		this.waitt = true;
+
 		// Set the state variable indicating that we are have started a click...
 		// This may turn into drag in cellMouseMove
 		this.setCellClicked(true);
@@ -973,7 +979,8 @@ nitobi.grid.Grid.prototype.handleCellMouseDown=function(evt)
 		// SetActiveCell will collapse the selection onto the specified cell
 		this.setActiveCell(cell, evt.ctrlKey || evt.metaKey);
 
-		this.selection.selecting = true;
+		if(this.waitt == true)
+			this.selection.selecting=true;
 
 		// Fire the cellclick event on the grid and column
 		var activeColumn = this.getSelectedColumnObject();

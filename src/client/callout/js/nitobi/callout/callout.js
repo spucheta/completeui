@@ -38,7 +38,7 @@ nitobi.callout.lastStyle = '';
  * @see show
  * @param {String} theme Which theme to use for this callout. Eg: "xp", "impact", "vista".
  */
-nitobi.callout.Callout = function(stylesheet)
+nitobi.callout.Callout = function(stylesheet,title,body)
 {
 	/**
 	 * @private
@@ -456,6 +456,7 @@ nitobi.callout.Callout = function(stylesheet)
 		window.attachEvent('onresize', nitobi.callout.Callout.update);	
 		} 
 	}
+	
 	this.setTitle('');	
 
 	/**
@@ -468,6 +469,12 @@ nitobi.callout.Callout = function(stylesheet)
 	 */	
 	this.useBody = false;
 	this.setBody('');
+
+	if(title != null)
+	this.setTitle(title);
+	if(body != null)
+		this.setBody(body);
+	
 
 	/**
 	 * @private

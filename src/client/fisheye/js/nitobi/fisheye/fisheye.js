@@ -208,8 +208,9 @@ nitobi.fisheye.FishEye.prototype.render = function()
 		if (nitobi.fisheye.FishEye.isMouseAttached == false)
 		{
 			nitobi.html.attachEvent(document.body, "mousemove", handleMouse);	
-			nitobi.html.attachEvent(window, "onresize", nitobi.fisheye.FishEye.handleResize);
+			nitobi.html.attachEvent(window, "resize", nitobi.fisheye.FishEye.handleResize);
 			nitobi.fisheye.FishEye.isMouseAttached = true;
+			nitobi.fisheye.FishEye.continuousPositionCheck();
 		}
 		this.renderTimes++;
 	}
@@ -229,6 +230,26 @@ nitobi.fisheye.FishEye.prototype.render = function()
 		this.renderTimes++;
 	}
 	this.labelObj.style.width = "50px";
+}
+
+/**
+ * A static property that controls how often the fisheye will check for its main DHTML element being moved/resized
+ * Any value less than equal 0 will cause the checking of size/position to only occur during a 
+ * browser window resize.  Any value greater than 0 will be the interval in ms for how often the check
+ * for size/position will occur.
+ * @private
+ */
+nitobi.fisheye.FishEye.performContinuousPositionCheck = 200;
+
+/**
+ * Does the work of calling the handleResize static method and itself with a window timer based
+ * on the performContinuousPositionCheck value.
+ * @private
+ */
+nitobi.fisheye.FishEye.continuousPositionCheck = function()
+{
+	if(nitobi.fisheye.FishEye.performContinuousPositionCheck > 0)
+		window.setTimeout("nitobi.fisheye.FishEye.handleResize();nitobi.fisheye.FishEye.continuousPositionCheck();", nitobi.fisheye.FishEye.performContinuousPositionCheck);
 }
 
 /**
@@ -713,8 +734,14 @@ nitobi.fisheye.FishEye.createLabel = function(theme)
  */
 nitobi.fisheye.FishEye.handleResize = function() {
 	for (t = 0; t < fisheyeList.length; t++) {
-		fisheyeList[t].updateMenuPosition();
-		fisheyeList[t].reDrawItems();
+		var f = fisheyeList[t];
+		var objCoords = nitobi.html.getCoords(f.getHtmlNode());
+		if(f.lastCoords == null || f.lastCoords.x != objCoords.x || f.lastCoords.y != objCoords.y)
+		{
+			f.lastCoords = objCoords;
+			f.updateMenuPosition();
+			f.reDrawItems();
+		}
 	}
 }
 

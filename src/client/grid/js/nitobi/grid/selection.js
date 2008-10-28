@@ -780,6 +780,7 @@ nitobi.grid.Selection.prototype.handleSelectionMouseDown = function(evt) {
 
 nitobi.grid.Selection.prototype.stopSelecting = function()
 {
+	this.owner.waitt=false;
 	this.selecting = true;
 	if (!this.selected())
 		this.collapse(this.startCell);

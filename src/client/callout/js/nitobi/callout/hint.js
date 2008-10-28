@@ -20,7 +20,7 @@ nitobi.lang.defineNs("nitobi.callout");
  * @param {Number} [expireTimeout] How long to wait getting rid of the tooltip.
  * @param {String} [stylesheet] The callout stylesheet to use for the hints (XP by default).
  */
-nitobi.callout.Hint = function(timerLength, expireTimeout, stylesheet)
+nitobi.callout.Hint = function(timerLength, expireTimeout, stylesheet, showOnMouseDown)
 {
 	/**
 	 * @private
@@ -43,6 +43,8 @@ nitobi.callout.Hint = function(timerLength, expireTimeout, stylesheet)
 	{
 		this.timerLength = timerLength
 	}
+	this.showOnMouseDown = showOnMouseDown != false;
+	
 	if (expireTimeout != null) 
 	{
 		this.expireTimeout = expireTimeout
@@ -112,7 +114,8 @@ nitobi.callout.Hint.prototype.addHint = function(objID, hintTitle, hintText)
 	{
 		document.getElementById(objID).onmouseover = function() { abd.runHint(this.id, hintTitle, hintText);};
 		document.getElementById(objID).onmouseout = function() { clearTimeout(abd.timerObj);}
-		document.getElementById(objID).onmousedown = function() { abd.execHint(this.id, hintTitle, hintText);};
+		if(this.showOnMouseDown)
+			document.getElementById(objID).onmousedown = function() { abd.execHint(this.id, hintTitle, hintText);};
 		document.getElementById(objID).id = objID;
 	} 
 	catch(e) 
@@ -125,7 +128,8 @@ nitobi.callout.Hint.prototype.addHint = function(objID, hintTitle, hintText)
 				{
 					document.forms[i].elements[b].onmouseover = function() { abd.runHint(this.id, hintTitle, hintText);};
 					document.forms[i].elements[b].onmouseout = function() { clearTimeout(abd.timerObj);}
-					document.forms[i].elements[b].onmousedown = function() { abd.execHint(this.id, hintTitle, hintText);};
+					if(this.showOnMouseDown)
+						document.forms[i].elements[b].onmousedown = function() { abd.execHint(this.id, hintTitle, hintText);};
 					document.forms[i].elements[b].id = objID;
 				}
 			
