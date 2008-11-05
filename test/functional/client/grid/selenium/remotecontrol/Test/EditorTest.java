@@ -17,7 +17,7 @@ public class EditorTest extends BaseTest {
 		//this.standards = false;
 
 		// Call start session
-		startSession("/oscui/public/samples/client/grid/php/editors/index.html", "http://localhost");
+		startSession("/completeui/samples/client/grid/php/editors/index.html", "http://localhost");
 	}
 	
 	public void testNumberEditor() throws Exception {

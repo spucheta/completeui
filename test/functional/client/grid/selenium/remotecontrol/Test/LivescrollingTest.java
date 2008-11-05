@@ -17,7 +17,7 @@ public class LivescrollingTest extends BaseTest {
 		//this.standards = false;
 
 		// Call start session
-		startSession("/oscui/public/samples/client/grid/php/livescrolling/index.html", "http://localhost");
+		startSession("/completeui/samples/client/grid/php/livescrolling/index.html", "http://localhost");
 	}	
 	
 	public void testOnCellClick() throws Exception 
