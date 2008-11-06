@@ -1,7 +1,7 @@
 package RemoteControl.Test;
 
 import com.thoughtworks.selenium.*;
-impurt java.util.regex.Pattern;
+import java.util.regex.Pattern;
 
 public class ApiTest extends BaseTest {
 
