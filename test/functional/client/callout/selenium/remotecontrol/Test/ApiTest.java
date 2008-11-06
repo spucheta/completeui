@@ -2,6 +2,7 @@ package RemoteControl.Test;
 
 import com.thoughtworks.selenium.*;
 import java.util.regex.Pattern;
+import RemoteControl.BaseTest;
 
 public class ApiTest extends BaseTest {
 
