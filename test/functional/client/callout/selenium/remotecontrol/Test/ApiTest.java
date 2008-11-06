@@ -3,7 +3,7 @@ package RemoteControl.Test;
 import com.thoughtworks.selenium.*;
 import java.util.regex.Pattern;
 
-public class ApiTest extends BaseTest {
+public class ApiTest extends SelaneseBaseTest {
 
   public void setUp() throws Exception {
     super.setUp();
