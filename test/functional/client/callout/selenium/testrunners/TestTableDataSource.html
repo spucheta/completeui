@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Test Grid Client Side Events</title>
+  <script src="../../../base.js"></script>
+  <script src="../seleniumtest.js"></script>
+</head>
+<body onload="generateTests()">
+<table cellpadding="1" cellspacing="1" border="1" id="testTable">
+  <tbody>
+    <tr>
+      <td rowspan="1" colspan="3">Test TableDataSourceObject<br>
+      </td>
+    </tr>
+    <tr>
+      <td>open</td>
+      <td testName="/Common/TestPages/TableDataSource/test.html"></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+    <td>waitForCondition</td>
+    <td>myTable!=null;</td>
+    <td>10000</td>
+    </tr>
+    <tr>
+    	<td>click</td>
+    	<td>dom=document.getElementById("btn_GetData");</td>
+    	<td></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
