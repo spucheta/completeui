@@ -3,7 +3,7 @@ package RemoteControl;
 import com.thoughtworks.selenium.*;
 import java.util.regex.Pattern;
 
-public class BaseTest extends SelaneseTestCase {
+public class BaseTest extends SeleneseTestCase {
 	
 	protected String testWindow = "ntbtestdoc";	
 	protected String declarationId = "";
