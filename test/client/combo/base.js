@@ -35,11 +35,11 @@ var baseDir = window.location.protocol + "//" + window.location.host
 	nitobi.testframework.baseDir = baseDir + pathname.replace(/(.*?branches\/.*?)\/.*,"$1");
 }*/
 
-nitobi.testframework.baseDir = baseDir + pathname.substr(0, pathname.indexOf("public"));
+nitobi.testframework.baseDir = baseDir + pathname.substr(0, pathname.indexOf("samples"));
 
-nitobi.testframework.projectBaseDir = nitobi.testframework.baseDir + "public/src/client/" + nitobi.testframework.projectDir;
-nitobi.testframework.testFrameworkBaseDir = nitobi.testframework.baseDir + "private/testframework";
-nitobi.testframework.frameworkBaseDir = nitobi.testframework.baseDir + "public/src/client/toolkit";
+nitobi.testframework.projectBaseDir = nitobi.testframework.baseDir + "src/client/" + nitobi.testframework.projectDir;
+nitobi.testframework.testFrameworkBaseDir = nitobi.testframework.baseDir + "testframework";
+nitobi.testframework.frameworkBaseDir = nitobi.testframework.baseDir + "src/client/toolkit";
 
 
 nitobi.testframework.includeSource = function () 
