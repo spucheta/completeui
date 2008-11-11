@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Test Grid Client Side Events</title>
+  <script src="/cui/test/client/grid/base.js"></script>
+  <script src="../seleniumtest.js"></script>
+</head>
+<body onload="generateTests()">
+<table cellpadding="1" cellspacing="1" border="1" id="testTable">
+  <tbody>
+    <tr>
+      <td rowspan="1" colspan="3">Test Client Side Events<br>
+      </td>
+    </tr>
+    <tr>
+      <td>open</td>
+      <td testName="/DotNet/Common/Events/Basic.aspx"></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+    <td>waitForCondition</td>
+    <td>getGrid('Grid1')!=null;</td>
+    <td>10000</td>
+    </tr>
+    <tr>
+    <td>waitForCondition</td>
+    <td>getSeleniumDocument().getElementById("eba_grid_cell_5_0_"+getGridUid("Grid1"))!=null;</td>
+    <td>10000</td>
+    </tr>
+    <tr>
+    	<td>click</td>
+    	<td>dom=document.getElementById("eba_grid_cell_5_0_"+getGridUid("Grid1"));</td>
+    	<td></td>
+    </tr>
+    <tr>
+      <td>assertExpression</td>
+      <td>javascript{getGrid("Grid1").testValues.clickEvent}</td>
+      <td>true</td>
+    </tr>
+
+</table>
+
+</body>
+</html>
