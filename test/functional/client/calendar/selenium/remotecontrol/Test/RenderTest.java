@@ -55,7 +55,7 @@ public class RenderTest extends BaseTest {
     String startTheme = eval("nitobi.getComponent(\"dp\").getTheme();");
     selenium.click("//div[@id='gloss']/img");
     String endTheme = eval("nitobi.getComponent(\"dp\").getTheme();");
-    assertTrue(!startTheme.equals(endTheme));
+    assertTrue(!(startTheme.equals(endTheme)));
   }
 
   /*
@@ -73,7 +73,7 @@ public class RenderTest extends BaseTest {
 		selenium.click("id0x20eed9c05ntbcmp_0.navconfirm");
 		selenium.click("link=12");
     String endDate = eval("nitobi.getComponent(\"dp\").getSelectedDate();");
-    assertTrue(!startTheme.equals(endTheme));
+    assertTrue(!startDate.equals(endDate));
   }
 
   public void tearDown() throws Exception {
