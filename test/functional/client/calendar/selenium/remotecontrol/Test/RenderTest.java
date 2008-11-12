@@ -30,18 +30,17 @@ public class RenderTest extends BaseTest {
    */
 
   public void testMonthButton(){
-    String startMonth = eval("");
+    String startMonth = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent('dp').getCalendar().getHtmlNode(),'class','ntb-calendar-month', true).innerHTML;");
 		selenium.click("dp.button");
     /* 
      * We need to get the id of the button to click
      * otherwise this epic fails
      */
-    String next_month_id = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent('dp').getCalendar().getHtmlNode(), \"class\", \"ntb-calendar-next\", true).id;");
+    String next_month_id = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent('dp').getCalendar().getHtmlNode(),'class','ntb-calendar-next', true).id;");
 		selenium.click(next_month_id);
     pause("1000");
-    String endMonth = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent('dp').getCalendar().getHtmlNode(), \"class\", \"ntb-calendar-month\", true).innerHTML;");
+    String endMonth = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent('dp').getCalendar().getHtmlNode(),'class','ntb-calendar-month', true).innerHTML;");
     assertTrue(!startMonth.equals(endMonth));
-    selenium.click("dp.button");
   }
 
   /*
