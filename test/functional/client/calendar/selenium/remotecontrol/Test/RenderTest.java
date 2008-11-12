@@ -30,7 +30,12 @@ public class RenderTest extends BaseTest {
   public void testMonthButton(){
     String startMonth = eval("document.getElementsByClassName(\"ntb-calendar-month\")[0].innerHTML;");
 		selenium.click("dp.button");
-		selenium.click("id0x231f65205ntbcmp_0.nextmonth");
+    /* 
+     * We need to get the id of the button to click
+     * otherwise this epic fails
+     */
+    String next_month_id = eval("document.getElementsByClassName(\"ntb-calendar-next\")[0].id;");
+		selenium.click(next_month_id);
     String endMonth = eval("document.getElementsByClassName(\"ntb-calendar-month\")[0].innerHTML;");
     assertTrue(!startMonth.equals(endMonth));
     selenium.click("dp.button");
@@ -68,9 +73,18 @@ public class RenderTest extends BaseTest {
     String startDate = eval("nitobi.getComponent(\"dp\").getSelectedDate();");
 		selenium.click("dp.button");
 		selenium.click("link=" + startMonth);
-		selenium.select("id0x20eed9c05ntbcmp_0.months", "label=February");
-		selenium.type("id0x20eed9c05ntbcmp_0.year", "2010");
-		selenium.click("id0x20eed9c05ntbcmp_0.navconfirm");
+    /* 
+     * Need to get the month and the year of these selects
+     */
+    String monthSelect = eval("document.getElementsByClassName(\"ntb-calendar-navms\")[0].id;");
+    String yearField = eval("document.getElementsByClassName(\"ntb-calendar-navinput\")[0].id;");
+		selenium.select(monthSelect, "label=February");
+		selenium.type(yearField, "2010");
+    /*
+     * Get the confirmation button!
+     */
+    String confirmButton = eval("document.getElementsByClassName(\"ntb-calendar-controls\")[0].childNodes[0].id;");
+		selenium.click(confirmButton);
 		selenium.click("link=12");
     String endDate = eval("nitobi.getComponent(\"dp\").getSelectedDate();");
     assertTrue(!startDate.equals(endDate));
