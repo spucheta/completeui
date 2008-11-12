@@ -36,10 +36,10 @@ public class RenderTest extends BaseTest {
      * We need to get the id of the button to click
      * otherwise this epic fails
      */
-    String next_month_id = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent.('dp').getCalendar().getHtmlNode(), \"class\", \"ntb-calendar-next\", true).id;");
+    String next_month_id = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent('dp').getCalendar().getHtmlNode(), \"class\", \"ntb-calendar-next\", true).id;");
 		selenium.click(next_month_id);
     pause("1000");
-    String endMonth = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent.('dp').getCalendar().getHtmlNode(), \"class\", \"ntb-calendar-month\", true).innerHTML;");
+    String endMonth = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent('dp').getCalendar().getHtmlNode(), \"class\", \"ntb-calendar-month\", true).innerHTML;");
     assertTrue(!startMonth.equals(endMonth));
     selenium.click("dp.button");
   }
@@ -80,14 +80,14 @@ public class RenderTest extends BaseTest {
     /* 
      * Need to get the month and the year of these selects
      */
-    String monthSelect = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent.('dp').getCalendar().getHtmlNode(), \"class\", \"ntb-calendar-navms\",true).id;");
-    String yearField = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent.('dp').getCalendar().getHtmlNode(), \"class\", \"ntb-calendar-navinput\")[0].id;");
+    String monthSelect = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent('dp').getCalendar().getHtmlNode(), \"class\", \"ntb-calendar-navms\",true).id;");
+    String yearField = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent('dp').getCalendar().getHtmlNode(), \"class\", \"ntb-calendar-navinput\")[0].id;");
 		selenium.select(monthSelect, "label=February");
 		selenium.type(yearField, "2010");
     /*
      * Get the confirmation button!
      */
-    String confirmButton = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent.('dp').getCalendar().getHtmlNode(), \"class\", \"ntb-calendar-controls\",true).childNodes[0].id;");
+    String confirmButton = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent('dp').getCalendar().getHtmlNode(), \"class\", \"ntb-calendar-controls\",true).childNodes[0].id;");
 		selenium.click(confirmButton);
 		selenium.click("link=12");
     pause("1000");
