@@ -19,6 +19,8 @@ public class RenderTest extends BaseTest {
     // This is horribly ugly
     String hiddenDiv = eval("nitobi.getComponent('dp').getCalendar().getHtmlNode().className.split(\" \").length;");
     selenium.click("dp.button");
+    // Firefox flies through this too fast, wait a second
+    wait("1000");
     String shownDiv = eval("nitobi.getComponent('dp').getCalendar().getHtmlNode().className.split(\" \").length;");
     assertTrue(!hiddenDiv.equals(shownDiv));
   }
@@ -36,6 +38,7 @@ public class RenderTest extends BaseTest {
      */
     String next_month_id = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent.('dp').getCalendar().getHtmlNode(), \"class\", \"ntb-calendar-next\", true).id;");
 		selenium.click(next_month_id);
+    wait("1000");
     String endMonth = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent.('dp').getCalendar().getHtmlNode(), \"class\", \"ntb-calendar-month\", true).innerHTML;");
     assertTrue(!startMonth.equals(endMonth));
     selenium.click("dp.button");
@@ -69,10 +72,11 @@ public class RenderTest extends BaseTest {
 
   public void testMonthYearChange(){
     String startMonth = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent.('dp').getCalendar().getHtmlNode(), \"class\", \"ntb-calendar-month\", true).innerHTML;");
-    
     String startDate = eval("nitobi.getComponent(\"dp\").getSelectedDate();");
 		selenium.click("dp.button");
 		selenium.click("link=" + startMonth);
+    // Wait a second for this to appear
+    wait("1000");
     /* 
      * Need to get the month and the year of these selects
      */
@@ -86,6 +90,7 @@ public class RenderTest extends BaseTest {
     String confirmButton = eval("nitobi.html.getChildNodeByAttribute(nitobi.getComponent.('dp').getCalendar().getHtmlNode(), \"class\", \"ntb-calendar-controls\",true).childNodes[0].id;");
 		selenium.click(confirmButton);
 		selenium.click("link=12");
+    wait("1000");
     String endDate = eval("nitobi.getComponent(\"dp\").getSelectedDate();");
     assertTrue(!startDate.equals(endDate));
   }
