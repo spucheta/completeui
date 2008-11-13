@@ -1,0 +1,85 @@
+<!doctype html public "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Presentation Platform - Tree Control</title>
+<link rel="stylesheet" type="text/css" href="css/screen.css">
+
+<script type="text/javascript" src="script/YAHOO.js" ></script>
+<script type="text/javascript" src="script/log.js"></script>
+<script type="text/javascript" src="script/event.js"></script>
+<script type="text/javascript" src="script/connect.js"></script>
+<script type="text/javascript" src="script/animation.js"></script>
+<script type="text/javascript" src="script/dom.js"></script>
+
+
+<script type="text/javascript" src="script/treeview.js" ></script>
+<script type="text/javascript" src="script/TaskNode.js"></script>
+
+<script type="text/javascript" src="../lib/xmlxsl/eba.xml.js" ></script>
+</head>
+
+<body onload="treeInit()">
+
+<link rel="stylesheet" type="text/css" href="css/folders/tree.css">
+
+
+	<h3>Tree Control</h3>
+
+
+  <div id="content">
+    
+	  <div id="treeDiv1"></div>
+	
+  </div>
+
+
+
+
+<script type="text/javascript">
+
+	var gLogger;
+	var tree;
+	var nodes = new Array();
+	var nodeIndex;
+
+	function treeInit() {
+
+		buildRandomTextNodeTree();
+	}
+
+
+	var treeXslDoc = declarationTranslatorXsl = Eba.Xml.createXslDoc();
+	treeXslDoc.async=false;
+	treeXslDoc.load("xsl/tree.xsl");
+	var treeXslProc = Eba.Xml.createXslProcessor(treeXslDoc);
+
+	
+	function loadDataForNode(node, onCompleteCallback) 
+	{
+	    var tmpNode;
+	    var xmlDoc = Eba.Xml.createXmlDoc();
+	    xmlDoc.load("xml/tree"+node.data+".xml");
+	    var code = Eba.Xml.transformToString(  xmlDoc    ,treeXslProc);
+	    eval(code);
+		onCompleteCallback();
+	    	
+ 	}
+ 	
+	function buildRandomTextNodeTree() {
+		tree = new YAHOO.widget.TreeView("treeDiv1");
+		for (var i = 0; i < Math.floor((Math.random()*4) + 3); i++) {
+			var tmpNode = new YAHOO.widget.TextNode("label-" + i, tree.getRoot(), false);
+			tmpNode.data="";
+			tmpNode.multiExpand=false;
+			tmpNode.setDynamicLoad(loadDataForNode)
+		}
+
+		tree.draw();
+	}
+
+</script>
+
+  </body>
+</html>
+

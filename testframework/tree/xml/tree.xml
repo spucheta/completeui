@@ -1,0 +1,6 @@
+<tree>
+	<node label="Node A" id="a" />
+	<node label="Node B" id="b" />
+	<node label="A-CASIO " id="103155503" isLeaf="true"/>
+	<node label="A-CASIO 4" id="103155504" isLeaf="true"/>
+</tree>

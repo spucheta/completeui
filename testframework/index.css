@@ -1,0 +1,124 @@
+/*****************************************************************************
+ * @Title: Style for the Framework's Front Page
+ * @File: index.css
+ * @Author: EBA_DC\ngentleman
+ * @Date: 7/26/2005 1:41:11 PM
+ * @Purpose: for index.asp
+ * @Notes: Uses underscore hack for IE rendering differences.
+ *****************************************************************************/
+body 
+{
+	margin:0;
+	padding:0;
+	font-size:80%; 
+	background-color:#FFFFFF;
+	font-family:Verdana;
+}
+html, body
+{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+#hider
+{
+	position:absolute;
+	/* IE shows a gap with 0 */
+	bottom:0px;
+	_bottom:-1px;
+	left:185px;
+	border-right:1px solid #EEE;
+	border-top:1px solid #EEE;
+	height:16px;
+	width:16px;
+	/* what's up with the lack of standards here? */
+	cursor:pointer;
+	cursor:hand;
+	text-align:center;
+}
+#hider:hover
+{
+	background-color:#D4D0C8;
+}
+/* the list column */
+#list
+{
+	float:left;
+	width:185px;
+	height:100%;
+	/*background-color:#D4D0C8;*/
+	overflow:auto;
+	border: 1px solid black;
+}
+/* body of the page */
+#test
+{
+	_margin-left:-1px;
+	margin-bottom:-1px;
+	border:0;
+}
+/* log window */
+#log
+{
+	height:125px;
+	_margin-left:-3px;
+	border-top:1px solid #000;
+	border-left:0px solid #000;
+	border-bottom:0px solid #000;
+	border-right:0px solid #000;
+}
+/* the test descripton popups */
+#tooltip
+{
+	color:#000;
+	display:none;
+	position:absolute;
+	left:167px;
+	background-color:#D4D0C8;
+	width:200px;
+	border-top:1px solid #000;
+	border-right:1px solid #000;
+	border-bottom:1px solid #000;
+}
+.desc 
+{
+	display:none;
+}
+a:link
+{
+	text-decoration:none;
+	color:#00D;
+}
+a:visited
+{
+	text-decoration:none;
+	color:#118;
+}
+a:hover
+{
+	text-decoration:underline;
+}
+a.teststitle:link, a.teststitle:visited, a.teststitle:hover
+{
+	color:#000;
+	text-decoration:none;
+}
+.testgroup
+{
+	color:#555;
+	border-left:1px solid #555;
+	margin-left:.6em;
+	margin-bottom:.4em;
+}
+.teststitle
+{
+	color:#000;
+	font-size:1.4em;
+	margin-left:.2em;
+	font-weight:bold;	
+}
+.testgroup .teststitle
+{
+	font-size:1em;
+	margin-left:.3em;
+}
