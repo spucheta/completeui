@@ -15,14 +15,14 @@ public class AddRemove extends BaseTest {
 
   public void testTopLevelNode(){
     String hiddenChildren = eval("nitobi.getComponent('tree1').getChildren().list[2].getHtmlNode().childNodes[1].class");
-    String expander = eval("nitobi.getComponent('tree1').getChildren().list[2].getHtmlNode('expander').id;";
+    String expander = eval("nitobi.getComponent('tree1').getChildren().list[2].getHtmlNode('expander').id;");
     selenium.click(expander);
     String shownChildren = eval("nitobi.getComponent('tree1').getChildren().list[2].getHtmlNode().childNodes[1].class");
     assertTrue(!hiddenChildren.equals(shownChildren));
   }
 
   public void testSecondLastNode(){
-    String expanderOne = eval("nitobi.getComponent('tree1').getChildren().list[2].getHtmlNode('expander').id;";
+    String expanderOne = eval("nitobi.getComponent('tree1').getChildren().list[2].getHtmlNode('expander').id;");
     selenium.click(expanderOne);
     wait("1000");
     String shownChildren = eval("nitobi.getComponent('tree1').getChildren().list[2].getChildren().list[3].getChildren().getHtmlNode().class");
@@ -33,7 +33,7 @@ public class AddRemove extends BaseTest {
   }
 
   public void testSecondMiddleNode(){
-    String expanderOne = eval("nitobi.getComponent('tree1').getChildren().list[2].getHtmlNode('expander').id;";
+    String expanderOne = eval("nitobi.getComponent('tree1').getChildren().list[2].getHtmlNode('expander').id;");
     selenium.click(expanderOne);
     wait("1000");
     String shownChildren = eval("nitobi.getComponent('tree1').getChildren().list[2].getChildren().list[3].getChildren().getHtmlNode().class");
