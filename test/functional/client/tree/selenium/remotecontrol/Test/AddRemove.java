@@ -4,7 +4,7 @@ import com.thoughtworks.selenium.*;
 import java.util.regex.Pattern;
 import RemoteControl.BaseTest;
 
-public class AddRemove extends BaseTest {
+public  AddRemove extends BaseTest {
 
   public void setUp() throws Exception {
     super.setUp();
@@ -14,10 +14,10 @@ public class AddRemove extends BaseTest {
   }
 
   public void testTopLevelNode(){
-    String hiddenChildren = eval("nitobi.getComponent('tree1').getChildren().list[2].getHtmlNode().childNodes[1].class");
+    String hiddenChildren = eval("nitobi.getComponent('tree1').getChildren().list[2].getHtmlNode().childNodes[1].className;");
     String expander = eval("nitobi.getComponent('tree1').getChildren().list[2].getHtmlNode('expander').id;");
     selenium.click(expander);
-    String shownChildren = eval("nitobi.getComponent('tree1').getChildren().list[2].getHtmlNode().childNodes[1].class");
+    String shownChildren = eval("nitobi.getComponent('tree1').getChildren().list[2].getHtmlNode().childNodes[1].className;");
     assertTrue(!hiddenChildren.equals(shownChildren));
   }
 
@@ -25,10 +25,10 @@ public class AddRemove extends BaseTest {
     String expanderOne = eval("nitobi.getComponent('tree1').getChildren().list[2].getHtmlNode('expander').id;");
     selenium.click(expanderOne);
     pause("1000");
-    String shownChildren = eval("nitobi.getComponent('tree1').getChildren().list[2].getChildren().list[3].getChildren().getHtmlNode().class");
+    String shownChildren = eval("nitobi.getComponent('tree1').getChildren().list[2].getChildren().list[3].getChildren().getHtmlNode().className;");
     String expanderTwo = eval("nitobi.getComponent('tree1').getChildren().list[2].getChildren().list[3].getHtmlNode('expander').id;");
     selenium.click(expanderTwo);
-    String hiddenChildren = eval("nitobi.getComponent('tree1').getChildren().list[2].getChildren().list[3].getChildren().getHtmlNode().class");
+    String hiddenChildren = eval("nitobi.getComponent('tree1').getChildren().list[2].getChildren().list[3].getChildren().getHtmlNode().className;");
     assertTrue(!shownChildren.equals(hiddenChildren));
   }
 
@@ -36,10 +36,10 @@ public class AddRemove extends BaseTest {
     String expanderOne = eval("nitobi.getComponent('tree1').getChildren().list[2].getHtmlNode('expander').id;");
     selenium.click(expanderOne);
     pause("1000");
-    String shownChildren = eval("nitobi.getComponent('tree1').getChildren().list[2].getChildren().list[3].getChildren().getHtmlNode().class");
+    String shownChildren = eval("nitobi.getComponent('tree1').getChildren().list[2].getChildren().list[3].getChildren().getHtmlNode().className;");
     String expanderTwo = eval("nitobi.getComponent('tree1').getChildren().list[2].getChildren().list[3].getHtmlNode('expander').id;");
     selenium.click(expanderTwo);
-    String hiddenChildren = eval("nitobi.getComponent('tree1').getChildren().list[2].getChildren().list[3].getChildren().getHtmlNode().class");
+    String hiddenChildren = eval("nitobi.getComponent('tree1').getChildren().list[2].getChildren().list[3].getChildren().getHtmlNode().className;");
     assertTrue(!shownChildren.equals(hiddenChildren));
   }
 
