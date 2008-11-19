@@ -1,0 +1,146 @@
+<project default="test" basedir=".">
+
+    <property name="logsdir" value=""/>
+    
+	<!-- property name="remotecontrol.home" value="C:/bin/seleniumrc" / -->
+	<property name="remotecontrol.java.client.driver" value="..\..\..\..\..\testframework\selenium\client" />
+	
+	<property name="selenium.test.class" value="${basedir}/RemoteControl" /> <!-- the directory for the cooked java test codes -->
+	<property name="selenium.test.source" value="${basedir}" /> <!-- the directory where raw java codes -->
+
+	<property name="junit.home" value="..\..\..\..\..\..\testframework\junit"/>
+	<property name="log.directory" value="${logsdir}" />
+	<property name="mytest" value="RemoteControl.Test.${testname}" />	
+
+	<fileset id="junit.lib" dir="${junit.home}">	
+		<include name="*.jar"/>
+	</fileset>
+	
+	<fileset id="remotecontrol.java.client.lib" dir="${remotecontrol.java.client.driver}">
+		<include name="selenium-java-client-driver.jar"/>
+	</fileset>
+
+	<fileset id="remotecontrol.test.classes" dir="${remotecontrol.java.client.driver}">
+		<include name="*"/>
+	</fileset>
+		
+	<path id="selenium.test.classpath">
+		<fileset refid="junit.lib" />
+		<pathelement location="${remotecontrol.java.client.driver}/selenium-java-client-driver.jar" />
+		<pathelement path="${selenium.test.class}"/>
+		<dirset dir="${selenium.test.class}">
+			<include name="*" />
+		</dirset>
+	</path>
+		
+	<target name="compile">
+		<javac srcdir="${basedir}" destdir="${basedir}" tempdir="${basedir}/tmp">
+			<!--classpath refid="selenium.test.classpath" -->
+		</javac>
+	</target>
+	
+	<java fork="true" spawn="true" jar="../../../../../testframework/selenium/server/selenium-server.jar" />
+		  
+	<target name="test" depends="compile">		
+		
+		<!-- Internet explorer, standards -->
+		<junit fork="yes" haltonfailure="no">
+			<batchtest todir="${log.directory}" unless="testname">				
+				<fileset dir="${basedir}">
+					<include name="RemoteControl/Test/*.class"/>
+				</fileset>
+			</batchtest>
+			<formatter type="xml" extension=".iexplore.standards.xml"/>
+		    <formatter type="plain" usefile="false" />
+			<classpath refid="selenium.test.classpath" />
+			<jvmarg value="-Dbrowser=*iexplore"/>
+			<jvmarg value="-Dstandards=true"/>			
+		</junit>
+
+		<!-- Internet explorer, quirks -->
+
+		<junit fork="yes" haltonfailure="no">
+			<batchtest todir="${log.directory}" unless="testname">				
+				<fileset dir="${basedir}">
+					<include name="RemoteControl/Test/*.class"/>
+				</fileset>
+			</batchtest>
+			<formatter type="xml" extension=".iexplore.quirks.xml"/>
+		    <formatter type="plain" usefile="false" />
+			<classpath refid="selenium.test.classpath" />
+			<jvmarg value="-Dbrowser=*iexplore"/>
+			<jvmarg value="-Dstandards=false"/>			
+		</junit>		
+		
+		<!-- Firefox, standards -->
+		<junit fork="yes" haltonfailure="no">
+			<batchtest todir="${log.directory}" unless="testname">				
+				<fileset dir="${basedir}">
+					<include name="RemoteControl/Test/*.class"/>
+				</fileset>
+			</batchtest>
+			<formatter type="xml" extension=".firefox.standards.xml"/>
+		    <formatter type="plain" usefile="false" />
+			<classpath refid="selenium.test.classpath" />
+			<jvmarg value="-Dbrowser=*firefox"/>
+			<jvmarg value="-Dstandards=true"/>			
+		</junit>		
+		
+		<!-- Firefox, quirks -->
+		<junit fork="yes" haltonfailure="no">
+			<batchtest todir="${log.directory}" unless="testname">				
+				<fileset dir="${basedir}">
+					<include name="RemoteControl/Test/*.class"/>
+				</fileset>
+			</batchtest>
+			<formatter type="xml" extension=".firefox.quirks.xml"/>
+		    <formatter type="plain" usefile="false" />
+			<classpath refid="selenium.test.classpath" />
+			<jvmarg value="-Dbrowser=*firefox"/>
+			<jvmarg value="-Dstandards=false"/>			
+		</junit>		
+		
+		
+		<junit fork="yes" haltonfailure="no">
+		    <test name="${mytest}" todir="${log.directory}" outfile="${mytest}.iexplore.standards" if="testname"></test>
+			<formatter type="xml"/>
+		    <formatter type="plain" usefile="false" />
+    		<classpath refid="selenium.test.classpath" />
+			<jvmarg value="-Dbrowser=*iexplore"/>
+			<jvmarg value="-Dstandards=true"/>
+		</junit>
+
+		<junit fork="yes" haltonfailure="no">
+		    <test name="${mytest}" todir="${log.directory}" outfile="${mytest}.iexplore.quirks" if="testname"></test>
+			<formatter type="xml"/>
+		    <formatter type="plain" usefile="false" />
+    		<classpath refid="selenium.test.classpath" />
+			<jvmarg value="-Dbrowser=*iexplore"/>
+			<jvmarg value="-Dstandards=false"/>
+		</junit>
+
+		<junit fork="yes" haltonfailure="no">
+		    <test name="${mytest}" todir="${log.directory}" outfile="${mytest}.firefox.standards" if="testname"></test>
+			<formatter type="xml"/>
+		    <formatter type="plain" usefile="false" />
+    		<classpath refid="selenium.test.classpath" />
+			<jvmarg value="-Dbrowser=*firefox"/>
+			<jvmarg value="-Dstandards=true"/>
+		</junit>
+
+		<junit fork="yes" haltonfailure="no">
+		    <test name="${mytest}" todir="${log.directory}" outfile="${mytest}.firefox.quirks" if="testname"></test>
+			<formatter type="xml"/>
+		    <formatter type="plain" usefile="false" />
+    		<classpath refid="selenium.test.classpath" />
+			<jvmarg value="-Dbrowser=*firefox"/>
+			<jvmarg value="-Dstandards=false"/>
+		</junit>
+
+        <get taskname="selenium-shutdown" 
+            src="http://localhost:4444/selenium-server/driver/?cmd=shutDown"	
+            dest="result.txt" ignoreerrors="true" />	
+		
+	</target>
+	
+</project>
