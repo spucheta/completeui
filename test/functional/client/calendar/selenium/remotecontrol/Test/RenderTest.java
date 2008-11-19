@@ -37,7 +37,7 @@ public class RenderTest extends BaseTest {
      * We need to get the id of the button to click
      * otherwise this epic fails
      */
-    String next_month_id = eval("nitobi.getComponent.('dp').getCalendar().getHtmlNode('nextmonth');");
+    String next_month_id = eval("nitobi.getComponent('dp').getCalendar().getHtmlNode('nextmonth').id;");
 		selenium.click(next_month_id);
     String endMonth = eval("nitobi.getComponent('dp').getCalendar().getHtmlNode('nav').childNodes[0].innerHTML;");
     assertTrue(!startMonth.equals(endMonth));
@@ -71,14 +71,14 @@ public class RenderTest extends BaseTest {
 
   public void testMonthYearChange(){
     String startMonth = eval("nitobi.getComponent('dp').getCalendar().getHtmlNode('nav').childNodes[0].innerHTML;");
-    String startDate = eval("nitobi.getComponent(\"dp\").getSelectedDate();");
+    String startDate = eval("nitobi.getComponent('dp').getSelectedDate();");
 		selenium.click("dp.button");
 		selenium.click("link=" + startMonth);
     /* 
      * Need to get the month and the year of these selects
      */
     String monthSelect = eval("nitobi.getComponent('dp').getCalendar().getHtmlNode('months').id;");
-    String yearField = eval("nitobi.getComponent('dp').getCalendar().getHtmlNode('months').id;");
+    String yearField = eval("nitobi.getComponent('dp').getCalendar().getHtmlNode('year').id;");
 		selenium.select(monthSelect, "label=February");
 		selenium.type(yearField, "2010");
     /*
