@@ -107,7 +107,7 @@ nitobi.html.attachEvent = function(element, type, handler, context, capture, ove
 	}
 
 	//	Allow people to pass in a node id or an actual DOM node.
-	element = $(element);
+	element = $ntb(element);
 
 	// Divert unload attachments to custom unload registration
 	if (type.toLowerCase() == 'unload' && override != true)
@@ -240,7 +240,7 @@ nitobi.html.detachEvents = function(element, events)
 nitobi.html.detachEvent = function(element, type, handler)
 {
 	//	Allow either a node id or an actual DOM node.
-	element = $(element);
+	element = $ntb(element);
 
 	// Allow either a Function with a guid or just the guid
 	var handlerGuid = handler; 

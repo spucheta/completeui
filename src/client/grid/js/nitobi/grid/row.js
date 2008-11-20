@@ -78,7 +78,7 @@ nitobi.grid.Row.getRowElements = function(grid, row)
 	
 	var midCol = grid.getFrozenLeftColumnCount();
 	if (!midCol)
-		return {left: null, mid: $("row_"+row+"_"+grid.uid)};
+		return {left: null, mid: $ntb("row_"+row+"_"+grid.uid)};
 
 	var C = nitobi.grid.Cell;
 	var rows = {};

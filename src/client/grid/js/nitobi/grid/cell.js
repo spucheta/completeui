@@ -481,7 +481,7 @@ nitobi.grid.Cell.prototype.getColumnObject = function()
  */
 nitobi.grid.Cell.getCellElement = function(grid, row, column)
 {
-	return $("cell_"+row+"_"+column+"_"+grid.uid);
+	return $ntb("cell_"+row+"_"+column+"_"+grid.uid);
 }
 
 /**

@@ -782,8 +782,8 @@ nitobi.grid.Grid.prototype.attachDomEvents= function()
 	else // MOZ
 	{
 		// Not sure this actually works since in the scorllhoriz and vert methods we focus again.
-		nitobi.html.attachEvent($("vscrollclip"+this.uid), "mousedown", this.focus, this);
-		nitobi.html.attachEvent($("hscrollclip"+this.uid), "mousedown", this.focus, this);
+		nitobi.html.attachEvent($ntb("vscrollclip"+this.uid), "mousedown", this.focus, this);
+		nitobi.html.attachEvent($ntb("hscrollclip"+this.uid), "mousedown", this.focus, this);
 
 		// This one needs to be tested still ...
 		ge.push({type:'DOMMouseScroll', handler:this.handleMouseWheel});
@@ -800,7 +800,7 @@ nitobi.grid.Grid.prototype.attachDomEvents= function()
 	if (nitobi.browser.IE)
 		this.keyNav = this.getScrollerContainer();
 	else
-		this.keyNav = $("ntb-grid-keynav"+this.uid);
+		this.keyNav = $ntb("ntb-grid-keynav"+this.uid);
 
 	this.keyEvents = [
 		{type:'keydown', handler:this.handleKey},
@@ -810,8 +810,8 @@ nitobi.grid.Grid.prototype.attachDomEvents= function()
 	nitobi.html.attachEvents(this.keyNav, this.keyEvents, this);
 
 	// Attach the DOM events for grid resizing
-	var rightGrabby = $("ntb-grid-resizeright" + this.uid);
-	var btmGrabby = $("ntb-grid-resizebottom" + this.uid);
+	var rightGrabby = $ntb("ntb-grid-resizeright" + this.uid);
+	var btmGrabby = $ntb("ntb-grid-resizebottom" + this.uid);
 	if (rightGrabby != null)
 	{
 		nitobi.html.attachEvent(rightGrabby, "mousedown", this.beforeResize, this);
@@ -1460,7 +1460,7 @@ nitobi.grid.Grid.prototype.getToolbars = function()
 nitobi.grid.Grid.prototype.adjustHorizontalScrollBars = function()
 {
 	var viewableWidth = this.calculateWidth();
-	var hScrollbarContainer = $("ntb-grid-hscrollshow" + this.uid);
+	var hScrollbarContainer = $ntb("ntb-grid-hscrollshow" + this.uid);
 	if ((viewableWidth <= parseInt(this.getWidth())))
 	{
 		hScrollbarContainer.style.display = "none";
@@ -1510,10 +1510,10 @@ nitobi.grid.Grid.prototype.createChildren= function()
 	this.subscribe("HtmlReady", L.close(ls,ls.hide));
 	this.subscribe("AfterGridResize", L.close(ls,ls.resize));
 	ls.initialize();
-	ls.attachToElement($("ntb-grid-overlay"+this.uid));
+	ls.attachToElement($ntb("ntb-grid-overlay"+this.uid));
 	ls.show();
 
-//	nitobi.html.setBgImage($("ntb-frozenshadow"+this.uid));
+//	nitobi.html.setBgImage($ntb("ntb-frozenshadow"+this.uid));
 
 	// TODO: these resizers should be inheriting from one resizer base class to reduce code.
 	/**
@@ -1580,7 +1580,7 @@ nitobi.grid.Grid.prototype.createChildren= function()
 
 	// create Scrollbars
 	var vs = this.vScrollbar = new nitobi.ui.VerticalScrollbar();
-	vs.attachToParent(this.element, $("vscroll"+this.uid));
+	vs.attachToParent(this.element, $ntb("vscroll"+this.uid));
 	vs.subscribe("ScrollByUser",L.close(this,this.scrollVertical));
 	this.subscribe("PercentHeightChanged",L.close(vs, vs.setRange)); // I had to do it this way ... context wasn't being passed properly
 	this.subscribe("ScrollVertical",L.close(vs, vs.setScrollPercent)); 
@@ -1590,7 +1590,7 @@ nitobi.grid.Grid.prototype.createChildren= function()
 //	this.subscribe("PercentHeightChanged",this.vScrollbar.setRange,this);
 
 	var hs = this.hScrollbar = new nitobi.ui.HorizontalScrollbar();
-	hs.attachToParent(this.element, $("hscroll"+this.uid));
+	hs.attachToParent(this.element, $ntb("hscroll"+this.uid));
 	hs.subscribe("ScrollByUser",L.close(this,this.scrollHorizontal));
 	this.subscribe("PercentWidthChanged",L.close(hs, hs.setRange)); // I had to do it this way ... context wasn't being passed properly
 	this.subscribe("ScrollHorizontal",L.close(hs, hs.setScrollPercent));

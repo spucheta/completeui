@@ -167,7 +167,7 @@ nitobi.html.evalScriptBlocks = function(node)
  */
 nitobi.html.position = function(node)
 {
-	var pos = nitobi.html.getStyle($(node), 'position');
+	var pos = nitobi.html.getStyle($ntb(node), 'position');
 	if ( pos == 'static' ) node.style.position = 'relative';
 };
 
@@ -290,11 +290,21 @@ if (typeof($) == "undefined")
 {
 	/**
 	 * Returns a DOM element from either a DOM element or an element ID.  A shorthand for this function
-	 * is the dollar sign ($).  IE: <code>nitobi.html.getElement('myId') == $('myId')
+	 * is the dollar sign ($).  IE: <code>nitobi.html.getElement('myId') == $ntb('myId')
 	 * @param {Object} element The element can be either a DOM element or an element ID.
 	 * @type HTMLElement
 	 */
 	$ = nitobi.html.getElement;
+}
+
+/*
+ * We have the $ntb command that allows us to get around jQuery and how it
+ * overrides the $ command.  This will allow us to insulate ourselves a bit
+ */
+
+if (typeof($ntb) == "undefined")
+{
+  $ntb = nitobi.html.getElement;
 }
 
 if (typeof($F) == "undefined")
@@ -306,7 +316,7 @@ if (typeof($F) == "undefined")
 	 */
 	$F = function(id)
 	{
-		var field = $(id);
+		var field = $ntb(id);
 		if (field != null)
 			return field.value;
 		return "";

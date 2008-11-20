@@ -35,7 +35,7 @@ nitobi.html.IRenderer = function(template)
  */
 nitobi.html.IRenderer.prototype.renderAfter = function(element, data)
 {
-	element = $(element);
+	element = $ntb(element);
 	var _parent = element.parentNode;
 	element = element.nextSibling;	
 	return this._renderBefore(_parent,element,data);
@@ -52,7 +52,7 @@ nitobi.html.IRenderer.prototype.renderAfter = function(element, data)
 
 nitobi.html.IRenderer.prototype.renderBefore = function(element, data)
 {
-	element = $(element);
+	element = $ntb(element);
 	return this._renderBefore(element.parentNode, element, data);
 };
 
@@ -99,7 +99,7 @@ nitobi.html.IRenderer.prototype._renderBefore = function(_parent, element, data)
  */
 nitobi.html.IRenderer.prototype.renderIn = function(element, data)
 {
-	element = $(element);
+	element = $ntb(element);
 	var s = this.renderToString(data);
 	element.innerHTML = s;
 	return element.childNodes;

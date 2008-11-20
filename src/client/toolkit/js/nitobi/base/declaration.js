@@ -36,7 +36,7 @@ nitobi.base.Declaration.prototype.loadHtml = function(element)
 {
 	try
 	{
-		element = $(element);
+		element = $ntb(element);
 		this.xmlDoc = nitobi.xml.parseHtml(element);
 		return this.xmlDoc;
 	}

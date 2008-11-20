@@ -26,13 +26,13 @@ if (typeof(console.log) == "undefined")
 	console.log = function(s)
 	{
 		nitobi.debug.addDebugTools();
-		var t = $('nitobi.log');
+		var t = $ntb('nitobi.log');
 		t.value = s + "\n" + t.value 
 	}
 	
 	console.evalCode = function()
 	{
-		var result = (eval($("nitobi.consoleEntry").value));
+		var result = (eval($ntb("nitobi.consoleEntry").value));
 		console.log(result.toString());
 	}
 }

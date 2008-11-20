@@ -141,10 +141,10 @@ nitobi.grid.Scroller3x3.prototype.mapToHtml=function(oNode)
 {
 	var uid = this.owner.uid;
 	for (var i=0;i<4;i++) {
-		var node=$("gridvp_"+i+"_"+uid);
+		var node=$ntb("gridvp_"+i+"_"+uid);
 		this.view[EBAScroller_VIEWPANES[i]].mapToHtml(node,nitobi.html.getFirstChild(node),null);  
 	}
-	this.scrollSurface = $("gridvp_3_"+uid);
+	this.scrollSurface = $ntb("gridvp_3_"+uid);
 }
 
 /**

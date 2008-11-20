@@ -35,13 +35,13 @@ nitobi.ui.Element = function(id)
 			// Assume that id is an XmlNode.
 			nitobi.base.ISerializable.call(this,id);
 		}
-		else if ($(id) != null)
+		else if ($ntb(id) != null)
 		{
 			// Assume a decl.
 			var decl = new nitobi.base.Declaration();
-			var xmlNode = decl.loadHtml($(id));
+			var xmlNode = decl.loadHtml($ntb(id));
 
-			var oldContainer = $(id);
+			var oldContainer = $ntb(id);
 			var parentNode = oldContainer.parentNode;
 			var wrapper = parentNode.ownerDocument.createElement('ntb:component');
 			parentNode.insertBefore(wrapper, oldContainer);
@@ -174,7 +174,7 @@ nitobi.ui.Element.htmlNodeCache = {};
  */
 nitobi.ui.Element.prototype.setHtmlNode = function(htmlNode)
 {
-	var node = $(htmlNode);
+	var node = $ntb(htmlNode);
 	this.htmlNode = node;
 };
 
@@ -338,7 +338,7 @@ nitobi.ui.Element.prototype.getHtmlNode = function(name)
 	var node = nitobi.ui.Element.htmlNodeCache[name];
 	if (node==null)
 	{
-		node = $(id);
+		node = $ntb(id);
 		nitobi.ui.Element.htmlNodeCache[id] = node;		
 	}
 	return node;
@@ -477,7 +477,7 @@ nitobi.ui.Element.prototype.render = function(container, state)
 {
 	this.flushHtmlNodeCache();
 	state = state || this.getState();
-	container = $(container) || this.getContainer();
+	container = $ntb(container) || this.getContainer();
 	
 	if (container == null)
 	{
@@ -504,7 +504,7 @@ nitobi.ui.Element.prototype.getContainer = function()
  */
 nitobi.ui.Element.prototype.setContainer = function(container)
 {
-	this.container = $(container);
+	this.container = $ntb(container);
 };
 
 /**

@@ -33,7 +33,7 @@ nitobi.effects.Effect = function( element, params )
 	 * The HTML element this effect will act on.
 	 * @type HTMLElement
 	 */
-	this.element = $(element);
+	this.element = $ntb(element);
 	/**
 	 * The transition (any function that takes any value between 0.0 and 1.0 and returns a value
 	 * between 0.0 and 1.0) for this effect. Default: {@link nitobi.effects.Transition#sinoidal}
@@ -224,8 +224,8 @@ nitobi.effects.Effect.prototype.cancel = function()
  *  var effect = nitobi.effects.factory(nitobi.effects.Effect.Scale, 
  *                                      {fps:25,scaleFrom:50.0},
  *                                      75.0);
- *  var e1 = new effect($('myDiv'));
- *  var e2 = new effect($('anotherDiv'));
+ *  var e1 = new effect($ntb('myDiv'));
+ *  var e2 = new effect($ntb('anotherDiv'));
  *  myEffects.FiftyToSeventyFiveWithFps25 = effect;  
  * @param {Function} effectClass the class to use as the basis for the returned effect
  * @param {Map} params the params Map to use in the <code>effectClass</code> constructor

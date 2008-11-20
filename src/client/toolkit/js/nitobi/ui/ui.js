@@ -27,7 +27,7 @@ nitobi.ui.setWaitScreen = function(onOff) {
 	document.getElementsByTagName('body').item(0).appendChild(me);
 	} else {
 		
-		var me = $('NTB_waitDiv');
+		var me = $ntb('NTB_waitDiv');
 		try {
 		document.getElementsByTagName('body').item(0).removeChild(me);	
 		} catch(e) {}

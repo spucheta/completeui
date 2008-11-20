@@ -160,5 +160,8 @@
 	<cssfile path="../calendar/css/flex/calendar.css"></cssfile>
 	<cssfile path="../calendar/css/leopard/calendar.css"></cssfile>
 	<cssfile path="../calendar/css/vista/calendar.css"></cssfile>
-		
+
+  <!-- This is just to break grid -->
+  <jsfile path="../toolkit/jquery/jquery-1.2.6.js" />
+
 </includes>

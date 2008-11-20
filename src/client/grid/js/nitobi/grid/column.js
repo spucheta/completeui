@@ -389,5 +389,5 @@ nitobi.grid.Column.prototype.unsubscribe = function(evt,func)
  */
 nitobi.grid.Column.getColumnHeaderElement = function(grid, column)
 {
-	return $('columnheader_'+column+'_'+grid.uid);
+	return $ntb('columnheader_'+column+'_'+grid.uid);
 }

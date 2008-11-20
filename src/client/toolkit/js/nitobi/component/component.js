@@ -25,7 +25,7 @@ if (false)
 nitobi.loadComponent = function(el)
 {
 	var id = el;
-	el = $(el);
+	el = $ntb(el);
 	if (el == null)
 	{
 		nitobi.lang.throwError("nitobi.loadComponent could not load the component because it could not be found on the page. The component may not have a declaration, node, or it may have a duplicated id. Id: " + id);
@@ -84,7 +84,7 @@ nitobi.component.renderComponent = function(eventArgs)
  */
 nitobi.getComponent = function(id)
 {
-	var el = $(id);
+	var el = $ntb(id);
 	if (el == null) return null;
 	return el.jsObject;
 }

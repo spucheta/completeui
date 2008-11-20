@@ -34,7 +34,7 @@ nitobi.ui.Effects = {};
 nitobi.ui.Effects.setVisible = function(element, visible, effectFamily, callback, context)
 {
 	callback = (context ? nitobi.lang.close(context,callback) : callback) || nitobi.lang.noop;
-	element = $(element);
+	element = $ntb(element);
 	if (typeof effectFamily == 'string')
 		effectFamily = nitobi.effects.families[effectFamily];
 	if (!effectFamily)

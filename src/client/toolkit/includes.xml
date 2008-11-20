@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
-
 	<jsfile path="js/nitobi/lang/lang.js"/>
 	<jsfile path="js/nitobi/lang/math.js"/>
 	<jsfile path="js/nitobi/version.js"/>

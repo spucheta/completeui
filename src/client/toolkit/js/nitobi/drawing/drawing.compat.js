@@ -54,8 +54,8 @@ nitobi.drawing.rgb = function(r,g,b)
 /**
  * Aligns two DOM nodes on in the web browser.
  * @example
- * var header = $("header");
- * var title = $("title");
+ * var header = $ntb("header");
+ * var title = $ntb("title");
  * nitobi.drawing.align(header, title, nitobi.drawing.align.ALIGNRIGHT);
  * @param {HtmlElement} source The element to align.
  * @param {HtmlElement} target The reference element to align against.
