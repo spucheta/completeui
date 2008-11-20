@@ -456,7 +456,6 @@ nitobi.callout.Callout = function(stylesheet,title,body)
 		window.attachEvent('onresize', nitobi.callout.Callout.update);	
 		} 
 	}
-	
 	this.setTitle('');	
 
 	/**
@@ -475,7 +474,6 @@ nitobi.callout.Callout = function(stylesheet,title,body)
 	if(body != null)
 		this.setBody(body);
 	
-
 	/**
 	 * @private
 	 */

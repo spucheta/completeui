@@ -1,23 +1,8 @@
-/* -----------------------------------------------------------
- *
- * nitobi Grid V3.0
- *
- * Details and latest version at:
- * http://www.nitobi.com
- *
- *
- * Copyright 2002-2007 Nitobi ALL RIGHTS RESERVED. DO NOT MAKE PUBLIC 
- * Copyright in the whole and every part of this document belongs to Nitobi. 
- * It is also the confidential information of Nitobi. 
- * You may not use, sell, license, transfer, copy or reproduce it in whole or in part 
- * in any manner or form or in or on any media to any person other than in accordance 
- * with the terms of the License or as otherwise agreed in writing with Nitobi. 
- *
- *
- * TradeMark Information
- * The nitobi Grid and eBusiness Applications logos are trademarks of Nitobi.
- * All other trademarks are acknowledged and are the property of their respective owners. 
- *
+ /*
+  * Nitobi Treegrid
+  * Copyright 2008 Nitobi (http://www.nitobi.com)
+  * This code is covered by the GNU GPL V3
+  * Licence can be found at http://www.nitobi.com/licence
  */
 
 nitobi.lang.defineNs("nitobi.grid");

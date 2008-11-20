@@ -1123,7 +1123,6 @@ nitobi.spotlight.Spotlight.prototype.play = function() {
 					targetId = this.stepArray[this.currentStep][0].id;
 				else
 					targetId = this.stepArray[this.currentStep][0].name;
-				
 				if (this.stepArray[this.currentStep][5])
 					this.setEffect(targetId);
 			}

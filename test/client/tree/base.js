@@ -36,7 +36,6 @@ var baseDir = window.location.protocol + "//" + window.location.host
 }*/
 
 nitobi.testframework.baseDir = baseDir + pathname.substr(0, pathname.indexOf("samples"));
-
 nitobi.testframework.projectBaseDir = nitobi.testframework.baseDir + "src/client/" + nitobi.testframework.projectDir;
 nitobi.testframework.testFrameworkBaseDir = nitobi.testframework.baseDir + "testframework";
 nitobi.testframework.frameworkBaseDir = nitobi.testframework.baseDir + "src/client/toolkit";

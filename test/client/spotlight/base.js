@@ -36,7 +36,6 @@ var baseDir = window.location.protocol + "//" + window.location.host
 }*/
 
 nitobi.testframework.baseDir = baseDir + pathname.substr(0, pathname.indexOf("samples"));
-
 nitobi.testframework.projectBaseDir = nitobi.testframework.baseDir + "src/client/" + nitobi.testframework.projectDir;
 nitobi.testframework.testFrameworkBaseDir = nitobi.testframework.baseDir + "testframework";
 nitobi.testframework.frameworkBaseDir = nitobi.testframework.baseDir + "src/client/toolkit";
@@ -307,6 +306,7 @@ nitobi.testframework.createXslProcessor = function(xsl)
 	        }
 	        return str;
 	    };
+
 		return new obj(xsl);
 	}
 }
@@ -400,7 +400,8 @@ nitobi.testframework.setParameter = function(xslt, baseName, parameter, namespac
 if (nitobi.testframework.moz || nitobi.testframework.safari)
 {
 	/**
-	 * Make the .xml property available on XML Document and XML Node objects.
+	 * Make the .xml property available on XML Document a
+nd XML Node objects.
 	 * @private
 	 */
 	Document.prototype.__defineGetter__("xml", function () {return (new XMLSerializer()).serializeToString(this);});

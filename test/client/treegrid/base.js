@@ -21,26 +21,12 @@ nitobi.testframework.projectDir = "treegrid";
 var pathname = window.location.pathname;
 var baseDir = window.location.protocol + "//" + window.location.host
 
-// Go back until we hit branches, tags, or trunk.
-/*if (pathname.indexOf("trunk") != -1)
-{
-	nitobi.testframework.baseDir = baseDir + pathname.substr(0,pathname.indexOf("trunk")+ "trunk".length);
-} else if (pathname.indexOf("tags") != -1)
-{
-	// Simply go back and select the base + version of the branch.
-	alert("Test framework todo");
-} else if (pathname.indexOf("branches") != -1)
-{
-	//alert("Test framework todo");
-	nitobi.testframework.baseDir = baseDir + pathname.replace(/(.*?branches\/.*?)\/.*,"$1");
-}*/
 
 nitobi.testframework.baseDir = baseDir + pathname.substr(0, pathname.indexOf("samples"));
 
 nitobi.testframework.projectBaseDir = nitobi.testframework.baseDir + "src/client/" + nitobi.testframework.projectDir;
 nitobi.testframework.testFrameworkBaseDir = nitobi.testframework.baseDir + "testframework";
 nitobi.testframework.frameworkBaseDir = nitobi.testframework.baseDir + "src/client/toolkit";
-
 
 nitobi.testframework.includeSource = function () 
 {
