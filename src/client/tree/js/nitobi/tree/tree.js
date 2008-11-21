@@ -43,7 +43,7 @@ if (false)
  * declaration in your web page. To access this API you get the tree object from its node in the HTML 
  * document. We can, for example, add a parameter to the gethandler:
  * <pre class="code">
- * var tree = $('tree1').jsObject;
+ * var tree = $ntb('tree1').jsObject;
  * var gethandler = tree.getGetHandler();
  * gethandler = nitobi.html.Url.addParameter(gethandler, 'testname', 'testvalue');
  * tree.setGetHandler(gethandler);
@@ -251,7 +251,7 @@ nitobi.tree.Tree.prototype.handleEvent = function(eventArgs)
 	{
 		if (this.getHoverHighlight())
 		{
-			var el = $(idProperties.id+'.css');
+			var el = $ntb(idProperties.id+'.css');
 			if (el)
 			{
 				nitobi.html.Css.addClass(el,'hover');
@@ -262,7 +262,7 @@ nitobi.tree.Tree.prototype.handleEvent = function(eventArgs)
 	{
 		if (this.getHoverHighlight())
 		{
-			var el = $(idProperties.id+'.css');
+			var el = $ntb(idProperties.id+'.css');
 			if (el)
 			{
 				nitobi.html.Css.removeClass(el,'hover');
@@ -501,7 +501,7 @@ nitobi.tree.Tree.prototype.setSelected = function(selected)
 			var frame = eval('parent.'+targetFrame);
 			if (!frame)
 			{
-				frame = $(targetFrame);
+				frame = $ntb(targetFrame);
 				if (frame)
 				{
 					frame.src = url;

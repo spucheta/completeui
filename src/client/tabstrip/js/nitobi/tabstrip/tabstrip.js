@@ -356,7 +356,7 @@ nitobi.tabstrip.TabStrip.handleEvent = function(id, event, targetId, cancelBubbl
 {
 	try
 	{
-		var tabstrip = $(id);
+		var tabstrip = $ntb(id);
 		if (tabstrip == null)
 		{
 			nitobi.lang.throwError("The tabstrip event could not find the component object.  The element with the specified id could not be found on the page.");

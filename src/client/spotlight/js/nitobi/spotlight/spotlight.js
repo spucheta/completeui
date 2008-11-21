@@ -365,7 +365,7 @@ nitobi.spotlight.Spotlight.prototype.drawLens = function() {
 	} else {
 		tLs.height = this.coords.h + 'px';
 	}
-	var tLi = $('ntbLensI' + this.uid).style;
+	var tLi = $ntb('ntbLensI' + this.uid).style;
 	tLi.width = this.coords.w + 'px';
 	tLi.height = this.coords.h + 'px';
 	}
@@ -544,7 +544,7 @@ nitobi.spotlight.Spotlight.prototype.setEffect = function(elementid) {
 	{
 		
 		isFake = true;
-		var mc = nitobi.callout.Callout.getCoords($(elementid));
+		var mc = nitobi.callout.Callout.getCoords($ntb(elementid));
 		elementid="NTB_tempDiv" + this.uid;
 		var me = nitobi.html.createElement('div', {"id":elementid}, {"position":"absolute", "top":mc.y+"px", "left":mc.x+"px", "width":"0px", "height":"0px"});
 		document.getElementsByTagName('body').item(0).appendChild(me);
@@ -571,7 +571,7 @@ nitobi.spotlight.Spotlight.prototype.setEffect = function(elementid) {
 		var ObjCoords;
 		if (elementid != this.lastID) {
 		this.lastID = elementid;
-		if (this.opera) {ObjCoords = nitobi.callout.Callout.getCoordsAlt($(elementid));} else {ObjCoords = nitobi.callout.Callout.getCoords($(elementid)); }
+		if (this.opera) {ObjCoords = nitobi.callout.Callout.getCoordsAlt($ntb(elementid));} else {ObjCoords = nitobi.callout.Callout.getCoords($ntb(elementid)); }
 		ObjCoords = this.lensMagnify(ObjCoords);
 		this.coords = ObjCoords;
 		this.ContainerCoords[0][0] = 0; this.ContainerCoords[0][1] = 0;
@@ -621,7 +621,7 @@ nitobi.spotlight.Spotlight.prototype.setEffect = function(elementid) {
 	}
 	this.drawLens();
 	if (isFake)
-	document.getElementsByTagName("body").item(0).removeChild($(elementid));	
+	document.getElementsByTagName("body").item(0).removeChild($ntb(elementid));	
 	
 }
 
@@ -914,12 +914,12 @@ nitobi.spotlight.Spotlight.prototype.moveMouseXY = function(TargetX, TargetY) {
 		{
 			this.setMouseIcon('ntbMouseClick');
 			if (this.stepArray[this.currentStep][2] == "CLICKONOBJECTCALCED") {
-				//var mynewobj = $();
+				//var mynewobj = $ntb();
 			} else {
 				if (typeof(this.stepArray[this.currentStep][0]) == "string")
-					try { var mynewobj = $(this.stepArray[this.currentStep][0]); } catch(e){}
+					try { var mynewobj = $ntb(this.stepArray[this.currentStep][0]); } catch(e){}
 				if (typeof(this.stepArray[this.currentStep][0]) == "function")
-					try { var mynewobj = $(this.stepArray[this.currentStep][0].call()); } catch(e){}				
+					try { var mynewobj = $ntb(this.stepArray[this.currentStep][0].call()); } catch(e){}				
 			}
 			
 			try{
@@ -1046,8 +1046,8 @@ nitobi.spotlight.Spotlight.prototype.play = function() {
 
 			this.callout.HaltAttributes = true;
 			this.callout.setTitle(this.stepArray[this.currentStep][1]);
-			this.callout.setBody(this.stepArray[this.currentStep][2]  + "<br><div id='calloutclose" + this.uid + "'  onclick='nitobi.spotlight.Spotlight.continueTour = true; $(\"close" + this.callout.uid + "\").onmouseup.call(); return false;' class=ntb" + this.stylesheet + "Callout_next_off onmouseover='this.className=\"ntb" + this.stylesheet + "Callout_next_on\"' onmouseout='this.className=\"ntb" + this.stylesheet + "Callout_next_off\"' onmousedown='this.className=\"ntb" + this.stylesheet + "Callout_next_off\"' onmouseup='this.className=\"ntb" + this.stylesheet + "Callout_next_on\"; return false;'></div>");
-			//onclick='$(\"close" + this.callout.uid + "\").onmouseup.call(); return false;'
+			this.callout.setBody(this.stepArray[this.currentStep][2]  + "<br><div id='calloutclose" + this.uid + "'  onclick='nitobi.spotlight.Spotlight.continueTour = true; $ntb(\"close" + this.callout.uid + "\").onmouseup.call(); return false;' class=ntb" + this.stylesheet + "Callout_next_off onmouseover='this.className=\"ntb" + this.stylesheet + "Callout_next_on\"' onmouseout='this.className=\"ntb" + this.stylesheet + "Callout_next_off\"' onmousedown='this.className=\"ntb" + this.stylesheet + "Callout_next_off\"' onmouseup='this.className=\"ntb" + this.stylesheet + "Callout_next_on\"; return false;'></div>");
+			//onclick='$ntb(\"close" + this.callout.uid + "\").onmouseup.call(); return false;'
 			
 			this.callout.setOnDestroy(function() {if (nitobi.spotlight.Spotlight.continueTour ==true) {ds.play()} else {ds.destroy();} nitobi.spotlight.Spotlight.continueTour = false;});
 			try {
@@ -1069,7 +1069,7 @@ nitobi.spotlight.Spotlight.prototype.play = function() {
 			var fd = this.callout;
 			//this.callout = null;
 			this.setMouseIcon('ntbMouse');
-			if (this.opera) {var ObjCoords = nitobi.callout.Callout.getCoordsAlt($(this.stepArray[this.currentStep][0]));} else {var ObjCoords = nitobi.callout.Callout.getCoords($(this.stepArray[this.currentStep][0])); }			
+			if (this.opera) {var ObjCoords = nitobi.callout.Callout.getCoordsAlt($ntb(this.stepArray[this.currentStep][0]));} else {var ObjCoords = nitobi.callout.Callout.getCoords($ntb(this.stepArray[this.currentStep][0])); }			
 				ObjCoords = this.lensMagnify(ObjCoords);
 				this.updateScroller(ObjCoords.x,ObjCoords.y,ObjCoords.x+ObjCoords.w, ObjCoords.y+ObjCoords.h);
 
@@ -1085,7 +1085,7 @@ nitobi.spotlight.Spotlight.prototype.play = function() {
 		}
 		
 		if (this.stepArray[this.currentStep][3] == "FOCUSID") {
-			if (this.opera) {var ObjCoords = nitobi.callout.Callout.getCoordsAlt($(this.stepArray[this.currentStep][0]));} else {var ObjCoords = nitobi.callout.Callout.getCoords($(this.stepArray[this.currentStep][0])); }			
+			if (this.opera) {var ObjCoords = nitobi.callout.Callout.getCoordsAlt($ntb(this.stepArray[this.currentStep][0]));} else {var ObjCoords = nitobi.callout.Callout.getCoords($ntb(this.stepArray[this.currentStep][0])); }			
 			this.setEffect(this.stepArray[this.currentStep][0]);
 			ObjCoords = this.lensMagnify(ObjCoords);
 			this.updateScroller(ObjCoords.x,ObjCoords.y,ObjCoords.x+ObjCoords.w, ObjCoords.y+ObjCoords.h);
@@ -1127,7 +1127,7 @@ nitobi.spotlight.Spotlight.prototype.play = function() {
 					this.setEffect(targetId);
 			}
 			
-			if (this.opera) {var ObjCoords = nitobi.callout.Callout.getCoordsAlt($(targetId));} else {var ObjCoords = nitobi.callout.Callout.getCoords($(targetId)); }		
+			if (this.opera) {var ObjCoords = nitobi.callout.Callout.getCoordsAlt($ntb(targetId));} else {var ObjCoords = nitobi.callout.Callout.getCoords($ntb(targetId)); }		
 			ObjCoords = this.lensMagnify(ObjCoords);
 			this.updateScroller(ObjCoords.x,ObjCoords.y,ObjCoords.x+ObjCoords.w, ObjCoords.y+ObjCoords.h);
 			
@@ -1155,10 +1155,10 @@ nitobi.spotlight.Spotlight.prototype.play = function() {
 			if (this.stepArray[this.currentStep][2] == "APPEARONOBJECT") {	
 				this.setMouseIcon('ntbMouse');
 				if (typeof(this.stepArray[this.currentStep][0]) == "string")
-					try { var mynewobj = $(this.stepArray[this.currentStep][0]); } catch(e){}
+					try { var mynewobj = $ntb(this.stepArray[this.currentStep][0]); } catch(e){}
 				if (typeof(this.stepArray[this.currentStep][0]) == "function")
 					try { 
-					var mynewobj = $(this.stepArray[this.currentStep][0].call());
+					var mynewobj = $ntb(this.stepArray[this.currentStep][0].call());
 					} catch(e){}
 					
 				if (this.opera) {var ObjCoords = nitobi.callout.Callout.getCoordsAlt(mynewobj);} else {var ObjCoords = nitobi.callout.Callout.getCoords(mynewobj); }
@@ -1175,10 +1175,10 @@ nitobi.spotlight.Spotlight.prototype.play = function() {
 				this.setMouseIcon('ntbMouse');	
 				
 				if (typeof(this.stepArray[this.currentStep][0]) == "string")
-					try { var mynewobj = $(this.stepArray[this.currentStep][0]); } catch(e){}
+					try { var mynewobj = $ntb(this.stepArray[this.currentStep][0]); } catch(e){}
 				if (typeof(this.stepArray[this.currentStep][0]) == "function")
 					try { 
-					var mynewobj = $(this.stepArray[this.currentStep][0].call());
+					var mynewobj = $ntb(this.stepArray[this.currentStep][0].call());
 					} catch(e){}
 					
 				if (this.opera) {var ObjCoords = nitobi.callout.Callout.getCoordsAlt(mynewobj);} else {var ObjCoords = nitobi.callout.Callout.getCoords(mynewobj); }
@@ -1196,10 +1196,10 @@ nitobi.spotlight.Spotlight.prototype.play = function() {
 
 				
 				if (typeof(this.stepArray[this.currentStep][0]) == "string")
-					try { var mynewobj = $(this.stepArray[this.currentStep][0]); } catch(e){}
+					try { var mynewobj = $ntb(this.stepArray[this.currentStep][0]); } catch(e){}
 				if (typeof(this.stepArray[this.currentStep][0]) == "function")
 					try { 
-					var mynewobj = $(this.stepArray[this.currentStep][0].call());
+					var mynewobj = $ntb(this.stepArray[this.currentStep][0].call());
 					} catch(e){}					
 
 				if (this.opera) {var ObjCoords = nitobi.callout.Callout.getCoordsAlt(mynewobj);} else {var ObjCoords = nitobi.callout.Callout.getCoords(mynewobj); }

@@ -404,9 +404,9 @@ nitobi.grid.Surface.prototype.clearHeader = function() {
  */
 nitobi.grid.Surface.prototype.mapToHtml = function(uid) 
 {
-	this.htmlNode = $(this.key + "_surface" + uid);
+	this.htmlNode = $ntb(this.key + "_surface" + uid);
 	for (var i = 0; i < 4; i++) {
-		var node = $("gridvp_" + i + "_" + uid + "_" + this.key);
+		var node = $ntb("gridvp_" + i + "_" + uid + "_" + this.key);
 		this.view[EBAScroller_VIEWPANES[i]].mapToHtml(node,nitobi.html.getFirstChild(node),null);
 	}
 };

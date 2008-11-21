@@ -14,7 +14,7 @@ if (false)
 	 * @class <code>nitobi.grid</code> is the namespace for classes that make up 
 	 * the Nitobi Grid component.  You're probably looking for documentation about one of
 	 * the classes below.  {@link nitobi.grid.Grid} is the class of object you will get if you
-	 * use {@link nitobi#getComponent} or <code>$('&lt;COMPONENT_ID&gt;').jsObject</code>.
+	 * use {@link nitobi#getComponent} or <code>$ntb('&lt;COMPONENT_ID&gt;').jsObject</code>.
 	 * <p>
 	 * The most commonly used classes are {@link nitobi.grid.Grid}, {@link nitobi.grid.Cell},
 	 * and {@link nitobi.grid.Column}
@@ -811,8 +811,8 @@ nitobi.grid.TreeGrid.prototype.attachDomEvents= function()
 	}
 	else // MOZ
 	{
-		nitobi.html.attachEvent($("vscrollclip"+this.uid), "mousedown", this.focus, this);
-		nitobi.html.attachEvent($("hscrollclip"+this.uid), "mousedown", this.focus, this);
+		nitobi.html.attachEvent($ntb("vscrollclip"+this.uid), "mousedown", this.focus, this);
+		nitobi.html.attachEvent($ntb("hscrollclip"+this.uid), "mousedown", this.focus, this);
 
 		// This one needs to be tested still ...
 		ge.push({type:'DOMMouseScroll', handler:this.handleMouseWheel});
@@ -828,7 +828,7 @@ nitobi.grid.TreeGrid.prototype.attachDomEvents= function()
 	if (nitobi.browser.IE)
 		this.keyNav = this.getScrollerContainer();
 	else
-		this.keyNav = $("ntb-grid-keynav"+this.uid);
+		this.keyNav = $ntb("ntb-grid-keynav"+this.uid);
 
 	this.keyEvents = [
 		{type:'keydown', handler:this.handleKey},
@@ -838,8 +838,8 @@ nitobi.grid.TreeGrid.prototype.attachDomEvents= function()
 	nitobi.html.attachEvents(this.keyNav, this.keyEvents, this);
 
 	// Attach the DOM events for grid resizing
-	var rightGrabby = $("ntb-grid-resizeright" + this.uid);
-	var btmGrabby = $("ntb-grid-resizebottom" + this.uid);
+	var rightGrabby = $ntb("ntb-grid-resizeright" + this.uid);
+	var btmGrabby = $ntb("ntb-grid-resizebottom" + this.uid);
 	if (rightGrabby != null)
 	{
 		nitobi.html.attachEvent(rightGrabby, "mousedown", this.beforeResize, this);
@@ -1529,7 +1529,7 @@ nitobi.grid.TreeGrid.prototype.getToolbars = function()
 nitobi.grid.TreeGrid.prototype.adjustHorizontalScrollBars = function()
 {
 	var viewableWidth = this.getViewableWidth();
-	var hScrollbarContainer = $("ntb-grid-hscrollshow" + this.uid);
+	var hScrollbarContainer = $ntb("ntb-grid-hscrollshow" + this.uid);
 	if ((viewableWidth <= parseInt(this.getWidth())))
 	{
 		hScrollbarContainer.style.display = "none";
@@ -1588,10 +1588,10 @@ nitobi.grid.TreeGrid.prototype.createChildren= function()
 	this.subscribe("HtmlReady", L.close(ls,ls.hide));
 	this.subscribe("AfterGridResize", L.close(ls,ls.resize));
 	ls.initialize();
-	ls.attachToElement($("ntb-grid-overlay"+this.uid));
+	ls.attachToElement($ntb("ntb-grid-overlay"+this.uid));
 	ls.show();
 
-//	nitobi.html.setBgImage($("ntb-frozenshadow"+this.uid));
+//	nitobi.html.setBgImage($ntb("ntb-frozenshadow"+this.uid));
 
 	// TODO: these resizers should be inheriting from one resizer base class to reduce code.
 	/**
@@ -1655,7 +1655,7 @@ nitobi.grid.TreeGrid.prototype.createChildren= function()
 
 	// create Scrollbars
 	var vs = this.vScrollbar = new nitobi.ui.VerticalScrollbar();
-	vs.attachToParent(this.element, $("vscroll"+this.uid));
+	vs.attachToParent(this.element, $ntb("vscroll"+this.uid));
 	vs.subscribe("ScrollByUser",L.close(this,this.scrollVertical));
 	this.subscribe("PercentHeightChanged",L.close(vs, vs.setRange)); // I had to do it this way ... context wasn't being passed properly
 	this.subscribe("ScrollVertical",L.close(vs, vs.setScrollPercent)); 
@@ -1665,7 +1665,7 @@ nitobi.grid.TreeGrid.prototype.createChildren= function()
 //	this.subscribe("PercentHeightChanged",this.vScrollbar.setRange,this);
 
 	var hs = this.hScrollbar = new nitobi.ui.HorizontalScrollbar();
-	hs.attachToParent(this.element, $("hscroll"+this.uid));
+	hs.attachToParent(this.element, $ntb("hscroll"+this.uid));
 	hs.subscribe("ScrollByUser",L.close(this,this.scrollHorizontal));
 	this.subscribe("PercentWidthChanged",L.close(hs, hs.setRange)); // I had to do it this way ... context wasn't being passed properly
 	this.subscribe("ScrollHorizontal",L.close(hs, hs.setScrollPercent));
@@ -2196,7 +2196,7 @@ nitobi.grid.TreeGrid.prototype.resizeSurfaces = function()
 nitobi.grid.TreeGrid.prototype.initializeModel= function()
 {
 	this.model = nitobi.xml.createXmlDoc(nitobi.xml.serialize(nitobi.grid.modelDoc));
-	//this.model = nitobi.xml.parseHtml($(this.uid));
+	//this.model = nitobi.xml.parseHtml($ntb(this.uid));
 	//this.model = nitobi.xml.createXmlDoc(this.defaultDeclarationModel);
 	//this.model = nitobi.xml.createXmlDoc(nitobi.xml.serialize(this.defaultModel.selectSingleNode("//ntb:grid")));
 	//this.defaultModel = this.model.cloneNode(true);
@@ -4123,7 +4123,7 @@ nitobi.grid.TreeGrid.prototype.renderSurface = function()
 	}
 	var surfaceHtml = this.Scroller.surface.renderContainer(this.uid);
 	// The ntb-grid-surface-container element is defined and created by frameXslProc
-	$("ntb-grid-surface-container-" + this.uid).innerHTML = surfaceHtml;
+	$ntb("ntb-grid-surface-container-" + this.uid).innerHTML = surfaceHtml;
 }
 
 /**
@@ -6199,7 +6199,7 @@ nitobi.grid.TreeGrid.prototype.expand = function(rowIndex, surfacePath)
 	if (this.activeCell)
 	{
 		var id = this.activeCell.id;
-		this.activeCell = $(id);
+		this.activeCell = $ntb(id);
 	}
 	
 	// TODO: This should be refactored.
@@ -6207,7 +6207,7 @@ nitobi.grid.TreeGrid.prototype.expand = function(rowIndex, surfacePath)
 	he.push({type:'mousedown', handler:this.handleHeaderMouseDown});
 	he.push({type:'mouseup', handler:this.handleHeaderMouseUp});
 	he.push({type:'mousemove', handler:this.handleHeaderMouseMove});
-	nitobi.html.attachEvents($("ntb-grid-header" + this.uid + "_" + subSurface.key), he, this);
+	nitobi.html.attachEvents($ntb("ntb-grid-header" + this.uid + "_" + subSurface.key), he, this);
 	
 	var columnsElement = subSurface.columnsNode;
 	var getHandler = columnsElement.getAttribute("gethandler");

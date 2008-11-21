@@ -105,7 +105,7 @@ nitobi.grid.Scroller3x3.prototype.setScrollLeftPercent=function(scrollPercent) {
 nitobi.grid.Scroller3x3.prototype.setScrollLeft=function(scrollLeft) {
 	this.surface.view.midcenter.element.scrollLeft = scrollLeft;
 	this.surface.view.topcenter.element.scrollLeft = scrollLeft;
-	$("ntb-grid-subheader-container" + this.owner.uid).scrollLeft = scrollLeft;
+	$ntb("ntb-grid-subheader-container" + this.owner.uid).scrollLeft = scrollLeft;
 }
 nitobi.grid.Scroller3x3.prototype.getScrollLeft=function() {
 	return this.scrollSurface.scrollLeft;
@@ -160,13 +160,13 @@ nitobi.grid.Scroller3x3.prototype.mapToHtml=function(oNode)
 {
 	var uid = this.owner.uid;
 	this.surface.mapToHtml(uid);
-	this.scrollSurface = $("gridvp_3_" + uid + "_" + this.surface.key);
-	this.htmlNode = $("ntb-grid-scroller");
+	this.scrollSurface = $ntb("gridvp_3_" + uid + "_" + this.surface.key);
+	this.htmlNode = $ntb("ntb-grid-scroller");
 	/*for (var i=0;i<4;i++) {
-		var node=$("gridvp_"+i+"_"+uid);
+		var node=$ntb("gridvp_"+i+"_"+uid);
 		this.view[EBAScroller_VIEWPANES[i]].mapToHtml(node,nitobi.html.getFirstChild(node),null);  
 	}*/
-	//this.scrollSurface = $("gridvp_3_"+uid);
+	//this.scrollSurface = $ntb("gridvp_3_"+uid);
 }
 
 /**

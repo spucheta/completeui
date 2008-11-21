@@ -504,7 +504,7 @@ nitobi.grid.Cell.prototype.getColumnObject = function()
  */
 nitobi.grid.Cell.getCellElement = function(grid, row, column, surfacePath)
 {
-	return $("cell_"+row+"_"+column+"_"+grid.uid + "_" + (surfacePath?surfacePath:""));
+	return $ntb("cell_"+row+"_"+column+"_"+grid.uid + "_" + (surfacePath?surfacePath:""));
 }
 
 /**

@@ -169,7 +169,7 @@ nitobi.grid.Column.prototype.getHeaderElement = function()
  */
 nitobi.grid.Column.prototype.getHeaderCopy = function()
 {
-	return $('columnheader_'+this.column+'_'+this.grid.uid+ "_" + this.surface.key+ "copy");
+	return $ntb('columnheader_'+this.column+'_'+this.grid.uid+ "_" + this.surface.key+ "copy");
 }
 
 /**
@@ -319,5 +319,5 @@ nitobi.grid.Column.prototype.unsubscribe = function(evt,func)
  */
 nitobi.grid.Column.getColumnHeaderElement = function(gridId, column, surface)
 {
-	return $('columnheader_'+column+'_'+gridId + "_" + surface);
+	return $ntb('columnheader_'+column+'_'+gridId + "_" + surface);
 }

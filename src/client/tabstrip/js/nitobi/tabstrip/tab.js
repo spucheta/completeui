@@ -288,7 +288,7 @@ nitobi.tabstrip.Tab.prototype.load = function(value)
 	}
 	this.setActivityIndicatorVisible(true);
 	var iframeNode = this.getIframeHtmlNode();
-	var el = $(value);
+	var el = $ntb(value);
 	if (iframeNode != null)
 	{
 		// IFrame target requested.

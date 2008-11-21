@@ -104,7 +104,7 @@ nitobi.grid.Row.getRowElement = function(grid, row)
 
 nitobi.grid.Row.findRowElement = function(path, grid)
 {
-	return $("row_" + path + "_" + grid.uid);
+	return $ntb("row_" + path + "_" + grid.uid);
 };
 
 /**

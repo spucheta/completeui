@@ -13,7 +13,7 @@ nitobi.lang.defineNs("nitobi.tree");
  * through their parent {@link nitobi.tree.Children} object.  In this example we set the variable
  * <code>myNode</code> to the second child of the first node in a tree:
  * <pre class="code">
- * var tree = $('myTreeId').jsObject;
+ * var tree = $ntb('myTreeId').jsObject;
  * var firstNode = tree.getChildren().get(0);
  * var myNode = firstNode.getChildren().get(1);
  * </pre>

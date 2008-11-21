@@ -257,7 +257,7 @@ nitobi.fisheye.FishEye.continuousPositionCheck = function()
  */
 nitobi.fisheye.FishEye.prototype.renderContainers = function()
 {
-	var containerDiv = $(this.getId());
+	var containerDiv = $ntb(this.getId());
 		
 	this.labelObj = nitobi.fisheye.FishEye.createLabel(); 
 	this.labelObj.setAttribute("id", this.getId() + ".label");
