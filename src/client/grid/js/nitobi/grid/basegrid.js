@@ -2077,7 +2077,7 @@ nitobi.grid.Grid.prototype.clearDefaultData= function(rows) {
 }
 
 /**
- * Creates the renderers for the nine possilbe Viewports of the Grid.
+ * Creates the renderers for the nine possible Viewports of the Grid.
  * @private
  */
 nitobi.grid.Grid.prototype.createRenderers= function() {
